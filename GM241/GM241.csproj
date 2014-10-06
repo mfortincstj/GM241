@@ -65,6 +65,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ChildForm.cs" />
     <Compile Include="Classes\Utilisateurs.cs" />
     <Compile Include="Fenetres\MenuPrincipal\MenuPrincipal.xaml.cs">
       <DependentUpon>MenuPrincipal.xaml</DependentUpon>
