@@ -4,12 +4,13 @@
         Title="Login" Height="600" Width="1000">
     <Grid>
         <Label Content="GM241" Canvas.Left="10" Canvas.Top="10" FontSize="48" Width="972" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="10,10,10,400" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBox x:Name="usager" Canvas.Left="481" TextWrapping="Wrap" Canvas.Top="153" Margin="426,200,352,338"/>
-        <TextBox x:Name="motDePasse" Canvas.Left="481" TextWrapping="Wrap" Canvas.Top="184" Margin="426,243,352,295"/>
-        <Button x:Name="authentification" Content="Authentification" Canvas.Left="443" Canvas.Top="234" RenderTransformOrigin="0.496,0.045" Margin="421,313,421,217" Click="authentification_Click"/>
-        <Button x:Name="quitter" Content="Quitter" Canvas.Left="469" Canvas.Top="476" Margin="442,442,442,90" Click="quitter_Click"/>
-        <Label Content="Utilisateur : " HorizontalAlignment="Left" Margin="342,196,0,0" VerticalAlignment="Top" Height="36" Width="96"/>
-        <Label Content="Mot de passe : " HorizontalAlignment="Left" Margin="325,239,0,0" VerticalAlignment="Top" Height="36" Width="96"/>
+        <Label Content="Authentification" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <TextBox x:Name="usager" Canvas.Left="481" TextWrapping="Wrap" Canvas.Top="153" Margin="393,181,385,357"/>
+        <Button x:Name="btnAuthentification" Content="Authentification" Canvas.Left="443" Canvas.Top="234" RenderTransformOrigin="0.496,0.045" Margin="421,286,421,244" Click="btnAuthentification_Click"/>
+        <Button x:Name="btnQuitter" Content="Quitter" Canvas.Left="469" Canvas.Top="476" Margin="442,447,442,85" Click="btnQuitter_Click"/>
+        <Label Content="Utilisateur : " HorizontalAlignment="Left" Margin="309,177,0,0" VerticalAlignment="Top" Height="36" Width="96"/>
+        <Label Content="Mot de passe : " HorizontalAlignment="Left" Margin="292,220,0,0" VerticalAlignment="Top" Height="36" Width="96"/>
+        <PasswordBox x:Name="motDePasse" Margin="393,220,385,318"/>
     </Grid>
 </Window>
     

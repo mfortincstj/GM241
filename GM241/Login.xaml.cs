@@ -23,29 +23,51 @@ namespace GM241
         public Login()
         {
             InitializeComponent();
+
+            // Centrer la fenêtre à l'ouverture de l'écran
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
         // Clic sur le bouton authentification
-        private void authentification_Click(object sender, RoutedEventArgs e)
+        private void btnAuthentification_Click(object sender, RoutedEventArgs e)
         {
-            // Valider le nom d'utilisatuer en BD
-            string usagerRecu = usager.Text;
+            string user = usager.Text;
+            string password = motDePasse.ToString();
 
-            // Voir en BD si ce nom d'usager est valide ?
+            bool usagerValide = true;
+            bool motDePasseValide = true;
 
+            string userBD;
+            string passwordBD;
 
-            // Valider le mot de passe en BD
-            string motDePasseRecu = motDePasse.Text;
+            // Valider le nom d'utilisatuer dans la BD
+            
+
+            // Valider le mot de passe de l'utilisateur dans la BD
+
 
             // Si tout est valide, on passe au menu principal
-            Login pageLogin = new Login();
-            pageLogin.Close();
+            if (usagerValide == true && motDePasseValide == true)
+            {
+                // Fermeture du login
+                Login fLogin = new Login();   // fLogin pour fenêtre de login
+                fLogin.Close();
 
+                // Ouverture du menu principal
+                MenuPrincipal fMenuPrincipal = new MenuPrincipal();
+                fMenuPrincipal.Show();
+            }
+            else // Le nom d'usager ou le mot de passe est invalide
+            {
+                // Afficher un message d'erreur
+                MessageBox.Show("Nom d'usager ou mot de passe invalide", "Erreur !", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK);
 
+                motDePasse.Password = "";
+            }
         }
 
         // Clic sur quitter
-        private void quitter_Click(object sender, RoutedEventArgs e)
+        private void btnQuitter_Click(object sender, RoutedEventArgs e)
         {
             // Fermeture du projet
             Application.Current.Shutdown();
