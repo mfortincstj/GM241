@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using GM241.Fenetres.MenuPrincipal;
+using GM241.Classes;
+using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace GM241
 {
@@ -32,23 +35,20 @@ namespace GM241
         // Clic sur le bouton authentification
         private void btnAuthentification_Click(object sender, RoutedEventArgs e)
         {
-            string user = usager.Text;
-            string password = motDePasse.ToString();
+            Utilisateurs user = new Utilisateurs();
+            string usagerFournit = usager.ToString();
+            string passwordFournit = motDePasse.ToString();
 
-            bool usagerValide = true;
-            bool motDePasseValide = true;
+            bool matriculeValide = false;
+            bool motDePasseValide = false;
 
-            string userBD;
-            string passwordBD;
+            // Valider l'utilisateur en BD
+            user.RetrieveUtilisateur(usagerFournit);
 
-            // Valider le nom d'utilisatuer dans la BD
-            
-
-            // Valider le mot de passe de l'utilisateur dans la BD
-
+            MessageBox.Show(user.matricule.ToString());
 
             // Si tout est valide, on passe au menu principal
-            if (usagerValide == true && motDePasseValide == true)
+            if (matriculeValide == true && motDePasseValide == true)
             {
                 // Fermeture du login
                 Login fLogin = new Login();   // fLogin pour fenêtre de login

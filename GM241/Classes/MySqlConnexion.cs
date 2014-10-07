@@ -17,7 +17,7 @@ namespace GM241.Classes
 
         static MySqlConnexion()
         {
-            CONNECTION_STRING = ConfigurationManager.ConnectionStrings["MySqlConnexion"].ConnectionString;
+            //CONNECTION_STRING = ConfigurationManager.ConnectionStrings["MySqlConnexion"].ConnectionString;
         }
 
         public MySqlConnexion()
