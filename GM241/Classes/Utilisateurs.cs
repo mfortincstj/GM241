@@ -15,5 +15,7 @@ namespace GM241.Classes
             private string motDePasse { get; set; }
             public virtual bool estAdmin { get; set; }
         #endregion
+
+
     }
 }

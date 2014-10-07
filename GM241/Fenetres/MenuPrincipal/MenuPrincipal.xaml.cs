@@ -23,5 +23,10 @@ namespace GM241.Fenetres.MenuPrincipal
         {
             InitializeComponent();
         }
+
+        private void btnQuitter_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

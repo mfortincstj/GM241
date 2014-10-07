@@ -13,4 +13,3 @@
         <PasswordBox x:Name="motDePasse" Margin="393,220,385,318"/>
     </Grid>
 </Window>
-    

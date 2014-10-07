@@ -4,7 +4,12 @@
         Title="MenuPrincipal" Height="600" Width="1000">
     <Grid>
         <Label Content="GM241" Canvas.Left="10" Canvas.Top="10" FontSize="48" Width="972" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="10,10,10,400" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Button Content="Déconnection" Canvas.Left="469" Canvas.Top="476" Margin="834,482,50,50"/>
-
+        <Label Content="Menu Principal" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <Button x:Name="btnInventaireGestion" Content="Inventaire et Gestion de produit" Margin="371,170,371,320"/>
+        <Label Content="Authentifié : " HorizontalAlignment="Left" Margin="10,529,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <Button x:Name="btnMenuUtilisateur" Content="Gestion d'utilisateur" Margin="371,290,371,200"/>
+        <Button x:Name="btnMenuRapport" Content="Menu des rapports" Margin="371,410,371,80"/>
+        <Button x:Name="btnQuitter" Content="Quitter" Margin="832,510,0,0" HorizontalAlignment="Left" Width="130" Height="30" VerticalAlignment="Top" Click="btnQuitter_Click"/>
+        <Button x:Name="btnDeconnexion" Content="Deconnexion" Margin="697,510,0,0" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="130"/>
     </Grid>
 </Window>
