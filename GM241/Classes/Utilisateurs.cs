@@ -11,7 +11,7 @@ namespace GM241.Classes
     class Utilisateurs
     {
         #region
-            public virtual int? matricule { get; set; }
+            public virtual string usager { get; set; }
             public virtual string prenom { get; set; }
             public virtual string nom { get; set; }
             public virtual string motDePasse { get; set; }
@@ -42,7 +42,7 @@ namespace GM241.Classes
         {
             return new Utilisateurs()
             {
-                matricule = (int)row["matricule"],
+                usager = (string)row["usager"],
                 motDePasse = (string)row["motDePasse"],
                 prenom = (string)row["prenom"],
                 nom = (string)row["nom"],

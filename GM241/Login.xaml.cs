@@ -45,7 +45,7 @@ namespace GM241
             // Valider l'utilisateur en BD
             user.RetrieveUtilisateur(usagerFournit);
 
-            MessageBox.Show(user.matricule.ToString());
+            MessageBox.Show(user.usager);
 
             // Si tout est valide, on passe au menu principal
             if (matriculeValide == true && motDePasseValide == true)
