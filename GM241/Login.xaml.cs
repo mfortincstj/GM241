@@ -35,7 +35,9 @@ namespace GM241
         // Clic sur le bouton authentification
         private void btnAuthentification_Click(object sender, RoutedEventArgs e)
         {
-            Utilisateurs user = new Utilisateurs();
+            //Utilisateurs user = new Utilisateurs();
+            BDService BDUser = new BDService();
+
             string usagerFournit = usager.Text;
             string passwordFournit = motDePasse.ToString();
 
@@ -43,9 +45,15 @@ namespace GM241
             bool motDePasseValide = false;
 
             // Valider l'utilisateur en BD
-            user.RetrieveUtilisateur(usagerFournit);
+            //user.RetrieveUtilisateur(usagerFournit);
+            String requete = "SELECT * FROM Utilisateurs";
+            List<string>[] tabRes;
 
-            MessageBox.Show(user.usager);
+            int nombreRange = 0;
+
+            tabRes = BDUser.selection(requete, 6, ref nombreRange);
+            
+            MessageBox.Show(tabRes[0][0]);
 
             // Si tout est valide, on passe au menu principal
             if (matriculeValide == true && motDePasseValide == true)
