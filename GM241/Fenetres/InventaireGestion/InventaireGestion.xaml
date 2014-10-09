@@ -18,10 +18,10 @@
         <Button x:Name="btnRecherche" Content="Recherche" Margin="88,403,88,129"/>
         <TextBox x:Name="champNom" HorizontalAlignment="Left" Height="40" Margin="176,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="310"/>
         <TextBox x:Name="champDescription" HorizontalAlignment="Left" Height="40" Margin="176,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="310"/>
-        <TextBox x:Name="champMateriaux" HorizontalAlignment="Left" Height="39" Margin="176,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="310"/>
+        <TextBox x:Name="champMateriaux" HorizontalAlignment="Left" Height="39" Margin="176,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="310" IsEnabled="False"/>
         <ComboBox x:Name="cboxCategorie" HorizontalAlignment="Left" Margin="176,330,0,0" Width="310" Height="38" VerticalAlignment="Top"/>
         <Button x:Name="btnAjoutProduit" Content="Ajouter un produit" Margin="285,529,10,10"/>
-        <Button x:Name="btnDetail" Content="Détails" Margin="23,529,322,10" Grid.Column="1"/>
+        <Button x:Name="btnModification" Content="Modifier" Margin="23,529,322,10" Grid.Column="1"/>
         <Button x:Name="btnSupprimer" Content="Supprimer" Margin="179,529,166,10" Grid.Column="1"/>
         <Button x:Name="btnRetour" Content="Retour" Margin="335,529,10,10" Grid.Column="1"/>
         <ListBox Grid.Column="1" HorizontalAlignment="Left" Height="368" Margin="10,130,0,0" VerticalAlignment="Top" Width="476"/>

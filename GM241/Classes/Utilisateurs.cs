@@ -21,13 +21,13 @@ namespace GM241.Classes
         private MySqlConnexion connexion;
 
         // Aller chercher les infos sur l'usager demandé par l'utilisateur
-        public Utilisateurs RetrieveUtilisateur(string matricule)
+        public Utilisateurs RetrieveUtilisateur(string usagerLogin)
         {
             try
             {
                 connexion = new MySqlConnexion();
 
-                string requete = string.Format("SELECT * FROM Utilisateurs WHERE matricule = " + matricule);
+                string requete = string.Format("SELECT * FROM Utilisateurs WHERE usager = " + usagerLogin);
                 DataSet dataset = connexion.Query(requete);
 
                 return ConstructUtilisateur(dataset.Tables[0].Rows[0]);
