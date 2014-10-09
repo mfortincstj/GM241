@@ -36,7 +36,7 @@ namespace GM241
         private void btnAuthentification_Click(object sender, RoutedEventArgs e)
         {
             Utilisateurs user = new Utilisateurs();
-            string usagerFournit = usager.ToString();
+            string usagerFournit = usager.Text;
             string passwordFournit = motDePasse.ToString();
 
             bool matriculeValide = false;
