@@ -35,28 +35,33 @@ namespace GM241
         // Clic sur le bouton authentification
         private void btnAuthentification_Click(object sender, RoutedEventArgs e)
         {
-            //Utilisateurs user = new Utilisateurs();
             BDService BDUser = new BDService();
 
             string usagerFournit = usager.Text;
-            string passwordFournit = motDePasse.ToString();
-
-            bool usagerValide = false;
-            bool motDePasseValide = false;
+            string passwordFournit = motDePasse.Password;
+            string usagerEnBD;
+            string motDePasseEnBD;
 
             // Valider l'utilisateur en BD
-            //user.RetrieveUtilisateur(usagerFournit);
-            string requete = "SELECT * FROM Utilisateurs;";
+            string requete = "SELECT * FROM Utilisateurs WHERE usager = " + "'" + usagerFournit + "'";
             List<string>[] tabRes;
-
             int nombreRange = 0;
-
             tabRes = BDUser.selection(requete, 6, ref nombreRange);
 
-            MessageBox.Show(tabRes[0][0]);
+            // Si le select en BD a capté quelque chose
+            if (nombreRange >= 1)
+            {
+                usagerEnBD = tabRes[0][1];
+                motDePasseEnBD = tabRes[0][2];
+            }
+            else // Icic rien trouvé dans la BD
+            {
+                usagerEnBD = "erreur";
+                motDePasseEnBD = "erreur";
+            }
 
             // Si tout est valide, on passe au menu principal
-            if (usagerValide == true && motDePasseValide == true)
+            if (usagerFournit == usagerEnBD && passwordFournit == motDePasseEnBD)
             {
                 // Fermeture du login
                 Login fLogin = new Login();   // fLogin pour fenêtre de login

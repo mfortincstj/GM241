@@ -19,37 +19,6 @@ namespace GM241.Classes
             public virtual bool estAdmin { get; set; }
         #endregion
 
-        private MySqlConnexion connexion;
 
-        // Aller chercher les infos sur l'usager demandé par l'utilisateur
-        public Utilisateurs RetrieveUtilisateur(string usagerLogin)
-        {
-            try
-            {
-                connexion = new MySqlConnexion();
-
-                string requete = string.Format("SELECT * FROM Utilisateurs");
-                DataSet dataset = connexion.Query(requete);
-
-                return ConstructUtilisateur(dataset.Tables[0].Rows[0]);
-            }
-            catch (MySqlException)
-            {
-                throw;
-            }
-        }
-
-        private Utilisateurs ConstructUtilisateur(DataRow row)
-        {
-            return new Utilisateurs()
-            {
-                idUtilisateur = (int)row["idUtilisateur"],
-                usager = (string)row["usager"],
-                motDePasse = (string)row["motDePasse"],
-                prenom = (string)row["prenom"],
-                nom = (string)row["nom"],
-                estAdmin = (bool)row["estAdmin"]
-            };
-        }
     }
 }
