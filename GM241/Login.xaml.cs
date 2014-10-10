@@ -41,22 +41,22 @@ namespace GM241
             string usagerFournit = usager.Text;
             string passwordFournit = motDePasse.ToString();
 
-            bool matriculeValide = false;
+            bool usagerValide = false;
             bool motDePasseValide = false;
 
             // Valider l'utilisateur en BD
             //user.RetrieveUtilisateur(usagerFournit);
-            String requete = "SELECT * FROM Utilisateurs";
+            string requete = "SELECT * FROM Utilisateurs;";
             List<string>[] tabRes;
 
             int nombreRange = 0;
 
             tabRes = BDUser.selection(requete, 6, ref nombreRange);
-            
+
             MessageBox.Show(tabRes[0][0]);
 
             // Si tout est valide, on passe au menu principal
-            if (matriculeValide == true && motDePasseValide == true)
+            if (usagerValide == true && motDePasseValide == true)
             {
                 // Fermeture du login
                 Login fLogin = new Login();   // fLogin pour fenêtre de login

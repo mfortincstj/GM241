@@ -23,8 +23,6 @@ namespace GM241.Classes
             {
                 string sConnection = "SERVER="+serveur+";DATABASE="+BD+";UID="+user+";PASSWORD="+password+";";
                 connexion = new MySqlConnection(sConnection);
-
-                MessageBox.Show("La string de connexion a le bon format");
             }
             catch (Exception e)
             {
