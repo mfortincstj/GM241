@@ -19,6 +19,18 @@ namespace GM241.Classes
             public virtual bool estAdmin { get; set; }
         #endregion
 
+        /*
+        // Aller chercher la liste des utilisateurs dans la BD
+        public List<string>[] BDUtilisateurs(string usager)
+        {
+            BDService BD = new BDService();
 
+            // Valider l'utilisateur et le mot de passe en BD
+            string requete = "SELECT * FROM Utilisateurs WHERE usager = " + "'" + usager + "'";
+            List<string>[] tabRes;
+            int nombreRange = 0;
+            return tabRes = BD.selection(requete, 6, ref nombreRange);
+        }
+        */
     }
 }

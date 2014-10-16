@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using GM241;
+using GM241.Fenetres.InventaireGestion;
 
 namespace GM241.Fenetres.MenuPrincipal
 {
@@ -24,16 +24,31 @@ namespace GM241.Fenetres.MenuPrincipal
         {
             InitializeComponent();
 
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+
             // Admin
             Login Login = new Login();
             string test = "test";
-            test = Login.adminAuthentifie();
-            MessageBox.Show(test);
+            //test = Login.adminAuthentifie();
+            authentifie.Text = "test";
         }
 
         private void btnQuitter_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
+
+        private void btnInventaireGestion_Click(object sender, RoutedEventArgs e)
+        {
+            // Ouverture du menu principal
+            InventaireGestion.InventaireGestion InventaireGestion = new InventaireGestion.InventaireGestion();
+            InventaireGestion.Show();
+        }
+
+        private void btnDeconnexion_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
+

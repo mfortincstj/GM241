@@ -34,28 +34,6 @@ namespace GM241
 
         string admin = "";
 
-        // Retourn si l'utilisateur est admin ou pas
-        public string adminAuthentifie()
-        {
-            if (admin == "True")
-            {
-                admin = "Admin";
-                MessageBox.Show(admin);
-                return admin;
-            }
-            else if (admin == "False")
-            {
-                admin = "Usager";
-                MessageBox.Show(admin);
-                return admin;
-            }
-            else
-            {
-                MessageBox.Show("ERREUR");
-                return null;
-            }
-        }
-
         // Clic sur le bouton authentification
         private void btnAuthentification_Click(object sender, RoutedEventArgs e)
         {
@@ -88,10 +66,10 @@ namespace GM241
             // Si tout est valide, on passe au menu principal
             if (usagerFournit == usagerEnBD && passwordFournit == motDePasseEnBD)
             {
-                adminAuthentifie();
                 // Fermeture du login
                 Login Login = new Login();
                 Login.Close();
+                motDePasse.Password = "";
 
                 // Ouverture du menu principal
                 MenuPrincipal MenuPrincipal = new MenuPrincipal();
@@ -104,6 +82,17 @@ namespace GM241
 
                 motDePasse.Password = "";
             }
+        }
+
+        // Retourn si l'utilisateur est admin ou pas
+        public string adminAuthentifie()
+        {
+            if (admin == "True")
+                return admin = "Admin";
+            else if (admin == "False")
+                return admin = "Usager";
+            else
+                return null;
         }
 
         // Clic sur quitter
