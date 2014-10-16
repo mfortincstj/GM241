@@ -32,29 +32,54 @@ namespace GM241
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
+        string admin = "";
+
+        // Retourn si l'utilisateur est admin ou pas
+        public string adminAuthentifie()
+        {
+            if (admin == "True")
+            {
+                admin = "Admin";
+                MessageBox.Show(admin);
+                return admin;
+            }
+            else if (admin == "False")
+            {
+                admin = "Usager";
+                MessageBox.Show(admin);
+                return admin;
+            }
+            else
+            {
+                MessageBox.Show("ERREUR");
+                return null;
+            }
+        }
+
         // Clic sur le bouton authentification
         private void btnAuthentification_Click(object sender, RoutedEventArgs e)
         {
-            BDService BDUser = new BDService();
+            BDService BDUtilisateur = new BDService();
 
             string usagerFournit = usager.Text;
             string passwordFournit = motDePasse.Password;
             string usagerEnBD;
             string motDePasseEnBD;
 
-            // Valider l'utilisateur en BD
+            // Valider l'utilisateur et le mot de passe en BD
             string requete = "SELECT * FROM Utilisateurs WHERE usager = " + "'" + usagerFournit + "'";
             List<string>[] tabRes;
             int nombreRange = 0;
-            tabRes = BDUser.selection(requete, 6, ref nombreRange);
+            tabRes = BDUtilisateur.selection(requete, 6, ref nombreRange);
 
             // Si le select en BD a capté quelque chose
             if (nombreRange >= 1)
             {
                 usagerEnBD = tabRes[0][1];
                 motDePasseEnBD = tabRes[0][2];
+                admin = tabRes[0][5];
             }
-            else // Icic rien trouvé dans la BD
+            else // Ici, rien trouvé dans la BD
             {
                 usagerEnBD = "erreur";
                 motDePasseEnBD = "erreur";
@@ -63,13 +88,14 @@ namespace GM241
             // Si tout est valide, on passe au menu principal
             if (usagerFournit == usagerEnBD && passwordFournit == motDePasseEnBD)
             {
+                adminAuthentifie();
                 // Fermeture du login
-                Login fLogin = new Login();   // fLogin pour fenêtre de login
-                fLogin.Close();
+                Login Login = new Login();
+                Login.Close();
 
                 // Ouverture du menu principal
-                MenuPrincipal fMenuPrincipal = new MenuPrincipal();
-                fMenuPrincipal.Show();
+                MenuPrincipal MenuPrincipal = new MenuPrincipal();
+                MenuPrincipal.Show();
             }
             else // Le nom d'usager ou le mot de passe est invalide
             {

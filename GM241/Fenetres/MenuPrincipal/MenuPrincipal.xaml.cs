@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using GM241;
 
 namespace GM241.Fenetres.MenuPrincipal
 {
@@ -22,6 +23,12 @@ namespace GM241.Fenetres.MenuPrincipal
         public MenuPrincipal()
         {
             InitializeComponent();
+
+            // Admin
+            Login Login = new Login();
+            string test = "test";
+            test = Login.adminAuthentifie();
+            MessageBox.Show(test);
         }
 
         private void btnQuitter_Click(object sender, RoutedEventArgs e)
