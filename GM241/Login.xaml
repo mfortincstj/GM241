@@ -1,15 +1,15 @@
 ﻿<Window x:Class="GM241.Login"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Login" Height="600" Width="1000">
+        Title="Login" Height="600" Width="1000" WindowStyle="None" ResizeMode="CanMinimize">
     <Grid>
         <Label Content="GM241" Canvas.Left="10" Canvas.Top="10" FontSize="48" Width="972" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="10,10,10,400" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Label Content="Authentification" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
-        <TextBox x:Name="usager" Canvas.Left="481" TextWrapping="Wrap" Canvas.Top="153" Margin="393,181,385,357"/>
-        <Button x:Name="btnAuthentification" Content="Authentification" Canvas.Left="443" Canvas.Top="234" RenderTransformOrigin="0.496,0.045" Margin="421,286,421,244" Click="btnAuthentification_Click"/>
-        <Button x:Name="btnQuitter" Content="Quitter" Canvas.Left="469" Canvas.Top="476" Margin="442,447,442,85" Click="btnQuitter_Click"/>
+        <TextBox x:Name="usager" Canvas.Left="481" TextWrapping="Wrap" Canvas.Top="153" Margin="393,181,385,387"/>
+        <Button x:Name="btnAuthentification" Content="Authentification" Canvas.Left="443" Canvas.Top="234" RenderTransformOrigin="0.496,0.045" Margin="421,286,421,270" Click="btnAuthentification_Click"/>
+        <Button x:Name="btnQuitter" Content="Quitter" Canvas.Left="469" Canvas.Top="476" Margin="442,451,442,105" Click="btnQuitter_Click"/>
         <Label Content="Utilisateur : " HorizontalAlignment="Left" Margin="309,177,0,0" VerticalAlignment="Top" Height="36" Width="96"/>
         <Label Content="Mot de passe : " HorizontalAlignment="Left" Margin="292,220,0,0" VerticalAlignment="Top" Height="36" Width="96"/>
-        <PasswordBox x:Name="motDePasse" Margin="393,220,385,318"/>
+        <PasswordBox x:Name="motDePasse" Margin="393,218,385,350"/>
     </Grid>
 </Window>

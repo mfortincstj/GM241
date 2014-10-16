@@ -30,7 +30,7 @@ namespace GM241.Fenetres.InventaireGestion
             cboxCategorie.Items.Insert(3, "Plaquettes");
         }
 
-        private void btnRetour_Click(object sender, RoutedEventArgs e)
+        private void btnFerme_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
