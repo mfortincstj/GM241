@@ -3,6 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Login" Height="600" Width="1000" WindowStyle="None" ResizeMode="CanMinimize">
     <Grid>
+        <Rectangle Width="1000" Height="600">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="motif-de-lacier_1920x1080.jpg"  />
+            </Rectangle.Fill>
+        </Rectangle>
         <Label Content="GM241" Canvas.Left="10" Canvas.Top="10" FontSize="48" Width="972" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="10,10,10,400" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Label Content="Authentification" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
         <TextBox x:Name="usager" Canvas.Left="481" TextWrapping="Wrap" Canvas.Top="153" Margin="393,181,385,387"/>
