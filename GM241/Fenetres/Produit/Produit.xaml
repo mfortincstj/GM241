@@ -4,9 +4,17 @@
         Title="Produit" Height="600" Width="1000" ResizeMode="CanMinimize">
     <Grid>
         <Label Content="Ajout d'un produit" Canvas.Left="10" Canvas.Top="10" FontSize="48" Width="972" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="10,10,10,400" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Label Content="Recherche par catégorie : " HorizontalAlignment="Left" Margin="112,188,0,0" VerticalAlignment="Top" Width="151" Height="33"/>
+        <Label Content="Recherche par catégorie : " HorizontalAlignment="Left" Margin="247,155,0,0" VerticalAlignment="Top" Width="230" Height="43" FontSize="18"/>
         <Button x:Name="btnFermer" Content="Fermer" Margin="816,529,10,10" Click="btnFermer_Click"/>
         <Button x:Name="btnAjoutProduit" Content="Ajouter un produit" Margin="413,485,413,55"/>
-
+        <ComboBox x:Name="cboxCategorie" HorizontalAlignment="Left" Margin="494,155,0,0" Width="310" Height="38" VerticalAlignment="Top"/>
+        <Label Name="champ1" Content="" HorizontalAlignment="Left" Margin="247,203,0,0" VerticalAlignment="Top" Width="230" Height="43" FontSize="18"/>
+        <Label Name="champ2" Content="" HorizontalAlignment="Left" Margin="247,251,0,0" VerticalAlignment="Top" Width="230" Height="43" FontSize="18"/>
+        <Label Name="champ3" Content="" HorizontalAlignment="Left" Margin="247,299,0,0" VerticalAlignment="Top" Width="230" Height="43" FontSize="18"/>
+        <Label Name="champ4" Content="" HorizontalAlignment="Left" Margin="247,347,0,0" VerticalAlignment="Top" Width="230" Height="43" FontSize="18"/>
+        <TextBox x:Name="box1" HorizontalAlignment="Left" Height="43" Margin="494,203,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="310" FontSize="16"/>
+        <TextBox x:Name="box2" HorizontalAlignment="Left" Height="43" Margin="494,251,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="310" FontSize="16"/>
+        <TextBox x:Name="box3" HorizontalAlignment="Left" Height="43" Margin="494,299,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="310" FontSize="16"/>
+        <TextBox Visibility="Hidden" x:Name="box4" HorizontalAlignment="Left" Height="43" Margin="494,347,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="310" FontSize="16" IsHitTestVisible="True"/>
     </Grid>
 </Window>

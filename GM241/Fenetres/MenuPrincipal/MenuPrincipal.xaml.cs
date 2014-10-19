@@ -40,7 +40,7 @@ namespace GM241.Fenetres.MenuPrincipal
 
         private void btnInventaireGestion_Click(object sender, RoutedEventArgs e)
         {
-            // Ouverture du menu principal
+            // Ouverture du menu d'inventaire et de gestion de produits
             InventaireGestion.InventaireGestion InventaireGestion = new InventaireGestion.InventaireGestion();
             InventaireGestion.Show();
         }
