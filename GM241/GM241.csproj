@@ -68,6 +68,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Fenetres\Produit\ajoutAttachement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Fenetres\Produit\Produit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -88,6 +92,9 @@
     </Compile>
     <Compile Include="Fenetres\MenuPrincipal\MenuPrincipal.xaml.cs">
       <DependentUpon>MenuPrincipal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fenetres\Produit\ajoutAttachement.xaml.cs">
+      <DependentUpon>ajoutAttachement.xaml</DependentUpon>
     </Compile>
     <Compile Include="Fenetres\Produit\Produit.xaml.cs">
       <DependentUpon>Produit.xaml</DependentUpon>
