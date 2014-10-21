@@ -5,16 +5,16 @@
     <Grid>
         <Rectangle Width="1000" Height="600">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="motif-de-lacier_1920x1080.jpg"  />
+                <ImageBrush ImageSource="fondEcran.jpeg"  />
             </Rectangle.Fill>
         </Rectangle>
-        <Label Content="GM241" Canvas.Left="10" Canvas.Top="10" FontSize="48" Width="972" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="10,10,10,400" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Label Content="Authentification" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <Label Content="GM241" Canvas.Left="10" Canvas.Top="10" FontSize="48" Width="980" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="10,41,10,485" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Content="Authentification" Margin="421,115,421,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
         <TextBox x:Name="usager" Canvas.Left="481" TextWrapping="Wrap" Canvas.Top="153" Margin="393,181,385,387"/>
-        <Button x:Name="btnAuthentification" Content="Authentification" Canvas.Left="443" Canvas.Top="234" RenderTransformOrigin="0.496,0.045" Margin="421,286,421,270" Click="btnAuthentification_Click"/>
-        <Button x:Name="btnQuitter" Content="Quitter" Canvas.Left="469" Canvas.Top="476" Margin="442,451,442,105" Click="btnQuitter_Click"/>
-        <Label Content="Utilisateur : " HorizontalAlignment="Left" Margin="309,177,0,0" VerticalAlignment="Top" Height="36" Width="96"/>
-        <Label Content="Mot de passe : " HorizontalAlignment="Left" Margin="292,220,0,0" VerticalAlignment="Top" Height="36" Width="96"/>
+        <Button x:Name="btnAuthentification" Content="Authentification" Canvas.Left="443" Canvas.Top="234" RenderTransformOrigin="0.496,0.045" Margin="421,0,421,270" Click="btnAuthentification_Click" Height="44" VerticalAlignment="Bottom"/>
+        <Button x:Name="btnQuitter" Content="Quitter" Canvas.Left="469" Canvas.Top="476" Margin="442,442,442,114" Click="btnQuitter_Click"/>
+        <Label Content="Utilisateur : " HorizontalAlignment="Left" Margin="277,177,0,0" VerticalAlignment="Top" Height="36" Width="111" FontSize="18" FontWeight="Bold"/>
+        <Label Content="Mot de passe : " HorizontalAlignment="Left" Margin="253,213,0,0" VerticalAlignment="Top" Height="36" Width="135" FontSize="18" FontWeight="Bold"/>
         <PasswordBox x:Name="motDePasse" Margin="393,218,385,350"/>
     </Grid>
 </Window>

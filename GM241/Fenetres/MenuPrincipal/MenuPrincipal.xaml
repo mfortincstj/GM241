@@ -5,10 +5,10 @@
     <Grid IsHitTestVisible="True">
         <Label Content="GM241" Canvas.Left="10" Canvas.Top="10" FontSize="48" Width="972" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="10,10,10,400" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Label Content="Menu Principal" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
-        <Button x:Name="btnInventaireGestion" Content="Inventaire et Gestion de produit" Margin="371,170,371,320" Click="btnInventaireGestion_Click"/>
+        <Button x:Name="btnInventaireGestion" Content="Inventaire" Margin="371,170,371,320" Click="btnInventaireGestion_Click" FontSize="22"/>
         <Label Content="Authentifié : " Margin="10,529,874,0" FontWeight="Bold" FontSize="16" Height="31" VerticalAlignment="Top"/>
-        <Button x:Name="btnMenuUtilisateur" Content="Gestion d'utilisateur" Margin="371,290,371,200"/>
-        <Button x:Name="btnMenuRapport" Content="Menu des rapports" Margin="371,410,371,80"/>
+        <Button x:Name="btnMenuUtilisateur" Content="Utilisateur" Margin="371,290,371,200" FontSize="22"/>
+        <Button x:Name="btnMenuRapport" Content="Rapports" Margin="371,410,371,80" FontSize="22"/>
         <Button x:Name="btnQuitter" Content="Quitter" Margin="832,510,0,0" HorizontalAlignment="Left" Width="130" Height="30" VerticalAlignment="Top" Click="btnQuitter_Click"/>
         <Button x:Name="btnDeconnexion" Content="Deconnexion" Margin="697,510,0,0" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="130" Click="btnDeconnexion_Click"/>
         <TextBox x:Name="authentifie" Margin="123,535,769,0" TextWrapping="Wrap" Text="TextBox" IsEnabled="False" Height="23" VerticalAlignment="Top"/>
