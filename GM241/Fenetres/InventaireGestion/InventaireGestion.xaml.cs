@@ -26,10 +26,21 @@ namespace GM241.Fenetres.InventaireGestion
 
             authentifie.Content = estAdmin;
 
-            cboxCategorie.Items.Insert(0, "Attachements");
-            cboxCategorie.Items.Insert(1, "Collets");
-            cboxCategorie.Items.Insert(2, "Outils");
-            cboxCategorie.Items.Insert(3, "Plaquettes");
+            /*
+            cboxCategorie.Items.Insert(0, "Sélectionné");
+            cboxCategorie.Items.Insert(1, "Attachements");
+            cboxCategorie.Items.Insert(2, "Collets");
+            cboxCategorie.Items.Insert(3, "Outils");
+            cboxCategorie.Items.Insert(4, "Plaquettes");
+            */
+
+            cboxCategorie.Items.Add("Sélectionnez");
+            cboxCategorie.Items.Add("Collet");          // Élément #1
+            cboxCategorie.Items.Add("Porte outil");     // #2
+            cboxCategorie.Items.Add("Outils");          // #3
+            cboxCategorie.Items.Add("Plaquettes");      // #4
+            cboxCategorie.SelectedIndex = 0;
+
         }
 
         private void btnFerme_Click(object sender, RoutedEventArgs e)
@@ -39,8 +50,15 @@ namespace GM241.Fenetres.InventaireGestion
 
         private void cboxCategorie_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // Section attachements
+            // Barrer l'acces au bouton rechercher si il n'y a pas de catégorie de sélectionnée
             if (cboxCategorie.SelectedIndex == 0)
+            {
+                btnRecherche.IsEnabled = false;
+                MessageBox.Show("test");
+            }
+
+            // Section attachements
+            if (cboxCategorie.SelectedIndex == 1)
             {
                 boiteResultats.Items.Clear();   // Vider la liste avant
 
@@ -59,7 +77,7 @@ namespace GM241.Fenetres.InventaireGestion
             }
 
             // Section collets
-            if (cboxCategorie.SelectedIndex == 1)
+            if (cboxCategorie.SelectedIndex == 2)
             {
                 boiteResultats.Items.Clear();   // Vider la liste avant
 
@@ -78,7 +96,7 @@ namespace GM241.Fenetres.InventaireGestion
             }
 
             // Section outils
-            if (cboxCategorie.SelectedIndex == 2)
+            if (cboxCategorie.SelectedIndex == 3)
             {
                 boiteResultats.Items.Clear();   // Vider la liste avant
 
@@ -99,7 +117,7 @@ namespace GM241.Fenetres.InventaireGestion
             }
 
             // Section plaquettes
-            if (cboxCategorie.SelectedIndex == 3)
+            if (cboxCategorie.SelectedIndex == 4)
             {
                 boiteResultats.Items.Clear();   // Vider la liste avant
 
