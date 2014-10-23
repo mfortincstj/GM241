@@ -128,11 +128,12 @@ namespace GM241.Fenetres.InventaireGestion
                                              tabPla[i][6]  + ", " + tabPla[i][7]  + ", " + tabPla[i][8] + ", " + tabPla[i][9] + ", " + tabPla[i][10] + ", " +
                                              tabPla[i][11] + ", " + tabPla[i][12] + ", " + tabPla[i][13]);
                 }
+
+                btnRecherche.IsEnabled = true;
             }
 
             btnModification.IsEnabled = false;
             btnSupprimer.IsEnabled = false;
-            btnRecherche.IsEnabled = true;
         }
 
         private void boiteResultats_SelectionChanged(object sender, SelectionChangedEventArgs e)
