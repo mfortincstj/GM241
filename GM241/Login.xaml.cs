@@ -32,70 +32,34 @@ namespace GM241
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
-        string admin = "";
-
-        // Clic sur le bouton authentification
+        // Authentification
         private void btnAuthentification_Click(object sender, RoutedEventArgs e)
         {
-            BDService BDUtilisateur = new BDService();
-
             string usagerFournit = usager.Text;
-            string passwordFournit = motDePasse.Password;
-            string usagerEnBD;
-            string motDePasseEnBD;
+            string motDePasseFournit = motDePasse.Password;
 
-            // Valider l'utilisateur et le mot de passe en BD
-            string requete = "SELECT * FROM Utilisateurs WHERE usager = " + "'" + usagerFournit + "'";
-            List<string>[] tabRes;
-            int nombreRange = 0;
-            tabRes = BDUtilisateur.selection(requete, 6, ref nombreRange);
+            Utilisateurs user = new Utilisateurs(usagerFournit, motDePasseFournit);
 
-            // Si le select en BD a capté quelque chose
-            if (nombreRange >= 1)
+            // Validation de l'utilisateur
+            if (user.userValide(usagerFournit, motDePasseFournit) == true)   // L'utilisateur est valide on passe au menu principal
             {
-                usagerEnBD = tabRes[0][1];
-                motDePasseEnBD = tabRes[0][2];
-                admin = tabRes[0][5];
-            }
-            else // Ici, rien trouvé dans la BD
-            {
-                usagerEnBD = "erreur";
-                motDePasseEnBD = "erreur";
-            }
-
-            // Si tout est valide, on passe au menu principal
-            if (usagerFournit == usagerEnBD && passwordFournit == motDePasseEnBD)
-            {
-                // Déterminer si l'utilisateur est admin ou non ?
-                if (admin == "True")
-                    admin = "Admin";
-                else if (admin == "False")
-                    admin = "Usager";
-                else
-                    admin = "ERREUR";
-                
                 // Fermeture du login
                 Login Login = new Login();
                 Login.Close();
                 motDePasse.Password = "";
 
                 // Ouverture du menu principal
-                MenuPrincipal MenuPrincipal = new MenuPrincipal(admin);
+                MenuPrincipal MenuPrincipal = new MenuPrincipal();
                 MenuPrincipal.Show();
             }
-            else // Le nom d'usager ou le mot de passe est invalide
+            else   // L'utilisateur n'est pas valide message d'erreur
             {
-                // Afficher un message d'erreur
                 MessageBox.Show("Nom d'usager ou mot de passe invalide", "Erreur !", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK);
 
                 motDePasse.Password = "";
             }
         }
 
-        private void btnQuitter_Click(object sender, RoutedEventArgs e)
-        {
-            // Fermeture du projet
-            Application.Current.Shutdown();
-        }
+        private void btnQuitter_Click(object sender, RoutedEventArgs e) {Application.Current.Shutdown();}
     }
 }

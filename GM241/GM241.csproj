@@ -72,6 +72,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Fenetres\Produit\ajoutOutil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Login.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -81,7 +85,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Classes\BDService.cs" />
-    <Compile Include="Classes\RequetesBD.cs" />
     <Compile Include="Classes\Utilisateurs.cs" />
     <Compile Include="Fenetres\InventaireGestion\InventaireGestion.xaml.cs">
       <DependentUpon>InventaireGestion.xaml</DependentUpon>
@@ -91,6 +94,9 @@
     </Compile>
     <Compile Include="Fenetres\Produit\ajoutCollet.xaml.cs">
       <DependentUpon>ajoutCollet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fenetres\Produit\ajoutOutil.xaml.cs">
+      <DependentUpon>ajoutOutil.xaml</DependentUpon>
     </Compile>
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>

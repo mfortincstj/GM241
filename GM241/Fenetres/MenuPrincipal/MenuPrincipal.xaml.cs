@@ -22,14 +22,13 @@ namespace GM241.Fenetres.MenuPrincipal
     {
         public string MPestAmin;
 
-        public MenuPrincipal(string estAdmin)
+        public MenuPrincipal()
         {
             InitializeComponent();
 
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
-            MPestAmin = estAdmin;
-            authentifie.Content = MPestAmin;
+            authentifie.Content = "";
         }
 
         private void btnQuitter_Click(object sender, RoutedEventArgs e)

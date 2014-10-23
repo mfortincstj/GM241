@@ -13,24 +13,50 @@ namespace GM241.Classes
         #region
             public virtual int idUtilisateur { get; set; }
             public virtual string usager { get; set; }
+            public virtual string motDePasse { get; set; }
             public virtual string prenom { get; set; }
             public virtual string nom { get; set; }
-            public virtual string motDePasse { get; set; }
             public virtual bool estAdmin { get; set; }
         #endregion
 
-        /*
-        // Aller chercher la liste des utilisateurs dans la BD
-        public List<string>[] BDUtilisateurs(string usager)
+        public Utilisateurs(string usagerFournit, string motDePasseFournit)
         {
-            BDService BD = new BDService();
+            BDService BDUtilisateur = new BDService();
 
             // Valider l'utilisateur et le mot de passe en BD
-            string requete = "SELECT * FROM Utilisateurs WHERE usager = " + "'" + usager + "'";
+            string requete = "SELECT * FROM Utilisateurs WHERE usager = " + "'" + usagerFournit + "'";
             List<string>[] tabRes;
             int nombreRange = 0;
-            return tabRes = BD.selection(requete, 6, ref nombreRange);
+            tabRes = BDUtilisateur.selection(requete, 6, ref nombreRange);
+
+            // Si le select en BD a capté quelque chose
+            if (nombreRange >= 1)
+            {
+                idUtilisateur = Convert.ToInt32(tabRes[0][0]);
+                usager = tabRes[0][1];
+                motDePasse = tabRes[0][2];
+                prenom = tabRes[0][3];
+                nom = tabRes[0][4];
+
+                if (tabRes[0][5] == "True")
+                    estAdmin = true;
+                else
+                    estAdmin = false;
+            }
+            else // Ici, rien trouvé dans la BD
+            {
+                usager = "erreur";
+                motDePasse = "erreur";
+            }
         }
-        */
+
+        // Valide si l'utilisateur qui tente de ce connecter est valide ou pas
+        public bool userValide(string usagerFournit, string motDePasseFournit)
+        {
+            if (usagerFournit == usager && motDePasseFournit == motDePasse)
+                return true;
+            else
+                return false;
+        }
     }
 }

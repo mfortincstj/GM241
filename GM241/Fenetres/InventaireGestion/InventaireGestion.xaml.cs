@@ -51,6 +51,9 @@ namespace GM241.Fenetres.InventaireGestion
 
                 BDService BDAttachements = new BDService();
 
+                
+
+                /*
                 // Valider l'utilisateur et le mot de passe en BD
                 string requete = "SELECT * FROM Collet";
                 List<string>[] tabAtt;
@@ -61,6 +64,7 @@ namespace GM241.Fenetres.InventaireGestion
                 {
                     boiteResultats.Items.Add(tabAtt[i][0] + ", " + tabAtt[i][2] + ", " + tabAtt[i][4]);
                 }
+                */
 
                 btnRecherche.IsEnabled = true;
             }
