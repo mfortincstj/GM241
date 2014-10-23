@@ -26,27 +26,15 @@ namespace GM241.Fenetres.InventaireGestion
 
             authentifie.Content = estAdmin;
 
-            /*
-            cboxCategorie.Items.Insert(0, "Sélectionné");
-            cboxCategorie.Items.Insert(1, "Attachements");
-            cboxCategorie.Items.Insert(2, "Collets");
-            cboxCategorie.Items.Insert(3, "Outils");
-            cboxCategorie.Items.Insert(4, "Plaquettes");
-            */
-
             cboxCategorie.Items.Add("Sélectionnez");
             cboxCategorie.Items.Add("Collet");          // Élément #1
             cboxCategorie.Items.Add("Porte outil");     // #2
             cboxCategorie.Items.Add("Outils");          // #3
             cboxCategorie.Items.Add("Plaquettes");      // #4
             cboxCategorie.SelectedIndex = 0;
-
         }
 
-        private void btnFerme_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
+        private void btnFerme_Click(object sender, RoutedEventArgs e) {this.Close();}
 
         private void cboxCategorie_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -54,10 +42,9 @@ namespace GM241.Fenetres.InventaireGestion
             if (cboxCategorie.SelectedIndex == 0)
             {
                 btnRecherche.IsEnabled = false;
-                MessageBox.Show("test");
             }
 
-            // Section attachements
+            // Section Collet
             if (cboxCategorie.SelectedIndex == 1)
             {
                 boiteResultats.Items.Clear();   // Vider la liste avant
@@ -65,7 +52,7 @@ namespace GM241.Fenetres.InventaireGestion
                 BDService BDAttachements = new BDService();
 
                 // Valider l'utilisateur et le mot de passe en BD
-                string requete = "SELECT * FROM Attachementcolletmachines";
+                string requete = "SELECT * FROM Collet";
                 List<string>[] tabAtt;
                 int nombreRange = 0;
                 tabAtt = BDAttachements.selection(requete, 5, ref nombreRange);
@@ -74,9 +61,11 @@ namespace GM241.Fenetres.InventaireGestion
                 {
                     boiteResultats.Items.Add(tabAtt[i][0] + ", " + tabAtt[i][2] + ", " + tabAtt[i][4]);
                 }
+
+                btnRecherche.IsEnabled = true;
             }
 
-            // Section collets
+            // Section Porte outil
             if (cboxCategorie.SelectedIndex == 2)
             {
                 boiteResultats.Items.Clear();   // Vider la liste avant
@@ -84,7 +73,7 @@ namespace GM241.Fenetres.InventaireGestion
                 BDService BDCollets = new BDService();
 
                 // Valider l'utilisateur et le mot de passe en BD
-                string requete = "SELECT * FROM Collets";
+                string requete = "SELECT * FROM PorteOutil";
                 List<string>[] tabCol;
                 int nombreRange = 0;
                 tabCol = BDCollets.selection(requete, 4, ref nombreRange);
@@ -93,6 +82,8 @@ namespace GM241.Fenetres.InventaireGestion
                 {
                     boiteResultats.Items.Add(tabCol[i][0] + ", " + tabCol[i][1] + ", " + tabCol[i][2] + ", " + tabCol[i][3]);
                 }
+
+                btnRecherche.IsEnabled = true;
             }
 
             // Section outils
@@ -114,6 +105,8 @@ namespace GM241.Fenetres.InventaireGestion
                                              tabOutil[i][7]  + ", " + tabOutil[i][8]  + ", " + tabOutil[i][9] + ", " + tabOutil[i][10] + ", " + tabOutil[i][11] + ", " + 
                                              tabOutil[i][12] + ", " + tabOutil[i][13] + ", " + tabOutil[i][14]);
                 }
+
+                btnRecherche.IsEnabled = true;
             }
 
             // Section plaquettes
@@ -139,11 +132,7 @@ namespace GM241.Fenetres.InventaireGestion
 
             btnModification.IsEnabled = false;
             btnSupprimer.IsEnabled = false;
-
-            if (cboxCategorie.Text != null)
-            {
-                btnRecherche.IsEnabled = true;
-            }
+            btnRecherche.IsEnabled = true;
         }
 
         private void boiteResultats_SelectionChanged(object sender, SelectionChangedEventArgs e)
