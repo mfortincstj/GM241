@@ -49,22 +49,11 @@ namespace GM241.Fenetres.InventaireGestion
             {
                 boiteResultats.Items.Clear();   // Vider la liste avant
 
-                BDService BDAttachements = new BDService();
-
                 
+                Collets collet = new Collets();
 
-                /*
-                // Valider l'utilisateur et le mot de passe en BD
-                string requete = "SELECT * FROM Collet";
-                List<string>[] tabAtt;
-                int nombreRange = 0;
-                tabAtt = BDAttachements.selection(requete, 5, ref nombreRange);
+                boiteResultats.Items.Add(collet.nom + ", " + collet.idEmplacement);
 
-                for (int i = 0; i < nombreRange; i++)
-                {
-                    boiteResultats.Items.Add(tabAtt[i][0] + ", " + tabAtt[i][2] + ", " + tabAtt[i][4]);
-                }
-                */
 
                 btnRecherche.IsEnabled = true;
             }
