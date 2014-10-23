@@ -66,13 +66,21 @@ namespace GM241
             // Si tout est valide, on passe au menu principal
             if (usagerFournit == usagerEnBD && passwordFournit == motDePasseEnBD)
             {
+                // Déterminer si l'utilisateur est admin ou non ?
+                if (admin == "True")
+                    admin = "Admin";
+                else if (admin == "False")
+                    admin = "Usager";
+                else
+                    admin = "ERREUR";
+                
                 // Fermeture du login
                 Login Login = new Login();
                 Login.Close();
                 motDePasse.Password = "";
 
                 // Ouverture du menu principal
-                MenuPrincipal MenuPrincipal = new MenuPrincipal();
+                MenuPrincipal MenuPrincipal = new MenuPrincipal(admin);
                 MenuPrincipal.Show();
             }
             else // Le nom d'usager ou le mot de passe est invalide
@@ -84,18 +92,6 @@ namespace GM241
             }
         }
 
-        // Retourn si l'utilisateur est admin ou pas
-        public string adminAuthentifie()
-        {
-            if (admin == "True")
-                return admin = "Admin";
-            else if (admin == "False")
-                return admin = "Usager";
-            else
-                return null;
-        }
-
-        // Clic sur quitter
         private void btnQuitter_Click(object sender, RoutedEventArgs e)
         {
             // Fermeture du projet

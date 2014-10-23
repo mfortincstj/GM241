@@ -25,6 +25,7 @@
         <ListBox Name="boiteResultats" Grid.Column="1" HorizontalAlignment="Left" Height="328" Margin="10,170,0,0" VerticalAlignment="Top" Width="476" SelectionChanged="boiteResultats_SelectionChanged"/>
         <Label Content="Résultats de la recherche" FontSize="20" Width="477" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="9,122,11,407" HorizontalAlignment="Center" VerticalAlignment="Center" Height="43" Grid.Column="1"/>
         <Label Content="Critères de recherche" FontSize="20" Width="477" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="10,122,10,407" HorizontalAlignment="Center" VerticalAlignment="Center" Height="43"/>
+        <Label Name="authentifie" Content="" HorizontalAlignment="Left" Margin="118,529,0,0" VerticalAlignment="Top" Height="31" Width="111"/>
 
     </Grid>
 </Window>

@@ -20,9 +20,11 @@ namespace GM241.Fenetres.InventaireGestion
     /// </summary>
     public partial class InventaireGestion : Window
     {
-        public InventaireGestion()
+        public InventaireGestion(string estAdmin)
         {
             InitializeComponent();
+
+            authentifie.Content = estAdmin;
 
             cboxCategorie.Items.Insert(0, "Attachements");
             cboxCategorie.Items.Insert(1, "Collets");

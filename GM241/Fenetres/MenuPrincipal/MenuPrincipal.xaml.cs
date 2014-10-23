@@ -20,17 +20,16 @@ namespace GM241.Fenetres.MenuPrincipal
     /// </summary>
     public partial class MenuPrincipal : Window
     {
-        public MenuPrincipal()
+        public string MPestAmin;
+
+        public MenuPrincipal(string estAdmin)
         {
             InitializeComponent();
 
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
-            // Admin
-            Login Login = new Login();
-            string test = "test";
-            //test = Login.adminAuthentifie();
-            authentifie.Text = "test";
+            MPestAmin = estAdmin;
+            authentifie.Content = MPestAmin;
         }
 
         private void btnQuitter_Click(object sender, RoutedEventArgs e)
@@ -41,7 +40,7 @@ namespace GM241.Fenetres.MenuPrincipal
         private void btnInventaireGestion_Click(object sender, RoutedEventArgs e)
         {
             // Ouverture du menu d'inventaire et de gestion de produits
-            InventaireGestion.InventaireGestion InventaireGestion = new InventaireGestion.InventaireGestion();
+            InventaireGestion.InventaireGestion InventaireGestion = new InventaireGestion.InventaireGestion(MPestAmin);
             InventaireGestion.Show();
         }
 
@@ -51,4 +50,3 @@ namespace GM241.Fenetres.MenuPrincipal
         }
     }
 }
-
