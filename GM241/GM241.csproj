@@ -76,6 +76,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Fenetres\Produit\ajoutPorteOutil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Login.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -97,6 +101,9 @@
     </Compile>
     <Compile Include="Fenetres\Produit\ajoutOutil.xaml.cs">
       <DependentUpon>ajoutOutil.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fenetres\Produit\ajoutPorteOutil.xaml.cs">
+      <DependentUpon>ajoutPorteOutil.xaml</DependentUpon>
     </Compile>
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
@@ -133,6 +140,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="fondEcran.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Fenetres\AjoutBD\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
