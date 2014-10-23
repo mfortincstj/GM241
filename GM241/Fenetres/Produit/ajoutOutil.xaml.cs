@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace GM241.Fenetres.Produit
 {
     /// <summary>
-    /// Logique d'interaction pour Produit.xaml
+    /// Logique d'interaction pour ajoutOutil.xaml
     /// </summary>
-    public partial class Produit : Window
+    public partial class ajoutOutil : Window
     {
-        public Produit()
+        public ajoutOutil()
         {
             InitializeComponent();
-        }
-
-        private void btnFermer_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }

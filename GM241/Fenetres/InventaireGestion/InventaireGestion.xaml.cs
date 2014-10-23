@@ -144,9 +144,7 @@ namespace GM241.Fenetres.InventaireGestion
 
         private void btnAjoutProduit_Click(object sender, RoutedEventArgs e)
         {
-            // Ouverture du menu d'inventaire et de gestion de produits
-            Produit.Produit Produit = new Produit.Produit();
-            Produit.Show();
+            
         }
     }
 }

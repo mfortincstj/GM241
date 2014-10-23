@@ -68,11 +68,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Fenetres\Produit\ajoutAttachement.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Fenetres\Produit\Produit.xaml">
+    <Page Include="Fenetres\Produit\ajoutCollet.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -93,11 +89,8 @@
     <Compile Include="Fenetres\MenuPrincipal\MenuPrincipal.xaml.cs">
       <DependentUpon>MenuPrincipal.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Fenetres\Produit\ajoutAttachement.xaml.cs">
-      <DependentUpon>ajoutAttachement.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Fenetres\Produit\Produit.xaml.cs">
-      <DependentUpon>Produit.xaml</DependentUpon>
+    <Compile Include="Fenetres\Produit\ajoutCollet.xaml.cs">
+      <DependentUpon>ajoutCollet.xaml</DependentUpon>
     </Compile>
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>

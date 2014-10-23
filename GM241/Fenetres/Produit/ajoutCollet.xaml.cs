@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace GM241.Fenetres.Produit
 {
     /// <summary>
-    /// Logique d'interaction pour ajoutAttachement.xaml
+    /// Logique d'interaction pour ajoutCollet.xaml
     /// </summary>
-    public partial class ajoutAttachement : Window
+    public partial class ajoutCollet : Window
     {
-        public ajoutAttachement()
+        public ajoutCollet()
         {
             InitializeComponent();
-        }
-
-        private void btnFermer_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }

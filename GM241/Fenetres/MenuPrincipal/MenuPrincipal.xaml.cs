@@ -34,7 +34,8 @@ namespace GM241.Fenetres.MenuPrincipal
 
         private void btnQuitter_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            if (MessageBox.Show("Voulez-vous quitter le programme ?", "Attention !", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No) == MessageBoxResult.Yes)
+                Application.Current.Shutdown();
         }
 
         private void btnInventaireGestion_Click(object sender, RoutedEventArgs e)
@@ -46,7 +47,8 @@ namespace GM241.Fenetres.MenuPrincipal
 
         private void btnDeconnexion_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Voulez-vous vous déconnectez ?", "Attention !", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No) == MessageBoxResult.Yes)
+                this.Close();
         }
     }
 }
