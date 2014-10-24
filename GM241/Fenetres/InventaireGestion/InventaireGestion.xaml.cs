@@ -50,9 +50,8 @@ namespace GM241.Fenetres.InventaireGestion
                 boiteResultats.Items.Clear();   // Vider la liste avant
 
                 
-                Collets collet = new Collets();
-
-                boiteResultats.Items.Add(collet.nom + ", " + collet.idEmplacement);
+                //Collets collet = new Collets(); // *****J'ai pas la classe collet ??? Je c'est pas pourquoi est pas sur GitHub regarge sa je met sa en commentaire pcq sa me fait une erreur*****
+                //boiteResultats.Items.Add(collet.nom + ", " + collet.idEmplacement);
 
 
                 btnRecherche.IsEnabled = true;

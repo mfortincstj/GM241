@@ -3,6 +3,22 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Login" Height="600" Width="1000" ResizeMode="CanMinimize">
     <Grid>
-        <Label Content="Ajout d'un porte outil" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="259,43,258,486" VerticalAlignment="Center" Height="43" Grid.ColumnSpan="2"/>
+        <Label Content="Ajout d'un porte outil" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="259,33,258,496" VerticalAlignment="Center" Height="43"/>
+        <Label Content="Type de prote outil : " HorizontalAlignment="Left" Margin="20,96,0,0" VerticalAlignment="Top" FontSize="20" Width="187"/>
+        <Label Content="Emplacement : " HorizontalAlignment="Left" Margin="20,196,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.507,0.036" Width="140"/>
+        <Label Content="Attachement : " HorizontalAlignment="Left" Margin="20,296,0,0" VerticalAlignment="Top" FontSize="20" Width="140"/>
+        <Label Content="Cone : " HorizontalAlignment="Left" Margin="20,396,0,0" VerticalAlignment="Top" FontSize="20" Width="68"/>
+        <Label Content="Nom : " HorizontalAlignment="Left" Margin="541,105,0,0" VerticalAlignment="Top" FontSize="20" Width="106"/>
+        <Label Content="Quantite : " HorizontalAlignment="Left" Margin="541,205,0,0" VerticalAlignment="Top" FontSize="20" Width="106"/>
+        <Button x:Name="btnAjout" Content="Ajout" Margin="261,485,559,0" VerticalAlignment="Top" Height="44" Click="btnAjout_Click"/>
+        <Button x:Name="bynAnnule" Content="Annulé" Margin="559,485,261,0" VerticalAlignment="Top" Height="44" Click="bynAnnule_Click"/>
+        <ComboBox x:Name="listePorteOutil" HorizontalAlignment="Left" Margin="212,96,0,0" VerticalAlignment="Top" Width="285" Height="37"/>
+        <TextBox x:Name="boxNom" HorizontalAlignment="Left" Height="37" Margin="673,105,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="295" FontSize="18"/>
+        <TextBox x:Name="boxQuantite" HorizontalAlignment="Left" Height="37" Margin="673,205,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="295" FontSize="18"/>
+        <ComboBox x:Name="listeEmplacement" HorizontalAlignment="Left" Margin="212,196,0,0" VerticalAlignment="Top" Width="285" Height="37"/>
+        <ComboBox x:Name="listeAttachement" HorizontalAlignment="Left" Margin="212,296,0,0" VerticalAlignment="Top" Width="285" Height="37"/>
+        <ComboBox x:Name="listeCone" HorizontalAlignment="Left" Margin="212,396,0,0" VerticalAlignment="Top" Width="285" Height="37"/>
+        <Label Content="Image : " HorizontalAlignment="Left" Margin="541,305,0,0" VerticalAlignment="Top" FontSize="20" Width="85" RenderTransformOrigin="0.129,0.432"/>
+        <TextBox x:Name="boxImage" HorizontalAlignment="Left" Height="37" Margin="673,305,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="295" FontSize="18"/>
     </Grid>
 </Window>

@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace GM241.Fenetres.Produit
 {
     /// <summary>
-    /// Logique d'interaction pour ajoutPorteOutil.xaml
+    /// Logique d'interaction pour ajoutPlaquette.xaml
     /// </summary>
-    public partial class ajoutPorteOutil : Window
+    public partial class ajoutPlaquette : Window
     {
-        public ajoutPorteOutil()
+        public ajoutPlaquette()
         {
             InitializeComponent();
         }

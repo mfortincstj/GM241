@@ -4,5 +4,19 @@
         Title="Login" Height="600" Width="1000" ResizeMode="CanMinimize">
     <Grid>
         <Label Content="Ajout d'un collet" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="259,43,258,486" VerticalAlignment="Center" Height="43" Grid.ColumnSpan="2"/>
+        <Label Content="Emplacement : " HorizontalAlignment="Left" Margin="20,120,0,0" VerticalAlignment="Top" FontSize="20" Width="150"/>
+        <Label Content="Nom : " HorizontalAlignment="Left" Margin="20,220,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.507,0.036" Width="71"/>
+        <Label Content="Dimension : " HorizontalAlignment="Left" Margin="20,320,0,0" VerticalAlignment="Top" FontSize="20" Width="124"/>
+        <Label Content="Attachement : " HorizontalAlignment="Left" Margin="524,120,0,0" VerticalAlignment="Top" FontSize="20" Width="144"/>
+        <Label Content="Quantité : " HorizontalAlignment="Left" Margin="524,220,0,0" VerticalAlignment="Top" FontSize="20" Width="106"/>
+        <Label Content="Image : " HorizontalAlignment="Left" Margin="524,320,0,0" VerticalAlignment="Top" FontSize="20" Width="83"/>
+        <Button x:Name="btnAjout" Content="Ajout" HorizontalAlignment="Left" Margin="260,447,0,0" VerticalAlignment="Top" Width="174" Height="44" Click="btnAjout_Click"/>
+        <Button x:Name="bynAnnule" Content="Annulé" Margin="560,447,260,0" VerticalAlignment="Top" Height="44" Click="bynAnnule_Click"/>
+        <ComboBox Name="listeEmplacement" HorizontalAlignment="Left" Margin="175,120,0,0" VerticalAlignment="Top" Width="295" Height="37"/>
+        <TextBox Name="boxNom" HorizontalAlignment="Left" Height="37" Margin="175,220,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="295" FontSize="18"/>
+        <TextBox Name="boxDimension" HorizontalAlignment="Left" Height="37" Margin="175,320,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="295" FontSize="18"/>
+        <TextBox Name="boxAttachement" HorizontalAlignment="Left" Height="37" Margin="673,120,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="295" FontSize="18"/>
+        <TextBox Name="boxQuantite" HorizontalAlignment="Left" Height="37" Margin="673,220,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="295" FontSize="18"/>
+        <TextBox Name="boxImage" HorizontalAlignment="Left" Height="37" Margin="673,320,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="295" FontSize="18"/>
     </Grid>
 </Window>

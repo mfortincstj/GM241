@@ -23,5 +23,17 @@ namespace GM241.Fenetres.Produit
         {
             InitializeComponent();
         }
+
+        private void btnAjout_Click(object sender, RoutedEventArgs e)
+        {
+            // Appel à une méthode (voir dans une classe collet ou dans une classe requêteBD ?) qui va permettre d'ajouter un collet dans la BD
+
+        }
+
+        private void bynAnnule_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Être vous sur de vouloir annuler cette ajout ?", "Attention !", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No) == MessageBoxResult.Yes)
+                this.Close();
+        }
     }
 }
