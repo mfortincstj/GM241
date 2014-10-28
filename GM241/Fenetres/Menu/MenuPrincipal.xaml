@@ -1,4 +1,4 @@
-﻿<Window x:Class="GM241.Fenetres.MenuPrincipal.MenuPrincipal"
+﻿<Window x:Class="GM241.Fenetres.Menu.MenuPrincipal"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MenuPrincipal" Height="600" Width="1000" WindowStyle="None" ResizeMode="CanMinimize">

@@ -12,9 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using GM241.Fenetres.InventaireGestion;
-using GM241.Fenetres.MenuPrincipal;
+using GM241.Fenetres.Menu;
 
-namespace GM241.Fenetres.MenuPrincipal
+namespace GM241.Fenetres.Menu
 {
     /// <summary>
     /// Logique d'interaction pour MenuPrincipal.xaml
@@ -51,7 +51,8 @@ namespace GM241.Fenetres.MenuPrincipal
 
         private void btnMenuUtilisateur_Click(object sender, RoutedEventArgs e)
         {
-            
+            MenuAdmin MenuAdmin = new MenuAdmin();
+            MenuAdmin.Show();
         }
     }
 }

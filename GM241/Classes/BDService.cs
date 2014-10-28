@@ -28,7 +28,6 @@ namespace GM241.Classes
             {
                 MessageBox.Show("Erreur de la string de connexion");
             }
-
         }
 
         private bool Ouvrir()

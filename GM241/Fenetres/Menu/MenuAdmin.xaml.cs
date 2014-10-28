@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace GM241.Fenetres.AjoutBD
+namespace GM241.Fenetres.Menu
 {
     /// <summary>
     /// Logique d'interaction pour menuAdmin.xaml
     /// </summary>
-    public partial class menuAdmin : Window
+    public partial class MenuAdmin : Window
     {
-        public menuAdmin()
+        public MenuAdmin()
         {
             InitializeComponent();
 
