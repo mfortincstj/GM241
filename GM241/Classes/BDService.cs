@@ -10,11 +10,18 @@ namespace GM241.Classes
 {
     class BDService
     {
+	/*
         private string serveur = "420.cstj.qc.ca";
         private string BD = "5a5_a14_mn400";
         private string user = "mn400";
         private string password = "ab47yP3DR";
-
+	*/
+	
+		private string serveur = "localhost";
+        private string BD = "5a5_a14_mn400";
+        private string user = "root";
+        private string password = "";
+	
         private MySqlConnection connexion;
 
         public BDService()
