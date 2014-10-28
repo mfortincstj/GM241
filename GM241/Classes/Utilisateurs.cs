@@ -19,7 +19,17 @@ namespace GM241.Classes
             public virtual bool estAdmin { get; set; }
         #endregion
 
-        public Utilisateurs(string usagerFournit, string motDePasseFournit)
+        public Utilisateurs()
+        {
+            idUtilisateur = idUtilisateur;
+            usager = usager;
+            motDePasse = motDePasse;
+            prenom = prenom;
+            nom = nom;
+            estAdmin = estAdmin;
+        }
+
+        public void genereUtilisateurs(string usagerFournit)
         {
             BDService BDUtilisateur = new BDService();
 
@@ -57,6 +67,6 @@ namespace GM241.Classes
                 return true;
             else
                 return false;
-        }
+        } 
     }
 }

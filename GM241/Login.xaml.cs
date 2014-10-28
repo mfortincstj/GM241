@@ -14,8 +14,6 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using GM241.Fenetres.MenuPrincipal;
 using GM241.Classes;
-using MySql.Data.MySqlClient;
-using System.Data;
 
 namespace GM241
 {
@@ -38,7 +36,8 @@ namespace GM241
             string usagerFournit = usager.Text;
             string motDePasseFournit = motDePasse.Password;
 
-            Utilisateurs user = new Utilisateurs(usagerFournit, motDePasseFournit);
+            Utilisateurs user = new Utilisateurs();
+            user.genereUtilisateurs(usagerFournit);
 
             // Validation de l'utilisateur
             if (user.userValide(usagerFournit, motDePasseFournit) == true)   // L'utilisateur est valide on passe au menu principal

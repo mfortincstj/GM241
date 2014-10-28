@@ -27,8 +27,6 @@ namespace GM241.Fenetres.MenuPrincipal
             InitializeComponent();
 
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
-
-            authentifie.Content = "";
         }
 
         private void btnQuitter_Click(object sender, RoutedEventArgs e)
@@ -48,6 +46,11 @@ namespace GM241.Fenetres.MenuPrincipal
         {
             if (MessageBox.Show("Voulez-vous vous déconnectez ?", "Attention !", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No) == MessageBoxResult.Yes)
                 this.Close();
+        }
+
+        private void btnMenuUtilisateur_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
