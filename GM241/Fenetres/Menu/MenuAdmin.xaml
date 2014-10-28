@@ -6,20 +6,22 @@
         <Label Content="GM241" Canvas.Left="10" Canvas.Top="10" FontSize="48" Width="980" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="10,41,10,485" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Label Content="Menu Administrateur" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
         <Button x:Name="btsFermer" Content="Fermer" Margin="832,510,0,0" HorizontalAlignment="Left" Width="130" Height="30" VerticalAlignment="Top" Click="btnFermer_Click"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="96,192,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="322,192,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="96,253,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="96,314,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="322,314,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="322,375,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="96,436,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="322,253,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="322,436,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="96,375,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
-        <Button Content="Ajout utilisateur" HorizontalAlignment="Left" Margin="693,192,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
-        <Button Content="Modifier utilisateur" HorizontalAlignment="Left" Margin="693,253,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
-        <Button Content="Supprimer utilisateur" HorizontalAlignment="Left" Margin="693,314,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
-        <Label Content="Inventaire" HorizontalAlignment="Left" Margin="248,133,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
-        <Label Content="Utilisateur" HorizontalAlignment="Left" Margin="736,133,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <Button Content="Machines" HorizontalAlignment="Left" Margin="44,172,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
+        <Button Content="PlateauMachines" HorizontalAlignment="Left" Margin="270,172,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
+        <Button Content="AttachementMachines" HorizontalAlignment="Left" Margin="44,233,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
+        <Button Content="TypeOutils" HorizontalAlignment="Left" Margin="44,294,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
+        <Button Content="PorteOutils" HorizontalAlignment="Left" Margin="270,294,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
+        <Button Content="Attachements" HorizontalAlignment="Left" Margin="270,355,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
+        <Button Content="Collets" HorizontalAlignment="Left" Margin="44,416,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
+        <Button Content="Cones" HorizontalAlignment="Left" Margin="270,233,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
+        <Button Content="TypePorteOutils" HorizontalAlignment="Left" Margin="270,416,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
+        <Button Content="Plaquettes" HorizontalAlignment="Left" Margin="44,355,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
+        <Button Content="Ajout utilisateur" HorizontalAlignment="Left" Margin="686,172,0,0" VerticalAlignment="Top" Width="174" Height="56" IsEnabled="False"/>
+        <Button Content="Modifier utilisateur" HorizontalAlignment="Left" Margin="686,233,0,0" VerticalAlignment="Top" Width="174" Height="56" IsEnabled="False"/>
+        <Button Content="Supprimer utilisateur" HorizontalAlignment="Left" Margin="686,294,0,0" VerticalAlignment="Top" Width="174" Height="56" IsEnabled="False"/>
+        <Label Content="Inventaire" HorizontalAlignment="Left" Margin="196,113,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <Label Content="Utilisateur" HorizontalAlignment="Left" Margin="726,122,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <Button Content="Emplacements" HorizontalAlignment="Left" Margin="44,477,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
+        <Button Content="TypeEmplacements" HorizontalAlignment="Left" Margin="270,477,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
     </Grid>
 </Window>

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using GM241.Fenetres.InventaireGestion;
 using GM241.Fenetres.Menu;
+using GM241.Classes;
 
 namespace GM241.Fenetres.Menu
 {
@@ -28,6 +29,14 @@ namespace GM241.Fenetres.Menu
             InitializeComponent();
 
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+
+            // L'utilisateur connecté est-il un admin ou pas ?
+            Utilisateurs user = new Utilisateurs();
+
+            if (user.estAdmin == true)
+                authentifie.Content = "Administrateur";
+            else
+                authentifie.Content = "Usager";
         }
 
         private void btnQuitter_Click(object sender, RoutedEventArgs e)

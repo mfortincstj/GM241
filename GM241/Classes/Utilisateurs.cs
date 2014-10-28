@@ -21,12 +21,12 @@ namespace GM241.Classes
 
         public Utilisateurs()
         {
-            idUtilisateur = idUtilisateur;
-            usager = usager;
-            motDePasse = motDePasse;
-            prenom = prenom;
-            nom = nom;
-            estAdmin = estAdmin;
+            idUtilisateur = 0;
+            usager = "DefaultUsager";
+            motDePasse = "DefaultMotDePasse";
+            prenom = "DefaultPrenom";
+            nom = "DefaultNom";
+            estAdmin = false;
         }
 
         public void genereUtilisateurs(string usagerFournit)

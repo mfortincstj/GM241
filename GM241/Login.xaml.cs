@@ -40,8 +40,8 @@ namespace GM241
             user.genereUtilisateurs(usagerFournit);
 
             // Validation de l'utilisateur
-            if (user.userValide(usagerFournit, motDePasseFournit) == true)   // L'utilisateur est valide on passe au menu principal
-            {
+            //if (user.userValide(usagerFournit, motDePasseFournit) == true)   // L'utilisateur est valide on passe au menu principal
+            //{
                 // Fermeture du login
                 Login Login = new Login();
                 Login.Close();
@@ -50,13 +50,13 @@ namespace GM241
                 // Ouverture du menu principal
                 MenuPrincipal MenuPrincipal = new MenuPrincipal();
                 MenuPrincipal.Show();
-            }
-            else   // L'utilisateur n'est pas valide message d'erreur
-            {
-                MessageBox.Show("Nom d'usager ou mot de passe invalide", "Erreur !", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK);
+            //}
+            //else   // L'utilisateur n'est pas valide message d'erreur
+            //{
+                //MessageBox.Show("Nom d'usager ou mot de passe invalide", "Erreur !", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK);
 
-                motDePasse.Password = "";
-            }
+                //motDePasse.Password = "";
+            //}
         }
 
         private void btnQuitter_Click(object sender, RoutedEventArgs e) {Application.Current.Shutdown();}
