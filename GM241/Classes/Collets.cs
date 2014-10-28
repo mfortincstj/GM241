@@ -43,6 +43,4 @@ namespace GM241.Classes
             }
         }
     }
-
-    
 }
