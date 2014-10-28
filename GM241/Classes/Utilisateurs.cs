@@ -26,7 +26,6 @@ namespace GM241.Classes
             motDePasse = "DefaultMotDePasse";
             prenom = "DefaultPrenom";
             nom = "DefaultNom";
-            estAdmin = false;
         }
 
         public void genereUtilisateurs(string usagerFournit)
@@ -52,6 +51,8 @@ namespace GM241.Classes
                     estAdmin = true;
                 else
                     estAdmin = false;
+
+                usagerEstAdmin();
             }
             else // Ici, rien trouvé dans la BD
             {
@@ -67,6 +68,14 @@ namespace GM241.Classes
                 return true;
             else
                 return false;
-        } 
+        }
+
+        public bool usagerEstAdmin()
+        {
+            if (estAdmin == true)
+                return true;
+            else
+                return false;
+        }
     }
 }

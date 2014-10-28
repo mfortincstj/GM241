@@ -8,7 +8,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Label Content="Inventaire et Gestion de produits" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="259,43,258,486" VerticalAlignment="Center" Height="43" Grid.ColumnSpan="2"/>
-        <Label Content="Authentifié : " HorizontalAlignment="Left" Margin="10,529,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <Label x:Name="authentifie1" Content="Authentifié : " HorizontalAlignment="Left" Margin="10,529,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
         <Label Content="Recherche par nom : " HorizontalAlignment="Left" Margin="20,170,0,0" VerticalAlignment="Top" Width="151" Height="45"/>
         <Label Content="Recherche par description : " HorizontalAlignment="Left" Margin="20,223,0,0" VerticalAlignment="Top" Width="151" Height="45"/>
         <Label Content="Recherche par matériaux : " HorizontalAlignment="Left" Margin="20,277,0,0" VerticalAlignment="Top" Width="151" Height="44"/>

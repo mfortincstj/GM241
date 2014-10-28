@@ -20,11 +20,15 @@ namespace GM241.Fenetres.InventaireGestion
     /// </summary>
     public partial class InventaireGestion : Window
     {
-        public InventaireGestion(string estAdmin)
+        public InventaireGestion(bool estAdmin)
         {
             InitializeComponent();
 
-            authentifie.Content = estAdmin;
+            // L'utilisateur connecté est-il un admin ou pas ?
+            if (estAdmin == true)
+                authentifie.Content = "Administrateur";
+            else
+                authentifie.Content = "Usager";
 
             cboxCategorie.Items.Add("Sélectionnez");
             cboxCategorie.Items.Add("Collet");          // Élément #1
