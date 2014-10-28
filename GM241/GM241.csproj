@@ -93,6 +93,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Classes\BDService.cs" />
+    <Compile Include="Classes\Collets.cs" />
     <Compile Include="Classes\Utilisateurs.cs" />
     <Compile Include="Fenetres\InventaireGestion\InventaireGestion.xaml.cs">
       <DependentUpon>InventaireGestion.xaml</DependentUpon>
