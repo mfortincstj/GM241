@@ -11,7 +11,6 @@ namespace GM241.Classes
     class Utilisateurs
     {
         #region
-            public virtual int idUtilisateur { get; set; }
             public virtual string usager { get; set; }
             public virtual string motDePasse { get; set; }
             public virtual string prenom { get; set; }
@@ -21,7 +20,6 @@ namespace GM241.Classes
 
         public Utilisateurs()
         {
-            idUtilisateur = 0;
             usager = "DefaultUsager";
             motDePasse = "DefaultMotDePasse";
             prenom = "DefaultPrenom";
@@ -36,12 +34,11 @@ namespace GM241.Classes
             string requete = "SELECT * FROM Utilisateurs WHERE usager = " + "'" + usagerFournit + "'";
             List<string>[] tabRes;
             int nombreRange = 0;
-            tabRes = BDUtilisateur.selection(requete, 6, ref nombreRange);
+            tabRes = BDUtilisateur.selection(requete, 5, ref nombreRange);
 
             // Si le select en BD a capté quelque chose
             if (nombreRange >= 1)
             {
-                idUtilisateur = Convert.ToInt32(tabRes[0][0]);
                 usager = tabRes[0][1];
                 motDePasse = tabRes[0][2];
                 prenom = tabRes[0][3];

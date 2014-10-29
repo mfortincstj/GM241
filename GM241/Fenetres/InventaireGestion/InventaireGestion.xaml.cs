@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using GM241.Classes;
+using GM241.Fenetres.Produit;
 
 namespace GM241.Fenetres.InventaireGestion
 {
@@ -44,19 +45,20 @@ namespace GM241.Fenetres.InventaireGestion
         {
             // Barrer l'acces au bouton rechercher si il n'y a pas de catégorie de sélectionnée
             if (cboxCategorie.SelectedIndex == 0)
-            {
                 btnRecherche.IsEnabled = false;
-            }
 
             // Section Collet
             if (cboxCategorie.SelectedIndex == 1)
             {
                 boiteResultats.Items.Clear();   // Vider la liste avant
 
-                
-                //Collets collet = new Collets(); // *****J'ai pas la classe collet ??? Je c'est pas pourquoi est pas sur GitHub regarge sa je met sa en commentaire pcq sa me fait une erreur*****
-                //boiteResultats.Items.Add(collet.nom + ", " + collet.idEmplacement);
+                Collets collets = new Collets();
 
+                List<Collets> listCol = new List<Collets>();
+
+                
+
+                boiteResultats.Items.Add(listCol);
 
                 btnRecherche.IsEnabled = true;
             }
@@ -140,7 +142,8 @@ namespace GM241.Fenetres.InventaireGestion
 
         private void btnAjoutProduit_Click(object sender, RoutedEventArgs e)
         {
-            
+            ajoutOutil ajoutOutil = new ajoutOutil();
+            ajoutOutil.Show();
         }
     }
 }

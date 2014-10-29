@@ -22,6 +22,7 @@ namespace GM241.Fenetres.Produit
         public ajoutPorteOutil()
         {
             InitializeComponent();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
         private void btnAjout_Click(object sender, RoutedEventArgs e)

@@ -39,6 +39,8 @@ namespace GM241
             Utilisateurs user = new Utilisateurs();
             user.genereUtilisateurs(usagerFournit);
 
+            MessageBox.Show(user.nom);
+
             // Validation de l'utilisateur
             if (user.userValide(usagerFournit, motDePasseFournit) == true)   // L'utilisateur est valide on passe au menu principal
             {
