@@ -51,14 +51,15 @@ namespace GM241.Fenetres.InventaireGestion
             if (cboxCategorie.SelectedIndex == 1)
             {
                 boiteResultats.Items.Clear();   // Vider la liste avant
+                /*
+                List<Collets> listCol = Collets.chargerlstCollets();
 
-                Collets collets = new Collets();
-
-                List<Collets> listCol = new List<Collets>();
-
-                
-
-                boiteResultats.Items.Add(listCol);
+                foreach (Collets c in listCol)
+                {
+                    boiteResultats.Items.Add(c.ToString());
+                    //boiteResultats.Items.Add(c.idEmplacement + ", " + c.idTypeAttachement + ", " + c.diametreInterieur + ", " + c.quantite + ", " + c.image);
+                }
+                */
 
                 btnRecherche.IsEnabled = true;
             }

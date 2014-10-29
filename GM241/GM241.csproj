@@ -72,6 +72,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Fenetres\Menu\MenuRapport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Fenetres\Produit\ajoutCollet.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -108,6 +112,9 @@
     </Compile>
     <Compile Include="Fenetres\Menu\MenuPrincipal.xaml.cs">
       <DependentUpon>MenuPrincipal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fenetres\Menu\MenuRapport.xaml.cs">
+      <DependentUpon>MenuRapport.xaml</DependentUpon>
     </Compile>
     <Compile Include="Fenetres\Produit\ajoutCollet.xaml.cs">
       <DependentUpon>ajoutCollet.xaml</DependentUpon>

@@ -27,7 +27,6 @@ namespace GM241.Fenetres.Menu
         public MenuPrincipal(bool estAdmin)
         {
             InitializeComponent();
-
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
             // L'utilisateur connecté est-il un admin ou pas ?
@@ -68,6 +67,12 @@ namespace GM241.Fenetres.Menu
         {
             MenuAdmin MenuAdmin = new MenuAdmin();
             MenuAdmin.Show();
+        }
+
+        private void btnMenuRapport_Click(object sender, RoutedEventArgs e)
+        {
+            MenuRapport menuRapport = new MenuRapport();
+            menuRapport.Show();
         }
     }
 }

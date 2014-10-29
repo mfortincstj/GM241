@@ -34,7 +34,7 @@ namespace GM241.Classes
             string requete = "SELECT * FROM Utilisateurs WHERE usager = " + "'" + usagerFournit + "'";
             List<string>[] tabRes;
             int nombreRange = 0;
-            tabRes = BDUtilisateur.selection(requete, 5, ref nombreRange);
+            tabRes = BDUtilisateur.selection(requete, 6, ref nombreRange);
 
             // Si le select en BD a capté quelque chose
             if (nombreRange >= 1)
