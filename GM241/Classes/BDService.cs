@@ -5,29 +5,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using MySql.Data.MySqlClient;
+using System.Configuration;
 
 namespace GM241.Classes
 {
     class BDService
     {
-        private string serveur = "420.cstj.qc.ca";
-        private string BD = "5a5_a14_mn400";
-        private string user = "mn400";
-        private string password = "ab47yP3DR";
-	/*
-		private string serveur = "localhost";
-        private string BD = "5a5_a14_mn400";
-        private string user = "root";
-        private string password = "";
-	*/
         private MySqlConnection connexion;
 
         public BDService()
         {
             try
             {
-                string sConnection = "SERVER="+serveur+";DATABASE="+BD+";UID="+user+";PASSWORD="+password+";";
-                connexion = new MySqlConnection(sConnection);
+                string connexionString;
+
+                connexionString = ConfigurationManager.ConnectionStrings["MySqlConnexion"].ConnectionString;
+                connexion = new MySqlConnection(connexionString);
             }
             catch (Exception e)
             {

@@ -42,14 +42,11 @@ namespace GM241
             // Validation de l'utilisateur
             if (user.userValide(usagerFournit, motDePasseFournit) == true)   // L'utilisateur est valide on passe au menu principal
             {
-                // Fermeture du login
-                Login Login = new Login();
-                Login.Close();
-                motDePasse.Password = "";
-
                 // Ouverture du menu principal
                 MenuPrincipal MenuPrincipal = new MenuPrincipal(user.estAdmin);
                 MenuPrincipal.Show();
+
+                this.Close();   // Fermeture du login
             }
             else   // L'utilisateur n'est pas valide message d'erreur
             {

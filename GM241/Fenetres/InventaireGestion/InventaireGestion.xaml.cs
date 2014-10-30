@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using GM241.Classes;
 using GM241.Fenetres.Produit;
+using GM241.Fenetres.Menu;
 
 namespace GM241.Fenetres.InventaireGestion
 {
@@ -24,12 +25,18 @@ namespace GM241.Fenetres.InventaireGestion
         public InventaireGestion(bool estAdmin)
         {
             InitializeComponent();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
             // L'utilisateur connecté est-il un admin ou pas ?
             if (estAdmin == true)
                 authentifie.Content = "Administrateur";
-            else
+            else   // Section usager seulement, alors pas acces au boutons ajouter, modifier et supprimer
+            {
                 authentifie.Content = "Usager";
+                btnModification.Visibility = Visibility.Hidden;
+                btnSupprimer.Visibility = Visibility.Hidden;
+                btnAjoutProduit.Visibility = Visibility.Hidden;
+            }
 
             cboxCategorie.Items.Add("Sélectionnez");
             cboxCategorie.Items.Add("Collet");          // Élément #1
@@ -45,7 +52,10 @@ namespace GM241.Fenetres.InventaireGestion
         {
             // Barrer l'acces au bouton rechercher si il n'y a pas de catégorie de sélectionnée
             if (cboxCategorie.SelectedIndex == 0)
+            {
                 btnRecherche.IsEnabled = false;
+                boiteResultats.Items.Clear();
+            }
 
             // Section Collet
             if (cboxCategorie.SelectedIndex == 1)
@@ -143,8 +153,15 @@ namespace GM241.Fenetres.InventaireGestion
 
         private void btnAjoutProduit_Click(object sender, RoutedEventArgs e)
         {
-            ajoutOutil ajoutOutil = new ajoutOutil();
-            ajoutOutil.Show();
+            MenuAdmin menuAdmin= new MenuAdmin();
+            menuAdmin.Show();
+
+            this.Close();
+        }
+
+        private void btnSupprimer_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

@@ -25,6 +25,13 @@ namespace GM241.Fenetres.Menu
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
-        private void btnFermer_Click(object sender, RoutedEventArgs e) {this.Close();}
+        private void btnFermer_Click(object sender, RoutedEventArgs e)
+        {
+            bool estAdmin = true;
+
+            MenuPrincipal menuPrincipal = new MenuPrincipal(estAdmin);
+            this.Close();
+            menuPrincipal.Show();
+        }
     }
 }

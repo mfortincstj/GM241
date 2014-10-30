@@ -60,19 +60,28 @@ namespace GM241.Fenetres.Menu
         private void btnDeconnexion_Click(object sender, RoutedEventArgs e)
         {
             if (MessageBox.Show("Voulez-vous vous déconnectez ?", "Attention !", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No) == MessageBoxResult.Yes)
-                this.Close();
-        }
+            {
+                Login login = new Login();
+                login.Show();
 
-        private void btnMenuUtilisateur_Click(object sender, RoutedEventArgs e)
-        {
-            MenuAdmin MenuAdmin = new MenuAdmin();
-            MenuAdmin.Show();
+                this.Close();
+            }
         }
 
         private void btnMenuRapport_Click(object sender, RoutedEventArgs e)
         {
             MenuRapport menuRapport = new MenuRapport();
             menuRapport.Show();
+
+            this.Close();
+        }
+
+        private void btnMenuAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            MenuAdmin menuAdmin = new MenuAdmin();
+            menuAdmin.Show();
+
+            this.Close();
         }
     }
 }
