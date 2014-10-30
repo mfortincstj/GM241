@@ -103,6 +103,8 @@
     <Compile Include="Classes\BDService.cs" />
     <Compile Include="Classes\Collets.cs" />
     <Compile Include="Classes\Outils.cs" />
+    <Compile Include="Classes\Plaquettes.cs" />
+    <Compile Include="Classes\PorteOutils.cs" />
     <Compile Include="Classes\Utilisateurs.cs" />
     <Compile Include="Fenetres\Menu\MenuAdmin.xaml.cs">
       <DependentUpon>MenuAdmin.xaml</DependentUpon>

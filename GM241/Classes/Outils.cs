@@ -31,7 +31,7 @@ namespace GM241.Classes
             idTypeOutil = 0;
             idEmplacement = 0;
             idPlaquette = 0;
-            nom = "nom";
+            nom = "";
             quantite = 0;
             diametreUsinage = "";
             diametreSerrage = "";
@@ -95,7 +95,7 @@ namespace GM241.Classes
 
             List<string>[] tabOutil;
             int nombreRange = 0;
-            tabOutil = BDOutils.selection(request, 16, ref nombreRange);
+            tabOutil = BDOutils.selection(request, 17, ref nombreRange);
 
             List<Outils> listeOutils = new List<Outils>();
 

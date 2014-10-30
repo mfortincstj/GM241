@@ -33,9 +33,7 @@ namespace GM241.Fenetres.InventaireGestion
             else   // Section usager seulement, alors pas acces au boutons ajouter, modifier et supprimer
             {
                 authentifie.Content = "Usager";
-                btnModification.Visibility = Visibility.Hidden;
-                btnSupprimer.Visibility = Visibility.Hidden;
-                btnAjoutProduit.Visibility = Visibility.Hidden;
+                btnDetail.Visibility = Visibility.Hidden;
             }
 
             cboxCategorie.Items.Add("Sélectionnez");
@@ -77,17 +75,11 @@ namespace GM241.Fenetres.InventaireGestion
             {
                 boiteResultats.Items.Clear();   // Vider la liste avant
 
-                /*
-                List<Outils> listOutil = Outils.chargerLstOutils();
+                List<PorteOutils> listPorteOutil = PorteOutils.chargerlstPorteOutils();
 
-                foreach (Outils o in listOutil)
-                {
-                    boiteResultats.Items.Add(o.idTypeOutil + ", " + o.idEmplacement + ", " + o.idPlaquette + ", " + o.nom + ", " + o.quantite + ", " + 
-                                             o.diametreUsinage + ", " + o.diametreSerrage + ", " + o.longueurCoupe + ", " + o.longueurTotal + ", " + 
-                                             o.longueurShank + ", " + o.rayonCoin + ", " + o.anglePointe + ", " + o.nombreFlute + ", " + 
-                                             o.disponible + ", " + o.unitePouce + ", " + o.image);
-                }
-                */
+                foreach (PorteOutils p in listPorteOutil)
+                    boiteResultats.Items.Add(p.idCollet + ", " + p.idTypePorteOutil + ", " + p.idEmplacement + ", " + p.idAttachement + ", " + p.idCone + ", " + p.nom + ", " + p.quantite + ", " + p.image);
+
                 btnRecherche.IsEnabled = true;
             }
 
@@ -114,45 +106,24 @@ namespace GM241.Fenetres.InventaireGestion
             {
                 boiteResultats.Items.Clear();   // Vider la liste avant
 
-                BDService BDPlaquettes = new BDService();
+                List<Plaquettes> listPlaquettes = Plaquettes.chargerlstPlaquettes();
 
-                // Valider l'utilisateur et le mot de passe en BD
-                string requete = "SELECT * FROM Plaquettes";
-                List<string>[] tabPla;
-                int nombreRange = 0;
-                tabPla = BDPlaquettes.selection(requete, 14, ref nombreRange);
-
-                for (int i = 0; i < nombreRange; i++)
+                foreach (Plaquettes p in listPlaquettes)
                 {
-                    boiteResultats.Items.Add(tabPla[i][0]  + ", " + tabPla[i][2]  + ", " + tabPla[i][3] + ", " + tabPla[i][4] + ", " + tabPla[i][5] + ", " +
-                                             tabPla[i][6]  + ", " + tabPla[i][7]  + ", " + tabPla[i][8] + ", " + tabPla[i][9] + ", " + tabPla[i][10] + ", " +
-                                             tabPla[i][11] + ", " + tabPla[i][12] + ", " + tabPla[i][13]);
+                    boiteResultats.Items.Add(p.idEmplacement + ", " + p.nom + ", " + p.typePlaquette + ", " + p.direction + ", " + p.angle 
+                                             + ", " + p.degagement + ", " + p.grosseur + ", " + p.compagnie + ", " + p.quantite + ", " + p.disponible 
+                                             + ", " + p.codeAlpha + ", " + p.ordre + ", " + p.tourFraseuse + ", " + p.image);
                 }
 
                 btnRecherche.IsEnabled = true;
             }
 
-            btnModification.IsEnabled = false;
-            btnSupprimer.IsEnabled = false;
+            btnDetail.IsEnabled = false;
         }
 
         private void boiteResultats_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            btnModification.IsEnabled = true;
-            btnSupprimer.IsEnabled = true;
-        }
-
-        private void btnAjoutProduit_Click(object sender, RoutedEventArgs e)
-        {
-            MenuAdmin menuAdmin= new MenuAdmin();
-            menuAdmin.Show();
-
-            this.Close();
-        }
-
-        private void btnSupprimer_Click(object sender, RoutedEventArgs e)
-        {
-            
+            btnDetail.IsEnabled = true;
         }
     }
 }
