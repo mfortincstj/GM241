@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace GM241.Fenetres.Produit
 {
     /// <summary>
-    /// Logique d'interaction pour ajoutCollet.xaml
+    /// Logique d'interaction pour ajoutPorteOutil.xaml
     /// </summary>
-    public partial class ajoutCollet : Window
+    public partial class PorteOutil : Window
     {
-        public ajoutCollet()
+        public PorteOutil()
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
@@ -27,7 +27,6 @@ namespace GM241.Fenetres.Produit
 
         private void btnAjout_Click(object sender, RoutedEventArgs e)
         {
-            // Appel à une méthode (voir dans une classe collet ou dans une classe requêteBD ?) qui va permettre d'ajouter un collet dans la BD
 
         }
 

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using GM241.Fenetres.Produit;
 
 namespace GM241.Fenetres.Menu
 {
@@ -34,6 +35,30 @@ namespace GM241.Fenetres.Menu
             menuPrincipal.Show();
 
             this.Close();
+        }
+
+        private void btnCollets_Click(object sender, RoutedEventArgs e)
+        {
+            Collet fenetreCollet = new Collet();
+            fenetreCollet.Show();
+        }
+
+        private void btnOutils_Click(object sender, RoutedEventArgs e)
+        {
+            Outil fenetreOutil = new Outil();
+            fenetreOutil.Show();
+        }
+
+        private void btnPlaquettes_Click(object sender, RoutedEventArgs e)
+        {
+            Plaquette fenetrePlaquette = new Plaquette();
+            fenetrePlaquette.Show();
+        }
+
+        private void bntPorteOutils_Click(object sender, RoutedEventArgs e)
+        {
+            PorteOutil fenetrePorteOutil = new PorteOutil();
+            fenetrePorteOutil.Show();
         }
     }
 }

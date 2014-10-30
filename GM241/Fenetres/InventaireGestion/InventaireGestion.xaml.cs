@@ -125,5 +125,10 @@ namespace GM241.Fenetres.InventaireGestion
         {
             btnDetail.IsEnabled = true;
         }
+
+        private void btnDetail_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

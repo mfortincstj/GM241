@@ -76,19 +76,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Fenetres\Produit\ajoutCollet.xaml">
+    <Page Include="Fenetres\Produit\Collet.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Fenetres\Produit\ajoutOutil.xaml">
+    <Page Include="Fenetres\Produit\Outil.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Fenetres\Produit\ajoutPlaquette.xaml">
+    <Page Include="Fenetres\Produit\Plaquette.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Fenetres\Produit\ajoutPorteOutil.xaml">
+    <Page Include="Fenetres\Produit\PorteOutil.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -118,17 +118,17 @@
     <Compile Include="Fenetres\Menu\MenuRapport.xaml.cs">
       <DependentUpon>MenuRapport.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Fenetres\Produit\ajoutCollet.xaml.cs">
-      <DependentUpon>ajoutCollet.xaml</DependentUpon>
+    <Compile Include="Fenetres\Produit\Collet.xaml.cs">
+      <DependentUpon>Collet.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Fenetres\Produit\ajoutOutil.xaml.cs">
-      <DependentUpon>ajoutOutil.xaml</DependentUpon>
+    <Compile Include="Fenetres\Produit\Outil.xaml.cs">
+      <DependentUpon>Outil.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Fenetres\Produit\ajoutPlaquette.xaml.cs">
-      <DependentUpon>ajoutPlaquette.xaml</DependentUpon>
+    <Compile Include="Fenetres\Produit\Plaquette.xaml.cs">
+      <DependentUpon>Plaquette.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Fenetres\Produit\ajoutPorteOutil.xaml.cs">
-      <DependentUpon>ajoutPorteOutil.xaml</DependentUpon>
+    <Compile Include="Fenetres\Produit\PorteOutil.xaml.cs">
+      <DependentUpon>PorteOutil.xaml</DependentUpon>
     </Compile>
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
@@ -162,9 +162,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="fondEcran.jpeg" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
