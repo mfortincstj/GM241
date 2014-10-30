@@ -61,15 +61,13 @@ namespace GM241.Fenetres.InventaireGestion
             if (cboxCategorie.SelectedIndex == 1)
             {
                 boiteResultats.Items.Clear();   // Vider la liste avant
-                /*
+                
                 List<Collets> listCol = Collets.chargerlstCollets();
 
                 foreach (Collets c in listCol)
                 {
-                    boiteResultats.Items.Add(c.ToString());
-                    //boiteResultats.Items.Add(c.idEmplacement + ", " + c.idTypeAttachement + ", " + c.diametreInterieur + ", " + c.quantite + ", " + c.image);
+                    boiteResultats.Items.Add(c.idEmplacement + ", " + c.idTypeAttachement + ", " + c.diametreInterieur + ", " + c.quantite + ", " + c.image);
                 }
-                */
 
                 btnRecherche.IsEnabled = true;
             }
@@ -79,19 +77,17 @@ namespace GM241.Fenetres.InventaireGestion
             {
                 boiteResultats.Items.Clear();   // Vider la liste avant
 
-                BDService BDCollets = new BDService();
+                /*
+                List<Outils> listOutil = Outils.chargerLstOutils();
 
-                // Valider l'utilisateur et le mot de passe en BD
-                string requete = "SELECT * FROM PorteOutil";
-                List<string>[] tabCol;
-                int nombreRange = 0;
-                tabCol = BDCollets.selection(requete, 4, ref nombreRange);
-
-                for (int i = 0; i < nombreRange; i++)
+                foreach (Outils o in listOutil)
                 {
-                    boiteResultats.Items.Add(tabCol[i][0] + ", " + tabCol[i][1] + ", " + tabCol[i][2] + ", " + tabCol[i][3]);
+                    boiteResultats.Items.Add(o.idTypeOutil + ", " + o.idEmplacement + ", " + o.idPlaquette + ", " + o.nom + ", " + o.quantite + ", " + 
+                                             o.diametreUsinage + ", " + o.diametreSerrage + ", " + o.longueurCoupe + ", " + o.longueurTotal + ", " + 
+                                             o.longueurShank + ", " + o.rayonCoin + ", " + o.anglePointe + ", " + o.nombreFlute + ", " + 
+                                             o.disponible + ", " + o.unitePouce + ", " + o.image);
                 }
-
+                */
                 btnRecherche.IsEnabled = true;
             }
 
@@ -100,19 +96,14 @@ namespace GM241.Fenetres.InventaireGestion
             {
                 boiteResultats.Items.Clear();   // Vider la liste avant
 
-                BDService BDOutils = new BDService();
+                List<Outils> listOutil = Outils.chargerLstOutils();
 
-                // Valider l'utilisateur et le mot de passe en BD
-                string requete = "SELECT * FROM Outils";
-                List<string>[] tabOutil;
-                int nombreRange = 0;
-                tabOutil = BDOutils.selection(requete, 15, ref nombreRange);
-
-                for (int i = 0; i < nombreRange; i++)
+                foreach (Outils o in listOutil)
                 {
-                    boiteResultats.Items.Add(tabOutil[i][0]  + ", " + tabOutil[i][3]  + ", " + tabOutil[i][4] + ", " + tabOutil[i][5] + ", " + tabOutil[i][6] + ", " + 
-                                             tabOutil[i][7]  + ", " + tabOutil[i][8]  + ", " + tabOutil[i][9] + ", " + tabOutil[i][10] + ", " + tabOutil[i][11] + ", " + 
-                                             tabOutil[i][12] + ", " + tabOutil[i][13] + ", " + tabOutil[i][14]);
+                    boiteResultats.Items.Add(o.idTypeOutil + ", " + o.idEmplacement + ", " + o.idPlaquette + ", " + o.nom + ", " + o.quantite + ", " +
+                                             o.diametreUsinage + ", " + o.diametreSerrage + ", " + o.longueurCoupe + ", " + o.longueurTotal + ", " +
+                                             o.longueurShank + ", " + o.rayonCoin + ", " + o.anglePointe + ", " + o.nombreFlute + ", " +
+                                             o.disponible + ", " + o.unitePouce + ", " + o.image);
                 }
 
                 btnRecherche.IsEnabled = true;

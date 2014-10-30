@@ -36,14 +36,21 @@ namespace GM241.Classes
             image = img;
         }
 
-        public List<Collets> chargerlstCollets()
+        public static List<Collets> chargerlstCollets()
         {
+            int idCollet;
+            int idEmplacement;
+            int idTypeAttachement;
+            string diametreInterieur;
+            int quantite;
+            string image;
+
             BDService BDCollets = new BDService();
             String request = "SELECT * FROM Collets";
 
             List<string>[] tabCol;
             int nombreRange = 0;
-            tabCol = BDCollets.selection(request, 7, ref nombreRange);
+            tabCol = BDCollets.selection(request, 6, ref nombreRange);
 
             List<Collets> listeCollets = new List<Collets>();
 
