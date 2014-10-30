@@ -30,8 +30,9 @@ namespace GM241.Fenetres.Menu
             bool estAdmin = true;
 
             MenuPrincipal menuPrincipal = new MenuPrincipal(estAdmin);
-            this.Close();
             menuPrincipal.Show();
+
+            this.Close();
         }
     }
 }
