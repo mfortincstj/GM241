@@ -9,7 +9,6 @@ namespace GM241.Classes
 {
     public class Collets
     {
-        public virtual int idCollet { get; set; }
         public virtual int idEmplacement { get; set; }
         public virtual int idTypeAttachement { get; set; }
         public virtual string diametreInterieur { get; set; }
@@ -18,7 +17,6 @@ namespace GM241.Classes
 
         public Collets()
         {
-            idCollet = 0;
             idEmplacement = 0;
             idTypeAttachement = 0;
             diametreInterieur = "";
@@ -26,9 +24,8 @@ namespace GM241.Classes
             image = "";
         }
 
-        public Collets(int idCol, int idEmp, int idTypeAtt, string diamInt, int quant, string img)
+        public Collets(int idEmp, int idTypeAtt, string diamInt, int quant, string img)
         {
-            idCollet = idCol;
             idEmplacement = idEmp;
             idTypeAttachement = idTypeAtt;
             diametreInterieur = diamInt;
@@ -38,7 +35,6 @@ namespace GM241.Classes
 
         public static List<Collets> chargerlstCollets()
         {
-            int idCollet;
             int idEmplacement;
             int idTypeAttachement;
             string diametreInterieur;
@@ -58,14 +54,13 @@ namespace GM241.Classes
             {
                 for (int i = 0; i < nombreRange; i++)
                 {
-                    idCollet = Convert.ToInt32(tabCol[i][0]);
                     idEmplacement = Convert.ToInt32(tabCol[i][1]);
                     idTypeAttachement = Convert.ToInt32(tabCol[i][2]);
                     diametreInterieur = tabCol[i][3];
                     quantite = Convert.ToInt32(tabCol[i][4]);
                     image = tabCol[i][5];
 
-                    listeCollets.Add(new Collets(idCollet, idEmplacement, idTypeAttachement, diametreInterieur, quantite, image));
+                    listeCollets.Add(new Collets(idEmplacement, idTypeAttachement, diametreInterieur, quantite, image));
                 }
             }
 

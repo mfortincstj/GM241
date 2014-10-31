@@ -13,15 +13,15 @@ namespace GM241.Classes
         public virtual string nom { get; set; }
         public virtual string typePlaquette { get; set; }
         public virtual string direction { get; set; }
-        public virtual float angle { get; set; }
-        public virtual float degagement { get; set; }
-        public virtual float grosseur { get; set; }
+        public virtual string angle { get; set; }
+        public virtual string degagement { get; set; }
+        public virtual string grosseur { get; set; }
         public virtual string compagnie { get; set; }
         public virtual int quantite { get; set; }
         public virtual bool disponible { get; set; }
         public virtual string codeAlpha { get; set; }
-        public virtual string ordre { get; set; }
-        public virtual float tourFraseuse { get; set; }
+        public virtual string tourFraseuse { get; set; }
+        public virtual bool unitePouce { get; set; }
         public virtual string image { get; set; }
 
         public Plaquettes()
@@ -30,20 +30,20 @@ namespace GM241.Classes
             nom = "";
             typePlaquette = "";
             direction = "";
-            angle = 0;
-            degagement = 0;
-            grosseur = 0;
+            angle = "";
+            degagement = "";
+            grosseur = "";
             compagnie = "";
             quantite = 0;
             disponible = false;
             codeAlpha = "";
-            ordre = "";
-            tourFraseuse = 0;
+            tourFraseuse = "";
+            unitePouce = false;
             image = "";
         }
 
-        public Plaquettes(int idEmp, string n, string typePla, string direc, float ang, float dega, float gros,
-                          string comp, int quant, bool dispo, string codeA, string ord, float tourFra, string img)
+        public Plaquettes(int idEmp, string n, string typePla, string direc, string ang, string dega, string gros,
+                          string comp, int quant, bool dispo, string codeA, string tourFra, bool unitePo, string img)
         {
             idEmplacement = idEmp;
             nom = n;
@@ -56,8 +56,8 @@ namespace GM241.Classes
             quantite = quant;
             disponible = dispo;
             codeAlpha = codeA;
-            ordre = ord;
             tourFraseuse = tourFra;
+            unitePouce = unitePo;
             image = img;
         }
 
@@ -67,15 +67,15 @@ namespace GM241.Classes
             string nom;
             string typePlaquette;
             string direction;
-            float angle;
-            float degagement;
-            float grosseur;
+            string angle;
+            string degagement;
+            string grosseur;
             string compagnie;
             int quantite;
             bool disponible;
             string codeAlpha;
-            string ordre;
-            float tourFraseuse;
+            string tourFraseuse;
+            bool unitePouce;
             string image;
 
             BDService BDPlaquettes = new BDService();
@@ -95,19 +95,19 @@ namespace GM241.Classes
                     nom = tabPlaquettes[i][2];
                     typePlaquette = tabPlaquettes[i][3];
                     direction = tabPlaquettes[i][4];
-                    angle = float.Parse(tabPlaquettes[i][5], CultureInfo.InvariantCulture.NumberFormat);
-                    degagement = float.Parse(tabPlaquettes[i][6], CultureInfo.InvariantCulture.NumberFormat);
-                    grosseur = float.Parse(tabPlaquettes[i][7], CultureInfo.InvariantCulture.NumberFormat);
+                    angle = tabPlaquettes[i][5];
+                    degagement = tabPlaquettes[i][6];
+                    grosseur = tabPlaquettes[i][7];
                     compagnie = tabPlaquettes[i][8];
                     quantite = Convert.ToInt32(tabPlaquettes[i][9]);
                     disponible = Convert.ToBoolean(tabPlaquettes[i][10]);
                     codeAlpha = tabPlaquettes[i][11];
-                    ordre = tabPlaquettes[i][12];
-                    tourFraseuse = float.Parse(tabPlaquettes[i][13], CultureInfo.InvariantCulture.NumberFormat);
+                    tourFraseuse = tabPlaquettes[i][12];
+                    unitePouce = Convert.ToBoolean(tabPlaquettes[i][13]);
                     image = tabPlaquettes[i][14];
 
                     listePlaquettes.Add(new Plaquettes(idEmplacement, nom, typePlaquette, direction, angle, degagement, grosseur, compagnie, quantite, 
-                                                        disponible, codeAlpha, ordre, tourFraseuse, image));
+                                                        disponible, codeAlpha, tourFraseuse, unitePouce, image));
                 }
             }
 

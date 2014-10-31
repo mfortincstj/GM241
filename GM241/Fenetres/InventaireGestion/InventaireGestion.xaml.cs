@@ -78,7 +78,7 @@ namespace GM241.Fenetres.InventaireGestion
                 List<PorteOutils> listPorteOutil = PorteOutils.chargerlstPorteOutils();
 
                 foreach (PorteOutils p in listPorteOutil)
-                    boiteResultats.Items.Add(p.idCollet + ", " + p.idTypePorteOutil + ", " + p.idEmplacement + ", " + p.idAttachement + ", " + p.idCone + ", " + p.nom + ", " + p.quantite + ", " + p.image);
+                    boiteResultats.Items.Add(p.idTypePorteOutil + ", " + p.idEmplacement + ", " + p.quantite + ", " + p.image);
 
                 btnRecherche.IsEnabled = true;
             }
@@ -112,7 +112,7 @@ namespace GM241.Fenetres.InventaireGestion
                 {
                     boiteResultats.Items.Add(p.idEmplacement + ", " + p.nom + ", " + p.typePlaquette + ", " + p.direction + ", " + p.angle 
                                              + ", " + p.degagement + ", " + p.grosseur + ", " + p.compagnie + ", " + p.quantite + ", " + p.disponible 
-                                             + ", " + p.codeAlpha + ", " + p.ordre + ", " + p.tourFraseuse + ", " + p.image);
+                                             + ", " + p.codeAlpha + ", " + p.unitePouce + ", " + p.tourFraseuse + ", " + p.image);
                 }
 
                 btnRecherche.IsEnabled = true;

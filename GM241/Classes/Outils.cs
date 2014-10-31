@@ -11,7 +11,7 @@ namespace GM241.Classes
     {
         public virtual int idTypeOutil { get; set; }
         public virtual int idEmplacement { get; set; }
-        public virtual int idPlaquette { get; set; }
+        public virtual int? idPlaquette { get; set; }
         public virtual string nom { get; set; }
         public virtual int quantite { get; set; }
         public virtual string diametreUsinage { get; set; }
@@ -46,7 +46,7 @@ namespace GM241.Classes
             image = "";
         }
 
-        public Outils(int idTO, int idEm, int idPla, string n, int q, string diamUsi, string diamSerr, string longC, string longT, string longS, 
+        public Outils(int idTO, int idEm, int? idPla, string n, int q, string diamUsi, string diamSerr, string longC, string longT, string longS, 
                       string rayC, string angR, int nbFlute, bool dispo, bool unitPo, string img)
         {
             idTypeOutil = idTO;
@@ -75,7 +75,7 @@ namespace GM241.Classes
         {
             int idTypeOutil;
             int idEmplacement;
-            int idPlaquette;
+            int? idPlaquette;
             string nom;
             int quantite;
             string diametreUsinage;
@@ -105,7 +105,13 @@ namespace GM241.Classes
                 {
                     idTypeOutil = Convert.ToInt32(tabOutil[i][1]);
                     idEmplacement = Convert.ToInt32(tabOutil[i][2]);
-                    idPlaquette = Convert.ToInt32(tabOutil[i][3]);
+
+                    // Le idPlaquette peut etre nullable
+                    if (tabOutil[i][3] == "")
+                        idPlaquette = null;
+                    else
+                        idPlaquette = Convert.ToInt32(tabOutil[i][3]);
+                    
                     nom = tabOutil[i][4];
                     quantite = Convert.ToInt32(tabOutil[i][5]);
                     diametreUsinage = tabOutil[i][6];
