@@ -51,7 +51,6 @@ namespace GM241.Fenetres.InventaireGestion
             // Barrer l'acces au bouton rechercher si il n'y a pas de catégorie de sélectionnée
             if (cboxCategorie.SelectedIndex == 0)
             {
-                btnRecherche.IsEnabled = false;
                 boiteResultats.Items.Clear();
             }
 
@@ -66,8 +65,6 @@ namespace GM241.Fenetres.InventaireGestion
                 {
                     boiteResultats.Items.Add(c.idEmplacement + ", " + c.idTypeAttachement + ", " + c.diametreInterieur + ", " + c.quantite + ", " + c.image);
                 }
-
-                btnRecherche.IsEnabled = true;
             }
 
             // Section Porte outil
@@ -79,8 +76,6 @@ namespace GM241.Fenetres.InventaireGestion
 
                 foreach (PorteOutils p in listPorteOutil)
                     boiteResultats.Items.Add(p.idTypePorteOutil + ", " + p.idEmplacement + ", " + p.quantite + ", " + p.image);
-
-                btnRecherche.IsEnabled = true;
             }
 
             // Section outils
@@ -97,8 +92,6 @@ namespace GM241.Fenetres.InventaireGestion
                                              o.longueurShank + ", " + o.rayonCoin + ", " + o.anglePointe + ", " + o.nombreFlute + ", " +
                                              o.disponible + ", " + o.unitePouce + ", " + o.image);
                 }
-
-                btnRecherche.IsEnabled = true;
             }
 
             // Section plaquettes
@@ -114,8 +107,6 @@ namespace GM241.Fenetres.InventaireGestion
                                              + ", " + p.degagement + ", " + p.grosseur + ", " + p.compagnie + ", " + p.quantite + ", " + p.disponible 
                                              + ", " + p.codeAlpha + ", " + p.unitePouce + ", " + p.tourFraseuse + ", " + p.image);
                 }
-
-                btnRecherche.IsEnabled = true;
             }
 
             btnDetail.IsEnabled = false;
@@ -129,6 +120,38 @@ namespace GM241.Fenetres.InventaireGestion
         private void btnDetail_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void btnRecherche_Click(object sender, RoutedEventArgs e)
+        {
+            boiteResultats.Items.Clear();   // Vider la liste avant
+
+            string nomFournit = champNom.Text.ToLower();
+
+            List<Outils> listOutil = Outils.chargerLstOutils();
+
+            foreach (Outils o in listOutil) 
+            {
+                if (o.nom == nomFournit)
+                {
+                    boiteResultats.Items.Add(o.idTypeOutil + ", " + o.idEmplacement + ", " + o.idPlaquette + ", " + o.nom + ", " + o.quantite + ", " +
+                                             o.diametreUsinage + ", " + o.diametreSerrage + ", " + o.longueurCoupe + ", " + o.longueurTotal + ", " +
+                                             o.longueurShank + ", " + o.rayonCoin + ", " + o.anglePointe + ", " + o.nombreFlute + ", " +
+                                             o.disponible + ", " + o.unitePouce + ", " + o.image);
+                }         
+            }
+
+            List<Plaquettes> listPlaquettes = Plaquettes.chargerlstPlaquettes();
+
+            foreach (Plaquettes p in listPlaquettes)
+            {
+                if (p.nom == nomFournit)
+                {
+                    boiteResultats.Items.Add(p.idEmplacement + ", " + p.nom + ", " + p.typePlaquette + ", " + p.direction + ", " + p.angle 
+                                             + ", " + p.degagement + ", " + p.grosseur + ", " + p.compagnie + ", " + p.quantite + ", " + p.disponible 
+                                             + ", " + p.codeAlpha + ", " + p.unitePouce + ", " + p.tourFraseuse + ", " + p.image);
+                }
+            }
         }
     }
 }
