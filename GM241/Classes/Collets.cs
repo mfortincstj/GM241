@@ -43,6 +43,9 @@ namespace GM241.Classes
 
             BDService BDCollets = new BDService();
             String request = "SELECT * FROM Collets";
+            //String request = "SELECT * FROM Collets AS c INNER JOIN TypeAttachements AS ta ON c.idCollet = ta.idCollet";
+
+            
 
             List<string>[] tabCol;
             int nombreRange = 0;

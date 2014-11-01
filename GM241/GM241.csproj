@@ -105,6 +105,8 @@
     <Compile Include="Classes\Outils.cs" />
     <Compile Include="Classes\Plaquettes.cs" />
     <Compile Include="Classes\PorteOutils.cs" />
+    <Compile Include="Classes\TypeAttachements.cs" />
+    <Compile Include="Classes\TypePorteOutils.cs" />
     <Compile Include="Classes\Utilisateurs.cs" />
     <Compile Include="Fenetres\Menu\MenuAdmin.xaml.cs">
       <DependentUpon>MenuAdmin.xaml</DependentUpon>

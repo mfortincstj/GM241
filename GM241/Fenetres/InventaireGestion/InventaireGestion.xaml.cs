@@ -127,12 +127,16 @@ namespace GM241.Fenetres.InventaireGestion
             boiteResultats.Items.Clear();   // Vider la liste avant
 
             string nomFournit = champNom.Text.ToLower();
+            string descriptionFournit = champDescription.Text.ToLower();
 
             List<Outils> listOutil = Outils.chargerLstOutils();
 
             foreach (Outils o in listOutil) 
             {
-                if (o.nom == nomFournit)
+                if (o.nom == nomFournit || o.idTypeOutil.ToString() == descriptionFournit || o.idEmplacement.ToString() == descriptionFournit
+                    || o.idPlaquette.ToString() == descriptionFournit || o.diametreUsinage == descriptionFournit || o.diametreSerrage == descriptionFournit 
+                    || o.longueurCoupe == descriptionFournit || o.longueurTotal == descriptionFournit || o.longueurShank == descriptionFournit
+                    || o.rayonCoin == descriptionFournit || o.anglePointe == descriptionFournit || o.nombreFlute.ToString() == descriptionFournit)
                 {
                     boiteResultats.Items.Add(o.idTypeOutil + ", " + o.idEmplacement + ", " + o.idPlaquette + ", " + o.nom + ", " + o.quantite + ", " +
                                              o.diametreUsinage + ", " + o.diametreSerrage + ", " + o.longueurCoupe + ", " + o.longueurTotal + ", " +
@@ -145,11 +149,36 @@ namespace GM241.Fenetres.InventaireGestion
 
             foreach (Plaquettes p in listPlaquettes)
             {
-                if (p.nom == nomFournit)
+                if(p.nom == nomFournit || p.idEmplacement.ToString() == descriptionFournit || p.typePlaquette == descriptionFournit 
+                   || p.direction == descriptionFournit || p.angle == descriptionFournit || p.degagement == descriptionFournit 
+                   || p.grosseur == descriptionFournit || p.compagnie == descriptionFournit || p.codeAlpha == descriptionFournit 
+                   || p.tourFraseuse == descriptionFournit)
                 {
                     boiteResultats.Items.Add(p.idEmplacement + ", " + p.nom + ", " + p.typePlaquette + ", " + p.direction + ", " + p.angle 
                                              + ", " + p.degagement + ", " + p.grosseur + ", " + p.compagnie + ", " + p.quantite + ", " + p.disponible 
                                              + ", " + p.codeAlpha + ", " + p.unitePouce + ", " + p.tourFraseuse + ", " + p.image);
+                }
+            }
+
+            List<Collets> listCollets = Collets.chargerlstCollets();
+
+            foreach (Collets c in listCollets)
+            {
+                if(c.idEmplacement.ToString() == descriptionFournit || c.idTypeAttachement.ToString() == descriptionFournit || c.diametreInterieur == descriptionFournit
+                   || c.quantite.ToString() == descriptionFournit || c.image == descriptionFournit)
+                {
+                    boiteResultats.Items.Add(c.idEmplacement + ", " + c.idTypeAttachement + ", " + c.diametreInterieur + ", " + c.quantite + ", " + c.image);
+                }
+            }
+
+            List<PorteOutils> listPorteOutils = PorteOutils.chargerlstPorteOutils();
+
+            foreach (PorteOutils po in listPorteOutils)
+            {
+                if(po.idTypePorteOutil.ToString() == descriptionFournit || po.idEmplacement.ToString() == descriptionFournit
+                   || po.quantite.ToString() == descriptionFournit || po.image == descriptionFournit)
+                {
+                    boiteResultats.Items.Add(po.idTypePorteOutil + ", " + po.idEmplacement + ", " + po.quantite + ", " + po.image);
                 }
             }
         }
