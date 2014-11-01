@@ -131,10 +131,10 @@ namespace GM241.Fenetres.InventaireGestion
 
             List<Outils> listOutil = Outils.chargerLstOutils();
 
-            foreach (Outils o in listOutil) 
+            foreach (Outils o in listOutil)
             {
                 if (o.nom == nomFournit || o.idTypeOutil.ToString() == descriptionFournit || o.idEmplacement.ToString() == descriptionFournit
-                    || o.idPlaquette.ToString() == descriptionFournit || o.diametreUsinage == descriptionFournit || o.diametreSerrage == descriptionFournit 
+                    || o.diametreUsinage == descriptionFournit || o.diametreSerrage == descriptionFournit 
                     || o.longueurCoupe == descriptionFournit || o.longueurTotal == descriptionFournit || o.longueurShank == descriptionFournit
                     || o.rayonCoin == descriptionFournit || o.anglePointe == descriptionFournit || o.nombreFlute.ToString() == descriptionFournit)
                 {
@@ -142,7 +142,7 @@ namespace GM241.Fenetres.InventaireGestion
                                              o.diametreUsinage + ", " + o.diametreSerrage + ", " + o.longueurCoupe + ", " + o.longueurTotal + ", " +
                                              o.longueurShank + ", " + o.rayonCoin + ", " + o.anglePointe + ", " + o.nombreFlute + ", " +
                                              o.disponible + ", " + o.unitePouce + ", " + o.image);
-                }         
+                }
             }
 
             List<Plaquettes> listPlaquettes = Plaquettes.chargerlstPlaquettes();
