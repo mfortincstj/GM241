@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Plaquette" Height="700" Width="1000" ResizeMode="CanMinimize">
     <Grid>
-        <Label Content="Détaille plaquette" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="259,20,258,0" VerticalAlignment="Top" Height="43"/>
+        <Label Content="Détail plaquette" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="259,20,258,0" VerticalAlignment="Top" Height="43"/>
         <Label Content="Nom : " HorizontalAlignment="Left" Margin="10,151,0,0" VerticalAlignment="Top" FontSize="20" Width="187"/>
         <Label Content="Emplacement : " HorizontalAlignment="Left" Margin="10,95,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.507,0.036" Width="140"/>
         <Label Content="Type plaquette : " HorizontalAlignment="Left" Margin="10,213,0,0" VerticalAlignment="Top" FontSize="20" Width="192"/>

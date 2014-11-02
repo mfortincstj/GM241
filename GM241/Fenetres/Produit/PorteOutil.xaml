@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="PorteOutil" Height="600" Width="1000" ResizeMode="CanMinimize">
     <Grid>
-        <Label Content="Détaille porte outil" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="259,33,258,496" VerticalAlignment="Center" Height="43"/>
+        <Label Content="Détail porte-outil" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="259,33,258,496" VerticalAlignment="Center" Height="43"/>
         <Label Content="Type de prote outil : " HorizontalAlignment="Left" Margin="20,96,0,0" VerticalAlignment="Top" FontSize="20" Width="187"/>
         <Label Content="Emplacement : " HorizontalAlignment="Left" Margin="20,196,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.507,0.036" Width="140"/>
         <Label Content="Attachement : " HorizontalAlignment="Left" Margin="20,296,0,0" VerticalAlignment="Top" FontSize="20" Width="140"/>

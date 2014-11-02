@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Outil" Height="800" Width="1000" ResizeMode="CanMinimize">
     <Grid>
-        <Label Content="Détaille outil" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="259,27,258,0" VerticalAlignment="Top" Height="43"/>
+        <Label Content="Détail outil" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="259,27,258,0" VerticalAlignment="Top" Height="43"/>
         <Label Content="Type d'outil : " HorizontalAlignment="Left" Margin="10,111,0,0" VerticalAlignment="Top" FontSize="20" Width="187"/>
         <Label Content="Emplacement : " HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.507,0.036" Width="140"/>
         <Label Content="Plaquette : " HorizontalAlignment="Left" Margin="10,245,0,0" VerticalAlignment="Top" FontSize="20" Width="140"/>
