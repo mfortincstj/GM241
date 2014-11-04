@@ -3,25 +3,33 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="PorteOutil" Height="600" Width="1000" ResizeMode="CanMinimize">
     <Grid>
-        <Label Content="Détail porte-outil" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="259,33,258,496" VerticalAlignment="Center" Height="43"/>
-        <Label Content="Type de prote outil : " HorizontalAlignment="Left" Margin="20,96,0,0" VerticalAlignment="Top" FontSize="20" Width="187"/>
+        <Label Content="Porte-outil" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="259,33,258,496" VerticalAlignment="Center" Height="43"/>
+
+        <Label Content="Type de porte-outil : " HorizontalAlignment="Left" Margin="20,96,0,0" VerticalAlignment="Top" FontSize="20" Width="191"/>
+        <ComboBox x:Name="listePorteOutil" HorizontalAlignment="Left" Margin="216,96,0,0" VerticalAlignment="Top" Width="281" Height="37"/>
+
         <Label Content="Emplacement : " HorizontalAlignment="Left" Margin="20,196,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.507,0.036" Width="140"/>
+        <ComboBox x:Name="listeEmplacement" HorizontalAlignment="Left" Margin="216,196,0,0" VerticalAlignment="Top" Width="281" Height="37"/>
+
         <Label Content="Attachement : " HorizontalAlignment="Left" Margin="20,296,0,0" VerticalAlignment="Top" FontSize="20" Width="140"/>
+        <ComboBox x:Name="listeAttachement" HorizontalAlignment="Left" Margin="216,296,0,0" VerticalAlignment="Top" Width="281" Height="37"/>
+
         <Label Content="Cone : " HorizontalAlignment="Left" Margin="20,396,0,0" VerticalAlignment="Top" FontSize="20" Width="68"/>
+        <ComboBox x:Name="listeCone" HorizontalAlignment="Left" Margin="216,396,0,0" VerticalAlignment="Top" Width="281" Height="37"/>
+
         <Label Content="Nom : " HorizontalAlignment="Left" Margin="541,105,0,0" VerticalAlignment="Top" FontSize="20" Width="106"/>
-        <Label Content="Quantite : " HorizontalAlignment="Left" Margin="541,205,0,0" VerticalAlignment="Top" FontSize="20" Width="106"/>
-        <Button x:Name="btnAjoute" Content="Ajouté" Margin="140,464,680,0" VerticalAlignment="Top" Height="44" Click="btnAjout_Click"/>
-        <Button x:Name="bynAnnule" Content="Annulé" Margin="810,518,10,0" VerticalAlignment="Top" Height="44" Click="bynAnnule_Click"/>
-        <ComboBox x:Name="listePorteOutil" HorizontalAlignment="Left" Margin="212,96,0,0" VerticalAlignment="Top" Width="285" Height="37"/>
         <TextBox x:Name="boxNom" HorizontalAlignment="Left" Height="37" Margin="673,105,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="295" FontSize="18"/>
+
+        <Label Content="Quantité : " HorizontalAlignment="Left" Margin="541,205,0,0" VerticalAlignment="Top" FontSize="20" Width="106"/>
         <TextBox x:Name="boxQuantite" HorizontalAlignment="Left" Height="37" Margin="673,205,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="295" FontSize="18"/>
-        <ComboBox x:Name="listeEmplacement" HorizontalAlignment="Left" Margin="212,196,0,0" VerticalAlignment="Top" Width="285" Height="37"/>
-        <ComboBox x:Name="listeAttachement" HorizontalAlignment="Left" Margin="212,296,0,0" VerticalAlignment="Top" Width="285" Height="37"/>
-        <ComboBox x:Name="listeCone" HorizontalAlignment="Left" Margin="212,396,0,0" VerticalAlignment="Top" Width="285" Height="37"/>
+
         <Label Content="Image : " HorizontalAlignment="Left" Margin="541,305,0,0" VerticalAlignment="Top" FontSize="20" Width="85" RenderTransformOrigin="0.129,0.432"/>
         <TextBox x:Name="boxImage" HorizontalAlignment="Left" Height="37" Margin="673,305,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="295" FontSize="18"/>
-        <Button x:Name="btnModif" Content="Modifié" Margin="410,464,410,0" VerticalAlignment="Top" Height="44" IsEnabled="False"/>
-        <Button x:Name="btnSupprime" Content="Supprimer" Margin="680,464,140,0" VerticalAlignment="Top" Height="44" IsEnabled="False"/>
+
+        <Button x:Name="btnAjouter" Content="Ajouter" Margin="140,464,680,0" VerticalAlignment="Top" Height="44" Click="btnAjout_Click"/>
+        <Button x:Name="btnModif" Content="Modifier" Margin="410,464,410,0" VerticalAlignment="Top" Height="44" IsEnabled="False"/>
+        <Button x:Name="btnSupprimer" Content="Supprimer" Margin="680,464,140,0" VerticalAlignment="Top" Height="44" IsEnabled="False"/>
+        <Button x:Name="btnAnnuler" Content="Annuler" Margin="810,518,10,0" VerticalAlignment="Top" Height="44" Click="btnAnnule_Click" IsCancel="True"/>
 
     </Grid>
 </Window>

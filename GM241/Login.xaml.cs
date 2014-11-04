@@ -50,12 +50,20 @@ namespace GM241
             }
             else   // L'utilisateur n'est pas valide message d'erreur
             {
-                MessageBox.Show("Nom d'usager ou mot de passe invalide", "Erreur !", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK);
+                MessageBox.Show("Nom d'usager ou mot de passe invalide", "Erreur!", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK);
 
                 motDePasse.Password = "";
             }
         }
 
-        private void btnQuitter_Click(object sender, RoutedEventArgs e) {Application.Current.Shutdown();}
+        private void btnQuitter_Click(object sender, RoutedEventArgs e)
+        {
+            
+
+            if(MessageBox.Show("Êtes-vous sûr de vouloir quitter?", "Attention!", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.Yes) == MessageBoxResult.Yes)
+            { 
+                Application.Current.Shutdown();
+            }
+        }
     }
 }

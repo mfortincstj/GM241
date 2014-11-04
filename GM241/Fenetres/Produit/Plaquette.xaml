@@ -3,37 +3,51 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Plaquette" Height="700" Width="1000" ResizeMode="CanMinimize">
     <Grid>
-        <Label Content="Détail plaquette" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="259,20,258,0" VerticalAlignment="Top" Height="43"/>
-        <Label Content="Nom : " HorizontalAlignment="Left" Margin="10,151,0,0" VerticalAlignment="Top" FontSize="20" Width="187"/>
+        <Label Content="Plaquette" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="259,20,258,0" VerticalAlignment="Top" Height="43"/>
+
         <Label Content="Emplacement : " HorizontalAlignment="Left" Margin="10,95,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.507,0.036" Width="140"/>
-        <Label Content="Type plaquette : " HorizontalAlignment="Left" Margin="10,213,0,0" VerticalAlignment="Top" FontSize="20" Width="192"/>
-        <Label Content="Direction : " HorizontalAlignment="Left" Margin="10,275,0,0" VerticalAlignment="Top" FontSize="20" Width="192"/>
-        <Label Content="Grosseur : " HorizontalAlignment="Left" Margin="10,461,0,0" VerticalAlignment="Top" FontSize="20" Width="181"/>
-        <Label Content="Compagnie : " HorizontalAlignment="Left" Margin="520,95,0,0" VerticalAlignment="Top" FontSize="20" Width="174"/>
-        <Button x:Name="btnAjoute" Content="Ajouté" Margin="135,557,685,0" VerticalAlignment="Top" Height="44" Click="btnAjout_Click"/>
-        <Button x:Name="bynAnnule" Content="Annulé" Margin="810,618,10,0" VerticalAlignment="Top" Height="44" Click="bynAnnule_Click"/>
-        <TextBox x:Name="boxCompagnie" HorizontalAlignment="Left" Height="37" Margin="699,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="285" FontSize="18"/>
-        <TextBox x:Name="boxQuantite" HorizontalAlignment="Left" Height="37" Margin="699,151,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="285" FontSize="18"/>
         <ComboBox x:Name="listeEmplacement" HorizontalAlignment="Left" Margin="207,95,0,0" VerticalAlignment="Top" Width="285" Height="37"/>
+
+        <Label Content="Nom : " HorizontalAlignment="Left" Margin="10,151,0,0" VerticalAlignment="Top" FontSize="20" Width="187"/>
+        <TextBox x:Name="boxNom" HorizontalAlignment="Left" Height="37" Margin="207,151,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="285" FontSize="18"/>
+        
+        <Label Content="Type de plaquette : " HorizontalAlignment="Left" Margin="10,213,0,0" VerticalAlignment="Top" FontSize="20" Width="192"/>
+        <TextBox x:Name="boxPlaquette" HorizontalAlignment="Left" Height="37" Margin="207,213,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="285" FontSize="18"/>
+
+        <Label Content="Direction : " HorizontalAlignment="Left" Margin="10,275,0,0" VerticalAlignment="Top" FontSize="20" Width="192"/>
+        <TextBox x:Name="boxDirection" HorizontalAlignment="Left" Height="37" Margin="207,275,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="285" FontSize="18"/>
+
+        <Label Content="Angle : " HorizontalAlignment="Left" Margin="10,337,0,0" VerticalAlignment="Top" FontSize="20" Width="102"/>
+        <TextBox x:Name="boxAngle" HorizontalAlignment="Left" Height="37" Margin="207,337,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="285" FontSize="18"/>
+
+        <Label Content="Dégagement : " HorizontalAlignment="Left" Margin="10,399,0,0" VerticalAlignment="Top" FontSize="20" Width="175"/>
+        <TextBox x:Name="boxDegagement" HorizontalAlignment="Left" Height="37" Margin="207,399,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="285" FontSize="18"/>
+
+        <Label Content="Grosseur : " HorizontalAlignment="Left" Margin="10,461,0,0" VerticalAlignment="Top" FontSize="20" Width="181"/>
+        <TextBox x:Name="boxGrosseur" HorizontalAlignment="Left" Height="37" Margin="207,461,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="285" FontSize="18"/>
+
+        <Label Content="Compagnie : " HorizontalAlignment="Left" Margin="520,95,0,0" VerticalAlignment="Top" FontSize="20" Width="174"/>
+        <TextBox x:Name="boxCompagnie" HorizontalAlignment="Left" Height="37" Margin="699,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="285" FontSize="18"/>
+
+        <Label Content="Quantité : " HorizontalAlignment="Left" Margin="520,151,0,0" VerticalAlignment="Top" FontSize="20" Width="174"/>
+        <TextBox x:Name="boxQuantite" HorizontalAlignment="Left" Height="37" Margin="699,151,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="285" FontSize="18"/>
+        
         <Label Content="Code Alpha : " HorizontalAlignment="Left" Margin="520,213,0,0" VerticalAlignment="Top" FontSize="20" Width="174" RenderTransformOrigin="0.129,0.432"/>
         <TextBox x:Name="boxCodeAlpha" HorizontalAlignment="Left" Height="37" Margin="699,213,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="285" FontSize="18"/>
-        <Label Content="Angle : " HorizontalAlignment="Left" Margin="10,337,0,0" VerticalAlignment="Top" FontSize="20" Width="102"/>
-        <Label Content="Dégagement : " HorizontalAlignment="Left" Margin="10,399,0,0" VerticalAlignment="Top" FontSize="20" Width="175"/>
-        <Label Content="Quantité : " HorizontalAlignment="Left" Margin="520,151,0,0" VerticalAlignment="Top" FontSize="20" Width="174"/>
+       
         <Label Content="Ordre : " HorizontalAlignment="Left" Margin="520,275,0,0" VerticalAlignment="Top" FontSize="20" Width="174" RenderTransformOrigin="0.129,0.432"/>
-        <Label Content="Tour fraseuse : " HorizontalAlignment="Left" Margin="520,337,0,0" VerticalAlignment="Top" FontSize="20" Width="174" RenderTransformOrigin="0.129,0.432"/>
         <TextBox x:Name="boxOrdre" HorizontalAlignment="Left" Height="37" Margin="699,275,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="285" FontSize="18"/>
-        <TextBox x:Name="boxTourFfaseuse" HorizontalAlignment="Left" Height="37" Margin="699,337,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="285" FontSize="18"/>
-        <TextBox x:Name="boxImage" HorizontalAlignment="Left" Height="37" Margin="699,399,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="285" FontSize="18"/>
+
+        <Label Content="Tour de fraiseuse : " HorizontalAlignment="Left" Margin="520,337,0,0" VerticalAlignment="Top" FontSize="20" Width="174" RenderTransformOrigin="0.129,0.432"/>
+        <TextBox x:Name="boxTourFraiseuse" HorizontalAlignment="Left" Height="37" Margin="699,337,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="285" FontSize="18"/>
+
         <Label Content="Image : " HorizontalAlignment="Left" Margin="520,399,0,0" VerticalAlignment="Top" FontSize="20" Width="174" RenderTransformOrigin="0.129,0.432"/>
-        <TextBox x:Name="boxDirection" HorizontalAlignment="Left" Height="37" Margin="207,275,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="285" FontSize="18"/>
-        <TextBox x:Name="boxAngle" HorizontalAlignment="Left" Height="37" Margin="207,337,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="285" FontSize="18"/>
-        <TextBox x:Name="boxDegagement" HorizontalAlignment="Left" Height="37" Margin="207,399,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="285" FontSize="18"/>
-        <TextBox x:Name="boxGrosseur" HorizontalAlignment="Left" Height="37" Margin="207,461,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="285" FontSize="18"/>
-        <TextBox x:Name="boxPlaquette" HorizontalAlignment="Left" Height="37" Margin="207,213,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="285" FontSize="18"/>
-        <TextBox x:Name="boxNom" HorizontalAlignment="Left" Height="37" Margin="207,151,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="285" FontSize="18"/>
-        <Button x:Name="btnModif" Content="Modifié" Margin="410,557,410,0" VerticalAlignment="Top" Height="44" IsEnabled="False"/>
-        <Button x:Name="btnSupprime" Content="Supprimer" Margin="685,557,135,0" VerticalAlignment="Top" Height="44" IsEnabled="False"/>
+        <TextBox x:Name="boxImage" HorizontalAlignment="Left" Height="37" Margin="699,399,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="285" FontSize="18"/>
+
+        <Button x:Name="btnAjouter" Content="Ajouter" Margin="135,557,685,0" VerticalAlignment="Top" Height="44" Click="btnAjout_Click"/>
+        <Button x:Name="btnModif" Content="Modifier" Margin="410,557,410,0" VerticalAlignment="Top" Height="44" IsEnabled="False"/>
+        <Button x:Name="btnSupprimer" Content="Supprimer" Margin="685,557,135,0" VerticalAlignment="Top" Height="44" IsEnabled="False"/>
+        <Button x:Name="btnAnnuler" Content="Annuler" Margin="810,618,10,0" VerticalAlignment="Top" Height="44" Click="btnAnnule_Click" IsCancel="True"/>
 
     </Grid>
 </Window>
