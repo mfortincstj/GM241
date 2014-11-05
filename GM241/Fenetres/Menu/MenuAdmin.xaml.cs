@@ -30,9 +30,10 @@ namespace GM241.Fenetres.Menu
         private void btnFermer_Click(object sender, RoutedEventArgs e)
         {
             bool estAdmin = true;
+            string nom = "???";
 
-            //Inventaire.Inventaire inventaire = new Inventaire.Inventaire(estAdmin);
-            //inventaire.Show();
+            Inventaire.Inventaire inventaire = new Inventaire.Inventaire(estAdmin, nom);
+            inventaire.Show();
             this.Close();   // Fermeture du login
         }
 

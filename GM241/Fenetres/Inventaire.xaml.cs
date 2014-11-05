@@ -36,7 +36,7 @@ namespace GM241.Fenetres.Inventaire
             else   // Section usager seulement, alors pas acces au boutons ajouter, modifier et supprimer
             {
                 authentifie.Content = "Usager";
-                btnDetail.Visibility = Visibility.Hidden;
+                lstMenu.IsEnabled = false;
             }
 
             // Initialiser la liste des catégories
@@ -62,65 +62,31 @@ namespace GM241.Fenetres.Inventaire
 
         private void cboxCategorie_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // Barrer l'acces au bouton rechercher si il n'y a pas de catégorie de sélectionnée
-            if (cboxCategorie.SelectedIndex == 0)
+            switch (cboxCategorie.SelectedIndex)
             {
-                boiteResultats.Items.Clear();
-            }
+                case 0 :   // Rien de sélectionné
+                    resGrid.ItemsSource = null;
+                break;
 
-            // Section Collet
-            if (cboxCategorie.SelectedIndex == 1)
-            {
-                boiteResultats.Items.Clear();   // Vider la liste avant
-                
-                List<Collets> listCol = Collets.chargerlstCollets();
+                case 1 :   // Collets
+                    List<Collets> listCol = Collets.chargerlstCollets();
+                    resGrid.ItemsSource = listCol;
+                break;
 
-                foreach (Collets c in listCol)
-                {
-                    boiteResultats.Items.Add(c.idEmplacement + ", " + c.idTypeAttachement + ", " + c.diametreInterieur + ", " + c.quantite + ", " + c.image);
-                }
-            }
+                case 2:   // Porte outils
+                    List<PorteOutils> listPorteOutil = PorteOutils.chargerlstPorteOutils();
+                    resGrid.ItemsSource = listPorteOutil;
+                break;
 
-            // Section Porte outil
-            if (cboxCategorie.SelectedIndex == 2)
-            {
-                boiteResultats.Items.Clear();   // Vider la liste avant
+                case 3:   // Outils
+                    List<Outils> listOutil = Outils.chargerLstOutils();
+                    resGrid.ItemsSource = listOutil;
+                break;
 
-                List<PorteOutils> listPorteOutil = PorteOutils.chargerlstPorteOutils();
-
-                foreach (PorteOutils p in listPorteOutil)
-                    boiteResultats.Items.Add(p.idTypePorteOutil + ", " + p.idEmplacement + ", " + p.quantite + ", " + p.image);
-            }
-
-            // Section outils
-            if (cboxCategorie.SelectedIndex == 3)
-            {
-                boiteResultats.Items.Clear();   // Vider la liste avant
-
-                List<Outils> listOutil = Outils.chargerLstOutils();
-
-                foreach (Outils o in listOutil)
-                {
-                    boiteResultats.Items.Add(o.idTypeOutil + ", " + o.idEmplacement + ", " + o.idPlaquette + ", " + o.nom + ", " + o.quantite + ", " +
-                                             o.diametreUsinage + ", " + o.diametreSerrage + ", " + o.longueurCoupe + ", " + o.longueurTotal + ", " +
-                                             o.longueurShank + ", " + o.rayonCoin + ", " + o.anglePointe + ", " + o.nombreFlute + ", " +
-                                             o.disponible + ", " + o.unitePouce + ", " + o.image);
-                }
-            }
-
-            // Section plaquettes
-            if (cboxCategorie.SelectedIndex == 4)
-            {
-                boiteResultats.Items.Clear();   // Vider la liste avant
-
-                List<Plaquettes> listPlaquettes = Plaquettes.chargerlstPlaquettes();
-
-                foreach (Plaquettes p in listPlaquettes)
-                {
-                    boiteResultats.Items.Add(p.idEmplacement + ", " + p.nom + ", " + p.typePlaquette + ", " + p.direction + ", " + p.angle 
-                                             + ", " + p.degagement + ", " + p.grosseur + ", " + p.compagnie + ", " + p.quantite + ", " + p.disponible 
-                                             + ", " + p.codeAlpha + ", " + p.unitePouce + ", " + p.tourFraseuse + ", " + p.image);
-                }
+                case 4:   // Plaquettes
+                    List<Plaquettes> listPlaquettes = Plaquettes.chargerlstPlaquettes();
+                    resGrid.ItemsSource = listPlaquettes;
+                break;
             }
 
             btnDetail.IsEnabled = false;
@@ -138,8 +104,6 @@ namespace GM241.Fenetres.Inventaire
 
         private void btnRecherche_Click(object sender, RoutedEventArgs e)
         {
-            boiteResultats.Items.Clear();   // Vider la liste avant
-
             string nomFournit = champNom.Text.ToLower();
             string descriptionFournit = champDescription.Text.ToLower();
 
@@ -152,7 +116,7 @@ namespace GM241.Fenetres.Inventaire
                     || o.longueurCoupe == descriptionFournit || o.longueurTotal == descriptionFournit || o.longueurShank == descriptionFournit
                     || o.rayonCoin == descriptionFournit || o.anglePointe == descriptionFournit || o.nombreFlute.ToString() == descriptionFournit)
                 {
-                    boiteResultats.Items.Add(o.idTypeOutil + ", " + o.idEmplacement + ", " + o.idPlaquette + ", " + o.nom + ", " + o.quantite + ", " +
+                    resGrid.Items.Add(o.idTypeOutil + ", " + o.idEmplacement + ", " + o.idPlaquette + ", " + o.nom + ", " + o.quantite + ", " +
                                              o.diametreUsinage + ", " + o.diametreSerrage + ", " + o.longueurCoupe + ", " + o.longueurTotal + ", " +
                                              o.longueurShank + ", " + o.rayonCoin + ", " + o.anglePointe + ", " + o.nombreFlute + ", " +
                                              o.disponible + ", " + o.unitePouce + ", " + o.image);
@@ -168,7 +132,7 @@ namespace GM241.Fenetres.Inventaire
                    || p.grosseur == descriptionFournit || p.compagnie == descriptionFournit || p.codeAlpha == descriptionFournit 
                    || p.tourFraseuse == descriptionFournit)
                 {
-                    boiteResultats.Items.Add(p.idEmplacement + ", " + p.nom + ", " + p.typePlaquette + ", " + p.direction + ", " + p.angle 
+                    resGrid.Items.Add(p.idEmplacement + ", " + p.nom + ", " + p.typePlaquette + ", " + p.direction + ", " + p.angle 
                                              + ", " + p.degagement + ", " + p.grosseur + ", " + p.compagnie + ", " + p.quantite + ", " + p.disponible 
                                              + ", " + p.codeAlpha + ", " + p.unitePouce + ", " + p.tourFraseuse + ", " + p.image);
                 }
@@ -181,7 +145,7 @@ namespace GM241.Fenetres.Inventaire
                 if(c.idEmplacement.ToString() == descriptionFournit || c.idTypeAttachement.ToString() == descriptionFournit || c.diametreInterieur == descriptionFournit
                    || c.quantite.ToString() == descriptionFournit || c.image == descriptionFournit)
                 {
-                    boiteResultats.Items.Add(c.idEmplacement + ", " + c.idTypeAttachement + ", " + c.diametreInterieur + ", " + c.quantite + ", " + c.image);
+                    resGrid.Items.Add(c.idEmplacement + ", " + c.idTypeAttachement + ", " + c.diametreInterieur + ", " + c.quantite + ", " + c.image);
                 }
             }
 
@@ -192,7 +156,7 @@ namespace GM241.Fenetres.Inventaire
                 if(po.idTypePorteOutil.ToString() == descriptionFournit || po.idEmplacement.ToString() == descriptionFournit
                    || po.quantite.ToString() == descriptionFournit || po.image == descriptionFournit)
                 {
-                    boiteResultats.Items.Add(po.idTypePorteOutil + ", " + po.idEmplacement + ", " + po.quantite + ", " + po.image);
+                    resGrid.Items.Add(po.idTypePorteOutil + ", " + po.idEmplacement + ", " + po.quantite + ", " + po.image);
                 }
             }
         }
@@ -220,6 +184,14 @@ namespace GM241.Fenetres.Inventaire
                 Login login = new Login();
                 login.Show();
                 this.Close();
+            }
+        }
+
+        private void resGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (resGrid.SelectedItem != null)
+            {
+                btnDetail.IsEnabled = true;
             }
         }
     }
