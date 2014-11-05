@@ -15,36 +15,50 @@ using GM241.Classes;
 using GM241.Fenetres.Produit;
 using GM241.Fenetres.Menu;
 
-namespace GM241.Fenetres.InventaireGestion
+namespace GM241.Fenetres.Inventaire
 {
     /// <summary>
-    /// Logique d'interaction pour InventaireGestion.xaml
+    /// Logique d'interaction pour Inventaire.xaml
     /// </summary>
-    public partial class InventaireGestion : Window
+    public partial class Inventaire : Window
     {
-        public InventaireGestion(bool estAdmin)
+        public Inventaire(bool estAdmin, string usagerConnecte)
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
             // L'utilisateur connecté est-il un admin ou pas ?
             if (estAdmin == true)
+            {
                 authentifie.Content = "Administrateur";
+                usager.Content = usagerConnecte;
+            }
             else   // Section usager seulement, alors pas acces au boutons ajouter, modifier et supprimer
             {
                 authentifie.Content = "Usager";
                 btnDetail.Visibility = Visibility.Hidden;
             }
 
+            // Initialiser la liste des catégories
             cboxCategorie.Items.Add("Sélectionnez");
             cboxCategorie.Items.Add("Collet");          // Élément #1
             cboxCategorie.Items.Add("Porte outil");     // #2
             cboxCategorie.Items.Add("Outils");          // #3
             cboxCategorie.Items.Add("Plaquettes");      // #4
             cboxCategorie.SelectedIndex = 0;
+
+            // Initialiser la liste des menus
+            lstMenu.Items.Add("Inventaire");
+            lstMenu.Items.Add("Administration");
+            lstMenu.Items.Add("Rapports");
+            lstMenu.SelectedIndex = 0;
         }
 
-        private void btnFerme_Click(object sender, RoutedEventArgs e) {this.Close();}
+        private void btnQuitter_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Voulez-vous quitter le programme ?", "Attention !", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No) == MessageBoxResult.Yes)
+                Application.Current.Shutdown();
+        }
 
         private void cboxCategorie_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -180,6 +194,32 @@ namespace GM241.Fenetres.InventaireGestion
                 {
                     boiteResultats.Items.Add(po.idTypePorteOutil + ", " + po.idEmplacement + ", " + po.quantite + ", " + po.image);
                 }
+            }
+        }
+
+        private void lstMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (lstMenu.SelectedIndex == 1)   // Administration
+            {
+                MenuAdmin menuAdmin = new MenuAdmin();
+                menuAdmin.Show();
+                this.Close();
+            }
+            else if (lstMenu.SelectedIndex == 2)   // Rapports
+            {
+                MenuRapport menuRapport = new MenuRapport();
+                menuRapport.Show();
+                this.Close();
+            }
+        }
+
+        private void btnDeconnexion_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Voulez-vous vous déconnectez ?", "Attention !", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No) == MessageBoxResult.Yes)
+            {
+                Login login = new Login();
+                login.Show();
+                this.Close();
             }
         }
     }

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using GM241.Fenetres.Inventaire;
 
 namespace GM241.Fenetres.Menu
 {
@@ -27,12 +28,9 @@ namespace GM241.Fenetres.Menu
 
         private void btnFermer_Click(object sender, RoutedEventArgs e)
         {
-            bool estAdmin = true;
-
-            MenuPrincipal menuPrincipal = new MenuPrincipal(estAdmin);
-            menuPrincipal.Show();
-
-            this.Close();
+            //Inventaire.Inventaire inventaire = new Inventaire.Inventaire(estAdmin);
+            //inventaire.Show();
+            this.Close();   // Fermeture du login
         }
     }
 }

@@ -64,11 +64,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Fenetres\InventaireGestion\InventaireGestion.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Fenetres\Menu\MenuPrincipal.xaml">
+    <Page Include="Fenetres\Inventaire.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -111,11 +107,8 @@
     <Compile Include="Fenetres\Menu\MenuAdmin.xaml.cs">
       <DependentUpon>MenuAdmin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Fenetres\InventaireGestion\InventaireGestion.xaml.cs">
-      <DependentUpon>InventaireGestion.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Fenetres\Menu\MenuPrincipal.xaml.cs">
-      <DependentUpon>MenuPrincipal.xaml</DependentUpon>
+    <Compile Include="Fenetres\Inventaire.xaml.cs">
+      <DependentUpon>Inventaire.xaml</DependentUpon>
     </Compile>
     <Compile Include="Fenetres\Menu\MenuRapport.xaml.cs">
       <DependentUpon>MenuRapport.xaml</DependentUpon>

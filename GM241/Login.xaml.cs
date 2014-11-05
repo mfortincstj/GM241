@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using GM241.Fenetres.Menu;
 using GM241.Classes;
+using GM241.Fenetres.Inventaire;
 
 namespace GM241
 {
@@ -25,8 +26,6 @@ namespace GM241
         public Login()
         {
             InitializeComponent();
-
-            // Centrer la fenêtre à l'ouverture de l'écran
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
@@ -43,9 +42,8 @@ namespace GM241
             if (user.userValide(usagerFournit, motDePasseFournit) == true)   // L'utilisateur est valide on passe au menu principal
             {
                 // Ouverture du menu principal
-                MenuPrincipal MenuPrincipal = new MenuPrincipal(user.estAdmin);
-                MenuPrincipal.Show();
-
+                Inventaire inventaire = new Inventaire(user.estAdmin, user.prenom);
+                inventaire.Show();
                 this.Close();   // Fermeture du login
             }
             else   // L'utilisateur n'est pas valide message d'erreur
@@ -58,12 +56,8 @@ namespace GM241
 
         private void btnQuitter_Click(object sender, RoutedEventArgs e)
         {
-            
-
             if(MessageBox.Show("Êtes-vous sûr de vouloir quitter?", "Attention!", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.Yes) == MessageBoxResult.Yes)
-            { 
                 Application.Current.Shutdown();
-            }
         }
     }
 }

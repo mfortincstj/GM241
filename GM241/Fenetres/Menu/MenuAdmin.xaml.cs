@@ -31,10 +31,9 @@ namespace GM241.Fenetres.Menu
         {
             bool estAdmin = true;
 
-            MenuPrincipal menuPrincipal = new MenuPrincipal(estAdmin);
-            menuPrincipal.Show();
-
-            this.Close();
+            //Inventaire.Inventaire inventaire = new Inventaire.Inventaire(estAdmin);
+            //inventaire.Show();
+            this.Close();   // Fermeture du login
         }
 
         private void btnCollets_Click(object sender, RoutedEventArgs e)
