@@ -5,13 +5,13 @@
     <Grid>
         <Label Content="Collet" FontSize="24" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="259,43,258,486" VerticalAlignment="Center" Height="43" Grid.ColumnSpan="2"/>
 
-        <Label Content="Emplacement : " HorizontalAlignment="Left" Margin="20,120,0,0" VerticalAlignment="Top" FontSize="20" Width="181"/>
-        <ComboBox Name="listeEmplacement" HorizontalAlignment="Left" Margin="206,120,0,0" VerticalAlignment="Top" Width="264" Height="37"/>
+        <Label Content="Type d'emplacement : " HorizontalAlignment="Left" Margin="20,120,0,0" VerticalAlignment="Top" FontSize="20" Width="219"/>
+        <ComboBox x:Name="listeTypeEmplacement" HorizontalAlignment="Left" Margin="244,120,0,0" VerticalAlignment="Top" Width="264" Height="37"/>
 
-        <Label Content="Diamètre : " HorizontalAlignment="Left" Margin="20,320,0,0" VerticalAlignment="Top" FontSize="20" Width="181"/>
-        <TextBox x:Name="boxDiametre" HorizontalAlignment="Left" Height="37" Margin="206,320,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="264" FontSize="18"/>
+        <Label Content="Diamètre : " HorizontalAlignment="Left" Margin="20,320,0,0" VerticalAlignment="Top" FontSize="20" Width="219"/>
+        <TextBox x:Name="boxDiametre" HorizontalAlignment="Left" Height="37" Margin="244,320,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="264" FontSize="18"/>
 
-        <Label Content="Type attachement : " HorizontalAlignment="Left" Margin="20,220,0,0" VerticalAlignment="Top" FontSize="20" Width="181"/>
+        <Label Content="Type attachement : " HorizontalAlignment="Left" Margin="20,220,0,0" VerticalAlignment="Top" FontSize="20" Width="219"/>
 
         <Label Content="Quantité : " HorizontalAlignment="Left" Margin="524,120,0,0" VerticalAlignment="Top" FontSize="20" Width="106"/>
         <TextBox Name="boxQuantite" HorizontalAlignment="Left" Height="37" Margin="635,120,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="264" FontSize="18"/>
@@ -23,7 +23,7 @@
         <Button x:Name="btnModif" Content="Modifier" Margin="410,447,410,0" VerticalAlignment="Top" Height="44" IsEnabled="False"/>
         <Button x:Name="btnSupprimer" Content="Supprimer" Margin="664,447,156,0" VerticalAlignment="Top" Height="44" IsEnabled="False"/>
         <Button x:Name="btnAnnuler" Content="Annuler" Margin="810,518,10,0" VerticalAlignment="Top" Height="44" Click="btnAnnule_Click" IsCancel="True"/>
-        <ComboBox x:Name="listeTypeAttachement" HorizontalAlignment="Left" Margin="206,220,0,0" VerticalAlignment="Top" Width="264" Height="37"/>
+        <ComboBox x:Name="listeTypeAttachement" HorizontalAlignment="Left" Margin="244,220,0,0" VerticalAlignment="Top" Width="264" Height="37"/>
 
     </Grid>
 </Window>

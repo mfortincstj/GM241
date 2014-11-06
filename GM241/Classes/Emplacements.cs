@@ -45,7 +45,7 @@ namespace GM241.Classes
 
             List<string>[] tabEmplacements;
             int nombreRange = 0;
-            tabEmplacements = BDEmplacements.selection(request, 7, ref nombreRange);
+            tabEmplacements = BDEmplacements.selection(request, 6, ref nombreRange);
 
             List<Emplacements> listeEmplacements = new List<Emplacements>();
 

@@ -49,8 +49,6 @@ namespace GM241.Classes
             String request = "SELECT * FROM Collets";
             //String request = "SELECT * FROM Collets AS c INNER JOIN TypeAttachements AS ta ON c.idCollet = ta.idCollet";
 
-            
-
             List<string>[] tabCol;
             int nombreRange = 0;
             tabCol = BDCollets.selection(request, 6, ref nombreRange);

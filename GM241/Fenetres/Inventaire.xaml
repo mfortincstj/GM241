@@ -32,6 +32,6 @@
         <RadioButton x:Name="radioRechPart" GroupName="recherche" Content="Recherche partielle" HorizontalAlignment="Left" Margin="30,423,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="radioEt" IsChecked="True" GroupName="etOu" Content="Et" HorizontalAlignment="Left" Margin="30,332,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="radioRechComp" IsChecked="True" GroupName="recherche" Content="Recherche complète" HorizontalAlignment="Left" Margin="30,407,0,0" VerticalAlignment="Top"/>
-        <DataGrid x:Name="resGrid" HorizontalAlignment="Center" Margin="405,130,0,0" Grid.ColumnSpan="2" Height="393" Width="574" SelectionChanged="resGrid_SelectionChanged" CanUserReorderColumns="False" VerticalAlignment="Center"/>
+        <DataGrid x:Name="resGrid" HorizontalAlignment="Left" Margin="410,160,5,59" Grid.ColumnSpan="2" Height="363" Width="574" SelectionChanged="resGrid_SelectionChanged" CanUserReorderColumns="False" VerticalAlignment="Top"/>
     </Grid>
 </Window>
