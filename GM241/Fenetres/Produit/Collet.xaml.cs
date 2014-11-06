@@ -26,9 +26,13 @@ namespace GM241.Fenetres.Produit
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
             // Charger la liste des emplacements
-            List<Emplacements> listEmplacements = Emplacements.chargerlstEmplacements();
+            //List<Emplacements> listEmplacements = Emplacements.chargerlstEmplacements();
             //foreach (Emplacements emp in listEmplacements)
-                //listeEmplacement.Items.Add(emp.idTypeEmplacement);
+                //listeTypeEmplacement.Items.Add(emp.idTypeEmplacement);
+
+            List<string> lstnom = TypeEmplacements.chargerNom();
+            for (int i = 0; i < lstnom.Count; i++)
+                listeTypeEmplacement.Items.Add(lstnom[i]);
         }
 
         private void btnAjout_Click(object sender, RoutedEventArgs e)
