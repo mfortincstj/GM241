@@ -33,6 +33,10 @@ namespace GM241.Classes
             image = img;
         }
 
+        /// <summary>
+        /// Charge la liste des collet
+        /// </summary>
+        /// <returns>Tous les collets de la BD</returns>
         public static List<Collets> chargerlstCollets()
         {
             int idEmplacement;
@@ -68,6 +72,20 @@ namespace GM241.Classes
             }
 
             return listeCollets;
+        }
+
+        /// <summary>
+        /// Permet d'ajouter un collet dans la BD
+        /// </summary>
+        public void ajoutCollet(int idEmpl, int idTypeAtt, string diam, int quant, string img)
+        {
+            BDService BDCollets = new BDService();
+            String request = "INSERT INTO Collets (idEmplacement, idTypeAttachement, diametreInterieur, quantite, image) VALUES" + 
+                             "( " + idEmpl + 
+                             ", " + idTypeAtt + 
+                             ", " + diam +
+                             ", " + quant +
+                             ", " + img + ");";
         }
     }
 }

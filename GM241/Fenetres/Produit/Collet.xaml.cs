@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using GM241.Classes;
 
 namespace GM241.Fenetres.Produit
 {
@@ -23,12 +24,19 @@ namespace GM241.Fenetres.Produit
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+
+            // Charger la liste des emplacements
+            List<Emplacements> listEmplacements = Emplacements.chargerlstEmplacements();
+            //foreach (Emplacements emp in listEmplacements)
+                //listeEmplacement.Items.Add(emp.idTypeEmplacement);
         }
 
         private void btnAjout_Click(object sender, RoutedEventArgs e)
         {
-            // Appel à une méthode (voir dans une classe collet ou dans une classe requêteBD ?) qui va permettre d'ajouter un collet dans la BD
+            //Collets collets = new Collets();
 
+            //collets.ajoutCollet(Convert.ToInt32(listeEmplacement.Text), Convert.ToInt32(listeTypeAttachement.Text), 
+              //                  boxDiametre.Text, Convert.ToInt32(boxQuantite.Text), boxQuantite.Text);
         }
 
         private void btnAnnule_Click(object sender, RoutedEventArgs e)

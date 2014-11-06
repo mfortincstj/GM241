@@ -43,7 +43,7 @@ namespace GM241.Classes
             int nombreRange = 0;
             tabPorteOutils = BDporteOutils.selection(request, 5, ref nombreRange);
 
-            List<PorteOutils> listeporteOutils = new List<PorteOutils>();
+            List<PorteOutils> listePorteOutils = new List<PorteOutils>();
 
             if (nombreRange >= 1)
             {
@@ -54,11 +54,11 @@ namespace GM241.Classes
                     quantite = Convert.ToInt32(tabPorteOutils[i][3]);
                     image = tabPorteOutils[i][4];
 
-                    listeporteOutils.Add(new PorteOutils(idTypePorteOutil, idEmplacement, quantite, image));
+                    listePorteOutils.Add(new PorteOutils(idTypePorteOutil, idEmplacement, quantite, image));
                 }
             }
 
-            return listeporteOutils;
+            return listePorteOutils;
         }
     }
 }
