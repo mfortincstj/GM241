@@ -26,20 +26,24 @@ namespace GM241.Fenetres.Produit
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
             // Charger la liste des emplacements
-            //List<Emplacements> listEmplacements = Emplacements.chargerlstEmplacements();
-            //foreach (Emplacements emp in listEmplacements)
-                //listeTypeEmplacement.Items.Add(emp.idTypeEmplacement);
-
             List<string> lstnom = TypeEmplacements.chargerNom();
             for (int i = 0; i < lstnom.Count; i++)
                 listeTypeEmplacement.Items.Add(lstnom[i]);
+
+            // Charger la liste des attachements
+            List<TypeAttachements> lstAttachements = TypeAttachements.chargerlstTypeAttachements();
+            foreach (TypeAttachements tA in lstAttachements)
+            {
+                MessageBox.Show(tA.nom.ToString());
+                listeTypeAttachement.Items.Add(tA.nom.ToString());
+            }
         }
 
         private void btnAjout_Click(object sender, RoutedEventArgs e)
         {
             //Collets collets = new Collets();
 
-            //collets.ajoutCollet(Convert.ToInt32(listeEmplacement.Text), Convert.ToInt32(listeTypeAttachement.Text), 
+            //collets.ajoutCollet(listeEmplacement.Text, listeTypeAttachement.Text, 
               //                  boxDiametre.Text, Convert.ToInt32(boxQuantite.Text), boxQuantite.Text);
         }
 

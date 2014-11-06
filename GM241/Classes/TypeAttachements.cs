@@ -9,15 +9,15 @@ namespace GM241.Classes
     public class TypeAttachements
     {
         public virtual string nom { get; set; }
-        public virtual int diametreExterieur { get; set; }
+        public virtual string diametreExterieur { get; set; }
 
         public TypeAttachements()
         {
             nom = "";
-            diametreExterieur = 0;
+            diametreExterieur = "";
         }
 
-        public TypeAttachements(string n, int dE)
+        public TypeAttachements(string n, string dE)
         {
             nom = n;
             diametreExterieur = dE;
@@ -26,7 +26,7 @@ namespace GM241.Classes
         public static List<TypeAttachements> chargerlstTypeAttachements()
         {
             string nom;
-            int diametreExterieur;
+            string diametreExterieur;
 
             BDService BDtypeAttachements = new BDService();
             String request = "SELECT * FROM TypeAttachements";
@@ -42,7 +42,7 @@ namespace GM241.Classes
                 for (int i = 0; i < nombreRange; i++)
                 {
                     nom = tabTypeAttachements[i][1];
-                    diametreExterieur = Convert.ToInt32(tabTypeAttachements[i][2]);
+                    diametreExterieur = tabTypeAttachements[i][2];
 
                     listeTypeAttachements.Add(new TypeAttachements(nom, diametreExterieur));
                 }
