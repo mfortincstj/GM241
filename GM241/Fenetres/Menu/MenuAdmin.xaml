@@ -8,22 +8,21 @@
         <Button x:Name="btsFermer" Content="Fermer" Margin="833,510,0,0" Click="btnFermer_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="129"/>
         <Button x:Name="btnMachines" Content="Machines" HorizontalAlignment="Left" Margin="24,131,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
         <Button x:Name="btnPlateauMachines" Content="Plateau Machines" HorizontalAlignment="Left" Margin="250,131,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
-        <Button x:Name="btnAttMachines" Content="Attachements Machines" HorizontalAlignment="Left" Margin="24,192,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
-        <Button x:Name="btnTypeOutils" Content="Type Outils" HorizontalAlignment="Left" Margin="24,253,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
+        <Button x:Name="btnTypeOutils" Content="Type Outils" HorizontalAlignment="Left" Margin="250,192,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
         <Button x:Name="bntPorteOutils" Content="Porte Outils" HorizontalAlignment="Left" Margin="250,253,0,0" VerticalAlignment="Top" Width="174" Height="56" Click="bntPorteOutils_Click"/>
-        <Button x:Name="btnAttachements" Content="Attachements" HorizontalAlignment="Left" Margin="250,314,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
-        <Button x:Name="btnCollets" Content="Collets" HorizontalAlignment="Left" Margin="24,375,0,0" VerticalAlignment="Top" Width="174" Height="56" Click="btnCollets_Click"/>
-        <Button x:Name="btnCones" Content="Cones" HorizontalAlignment="Left" Margin="250,192,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
-        <Button x:Name="btnTypePorteOutils" Content="Type porte outils" HorizontalAlignment="Left" Margin="250,375,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
-        <Button x:Name="btnPlaquettes" Content="Plaquettes" HorizontalAlignment="Left" Margin="24,314,0,0" VerticalAlignment="Top" Width="174" Height="56" Click="btnPlaquettes_Click"/>
-        <Button x:Name="btnAjoutUser" Content="Ajout utilisateur" HorizontalAlignment="Left" Margin="686,172,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
-        <Button x:Name="btnModifUser" Content="Modifier utilisateur" HorizontalAlignment="Left" Margin="686,233,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
-        <Button x:Name="btnSuppUser" Content="Supprimer utilisateur" HorizontalAlignment="Left" Margin="686,294,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
+        <Button x:Name="btnTypeAttachements" Content="Type attachements" HorizontalAlignment="Left" Margin="24,497,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
+        <Button x:Name="btnCollets" Content="Collets" HorizontalAlignment="Left" Margin="24,314,0,0" VerticalAlignment="Top" Width="174" Height="56" Click="btnCollets_Click"/>
+        <Button x:Name="btnCones" Content="Cones" HorizontalAlignment="Left" Margin="24,375,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
+        <Button x:Name="btnTypePorteOutils" Content="Type porte outils" HorizontalAlignment="Left" Margin="250,314,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
+        <Button x:Name="btnPlaquettes" Content="Plaquettes" HorizontalAlignment="Left" Margin="250,375,0,0" VerticalAlignment="Top" Width="174" Height="56" Click="btnPlaquettes_Click"/>
+        <Button x:Name="btnAjoutUser" Content="Ajout utilisateur" HorizontalAlignment="Left" Margin="686,172,0,0" VerticalAlignment="Top" Width="174" Height="56" IsEnabled="False"/>
+        <Button x:Name="btnModifUser" Content="Modifier utilisateur" HorizontalAlignment="Left" Margin="686,233,0,0" VerticalAlignment="Top" Width="174" Height="56" IsEnabled="False"/>
+        <Button x:Name="btnSuppUser" Content="Supprimer utilisateur" HorizontalAlignment="Left" Margin="686,294,0,0" VerticalAlignment="Top" Width="174" Height="56" IsEnabled="False"/>
         <Label Content="Inventaire" HorizontalAlignment="Left" Margin="176,94,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
         <Label Content="Utilisateur" HorizontalAlignment="Left" Margin="726,122,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
         <Button x:Name="btnEmplacements" Content="Emplacements" HorizontalAlignment="Left" Margin="24,436,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
         <Button x:Name="btnTypeEmplacements" Content="Type emplacements" HorizontalAlignment="Left" Margin="250,436,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
-        <Button x:Name="btnOutils" Content="Outils" HorizontalAlignment="Left" Margin="24,497,0,0" VerticalAlignment="Top" Width="174" Height="56" Click="btnOutils_Click"/>
-        <Button x:Name="btnAutre" Content="Autre Tables ?" HorizontalAlignment="Left" Margin="250,497,0,0" VerticalAlignment="Top" Width="174" Height="56"/>
+        <Button x:Name="btnOutils" Content="Outils" HorizontalAlignment="Left" Margin="24,192,0,0" VerticalAlignment="Top" Width="174" Height="56" Click="btnOutils_Click"/>
+        <Button x:Name="btnExtension" Content="Extensions" HorizontalAlignment="Left" Margin="24,253,0,0" VerticalAlignment="Top" Width="174" Height="56" Click="btnOutils_Click"/>
     </Grid>
 </Window>
