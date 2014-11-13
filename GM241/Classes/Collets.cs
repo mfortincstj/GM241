@@ -75,7 +75,7 @@ namespace GM241.Classes
         /// <summary>
         /// Permet d'ajouter un collet dans la BD
         /// </summary>
-        public void ajoutCollet(int idEmpl, int idTypeAtt, string diam, int quant, string img)
+        public bool ajoutCollet(int idEmpl, int idTypeAtt, string diam, int quant, string img)
         {
             BDService BDCollets = new BDService();
             String request = "INSERT INTO Collets (idEmplacement, idTypeAttachement, diametreInterieur, quantite, image) VALUES" + 
@@ -84,6 +84,11 @@ namespace GM241.Classes
                              ", " + diam +
                              ", " + quant +
                              ", " + img + ");";
+
+            if(BDCollets.Insertion(request) == true)
+                return true;
+            else
+                return false;
         }
     }
 }

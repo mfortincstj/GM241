@@ -25,26 +25,48 @@ namespace GM241.Fenetres.Produit
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
+            int iCompteur = 0;
+
+            
             // Charger la liste des emplacements
-            List<string> lstnom = TypeEmplacements.chargerNom();
-            for (int i = 0; i < lstnom.Count; i++)
-                listeTypeEmplacement.Items.Add(lstnom[i]);
+            List<string> lstNom = TypeEmplacements.chargerNom();
+            List<Emplacements> lstEmpl = Emplacements.chargerlstEmplacements();
+
+            foreach (Emplacements e in lstEmpl)
+                listeTypeEmplacement.Items.Add(e.idTypeEmplacement + " - " + lstNom[iCompteur++]);
 
             // Charger la liste des attachements
             List<TypeAttachements> lstAttachements = TypeAttachements.chargerlstTypeAttachements();
+
             foreach (TypeAttachements tA in lstAttachements)
-            {
-                MessageBox.Show(tA.nom.ToString());
-                listeTypeAttachement.Items.Add(tA.nom.ToString());
-            }
+                listeTypeAttachement.Items.Add(tA.idTypeAttachements + " - " + tA.nom);
         }
 
         private void btnAjout_Click(object sender, RoutedEventArgs e)
         {
-            //Collets collets = new Collets();
+            char[] splitchar = {' '};
+            string str = null;
+            string str2 = null;
+            string[] idEmp = null;
+            string[] idTypeAtt = null;
+            Collets collets = new Collets();
 
-            //collets.ajoutCollet(listeEmplacement.Text, listeTypeAttachement.Text, 
-              //                  boxDiametre.Text, Convert.ToInt32(boxQuantite.Text), boxQuantite.Text);
+            // Prendre le id de l'attachement
+            
+            str = listeTypeEmplacement.Text;
+            idEmp = str.Split(splitchar);
+
+            // Prendre le id du type d'attachement
+            str2 = listeTypeEmplacement.Text;
+            idTypeAtt = str.Split(splitchar);
+
+            // Valider tous les champs pour qu'ils ne soient pas vides ************
+
+            if (collets.ajoutCollet(Convert.ToInt32(idEmp[0]), Convert.ToInt32(idTypeAtt[0]), boxDiametre.Text.ToString(), Convert.ToInt32(boxQuantite.Text), boxImage.Text.ToString()) == true)
+            {
+                MessageBox.Show("Insertion réussie");
+                this.Close();
+            }
         }
 
         private void btnAnnule_Click(object sender, RoutedEventArgs e)

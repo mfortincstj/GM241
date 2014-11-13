@@ -56,21 +56,28 @@ namespace GM241.Classes
             }
         }
 
-        public void Insertion(string ins)
+        public bool Insertion(string ins)
         {
+            bool insertValide = false;
+
             try
             {
                 if(Ouvrir())
                 {
                     MySqlCommand cmd = new MySqlCommand(ins,connexion);
                     cmd.ExecuteNonQuery();
+                    insertValide = true;
                     Fermer();
                 }
             }
             catch (Exception e)
             {
                 MessageBox.Show("Erreur lors de l'insertion");
+
+                insertValide = false;
             }
+
+            return insertValide;
         }
 
         public List<string>[] selection(string sel, int nbChamp, ref int nbRange)

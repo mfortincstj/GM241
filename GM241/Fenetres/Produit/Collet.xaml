@@ -8,7 +8,7 @@
         <Label Content="Type d'emplacement : " HorizontalAlignment="Left" Margin="20,120,0,0" VerticalAlignment="Top" FontSize="20" Width="219"/>
         <ComboBox x:Name="listeTypeEmplacement" HorizontalAlignment="Left" Margin="244,120,0,0" VerticalAlignment="Top" Width="264" Height="37"/>
 
-        <Label Content="Diamètre : " HorizontalAlignment="Left" Margin="20,320,0,0" VerticalAlignment="Top" FontSize="20" Width="219"/>
+        <Label Content="Diamètre intérieur : " HorizontalAlignment="Left" Margin="20,320,0,0" VerticalAlignment="Top" FontSize="20" Width="219"/>
         <TextBox x:Name="boxDiametre" HorizontalAlignment="Left" Height="37" Margin="244,320,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="264" FontSize="18"/>
 
         <Label Content="Type attachement : " HorizontalAlignment="Left" Margin="20,220,0,0" VerticalAlignment="Top" FontSize="20" Width="219"/>

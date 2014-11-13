@@ -8,23 +8,27 @@ namespace GM241.Classes
 {
     public class TypeAttachements
     {
+        public virtual int idTypeAttachements { get; set; }
         public virtual string nom { get; set; }
         public virtual string diametreExterieur { get; set; }
 
         public TypeAttachements()
         {
+            idTypeAttachements = 0;
             nom = "";
             diametreExterieur = "";
         }
 
-        public TypeAttachements(string n, string dE)
+        public TypeAttachements(int idTypeAtt, string n, string dE)
         {
+            idTypeAttachements = idTypeAtt;
             nom = n;
             diametreExterieur = dE;
         }
 
         public static List<TypeAttachements> chargerlstTypeAttachements()
         {
+            int idTypeAttachements;
             string nom;
             string diametreExterieur;
 
@@ -41,10 +45,11 @@ namespace GM241.Classes
             {
                 for (int i = 0; i < nombreRange; i++)
                 {
+                    idTypeAttachements = Convert.ToInt32(tabTypeAttachements[i][0]);
                     nom = tabTypeAttachements[i][1];
                     diametreExterieur = tabTypeAttachements[i][2];
 
-                    listeTypeAttachements.Add(new TypeAttachements(nom, diametreExterieur));
+                    listeTypeAttachements.Add(new TypeAttachements(idTypeAttachements, nom, diametreExterieur));
                 }
             }
 
