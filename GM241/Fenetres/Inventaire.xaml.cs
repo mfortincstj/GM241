@@ -22,10 +22,16 @@ namespace GM241.Fenetres.Inventaire
     /// </summary>
     public partial class Inventaire : Window
     {
-        public Inventaire(bool estAdmin, string usagerConnecte)
+        private string usagerConnecte = "";
+        private bool estAdmin = false;
+
+        public Inventaire(bool admin, string user)
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+
+            estAdmin = admin;
+            usagerConnecte = user;
 
             // L'utilisateur connecté est-il un admin ou pas ?
             if (estAdmin == true)
@@ -37,6 +43,7 @@ namespace GM241.Fenetres.Inventaire
             {
                 authentifie.Content = "Usager";
                 lstMenu.IsEnabled = false;
+                btnDetail.Visibility = Visibility.Hidden;
             }
 
             // Initialiser la liste des catégories
@@ -99,9 +106,10 @@ namespace GM241.Fenetres.Inventaire
 
         private void btnDetail_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show(resGrid.SelectedItems.ToString());
         }
 
+        /*
         private void btnRecherche_Click(object sender, RoutedEventArgs e)
         {
             string nomFournit = champNom.Text.ToLower();
@@ -160,18 +168,19 @@ namespace GM241.Fenetres.Inventaire
                 }
             }
         }
+        */
 
         private void lstMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (lstMenu.SelectedIndex == 1)   // Administration
             {
-                MenuAdmin menuAdmin = new MenuAdmin();
+                MenuAdmin menuAdmin = new MenuAdmin(estAdmin, usagerConnecte);
                 menuAdmin.Show();
                 this.Close();
             }
             else if (lstMenu.SelectedIndex == 2)   // Rapports
             {
-                MenuRapport menuRapport = new MenuRapport();
+                MenuRapport menuRapport = new MenuRapport(estAdmin, usagerConnecte);
                 menuRapport.Show();
                 this.Close();
             }

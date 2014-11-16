@@ -20,18 +20,21 @@ namespace GM241.Fenetres.Menu
     /// </summary>
     public partial class MenuRapport : Window
     {
-        public MenuRapport()
+        private string usagerConnecte = "";
+        private bool estAdmin = false;
+
+        public MenuRapport(bool admin, string user)
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+
+            estAdmin = admin;
+            usagerConnecte = user;
         }
 
         private void btnFermer_Click(object sender, RoutedEventArgs e)
         {
-            bool estAdmin = true;
-            string nom = "???";
-
-            Inventaire.Inventaire inventaire = new Inventaire.Inventaire(estAdmin, nom);
+            Inventaire.Inventaire inventaire = new Inventaire.Inventaire(estAdmin, usagerConnecte);
             inventaire.Show();
             this.Close();   // Fermeture du login
         }

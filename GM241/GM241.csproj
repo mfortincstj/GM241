@@ -76,6 +76,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Fenetres\Produit\Cone.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fenetres\Produit\Emplacement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fenetres\Produit\Extension.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Fenetres\Produit\Outil.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -84,7 +96,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Fenetres\Produit\PlateauMachine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Fenetres\Produit\PorteOutil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fenetres\Produit\TypePorteOutil.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -118,14 +138,29 @@
     <Compile Include="Fenetres\Produit\Collet.xaml.cs">
       <DependentUpon>Collet.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Fenetres\Produit\Cone.xaml.cs">
+      <DependentUpon>Cone.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fenetres\Produit\Emplacement.xaml.cs">
+      <DependentUpon>Emplacement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fenetres\Produit\Extension.xaml.cs">
+      <DependentUpon>Extension.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Fenetres\Produit\Outil.xaml.cs">
       <DependentUpon>Outil.xaml</DependentUpon>
     </Compile>
     <Compile Include="Fenetres\Produit\Plaquette.xaml.cs">
       <DependentUpon>Plaquette.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Fenetres\Produit\PlateauMachine.xaml.cs">
+      <DependentUpon>PlateauMachine.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Fenetres\Produit\PorteOutil.xaml.cs">
       <DependentUpon>PorteOutil.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fenetres\Produit\TypePorteOutil.xaml.cs">
+      <DependentUpon>TypePorteOutil.xaml</DependentUpon>
     </Compile>
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>

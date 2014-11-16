@@ -28,10 +28,10 @@
         <Button x:Name="btnDeconnexion" Content="Deconnexion" Margin="0,0,7,49" Click="btnDeconnexion_Click" Height="34" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152"/>
         <Button x:Name="btnQuitter" Content="Quitter" Margin="0,0,7,10" Click="btnQuitter_Click" Height="34" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152"/>
 
-        <Label Content="Inventaire" FontSize="36" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="392,10,392,0" VerticalAlignment="Top" Height="67"/>
+        <Label Content="Inventaire" FontSize="36" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="392,10,0,0" VerticalAlignment="Top" Height="67" HorizontalAlignment="Left" Width="208"/>
         <Label x:Name="authentifie1" Content="Authentifié : " HorizontalAlignment="Right" Margin="0,10,141,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Width="105"/>
         <Label Name="authentifie" Content="" HorizontalAlignment="Right" Margin="0,46,10,0" VerticalAlignment="Top" Height="31" Width="127" FontSize="16"/>
-        <Label Content="GM241 - Navigation : " HorizontalAlignment="Left" Margin="10,10,0,0" Width="193" FontSize="18" FontWeight="Bold" Height="31" VerticalAlignment="Top"/>
+        <Label Content="GM241 - Navigation : " HorizontalAlignment="Left" Margin="10,10,0,0" Width="193" FontSize="18" FontWeight="Bold" Height="40" VerticalAlignment="Top"/>
         <Label x:Name="role" Content="Connecté :  " HorizontalAlignment="Right" Margin="0,46,141,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Width="91"/>
         <Label x:Name="usager" Content="" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Height="31" Width="126" FontSize="16"/>
 

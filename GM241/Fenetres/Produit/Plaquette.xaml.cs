@@ -29,11 +29,5 @@ namespace GM241.Fenetres.Produit
         {
 
         }
-
-        private void btnAnnule_Click(object sender, RoutedEventArgs e)
-        {
-            if (MessageBox.Show("Êtes-vous sûr de vouloir annuler cet ajout?", "Attention!", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No) == MessageBoxResult.Yes)
-                this.Close();
-        }
     }
 }

@@ -15,19 +15,13 @@ using System.Windows.Shapes;
 namespace GM241.Fenetres.Produit
 {
     /// <summary>
-    /// Logique d'interaction pour ajoutPorteOutil.xaml
+    /// Logique d'interaction pour PlateauMachine.xaml
     /// </summary>
-    public partial class PorteOutil : Window
+    public partial class PlateauMachine : Window
     {
-        public PorteOutil()
+        public PlateauMachine()
         {
             InitializeComponent();
-            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
-        }
-
-        private void btnAjout_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
