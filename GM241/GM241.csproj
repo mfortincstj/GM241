@@ -118,9 +118,13 @@
     </Compile>
     <Compile Include="Classes\BDService.cs" />
     <Compile Include="Classes\Collets.cs" />
+    <Compile Include="Classes\Cones.cs" />
     <Compile Include="Classes\Emplacements.cs" />
+    <Compile Include="Classes\Extensions.cs" />
+    <Compile Include="Classes\Machines.cs" />
     <Compile Include="Classes\Outils.cs" />
     <Compile Include="Classes\Plaquettes.cs" />
+    <Compile Include="Classes\PlateauMachines.cs" />
     <Compile Include="Classes\PorteOutils.cs" />
     <Compile Include="Classes\TypeAttachements.cs" />
     <Compile Include="Classes\TypeEmplacements.cs" />
@@ -195,7 +199,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="GM241.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
