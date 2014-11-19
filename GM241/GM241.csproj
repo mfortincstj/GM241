@@ -88,6 +88,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Fenetres\Produit\Machine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Fenetres\Produit\Outil.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -101,6 +105,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Fenetres\Produit\PorteOutil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fenetres\Produit\TypeOutil.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -152,6 +160,9 @@
     <Compile Include="Fenetres\Produit\Extension.xaml.cs">
       <DependentUpon>Extension.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Fenetres\Produit\Machine.xaml.cs">
+      <DependentUpon>Machine.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Fenetres\Produit\Outil.xaml.cs">
       <DependentUpon>Outil.xaml</DependentUpon>
     </Compile>
@@ -163,6 +174,9 @@
     </Compile>
     <Compile Include="Fenetres\Produit\PorteOutil.xaml.cs">
       <DependentUpon>PorteOutil.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fenetres\Produit\TypeOutil.xaml.cs">
+      <DependentUpon>TypeOutil.xaml</DependentUpon>
     </Compile>
     <Compile Include="Fenetres\Produit\TypePorteOutil.xaml.cs">
       <DependentUpon>TypePorteOutil.xaml</DependentUpon>

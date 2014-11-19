@@ -1,9 +1,8 @@
 ﻿<Window x:Class="GM241.Fenetres.Produit.Outil"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Outil" Height="545" Width="1000" ResizeMode="CanMinimize">
+        Title="Outil" Height="550" Width="975" ResizeMode="CanMinimize">
     <Grid>
-
         <Label Content="Type d'outil : " HorizontalAlignment="Left" Margin="1,0,0,0" VerticalAlignment="Top" FontSize="20" Width="187"/>
         <ComboBox x:Name="listeTypeOutil" HorizontalAlignment="Left" Margin="208,0,0,0" VerticalAlignment="Top" Width="275" Height="37"/>
 
@@ -45,10 +44,8 @@
 
         <Label Content="Image : " HorizontalAlignment="Left" Margin="511,414,0,0" VerticalAlignment="Top" FontSize="20" Width="78" RenderTransformOrigin="0.129,0.432"/>
         <TextBox x:Name="boxImage" HorizontalAlignment="Left" Height="37" Margin="715,414,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="260" FontSize="18"/>
-
-        <Button x:Name="btnAjouter" Content="Ajouter" Margin="151,466,669,0" VerticalAlignment="Top" Height="44" Click="btnAjout_Click"/>
-        <Button x:Name="btnModif" Content="Modifier" Margin="401,466,419,0" VerticalAlignment="Top" Height="44" IsEnabled="False"/>
-        <Button x:Name="btnSupprimer" Content="Supprimer" Margin="651,466,169,0" VerticalAlignment="Top" Height="44" IsEnabled="False"/>
-
+        <Button x:Name="btnAjouter" Content="Ajouter" Margin="10,468,739,0" Click="btnAjout_Click" Height="44" VerticalAlignment="Top"/>
+        <Button x:Name="btnModif" Content="Modifier" Margin="375,468,374,0" IsEnabled="False" Height="44" VerticalAlignment="Top"/>
+        <Button x:Name="btnSupprimer" Content="Supprimer" Margin="739,468,10,0" IsEnabled="False" Height="44" VerticalAlignment="Top"/>
     </Grid>
 </Window>

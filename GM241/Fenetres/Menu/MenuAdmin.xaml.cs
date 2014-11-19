@@ -58,7 +58,11 @@ namespace GM241.Fenetres.Menu
 
                 // Machines
                 case 1:
-                    
+                    vue.Children.Clear();
+                    Machine fenetreMachine = new Machine();
+                    object childContentMachine = fenetreMachine.Content;
+                    fenetreMachine.Content = null;
+                    vue.Children.Add(childContentMachine as UIElement);
                 break;
 
                 // Plateau pour machines
@@ -81,7 +85,11 @@ namespace GM241.Fenetres.Menu
 
                 // Type d'outils
                 case 4:
-                    
+                    vue.Children.Clear();
+                    TypeOutil fenetreTypeOutil = new TypeOutil();
+                    object childContentTypeOutil = fenetreTypeOutil.Content;
+                    fenetreTypeOutil.Content = null;
+                    vue.Children.Add(childContentTypeOutil as UIElement);
                 break;
 
                 // Extensions
