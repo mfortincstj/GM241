@@ -60,11 +60,17 @@ namespace GM241.Fenetres.Inventaire
             lstMenu.Items.Add("Administration");
             lstMenu.Items.Add("Rapports");
             lstMenu.SelectedIndex = 0;
+
+            List<Collets> listCol = Collets.chargerlstCollets();
+            resGrid2.ItemsSource = listCol;
+
+            List<PorteOutils> listPorteOutil = PorteOutils.chargerlstPorteOutils();
+            //resGrid3.ItemsSource = listPorteOutil;
         }
 
         private void btnQuitter_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Voulez-vous quitter le programme ?", "Attention !", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No) == MessageBoxResult.Yes)
+            if (MessageBox.Show("Voulez-vous quitter le programme?", "Attention!", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No) == MessageBoxResult.Yes)
                 Application.Current.Shutdown();
         }
 
@@ -73,27 +79,27 @@ namespace GM241.Fenetres.Inventaire
             switch (cboxCategorie.SelectedIndex)
             {
                 case 0 :   // Rien de sélectionné
-                    resGrid.ItemsSource = null;
+                    resGrid2.ItemsSource = null;
                 break;
 
                 case 1 :   // Collets
                     List<Collets> listCol = Collets.chargerlstCollets();
-                    resGrid.ItemsSource = listCol;
+                    resGrid2.ItemsSource = listCol;
                 break;
 
                 case 2:   // Porte outils
                     List<PorteOutils> listPorteOutil = PorteOutils.chargerlstPorteOutils();
-                    resGrid.ItemsSource = listPorteOutil;
+                    resGrid2.ItemsSource = listPorteOutil;
                 break;
 
                 case 3:   // Outils
                     List<Outils> listOutil = Outils.chargerLstOutils();
-                    resGrid.ItemsSource = listOutil;
+                    resGrid2.ItemsSource = listOutil;
                 break;
 
                 case 4:   // Plaquettes
                     List<Plaquettes> listPlaquettes = Plaquettes.chargerlstPlaquettes();
-                    resGrid.ItemsSource = listPlaquettes;
+                    resGrid2.ItemsSource = listPlaquettes;
                 break;
             }
 
@@ -107,7 +113,7 @@ namespace GM241.Fenetres.Inventaire
 
         private void btnDetail_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(resGrid.SelectedItems.ToString());
+            MessageBox.Show(resGrid2.SelectedItems.ToString());
         }
 
         /*
@@ -199,7 +205,7 @@ namespace GM241.Fenetres.Inventaire
 
         private void resGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (resGrid.SelectedItem != null)
+            if (resGrid2.SelectedItem != null)
             {
                 btnDetail.IsEnabled = true;
             }
