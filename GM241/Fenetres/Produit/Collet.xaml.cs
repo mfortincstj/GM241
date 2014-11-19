@@ -26,7 +26,6 @@ namespace GM241.Fenetres.Produit
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
             int iCompteur = 0;
-
             
             // Charger la liste des emplacements
             List<string> lstNom = TypeEmplacements.chargerNom();
@@ -40,6 +39,13 @@ namespace GM241.Fenetres.Produit
 
             foreach (TypeAttachements tA in lstAttachements)
                 listeTypeAttachement.Items.Add(tA.idTypeAttachements + " - " + tA.nom);
+
+            listeTypeEmplacement.SelectedIndex = 0;
+            listeTypeAttachement.SelectedIndex = 0;
+
+            diametreInt.Text = "";
+            quant.Text = "0";
+            img.Text = "";
         }
 
         private void btnAjout_Click(object sender, RoutedEventArgs e)
@@ -52,7 +58,6 @@ namespace GM241.Fenetres.Produit
             Collets collets = new Collets();
 
             // Prendre le id de l'attachement
-            
             str = listeTypeEmplacement.Text;
             idEmp = str.Split(splitchar);
 
@@ -62,10 +67,9 @@ namespace GM241.Fenetres.Produit
 
             // Valider tous les champs pour qu'ils ne soient pas vides ************
 
-            if (collets.ajoutCollet(Convert.ToInt32(idEmp[0]), Convert.ToInt32(idTypeAtt[0]), boxDiametre.Text.ToString(), Convert.ToInt32(boxQuantite.Text), boxImage.Text.ToString()) == true)
+            if (collets.ajoutCollet(Convert.ToInt32(idEmp[0]), Convert.ToInt32(idTypeAtt[0]), diametreInt.Text.ToString(), Convert.ToInt32(quant.Text), img.Text.ToString()) == true)
             {
                 MessageBox.Show("Insertion réussie");
-                this.Close();
             }
         }
     }

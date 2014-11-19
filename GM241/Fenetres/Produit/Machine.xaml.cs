@@ -34,6 +34,8 @@ namespace GM241.Fenetres.Produit
         {
             boxAxeZMin.IsEnabled = false;
             boxAxeZMax.IsEnabled = false;
+            boxAxeZMin.Text = "";
+            boxAxeZMax.Text = "";
         }
     }
 }
