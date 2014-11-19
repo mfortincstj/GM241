@@ -1,7 +1,7 @@
 ﻿<Window x:Class="GM241.Fenetres.Produit.PlateauMachine"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="PlateauMachine" Height="190" Width="1000" ResizeMode="CanMinimize">
+        Title="PlateauMachine" Height="550" Width="975" ResizeMode="CanMinimize">
     <Grid>
 
         <Label Content="Nom : " HorizontalAlignment="Left" Margin="1,10,0,0" VerticalAlignment="Top" FontSize="20" Width="187"/>
@@ -10,11 +10,10 @@
         <TextBox x:Name="axeSuppB" HorizontalAlignment="Left" Height="37" Margin="696,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="288" FontSize="18"/>
 
         <Label Content="Axe suppérieur A : " HorizontalAlignment="Left" Margin="1,63,0,0" VerticalAlignment="Top" FontSize="20" Width="187"/>
-
-        <Button x:Name="btnAjouter" Content="Ajouter" HorizontalAlignment="Left" Margin="149,112,0,0" VerticalAlignment="Top" Width="190" Height="44"/>
-        <Button x:Name="btnModif" Content="Modifier" Margin="426,112,378,0" VerticalAlignment="Top" Height="44" IsEnabled="False"/>
-        <Button x:Name="btnSupprimer" Content="Supprimer" Margin="703,112,102,0" VerticalAlignment="Top" Height="44" IsEnabled="False"/>
         <TextBox x:Name="axeSuppA" HorizontalAlignment="Left" Height="37" Margin="193,63,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="288" FontSize="18"/>
         <TextBox x:Name="nom" HorizontalAlignment="Left" Height="37" Margin="193,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="288" FontSize="18"/>
+        <Button x:Name="btnAjouter" Content="Ajouter" Margin="10,468,739,0" Height="44" VerticalAlignment="Top"/>
+        <Button x:Name="btnModif" Content="Modifier" Margin="375,468,374,0" IsEnabled="False" Height="44" VerticalAlignment="Top"/>
+        <Button x:Name="btnSupprimer" Content="Supprimer" Margin="739,468,10,0" IsEnabled="False" Height="44" VerticalAlignment="Top"/>
     </Grid>
 </Window>

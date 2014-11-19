@@ -1,7 +1,7 @@
 ﻿<Window x:Class="GM241.Fenetres.Produit.Plaquette"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Plaquette" Height="490" Width="1000" ResizeMode="CanMinimize">
+        Title="Plaquette" Height="550" Width="975" ResizeMode="CanMinimize">
     <Grid>
 
         <Label Content="Emplacement : " HorizontalAlignment="Left" Margin="1,0,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.507,0.036" Width="140"/>
@@ -42,10 +42,9 @@
 
         <Label Content="Image : " HorizontalAlignment="Left" Margin="511,304,0,0" VerticalAlignment="Top" FontSize="20" Width="174" RenderTransformOrigin="0.129,0.432"/>
         <TextBox x:Name="boxImage" HorizontalAlignment="Left" Height="37" Margin="690,304,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="285" FontSize="18"/>
-
-        <Button x:Name="btnAjouter" Content="Ajouter" Margin="126,414,694,0" VerticalAlignment="Top" Height="44" Click="btnAjout_Click"/>
-        <Button x:Name="btnModif" Content="Modifier" Margin="401,414,419,0" VerticalAlignment="Top" Height="44" IsEnabled="False"/>
-        <Button x:Name="btnSupprimer" Content="Supprimer" Margin="676,414,144,0" VerticalAlignment="Top" Height="44" IsEnabled="False"/>
+        <Button x:Name="btnAjouter" Content="Ajouter" Margin="10,468,739,0" Click="btnAjout_Click" Height="44" VerticalAlignment="Top"/>
+        <Button x:Name="btnModif" Content="Modifier" Margin="375,468,374,0" IsEnabled="False" Height="44" VerticalAlignment="Top"/>
+        <Button x:Name="btnSupprimer" Content="Supprimer" Margin="739,468,10,0" IsEnabled="False" Height="44" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
