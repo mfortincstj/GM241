@@ -157,12 +157,20 @@ namespace GM241.Fenetres.Menu
 
                 // Type d'emplacements
                 case 12:
-
+                    vue.Children.Clear();
+                    TypeEmplacement fenetreTypeEmplacement = new TypeEmplacement();
+                    object childContentTypeEmplacement = fenetreTypeEmplacement.Content;
+                    fenetreTypeEmplacement.Content = null;
+                    vue.Children.Add(childContentTypeEmplacement as UIElement);
                 break;
 
                 // Type d'attachements
                 case 13:
-
+                    vue.Children.Clear();
+                    TypeAttachement fenetreTypeAttachement = new TypeAttachement();
+                    object childContentTypeAttachement = fenetreTypeAttachement.Content;
+                    fenetreTypeAttachement.Content = null;
+                    vue.Children.Add(childContentTypeAttachement as UIElement);
                 break;
             }
         }

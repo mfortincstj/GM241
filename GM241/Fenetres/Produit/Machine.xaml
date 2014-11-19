@@ -3,48 +3,48 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Machine" Height="550" Width="975" ResizeMode="CanMinimize">
     <Grid>
-        <Label Content="Plateau pour machine : " HorizontalAlignment="Left" Margin="1,0,0,0" VerticalAlignment="Top" FontSize="20" Width="241"/>
-        <ComboBox x:Name="listePlateauMachine" HorizontalAlignment="Left" Margin="251,0,0,0" VerticalAlignment="Top" Width="241" Height="37"/>
+        <Label Content="Plateau pour machine : " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right"/>
+        <ComboBox x:Name="listePlateauMachine" HorizontalAlignment="Left" Margin="254,10,0,0" VerticalAlignment="Top" Width="230" Height="37"/>
 
-        <Label Content="Nom : " HorizontalAlignment="Left" Margin="1,64,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.507,0.036" Width="241"/>
+        <Label Content="Nom : " HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.507,0.036" Width="240" HorizontalContentAlignment="Right"/>
 
-        <Label Content="Nombre d'outil : " HorizontalAlignment="Left" Margin="1,134,0,0" VerticalAlignment="Top" FontSize="20" Width="241"/>
+        <Label Content="Nombre d'outil : " HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right"/>
 
-        <Label Content="Précision : " HorizontalAlignment="Left" Margin="1,204,0,0" VerticalAlignment="Top" FontSize="20" Width="241"/>
-        <TextBox x:Name="boxPrecision" HorizontalAlignment="Left" Height="37" Margin="247,204,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245" FontSize="18"/>
+        <Label Content="Précision : " HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="boxPrecision" HorizontalAlignment="Left" Height="37" Margin="254,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
 
-        <Label Content="Format du cône : " HorizontalAlignment="Left" Margin="1,274,0,0" VerticalAlignment="Top" FontSize="20" Width="241"/>
-        <TextBox x:Name="boxFormatCone" HorizontalAlignment="Left" Height="37" Margin="247,274,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245" FontSize="18"/>
+        <Label Content="Format du cône : " HorizontalAlignment="Left" Margin="10,178,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="boxFormatCone" HorizontalAlignment="Left" Height="37" Margin="254,178,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
 
-        <Label Content="Nombre d'outil prépapré : " HorizontalAlignment="Left" Margin="1,344,0,0" VerticalAlignment="Top" FontSize="20" Width="241"/>
-        <TextBox x:Name="boxNbrOutilPrep" HorizontalAlignment="Left" Height="37" Margin="247,344,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245" FontSize="18"/>
+        <Label Content="Nombre d'outil prépapré : " HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="boxNbrOutilPrep" HorizontalAlignment="Left" Height="37" Margin="254,220,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
 
-        <Label Content="Numéro de la machine : " HorizontalAlignment="Left" Margin="1,414,0,0" VerticalAlignment="Top" FontSize="20" Width="241"/>
-        <TextBox x:Name="boxNoMachine" HorizontalAlignment="Left" Height="37" Margin="251,414,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="241" FontSize="18"/>
+        <Label Content="Numéro de la machine : " HorizontalAlignment="Left" Margin="10,262,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="boxNoMachine" HorizontalAlignment="Left" Height="37" Margin="254,262,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
 
-        <Label Content="Axe X minimal : " HorizontalAlignment="Left" Margin="511,0,0,0" VerticalAlignment="Top" FontSize="20" Width="199"/>
-        <TextBox x:Name="boxAxeXMin" HorizontalAlignment="Left" Height="37" Margin="743,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="241" FontSize="18"/>
+        <Label Content="Axe X minimal : " HorizontalAlignment="Left" Margin="10,304,0,0" VerticalAlignment="Top" FontSize="20" Width="239" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="boxAxeXMin" HorizontalAlignment="Left" Height="37" Margin="254,304,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
 
-        <Label Content="Axe X maximal : " HorizontalAlignment="Left" Margin="511,64,0,0" VerticalAlignment="Top" FontSize="20" Width="199"/>
-        <TextBox x:Name="boxAxeXMax" HorizontalAlignment="Left" Height="37" Margin="743,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="241" FontSize="18"/>
+        <Label Content="Axe X maximal : " HorizontalAlignment="Left" Margin="10,346,0,0" VerticalAlignment="Top" FontSize="20" Width="239" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="boxAxeXMax" HorizontalAlignment="Left" Height="37" Margin="254,346,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
 
-        <Label Content="Axe Y minimal : " HorizontalAlignment="Left" Margin="511,134,0,0" VerticalAlignment="Top" FontSize="20" Width="199" RenderTransformOrigin="0.129,0.432"/>
-        <TextBox x:Name="boxAxeYMin" HorizontalAlignment="Left" Height="37" Margin="743,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="241" FontSize="18"/>
+        <Label Content="Axe Y minimal : " HorizontalAlignment="Left" Margin="489,10,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.129,0.432" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="boxAxeYMin" HorizontalAlignment="Left" Height="37" Margin="729,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
 
-        <Label Content="Axe Y maximal : " HorizontalAlignment="Left" Margin="511,204,0,0" VerticalAlignment="Top" FontSize="20" Width="199" RenderTransformOrigin="0.129,0.432"/>
-        <TextBox x:Name="boxAxeYMax" HorizontalAlignment="Left" Height="37" Margin="743,204,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="241" FontSize="18"/>
+        <Label Content="Axe Y maximal : " HorizontalAlignment="Left" Margin="489,52,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.129,0.432" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="boxAxeYMax" HorizontalAlignment="Left" Height="37" Margin="729,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
 
-        <Label Content="Avec un axe Z : " HorizontalAlignment="Left" Margin="511,274,0,0" VerticalAlignment="Top" FontSize="20" Width="199" RenderTransformOrigin="0.129,0.432"/>
+        <Label Content="Avec un axe Z : " HorizontalAlignment="Left" Margin="489,94,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.129,0.432" HorizontalContentAlignment="Right"/>
 
-        <Label Content="Axe Z minimal : " HorizontalAlignment="Left" Margin="511,344,0,0" VerticalAlignment="Top" FontSize="20" Width="199" RenderTransformOrigin="0.129,0.432"/>
-        <TextBox x:Name="boxAxeZMin" HorizontalAlignment="Left" Height="37" Margin="743,344,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="241" FontSize="18" IsEnabled="False"/>
+        <Label Content="Axe Z minimal : " HorizontalAlignment="Left" Margin="489,136,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.129,0.432" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="boxAxeZMin" HorizontalAlignment="Left" Height="37" Margin="729,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18" IsEnabled="False"/>
 
-        <Label Content="Axe Z maximal : " HorizontalAlignment="Left" Margin="511,414,0,0" VerticalAlignment="Top" FontSize="20" Width="199" RenderTransformOrigin="0.129,0.432"/>
-        <TextBox x:Name="boxAxeZMax" HorizontalAlignment="Left" Height="37" Margin="743,414,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="241" FontSize="18" IsEnabled="False"/>
-        <TextBox x:Name="boxNbrOutil" HorizontalAlignment="Left" Height="37" Margin="247,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245" FontSize="18"/>
-        <TextBox x:Name="boxNom" HorizontalAlignment="Left" Height="37" Margin="247,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245" FontSize="18"/>
-        <RadioButton x:Name="axeZOui" GroupName="axeZ" Content="Oui" HorizontalAlignment="Left" Margin="743,274,0,0" VerticalAlignment="Top" Height="37" FontSize="20" Checked="axeZOui_Checked"/>
-        <RadioButton x:Name="axeZNon" GroupName="axeZ" Content="Non" IsChecked="True" HorizontalAlignment="Left" Margin="820,274,0,0" VerticalAlignment="Top" Height="37" FontSize="20" Checked="axeZNon_Checked"/>
+        <Label Content="Axe Z maximal : " HorizontalAlignment="Left" Margin="489,178,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.129,0.432" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="boxAxeZMax" HorizontalAlignment="Left" Height="37" Margin="729,178,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18" IsEnabled="False"/>
+        <TextBox x:Name="boxNbrOutil" HorizontalAlignment="Left" Height="37" Margin="254,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
+        <TextBox x:Name="boxNom" HorizontalAlignment="Left" Height="37" Margin="254,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
+        <RadioButton x:Name="axeZOui" GroupName="axeZ" Content="Oui" HorizontalAlignment="Left" Margin="734,94,0,0" VerticalAlignment="Top" Height="37" FontSize="20" Checked="axeZOui_Checked" Width="53"/>
+        <RadioButton x:Name="axeZNon" GroupName="axeZ" Content="Non" IsChecked="True" HorizontalAlignment="Left" Margin="816,94,0,0" VerticalAlignment="Top" Height="37" FontSize="20" Checked="axeZNon_Checked" Width="62"/>
         <Button x:Name="btnAjouter" Content="Ajouter" Margin="10,468,739,0" Height="44" VerticalAlignment="Top"/>
         <Button x:Name="btnModif" Content="Modifier" Margin="375,468,374,0" IsEnabled="False" Height="44" VerticalAlignment="Top"/>
         <Button x:Name="btnSupprimer" Content="Supprimer" Margin="739,468,10,0" IsEnabled="False" Height="44" VerticalAlignment="Top"/>

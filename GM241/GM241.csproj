@@ -108,6 +108,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Fenetres\Produit\TypeAttachement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fenetres\Produit\TypeEmplacement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Fenetres\Produit\TypeOutil.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -174,6 +182,12 @@
     </Compile>
     <Compile Include="Fenetres\Produit\PorteOutil.xaml.cs">
       <DependentUpon>PorteOutil.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fenetres\Produit\TypeAttachement.xaml.cs">
+      <DependentUpon>TypeAttachement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fenetres\Produit\TypeEmplacement.xaml.cs">
+      <DependentUpon>TypeEmplacement.xaml</DependentUpon>
     </Compile>
     <Compile Include="Fenetres\Produit\TypeOutil.xaml.cs">
       <DependentUpon>TypeOutil.xaml</DependentUpon>

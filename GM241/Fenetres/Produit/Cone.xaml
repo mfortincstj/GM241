@@ -4,14 +4,14 @@
         Title="Cone" Height="550" Width="975" ResizeMode="CanMinimize">
     <Grid>
 
-        <Label Content="Nom : " HorizontalAlignment="Left" Margin="1,10,0,0" VerticalAlignment="Top" FontSize="20" Width="143"/>
+        <Label Content="Nom : " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right"/>
 
-        <Label Content="Type de machine : " HorizontalAlignment="Left" Margin="513,10,0,0" VerticalAlignment="Top" FontSize="20" Width="178"/>
-        <TextBox x:Name="typeMachine" HorizontalAlignment="Left" Height="37" Margin="696,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="288" FontSize="18"/>
+        <Label Content="Type de machine : " HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="typeMachine" HorizontalAlignment="Left" Height="37" Margin="255,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
 
-        <Label Content="Type de cone : " HorizontalAlignment="Left" Margin="1,63,0,0" VerticalAlignment="Top" FontSize="20" Width="143"/>
-        <TextBox x:Name="typeCone" HorizontalAlignment="Left" Height="37" Margin="149,63,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="288" FontSize="18"/>
-        <TextBox x:Name="nom" HorizontalAlignment="Left" Height="37" Margin="149,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="288" FontSize="18"/>
+        <Label Content="Type de cone : " HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="typeCone" HorizontalAlignment="Left" Height="37" Margin="255,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
+        <TextBox x:Name="nom" HorizontalAlignment="Left" Height="37" Margin="255,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
         <Button x:Name="btnAjouter" Content="Ajouter" Margin="10,468,739,0" Height="44" VerticalAlignment="Top"/>
         <Button x:Name="btnModif" Content="Modifier" Margin="375,468,374,0" IsEnabled="False" Height="44" VerticalAlignment="Top"/>
         <Button x:Name="btnSupprimer" Content="Supprimer" Margin="739,468,10,0" IsEnabled="False" Height="44" VerticalAlignment="Top"/>

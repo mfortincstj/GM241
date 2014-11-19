@@ -1,7 +1,7 @@
-﻿<Window x:Class="GM241.Fenetres.Produit.TypeOutil"
+﻿<Window x:Class="GM241.Fenetres.Produit.TypeEmplacement"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="TypeOutil" Height="550" Width="975" ResizeMode="CanMinimize">
+        Title="TypeEmplacement" Height="550" Width="975" ResizeMode="CanMinimize">
     <Grid>
         <Label Content="Nom :  " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Width="240" Height="37" HorizontalContentAlignment="Right"/>
         <TextBox x:Name="nom" Height="37" Margin="255,10,484,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="18"/>

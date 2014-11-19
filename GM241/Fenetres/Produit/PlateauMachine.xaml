@@ -3,15 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="PlateauMachine" Height="550" Width="975" ResizeMode="CanMinimize">
     <Grid>
-
-        <Label Content="Nom : " HorizontalAlignment="Left" Margin="1,10,0,0" VerticalAlignment="Top" FontSize="20" Width="187"/>
-
-        <Label Content="Axe suppérieur B : " HorizontalAlignment="Left" Margin="513,10,0,0" VerticalAlignment="Top" FontSize="20" Width="178"/>
-        <TextBox x:Name="axeSuppB" HorizontalAlignment="Left" Height="37" Margin="696,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="288" FontSize="18"/>
-
-        <Label Content="Axe suppérieur A : " HorizontalAlignment="Left" Margin="1,63,0,0" VerticalAlignment="Top" FontSize="20" Width="187"/>
-        <TextBox x:Name="axeSuppA" HorizontalAlignment="Left" Height="37" Margin="193,63,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="288" FontSize="18"/>
-        <TextBox x:Name="nom" HorizontalAlignment="Left" Height="37" Margin="193,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="288" FontSize="18"/>
+        <Label Content="Nom : " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Width="240" Height="37" HorizontalContentAlignment="Right"/>
+        <Label Content="Axe suppérieur B : " HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" FontSize="20" Width="240" Height="37" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="axeSuppB" HorizontalAlignment="Left" Height="37" Margin="255,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
+        <Label Content="Axe suppérieur A : " HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" FontSize="20" Width="240" Height="37" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="axeSuppA" HorizontalAlignment="Left" Height="37" Margin="255,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
+        <TextBox x:Name="nom" HorizontalAlignment="Left" Height="37" Margin="255,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
         <Button x:Name="btnAjouter" Content="Ajouter" Margin="10,468,739,0" Height="44" VerticalAlignment="Top"/>
         <Button x:Name="btnModif" Content="Modifier" Margin="375,468,374,0" IsEnabled="False" Height="44" VerticalAlignment="Top"/>
         <Button x:Name="btnSupprimer" Content="Supprimer" Margin="739,468,10,0" IsEnabled="False" Height="44" VerticalAlignment="Top"/>
