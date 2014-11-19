@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using GM241.Classes;
 using GM241.Fenetres.Produit;
 using GM241.Fenetres.Menu;
+using GM241;
 
 namespace GM241.Fenetres.Inventaire
 {
