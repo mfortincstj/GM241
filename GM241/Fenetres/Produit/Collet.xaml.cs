@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using GM241.Classes;
+using System.Text.RegularExpressions;
 
 namespace GM241.Fenetres.Produit
 {
@@ -20,6 +21,15 @@ namespace GM241.Fenetres.Produit
     /// </summary>
     public partial class Collet : Window
     {
+        private void viderChamps()
+        {
+            listeTypeEmplacement.SelectedIndex = 0;
+            listeTypeAttachement.SelectedIndex = 0;
+            diametreInt.Text = "";
+            quant.Text = "0";
+            img.Text = "";
+        }
+
         public Collet()
         {
             InitializeComponent();
@@ -40,16 +50,12 @@ namespace GM241.Fenetres.Produit
             foreach (TypeAttachements tA in lstAttachements)
                 listeTypeAttachement.Items.Add(tA.idTypeAttachements + " - " + tA.nom);
 
-            listeTypeEmplacement.SelectedIndex = 0;
-            listeTypeAttachement.SelectedIndex = 0;
-
-            diametreInt.Text = "";
-            quant.Text = "0";
-            img.Text = "";
+            viderChamps();
         }
 
         private void btnAjout_Click(object sender, RoutedEventArgs e)
         {
+            bool insertValide = true;
             char[] splitchar = {' '};
             string str = null;
             string str2 = null;
@@ -65,12 +71,26 @@ namespace GM241.Fenetres.Produit
             str2 = listeTypeEmplacement.Text;
             idTypeAtt = str.Split(splitchar);
 
-            // Valider tous les champs pour qu'ils ne soient pas vides ************
+            // Vérifier si les champs sont vide ? 
+            if(diametreInt.Text == "")
+                insertValide = false;
 
-            if (collets.ajoutCollet(Convert.ToInt32(idEmp[0]), Convert.ToInt32(idTypeAtt[0]), diametreInt.Text.ToString(), Convert.ToInt32(quant.Text), img.Text.ToString()) == true)
+            if (img.Text == "")
+                insertValide = false;
+
+            quant.Text = Regex.Replace(quant.Text, "[^0-9.]", "");
+
+
+            if (insertValide == true)
             {
-                MessageBox.Show("Insertion réussie");
+                if (collets.ajoutCollet(Convert.ToInt32(idEmp[0]), Convert.ToInt32(idTypeAtt[0]), diametreInt.Text, Convert.ToInt32(quant.Text), img.Text) == true)
+                {
+                    MessageBox.Show("Insertion réussie");
+                    viderChamps();
+                }
             }
+            else
+                MessageBox.Show("Champs incomplet", "Attention !", MessageBoxButton.OK, MessageBoxImage.Warning, MessageBoxResult.OK);
         }
     }
 }

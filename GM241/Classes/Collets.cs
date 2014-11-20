@@ -81,9 +81,9 @@ namespace GM241.Classes
             String request = "INSERT INTO Collets (idEmplacement, idTypeAttachement, diametreInterieur, quantite, image) VALUES" + 
                              "( " + idEmpl + 
                              ", " + idTypeAtt + 
-                             ", " + diam +
+                             ", " + "'" + diam + "'" +
                              ", " + quant +
-                             ", " + img + ");";
+                             ", " + "'" + img + "'" + ");";
 
             if(BDCollets.Insertion(request) == true)
                 return true;

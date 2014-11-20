@@ -61,3 +61,9 @@ namespace GM241
         }
     }
 }
+
+/* Note Mick : 
+ *  - Ajout Cones fait
+ *  - Ajout Collets fait
+ *  - 
+ */

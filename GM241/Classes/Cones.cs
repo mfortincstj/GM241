@@ -55,5 +55,19 @@ namespace GM241.Classes
 
             return listeCones;
         }
+
+        public bool ajoutCone(string nom, string typeCone, string typeMachine)
+        {
+            BDService BDCones = new BDService();
+            String request = "INSERT INTO Cones (nom, typeCone, TypeMachine) VALUES" +
+                             "( " + "'" + nom + "'" +
+                             ", " + "'" + typeCone + "'" +
+                             ", " + "'" + typeMachine + "'" + ");";
+
+            if (BDCones.Insertion(request) == true)
+                return true;
+            else
+                return false;
+        }
     }
 }
