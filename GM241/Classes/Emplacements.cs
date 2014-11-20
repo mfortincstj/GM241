@@ -65,5 +65,21 @@ namespace GM241.Classes
 
             return listeEmplacements;
         }
+
+        public bool ajoutEmplacement(int idTypeEmplacement, string noLocal, string noArmoire, string noTiroir, string noCasier)
+        {
+            BDService BDCollets = new BDService();
+            String request = "INSERT INTO Emplacements (idTypeEmplacement, noLocal, noArmoire, noTiroir, noCasier) VALUES" +
+                             "( " + idTypeEmplacement +
+                             ", " + "'" + noLocal + "'" +
+                             ", " + "'" + noArmoire + "'" +
+                             ", " + "'" + noTiroir + "'" +
+                             ", " + "'" + noCasier + "'" + ");";
+
+            if (BDCollets.Insertion(request) == true)
+                return true;
+            else
+                return false;
+        }
     }
 }
