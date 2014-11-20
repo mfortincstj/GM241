@@ -26,6 +26,18 @@ namespace GM241.Fenetres.Inventaire
         private string usagerConnecte = "";
         private bool estAdmin = false;
 
+        /*private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (MessageBox.Show("Êtes-vous sûr de vouloir quitter?", "Attention!", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.Yes) == MessageBoxResult.Yes)
+            {
+                Application.Current.Shutdown();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }*/
+
         public Inventaire(bool admin, string user)
         {
             InitializeComponent();
@@ -43,6 +55,7 @@ namespace GM241.Fenetres.Inventaire
             else   // Section usager seulement, alors pas acces au boutons ajouter, modifier et supprimer
             {
                 authentifie.Content = "Usager";
+                usager.Content = usagerConnecte;
                 lstMenu.IsEnabled = false;
                 btnDetail.Visibility = Visibility.Hidden;
             }
@@ -65,7 +78,8 @@ namespace GM241.Fenetres.Inventaire
             resGrid2.ItemsSource = listCol;
 
             List<PorteOutils> listPorteOutil = PorteOutils.chargerlstPorteOutils();
-            //resGrid3.ItemsSource = listPorteOutil;
+            
+            resGrid2.ItemsSource = listPorteOutil;
         }
 
         private void btnQuitter_Click(object sender, RoutedEventArgs e)

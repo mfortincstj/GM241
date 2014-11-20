@@ -29,6 +29,16 @@ namespace GM241
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
+        /*private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs f)
+        {
+            if (MessageBox.Show("Êtes-vous sûr de vouloir quitter?", "Attention!", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.Yes) == MessageBoxResult.Yes){
+                Application.Current.Shutdown();
+            }
+            else {
+                f.Cancel = true;
+            }
+        }*/
+
         // Authentification
         private void btnAuthentification_Click(object sender, RoutedEventArgs e)
         {
