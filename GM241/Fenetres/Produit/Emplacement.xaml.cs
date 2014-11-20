@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using GM241.Classes;
 
 namespace GM241.Fenetres.Produit
 {
@@ -19,9 +21,63 @@ namespace GM241.Fenetres.Produit
     /// </summary>
     public partial class Emplacement : Window
     {
+        private void viderChamps()
+        {
+            listeTypeEmplacement.SelectedIndex = 0;
+            noLocal.Text = "";
+            noArmoire.Text = "";
+            noTitoir.Text = "";
+            noCasier.Text = "";
+        }
+
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
         public Emplacement()
         {
             InitializeComponent();
+
+            int iCompteur = 0;
+
+            // Charger la liste des emplacements
+            List<string> lstNom = TypeEmplacements.chargerNom();
+            List<Emplacements> lstEmpl = Emplacements.chargerlstEmplacements();
+
+            foreach (Emplacements e in lstEmpl)
+                listeTypeEmplacement.Items.Add(e.idTypeEmplacement + " - " + lstNom[iCompteur++]);
+
+            viderChamps();
+        }
+
+        private void btnAjouter_Click(object sender, RoutedEventArgs e)
+        {
+            bool insertValide = true;
+            char[] splitchar = {' '};
+            string str = null;
+            string[] idEmp = null;
+            Emplacements empl = new Emplacements();
+
+            // Prendre le id du type d'emplacement
+            str = listeTypeEmplacement.Text;
+            idEmp = str.Split(splitchar);
+
+            // Vérifier si les champs sont vide ? 
+            if(noLocal.Text == "")
+                insertValide = false;
+
+            if (insertValide == true)
+            {
+                if (empl.ajoutEmplacement(Convert.ToInt32(idEmp[0]), noLocal.Text, noArmoire.Text, noTitoir.Text, noCasier.Text) == true)
+                {
+                    MessageBox.Show("Insertion réussie");
+                    viderChamps();
+                }
+            }
+            else
+                MessageBox.Show("Champs incomplet", "Attention !", MessageBoxButton.OK, MessageBoxImage.Warning, MessageBoxResult.OK);
         }
     }
 }

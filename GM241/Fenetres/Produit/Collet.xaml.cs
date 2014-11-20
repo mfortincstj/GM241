@@ -30,6 +30,12 @@ namespace GM241.Fenetres.Produit
             img.Text = "";
         }
 
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
         public Collet()
         {
             InitializeComponent();
@@ -63,7 +69,7 @@ namespace GM241.Fenetres.Produit
             string[] idTypeAtt = null;
             Collets collets = new Collets();
 
-            // Prendre le id de l'attachement
+            // Prendre le id du type d'emplacement
             str = listeTypeEmplacement.Text;
             idEmp = str.Split(splitchar);
 
@@ -78,8 +84,8 @@ namespace GM241.Fenetres.Produit
             if (img.Text == "")
                 insertValide = false;
 
-            quant.Text = Regex.Replace(quant.Text, "[^0-9.]", "");
-
+            if (quant.Text == "")
+                insertValide = false;
 
             if (insertValide == true)
             {
