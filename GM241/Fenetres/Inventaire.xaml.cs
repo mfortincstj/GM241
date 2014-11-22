@@ -59,14 +59,14 @@ namespace GM241.Fenetres.Inventaire
                 lstMenu.IsEnabled = false;
                 btnDetail.Visibility = Visibility.Hidden;
             }
-
+            /*
             // Initialiser la liste des catégories
             cboxCategorie.Items.Add("Sélectionnez");
             cboxCategorie.Items.Add("Collet");          // Élément #1
             cboxCategorie.Items.Add("Porte outil");     // #2
             cboxCategorie.Items.Add("Outils");          // #3
             cboxCategorie.Items.Add("Plaquettes");      // #4
-            cboxCategorie.SelectedIndex = 0;
+            cboxCategorie.SelectedIndex = 0;*/
 
             // Initialiser la liste des menus
             lstMenu.Items.Add("Inventaire");
@@ -75,11 +75,53 @@ namespace GM241.Fenetres.Inventaire
             lstMenu.SelectedIndex = 0;
 
             List<Collets> listCol = Collets.chargerlstCollets();
-            resGrid2.ItemsSource = listCol;
+            resGrid1.ItemsSource = listCol;
+
+            List<Outils> listOutil = Outils.chargerLstOutils();
+            resGrid2.ItemsSource = listOutil;
 
             List<PorteOutils> listPorteOutil = PorteOutils.chargerlstPorteOutils();
+            resGrid3.ItemsSource = listPorteOutil;
+
+            List<Plaquettes> listPlaquettes = Plaquettes.chargerlstPlaquettes();
+            resGrid4.ItemsSource = listPlaquettes;
+
+            List <Cones> listCone = Cones.chargerlstCones();
+            resGrid5.ItemsSource = listCone;
+
+            List <Emplacements> listEmplacement = Emplacements.chargerlstEmplacements();
+            resGrid6.ItemsSource = listEmplacement;
+
+            List <Extensions> listExtension = Extensions.chargerlstExtensions();
+            resGrid7.ItemsSource = listExtension;
+
+            /*List <Machines> listMachine = Machines.chargerMachines();
+            resGrid8.ItemsSource = listMachine;*/
+
+            List <PlateauMachines> listPlateauMachine = PlateauMachines.chargerlstPlateauMachines();
+            resGrid9.ItemsSource = listPlateauMachine;
+
+            List <TypeAttachements> listTypeAttachement = TypeAttachements.chargerlstTypeAttachements();
+            resGrid10.ItemsSource = listTypeAttachement;
+
+            List <TypePorteOutils> listTypePorteOutil = TypePorteOutils.chargerlstTypePorteOutils();
+            resGrid11.ItemsSource = listTypePorteOutil;
+
+            //List <TypeEmplacements> listTypeEmplacement = TypeEmplacements.chargerNom;
+            //resGrid12.ItemsSource =
+
+            //List<TypeOutils> listTypeOutil = TypeOutils.chargerNom;
+            //resGrid13.ItemsSource =
+
             
-            resGrid2.ItemsSource = listPorteOutil;
+
+
+
+
+
+
+
+
         }
 
         private void btnQuitter_Click(object sender, RoutedEventArgs e)
@@ -88,7 +130,7 @@ namespace GM241.Fenetres.Inventaire
                 Application.Current.Shutdown();
         }
 
-        private void cboxCategorie_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        /*private void cboxCategorie_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             switch (cboxCategorie.SelectedIndex)
             {
@@ -98,7 +140,7 @@ namespace GM241.Fenetres.Inventaire
 
                 case 1 :   // Collets
                     List<Collets> listCol = Collets.chargerlstCollets();
-                    resGrid2.ItemsSource = listCol;
+                    resGrid1.ItemsSource = listCol;
                 break;
 
                 case 2:   // Porte outils
@@ -118,7 +160,7 @@ namespace GM241.Fenetres.Inventaire
             }
 
             btnDetail.IsEnabled = false;
-        }
+        }*/
 
         private void boiteResultats_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
