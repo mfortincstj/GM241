@@ -50,5 +50,17 @@ namespace GM241.Classes
 
             return listeTypeOutils;
         }
+
+        public bool ajoutTypeOutil(string nom)
+        {
+            BDService BDTypeOutil = new BDService();
+            String request = "INSERT INTO TypeOutils (nom) VALUES" +
+                             "( " + "'" + nom + "'" + ");";
+
+            if (BDTypeOutil.Insertion(request) == true)
+                return true;
+            else
+                return false;
+        }
     }
 }

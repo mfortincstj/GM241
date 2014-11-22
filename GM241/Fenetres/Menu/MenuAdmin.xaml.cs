@@ -31,7 +31,7 @@ namespace GM241.Fenetres.Menu
             // Initialiser la liste des produits
             lstProduits.Items.Add("Sélection"); lstProduits.Items.Add("Machines"); lstProduits.Items.Add("Plateau pour machines");
             lstProduits.Items.Add("Outils"); lstProduits.Items.Add("Type d'outils"); lstProduits.Items.Add("Extensions");
-            lstProduits.Items.Add("Porte outils"); lstProduits.Items.Add("Collets"); lstProduits.Items.Add("Type de pourte outils");
+            lstProduits.Items.Add("Porte outils"); lstProduits.Items.Add("Collets"); lstProduits.Items.Add("Type de porte outils");
             lstProduits.Items.Add("Cones"); lstProduits.Items.Add("Plaquettes"); lstProduits.Items.Add("Emplacements");
             lstProduits.Items.Add("Type d'emplacements"); lstProduits.Items.Add("Type d'attachements");
             lstProduits.SelectedIndex = 0;

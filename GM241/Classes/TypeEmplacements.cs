@@ -50,5 +50,17 @@ namespace GM241.Classes
 
             return listeTypeEmplacements;
         }
+
+        public bool ajoutTypeEmplacement(string nom)
+        {
+            BDService BDTypeEmplacement = new BDService();
+            String request = "INSERT INTO TypeEmplacements (nom) VALUES" +
+                             "( " + "'" + nom + "'" + ");";
+
+            if (BDTypeEmplacement.Insertion(request) == true)
+                return true;
+            else
+                return false;
+        }
     }
 }

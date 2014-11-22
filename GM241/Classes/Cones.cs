@@ -8,19 +8,22 @@ namespace GM241.Classes
 {
     class Cones
     {
+        public virtual int idCone { get; set; }
         public virtual string nom { get; set; }
         public virtual string typeCone { get; set; }
         public virtual string typeMachine { get; set; }
 
         public Cones()
         {
+            idCone = 0;
             nom = "";
             typeCone = "";
             typeMachine = "";
         }
 
-        public Cones(string n, string typeC, string typeM)
+        public Cones(int idCon, string n, string typeC, string typeM)
         {
+            idCone = idCon;
             nom = n;
             typeCone = typeC;
             typeMachine = typeM;
@@ -28,6 +31,7 @@ namespace GM241.Classes
 
         public static List<Cones> chargerlstCones()
         {
+            int idCone;
             string nom;
             string typeCone;
             string typeMachine;
@@ -45,11 +49,12 @@ namespace GM241.Classes
             {
                 for (int i = 0; i < nombreRange; i++)
                 {
+                    idCone = Convert.ToInt32(tabCones[i][0]);
                     nom = tabCones[i][1];
                     typeCone = tabCones[i][2];
                     typeMachine = tabCones[i][3];
 
-                    listeCones.Add(new Cones(nom, typeCone, typeMachine));
+                    listeCones.Add(new Cones(idCone, nom, typeCone, typeMachine));
                 }
             }
 

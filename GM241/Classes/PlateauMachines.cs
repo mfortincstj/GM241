@@ -60,5 +60,19 @@ namespace GM241.Classes
 
             return listePlateauMachines;
         }
+
+        public bool ajoutPlateauMachine(string nom, bool axeSuppA, bool axeSuppB)
+        {
+            BDService BDPlateauMachines = new BDService();
+            String request = "INSERT INTO PlateauMachines (nom, axeSuppA, axeSuppB) VALUES" +
+                             "( " + "'" + nom + "'" + 
+                             ", " + axeSuppA +
+                             ", " + axeSuppB + ");";
+
+            if (BDPlateauMachines.Insertion(request) == true)
+                return true;
+            else
+                return false;
+        }
     }
 }

@@ -55,5 +55,18 @@ namespace GM241.Classes
 
             return listeTypeAttachements;
         }
+
+        public bool ajoutTypeAttachement(string nom, string diametreExterieur)
+        {
+            BDService BDTypeAttachement = new BDService();
+            String request = "INSERT INTO TypeAttachements (nom, diametreExterieur) VALUES" +
+                             "( " + "'" + nom + "'" +
+                             ", " + "'" + diametreExterieur + "'" + ");";
+
+            if (BDTypeAttachement.Insertion(request) == true)
+                return true;
+            else
+                return false;
+        }
     }
 }

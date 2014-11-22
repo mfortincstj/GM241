@@ -60,5 +60,19 @@ namespace GM241.Classes
 
             return listeTypePorteOutils;
         }
+
+        public bool ajoutTypePorteOutil(int idCone, int idTypeAttachement, string nom)
+        {
+            BDService BDTypePorteOutil = new BDService();
+            String request = "INSERT INTO TypePorteOutils (idCone, idTypeAttachement, nom) VALUES" +
+                             "( " + idCone +
+                             ", " + idTypeAttachement +
+                             ", " + "'" + nom + "'" + ");";
+
+            if (BDTypePorteOutil.Insertion(request) == true)
+                return true;
+            else
+                return false;
+        }
     }
 }
