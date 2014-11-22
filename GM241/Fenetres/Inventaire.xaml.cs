@@ -83,8 +83,8 @@ namespace GM241.Fenetres.Inventaire
             List<PorteOutils> listPorteOutil = PorteOutils.chargerlstPorteOutils();
             resGrid3.ItemsSource = listPorteOutil;
 
-            List<Plaquettes> listPlaquettes = Plaquettes.chargerlstPlaquettes();
-            resGrid4.ItemsSource = listPlaquettes;
+            List<Plaquettes> listPlaquette = Plaquettes.chargerlstPlaquettes();
+            resGrid4.ItemsSource = listPlaquette;
 
             List <Cones> listCone = Cones.chargerlstCones();
             resGrid5.ItemsSource = listCone;
@@ -95,8 +95,8 @@ namespace GM241.Fenetres.Inventaire
             List <Extensions> listExtension = Extensions.chargerlstExtensions();
             resGrid7.ItemsSource = listExtension;
 
-            /*List <Machines> listMachine = Machines.chargerMachines();
-            resGrid8.ItemsSource = listMachine;*/
+            //List <Machines> listMachine = Machines.chargerMachines();
+            //resGrid8.ItemsSource = listMachine;
 
             List <PlateauMachines> listPlateauMachine = PlateauMachines.chargerlstPlateauMachines();
             resGrid9.ItemsSource = listPlateauMachine;
@@ -107,21 +107,35 @@ namespace GM241.Fenetres.Inventaire
             List <TypePorteOutils> listTypePorteOutil = TypePorteOutils.chargerlstTypePorteOutils();
             resGrid11.ItemsSource = listTypePorteOutil;
 
-            //List <TypeEmplacements> listTypeEmplacement = TypeEmplacements.chargerNom;
-            //resGrid12.ItemsSource =
+            List <TypeEmplacements> listTypeEmplacement = TypeEmplacements.chargerlstTypeEmplacements();
+            resGrid12.ItemsSource = listTypeEmplacement;
 
             //List<TypeOutils> listTypeOutil = TypeOutils.chargerNom;
             //resGrid13.ItemsSource =
 
-            
+            string nomFournit = champNom.Text.ToLower();
+            string descriptionFournit = champDescription.Text.ToLower();
 
+            foreach (Outils o in listOutil)
+            {
+                if (o.nom == nomFournit)
+                {
+                    resGrid2.Items.Add(o.idTypeOutil + ", " + o.idEmplacement + ", " + o.idPlaquette + ", " + o.nom + ", " + o.quantite + ", " +
+                                             o.diametreUsinage + ", " + o.diametreSerrage + ", " + o.longueurCoupe + ", " + o.longueurTotal + ", " +
+                                             o.longueurShank + ", " + o.rayonCoin + ", " + o.anglePointe + ", " + o.nombreFlute + ", " +
+                                             o.disponible + ", " + o.unitePouce + ", " + o.image);
+                }
+            }
 
-
-
-
-
-
-
+            foreach (Plaquettes p in listPlaquette)
+            {
+                if (p.nom == nomFournit)
+                {
+                    resGrid4.Items.Add(p.idEmplacement + ", " + p.nom + ", " + p.typePlaquette + ", " + p.direction + ", " + p.angle
+                                             + ", " + p.degagement + ", " + p.grosseur + ", " + p.compagnie + ", " + p.quantite + ", " + p.disponible
+                                             + ", " + p.codeAlpha + ", " + p.unitePouce + ", " + p.tourFraseuse + ", " + p.image);
+                }
+            }
         }
 
         private void btnQuitter_Click(object sender, RoutedEventArgs e)
@@ -172,67 +186,6 @@ namespace GM241.Fenetres.Inventaire
             MessageBox.Show(resGrid2.SelectedItems.ToString());
         }
 
-        /*
-        private void btnRecherche_Click(object sender, RoutedEventArgs e)
-        {
-            string nomFournit = champNom.Text.ToLower();
-            string descriptionFournit = champDescription.Text.ToLower();
-
-            List<Outils> listOutil = Outils.chargerLstOutils();
-
-            foreach (Outils o in listOutil)
-            {
-                if (o.nom == nomFournit || o.idTypeOutil.ToString() == descriptionFournit || o.idEmplacement.ToString() == descriptionFournit
-                    || o.diametreUsinage == descriptionFournit || o.diametreSerrage == descriptionFournit 
-                    || o.longueurCoupe == descriptionFournit || o.longueurTotal == descriptionFournit || o.longueurShank == descriptionFournit
-                    || o.rayonCoin == descriptionFournit || o.anglePointe == descriptionFournit || o.nombreFlute.ToString() == descriptionFournit)
-                {
-                    resGrid.Items.Add(o.idTypeOutil + ", " + o.idEmplacement + ", " + o.idPlaquette + ", " + o.nom + ", " + o.quantite + ", " +
-                                             o.diametreUsinage + ", " + o.diametreSerrage + ", " + o.longueurCoupe + ", " + o.longueurTotal + ", " +
-                                             o.longueurShank + ", " + o.rayonCoin + ", " + o.anglePointe + ", " + o.nombreFlute + ", " +
-                                             o.disponible + ", " + o.unitePouce + ", " + o.image);
-                }
-            }
-
-            List<Plaquettes> listPlaquettes = Plaquettes.chargerlstPlaquettes();
-
-            foreach (Plaquettes p in listPlaquettes)
-            {
-                if(p.nom == nomFournit || p.idEmplacement.ToString() == descriptionFournit || p.typePlaquette == descriptionFournit 
-                   || p.direction == descriptionFournit || p.angle == descriptionFournit || p.degagement == descriptionFournit 
-                   || p.grosseur == descriptionFournit || p.compagnie == descriptionFournit || p.codeAlpha == descriptionFournit 
-                   || p.tourFraseuse == descriptionFournit)
-                {
-                    resGrid.Items.Add(p.idEmplacement + ", " + p.nom + ", " + p.typePlaquette + ", " + p.direction + ", " + p.angle 
-                                             + ", " + p.degagement + ", " + p.grosseur + ", " + p.compagnie + ", " + p.quantite + ", " + p.disponible 
-                                             + ", " + p.codeAlpha + ", " + p.unitePouce + ", " + p.tourFraseuse + ", " + p.image);
-                }
-            }
-
-            List<Collets> listCollets = Collets.chargerlstCollets();
-
-            foreach (Collets c in listCollets)
-            {
-                if(c.idEmplacement.ToString() == descriptionFournit || c.idTypeAttachement.ToString() == descriptionFournit || c.diametreInterieur == descriptionFournit
-                   || c.quantite.ToString() == descriptionFournit || c.image == descriptionFournit)
-                {
-                    resGrid.Items.Add(c.idEmplacement + ", " + c.idTypeAttachement + ", " + c.diametreInterieur + ", " + c.quantite + ", " + c.image);
-                }
-            }
-
-            List<PorteOutils> listPorteOutils = PorteOutils.chargerlstPorteOutils();
-
-            foreach (PorteOutils po in listPorteOutils)
-            {
-                if(po.idTypePorteOutil.ToString() == descriptionFournit || po.idEmplacement.ToString() == descriptionFournit
-                   || po.quantite.ToString() == descriptionFournit || po.image == descriptionFournit)
-                {
-                    resGrid.Items.Add(po.idTypePorteOutil + ", " + po.idEmplacement + ", " + po.quantite + ", " + po.image);
-                }
-            }
-        }
-        */
-
         private void lstMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (lstMenu.SelectedIndex == 1)   // Administration
@@ -258,6 +211,55 @@ namespace GM241.Fenetres.Inventaire
                 this.Close();
             }
         }
+
+            /*string nomFournit = champNom.Text.ToLower();
+            string descriptionFournit = champDescription.Text.ToLower();
+
+            foreach (Outils o in listOutil)
+            {
+                if (o.nom == nomFournit || o.idTypeOutil.ToString() == descriptionFournit || o.idEmplacement.ToString() == descriptionFournit
+                    || o.diametreUsinage == descriptionFournit || o.diametreSerrage == descriptionFournit
+                    || o.longueurCoupe == descriptionFournit || o.longueurTotal == descriptionFournit || o.longueurShank == descriptionFournit
+                    || o.rayonCoin == descriptionFournit || o.anglePointe == descriptionFournit || o.nombreFlute.ToString() == descriptionFournit)
+                {
+                    resGrid2.Items.Add(o.idTypeOutil + ", " + o.idEmplacement + ", " + o.idPlaquette + ", " + o.nom + ", " + o.quantite + ", " +
+                                             o.diametreUsinage + ", " + o.diametreSerrage + ", " + o.longueurCoupe + ", " + o.longueurTotal + ", " +
+                                             o.longueurShank + ", " + o.rayonCoin + ", " + o.anglePointe + ", " + o.nombreFlute + ", " +
+                                             o.disponible + ", " + o.unitePouce + ", " + o.image);
+                }
+            }
+
+            foreach (Plaquettes p in listPlaquette)
+            {
+                if (p.nom == nomFournit || p.idEmplacement.ToString() == descriptionFournit || p.typePlaquette == descriptionFournit
+                   || p.direction == descriptionFournit || p.angle == descriptionFournit || p.degagement == descriptionFournit
+                   || p.grosseur == descriptionFournit || p.compagnie == descriptionFournit || p.codeAlpha == descriptionFournit
+                   || p.tourFraseuse == descriptionFournit)
+                {
+                    resGrid4.Items.Add(p.idEmplacement + ", " + p.nom + ", " + p.typePlaquette + ", " + p.direction + ", " + p.angle
+                                             + ", " + p.degagement + ", " + p.grosseur + ", " + p.compagnie + ", " + p.quantite + ", " + p.disponible
+                                             + ", " + p.codeAlpha + ", " + p.unitePouce + ", " + p.tourFraseuse + ", " + p.image);
+                }
+            }
+
+            foreach (Collets c in listCol)
+            {
+                if (c.idEmplacement.ToString() == descriptionFournit || c.idTypeAttachement.ToString() == descriptionFournit || c.diametreInterieur == descriptionFournit
+                   || c.quantite.ToString() == descriptionFournit || c.image == descriptionFournit)
+                {
+                    resGrid1.Items.Add(c.idEmplacement + ", " + c.idTypeAttachement + ", " + c.diametreInterieur + ", " + c.quantite + ", " + c.image);
+                }
+            }
+
+            foreach (PorteOutils po in listPorteOutil)
+            {
+                if (po.idTypePorteOutil.ToString() == descriptionFournit || po.idEmplacement.ToString() == descriptionFournit
+                   || po.quantite.ToString() == descriptionFournit || po.image == descriptionFournit)
+                {
+                    resGrid3.Items.Add(po.idTypePorteOutil + ", " + po.idEmplacement + ", " + po.quantite + ", " + po.image);
+                }
+            }
+        }*/
 
         private void resGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

@@ -8,7 +8,7 @@ namespace GM241.Classes
 {
     class Machines
     {
-        public virtual int? idPlateauMachine { get; set; }
+        public virtual int idPlateauMachine { get; set; }
         public virtual string nom { get; set; }
         public virtual int nombreOutilMagasin { get; set; }
         public virtual string precisionMachine { get; set; }
@@ -41,7 +41,7 @@ namespace GM241.Classes
             axeZMAX = "";
         }
 
-        public Machines(int? idPlatMach, string n, int nbOutilMag, string precMach, string formatCo, int nbOutilPr, int noMach,
+        public Machines(int idPlatMach, string n, int nbOutilMag, string precMach, string formatCo, int nbOutilPr, int noMach,
                         string axeXMi, string axeXMa, string axeYMi, string axeYMa, bool axZ, string axeZMi, string axeZMa)
         {
             idPlateauMachine = idPlatMach;
@@ -62,7 +62,7 @@ namespace GM241.Classes
 
         public static List<Machines> chargerMachines()
         {
-            int? idPlateauMachine;
+            int idPlateauMachine;
             string nom;
             int nombreOutilMagasin;
             string precisionMachine;
