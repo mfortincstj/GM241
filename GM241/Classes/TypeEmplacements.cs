@@ -8,36 +8,47 @@ namespace GM241.Classes
 {
     class TypeEmplacements
     {
-        public virtual string nom{ get; set; }
+        public virtual int idTypeEmplacement { get; set; }
+        public virtual string nom { get; set; }
 
         public TypeEmplacements()
         {
+            idTypeEmplacement = 0;
             nom = "";
         }
 
-        public TypeEmplacements(string n)
-        { 
+        public TypeEmplacements(int idTypeEmp, string n)
+        {
+            idTypeEmplacement = idTypeEmp;
             nom = n;
         }
 
-        public static List<string> chargerNom()
+        public static List<TypeEmplacements> chargerlstTypeEmplacements()
         {
-            string request;
-            List<string>[] tabNom;
-            int nombreRange = 0;
+            int idTypeEmplacement;
+            string nom;
 
-            List<Emplacements> listEmplacements = Emplacements.chargerlstEmplacements();
-            List<string> lstNom= new List<string>();
             BDService BDTypeEmplacements = new BDService();
+            String request = "SELECT * FROM TypeEmplacements";
 
-            foreach (Emplacements emp in listEmplacements)
+            List<string>[] tabTypeEmplacements;
+            int nombreRange = 0;
+            tabTypeEmplacements = BDTypeEmplacements.selection(request, 2, ref nombreRange);
+
+            List<TypeEmplacements> listeTypeEmplacements = new List<TypeEmplacements>();
+
+            if (nombreRange >= 1)
             {
-                request = "SELECT * FROM TypeEmplacements WHERE idTypeEmplacement = " + emp.idTypeEmplacement;
-                tabNom = BDTypeEmplacements.selection(request, 2, ref nombreRange);
-                lstNom.Add(tabNom[0][1]);
+                for (int i = 0; i < nombreRange; i++)
+                {
+                    idTypeEmplacement = Convert.ToInt32(tabTypeEmplacements[i][0]);
+                    nom = tabTypeEmplacements[i][1];
+
+                    listeTypeEmplacements.Add(new TypeEmplacements(idTypeEmplacement, nom));
+                }
             }
 
-            return lstNom;
+            return listeTypeEmplacements;
         }
     }
 }

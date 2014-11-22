@@ -39,16 +39,12 @@ namespace GM241.Fenetres.Produit
         public Collet()
         {
             InitializeComponent();
-            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
-            int iCompteur = 0;
-            
-            // Charger la liste des emplacements
-            List<string> lstNom = TypeEmplacements.chargerNom();
-            List<Emplacements> lstEmpl = Emplacements.chargerlstEmplacements();
+            // Charger la liste des types d'emplacements
+            List<TypeEmplacements> lstTypeEmpl = TypeEmplacements.chargerlstTypeEmplacements();
 
-            foreach (Emplacements e in lstEmpl)
-                listeTypeEmplacement.Items.Add(e.idTypeEmplacement + " - " + lstNom[iCompteur++]);
+            foreach (TypeEmplacements tP in lstTypeEmpl)
+                listeTypeEmplacement.Items.Add(tP.idTypeEmplacement + " - " + tP.nom);
 
             // Charger la liste des attachements
             List<TypeAttachements> lstAttachements = TypeAttachements.chargerlstTypeAttachements();

@@ -40,14 +40,11 @@ namespace GM241.Fenetres.Produit
         {
             InitializeComponent();
 
-            int iCompteur = 0;
+            // Charger la liste des types d'emplacements
+            List<TypeEmplacements> lstTypeEmpl = TypeEmplacements.chargerlstTypeEmplacements();
 
-            // Charger la liste des emplacements
-            List<string> lstNom = TypeEmplacements.chargerNom();
-            List<Emplacements> lstEmpl = Emplacements.chargerlstEmplacements();
-
-            foreach (Emplacements e in lstEmpl)
-                listeTypeEmplacement.Items.Add(e.idTypeEmplacement + " - " + lstNom[iCompteur++]);
+            foreach (TypeEmplacements tP in lstTypeEmpl)
+                listeTypeEmplacement.Items.Add(tP.idTypeEmplacement + " - " + tP.nom);
 
             viderChamps();
         }
