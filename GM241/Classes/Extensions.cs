@@ -80,5 +80,24 @@ namespace GM241.Classes
 
             return listeExtensions;
         }
+
+        public bool ajoutExtension(int idPorteOutil, int idEmplacement, int idCollet, string longueurShank, string diametreShank, string longueurTotale, int quantite, string image)
+        {
+            BDService BDExtension = new BDService();
+            String request = "INSERT INTO Extensions (idPorteOutil, idEmplacement, idCollet, longueurShank, diametreShank, longueurTotale, quantite, image) VALUES" +
+                             "( " + idPorteOutil +
+                             ", " + idEmplacement +
+                             ", " + idCollet +
+                             ", " + "'" + longueurShank + "'" +
+                             ", " + "'" + diametreShank + "'" +
+                             ", " + "'" + longueurTotale + "'" +
+                             ", " + quantite +
+                             ", " + "'" + image + "'" + ");";
+
+            if (BDExtension.Insertion(request) == true)
+                return true;
+            else
+                return false;
+        }
     }
 }

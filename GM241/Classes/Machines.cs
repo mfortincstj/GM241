@@ -112,5 +112,30 @@ namespace GM241.Classes
 
             return listeMachines;
         }
+
+        public bool ajoutMachine(int idPlateauMachine, string nom, int nombreOutilMagasin, string precisionMachine, string formatCone, int nombreOutilPrep, int numeroMachine, string axeXMin, string axeXMAX, string axeYMin, string axeYMAX, bool axeZ, string axeZMin, string axeZMAX)
+        {
+            BDService BDMachines = new BDService();
+            String request = "INSERT INTO Collets (nom, nombreOutilMagasin, precisionMachine, formatCone, nombreOutilPrep , numeroMachine, axeXMin, axeXMAX, axeYMin, axeYMAX, axeZ, axeZMin, axeZMAX) VALUES" +
+                             "( " + idPlateauMachine +
+                             ", " + "'" + nom + "'" +
+                             ", " + nombreOutilMagasin +
+                             ", " + "'" + precisionMachine + "'" +
+                             ", " + "'" + formatCone + "'" +
+                             ", " + nombreOutilPrep +
+                             ", " + numeroMachine +
+                             ", " + "'" + axeXMin + "'" +
+                             ", " + "'" + axeXMAX + "'" +
+                             ", " + "'" + axeYMin + "'" +
+                             ", " + "'" + axeYMAX + "'" +
+                             ", " + axeZ +
+                             ", " + "'" + axeZMin + "'" +
+                             ", " + "'" + axeZMAX + "'" + ");";
+
+            if (BDMachines.Insertion(request) == true)
+                return true;
+            else
+                return false;
+        }
     }
 }

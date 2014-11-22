@@ -8,19 +8,22 @@ namespace GM241.Classes
 {
     class PlateauMachines
     {
+        public virtual int idPlateauMachine { get; set; }
         public virtual string nom { get; set; }
         public virtual bool axeSuppA { get; set; }
         public virtual bool axeSuppB { get; set; }
 
         public PlateauMachines()
         {
+            idPlateauMachine = 0;
             nom = "";
             axeSuppA = false;
             axeSuppB = false;
         }
 
-        public PlateauMachines(string n, bool axeSuA, bool axeSuB)
+        public PlateauMachines(int idPlateauM, string n, bool axeSuA, bool axeSuB)
         {
+            idPlateauMachine = idPlateauM;
             nom = n;
             axeSuppA = axeSuA;
             axeSuppB = axeSuB;
@@ -28,6 +31,7 @@ namespace GM241.Classes
 
         public static List<PlateauMachines> chargerlstPlateauMachines()
         {
+            int idPlateauMachine;
             string nom;
             bool axeSuppA;
             bool axeSuppB;
@@ -45,11 +49,12 @@ namespace GM241.Classes
             {
                 for (int i = 0; i < nombreRange; i++)
                 {
+                    idPlateauMachine = Convert.ToInt32(tabPlateauMachines[i][0]);
                     nom = tabPlateauMachines[i][1];
                     axeSuppA = Convert.ToBoolean(tabPlateauMachines[i][2]);
                     axeSuppB = Convert.ToBoolean(tabPlateauMachines[i][3]);
 
-                    listePlateauMachines.Add(new PlateauMachines(nom, axeSuppA, axeSuppB));
+                    listePlateauMachines.Add(new PlateauMachines(idPlateauMachine, nom, axeSuppA, axeSuppB));
                 }
             }
 
