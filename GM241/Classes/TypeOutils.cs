@@ -8,36 +8,47 @@ namespace GM241.Classes
 {
     class TypeOutils
     {
+        public virtual int idTypeOutil { get; set; }
         public virtual string nom{ get; set; }
 
         public TypeOutils()
         {
+            idTypeOutil = 0;
             nom = "";
         }
 
-        public TypeOutils(string n)
-        { 
+        public TypeOutils(int idTypeOul, string n)
+        {
+            idTypeOutil = idTypeOul;
             nom = n;
         }
 
-        public static List<string> chargerNom()
+        public static List<TypeOutils> chargerlstTypeOutils()
         {
-            string request;
-            List<string>[] tabNom;
-            int nombreRange = 0;
-            
-            //List<TypeOutils> listTypeOutils = TypeOutils.chargerlstTypeOutils();
-            List<string> lstNom= new List<string>();
-            /*BDService BDTypeEmplacements = new BDService();
+            int idTypeOutil;
+            string nom;
 
-            foreach (Emplacements emp in listEmplacements)
+            BDService BDTypeOutils = new BDService();
+            String request = "SELECT * FROM TypeOutils";
+
+            List<string>[] tabTypeOutils;
+            int nombreRange = 0;
+            tabTypeOutils = BDTypeOutils.selection(request, 2, ref nombreRange);
+
+            List<TypeOutils> listeTypeOutils = new List<TypeOutils>();
+
+            if (nombreRange >= 1)
             {
-                request = "SELECT * FROM TypeEmplacements WHERE idTypeEmplacement = " + emp.idTypeEmplacement;
-                tabNom = BDTypeEmplacements.selection(request, 2, ref nombreRange);
-                lstNom.Add(tabNom[0][1]);
+                for (int i = 0; i < nombreRange; i++)
+                {
+                    idTypeOutil = Convert.ToInt32(tabTypeOutils[i][0]);
+                    nom = tabTypeOutils[i][1];
+
+                    listeTypeOutils.Add(new TypeOutils(idTypeOutil, nom));
+                }
             }
-            */
-            return lstNom;
+
+            return listeTypeOutils;
         }
     }
 }

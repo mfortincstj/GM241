@@ -9,6 +9,7 @@ namespace GM241.Classes
 {
     class Plaquettes
     {
+        public virtual int idPlaquette { get; set; }
         public virtual int idEmplacement { get; set; }
         public virtual string nom { get; set; }
         public virtual string typePlaquette { get; set; }
@@ -26,6 +27,7 @@ namespace GM241.Classes
 
         public Plaquettes()
         {
+            idPlaquette = 0;
             idEmplacement = 0;
             nom = "";
             typePlaquette = "";
@@ -42,9 +44,10 @@ namespace GM241.Classes
             image = "";
         }
 
-        public Plaquettes(int idEmp, string n, string typePla, string direc, string ang, string dega, string gros,
+        public Plaquettes(int idPlaq, int idEmp, string n, string typePla, string direc, string ang, string dega, string gros,
                           string comp, int quant, bool dispo, string codeA, string tourFra, bool unitePo, string img)
         {
+            idPlaquette = idPlaq;
             idEmplacement = idEmp;
             nom = n;
             typePlaquette = typePla;
@@ -63,6 +66,7 @@ namespace GM241.Classes
 
         public static List<Plaquettes> chargerlstPlaquettes()
         {
+            int idPlaquette;
             int idEmplacement;
             string nom;
             string typePlaquette;
@@ -91,6 +95,7 @@ namespace GM241.Classes
             {
                 for (int i = 0; i < nombreRange; i++)
                 {
+                    idPlaquette = Convert.ToInt32(tabPlaquettes[i][0]);
                     idEmplacement = Convert.ToInt32(tabPlaquettes[i][1]);
                     nom = tabPlaquettes[i][2];
                     typePlaquette = tabPlaquettes[i][3];
@@ -106,7 +111,7 @@ namespace GM241.Classes
                     unitePouce = Convert.ToBoolean(tabPlaquettes[i][13]);
                     image = tabPlaquettes[i][14];
 
-                    listePlaquettes.Add(new Plaquettes(idEmplacement, nom, typePlaquette, direction, angle, degagement, grosseur, compagnie, quantite, 
+                    listePlaquettes.Add(new Plaquettes(idPlaquette, idEmplacement, nom, typePlaquette, direction, angle, degagement, grosseur, compagnie, quantite, 
                                                         disponible, codeAlpha, tourFraseuse, unitePouce, image));
                 }
             }

@@ -133,5 +133,32 @@ namespace GM241.Classes
 
             return listeOutils;
         }
+
+        public bool ajoutOutil(int idTypeOutil, int idEmplacement, int idPlaquette, string nom, int quantite, string diametreUsinage, string diametreSerrage, string longueurCoupe, string longueurTotal, string longueurShank, string rayonCoin, string anglePointe, int nombreFlute, bool disponible, bool unitePouce, string image)
+        {
+            BDService BDMachines = new BDService();
+            String request = "INSERT INTO Outils (idTypeOutil, idEmplacement, idPlaquette, nom, quantite, diametreUsinage , diametreSerrage, longueurCoupe, longueurTotal, longueurShank, rayonCoin, anglePointe, nombreFlute, disponible, unitePouce, image) VALUES" +
+                             "( " + idTypeOutil +
+                             ", " + idEmplacement +
+                             ", " + idPlaquette +
+                             ", " + "'" + nom + "'" +
+                             ", " + quantite +
+                             ", " + "'" + diametreUsinage + "'" +
+                             ", " + "'" + diametreSerrage + "'" +
+                             ", " + "'" + longueurCoupe + "'" +
+                             ", " + "'" + longueurTotal + "'" +
+                             ", " + "'" + longueurShank + "'" +
+                             ", " + "'" + rayonCoin + "'" +
+                             ", " + anglePointe +
+                             ", " + nombreFlute +
+                             ", " + disponible +
+                             ", " + unitePouce +
+                             ", " + "'" + image + "'" + ");";
+
+            if (BDMachines.Insertion(request) == true)
+                return true;
+            else
+                return false;
+        }
     }
 }
