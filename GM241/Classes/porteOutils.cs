@@ -60,5 +60,20 @@ namespace GM241.Classes
 
             return listePorteOutils;
         }
+
+        public bool ajoutPorteOutil(int idTypePorteOutil, int idEmplacement, int quantite, string image)
+        {
+            BDService BDPorteOutils = new BDService();
+            String request = "INSERT INTO PorteOutils (idTypePorteOutil, idEmplacement, quantite, image) VALUES" +
+                             "( " + idTypePorteOutil +
+                             ", " + idEmplacement +
+                             ", " + quantite +
+                             ", " + "'" + image + "'" + ");";
+
+            if (BDPorteOutils.Insertion(request) == true)
+                return true;
+            else
+                return false;
+        }
     }
 }

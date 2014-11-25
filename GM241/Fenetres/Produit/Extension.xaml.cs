@@ -24,8 +24,11 @@ namespace GM241.Fenetres.Produit
         private void viderChamps()
         {
             listePorteOutil.SelectedIndex = 0;
-            listeEmplacement.SelectedIndex = 0;
+            listeNoLocal.SelectedIndex = 0;
             listeCollet.SelectedIndex = 0;
+            listeNoArmoire.SelectedIndex = 0;
+            listeNoTiroir.SelectedIndex = 0;
+            listeNoCasier.SelectedIndex = 0;
             longShank.Text = "";
             diamShank.Text = "";
             longTotal.Text = "";
@@ -43,19 +46,26 @@ namespace GM241.Fenetres.Produit
         {
             InitializeComponent();
 
+            listeNoArmoire.Items.Add("0 - Aucun");
+            listeNoTiroir.Items.Add("0 - Aucun");
+            listeNoCasier.Items.Add("0 - Aucun");
+
             // Charger la liste des types de porte outil
             List<TypePorteOutils> lstTypePorteOutils = TypePorteOutils.chargerlstTypePorteOutils();
 
             foreach (TypePorteOutils tPo in lstTypePorteOutils)
                 listePorteOutil.Items.Add(tPo.idTypePorteOutil + " - " + tPo.nom);
 
-            /*
             // Charger la liste des types d'emplacements
-            List<TypeEmplacements> lstTypeEmpl = TypeEmplacements.chargerlstTypeEmplacements();
+            List<Emplacements> lstEmplacements = Emplacements.chargerlstEmplacements();
 
-            foreach (TypeEmplacements tP in lstTypeEmpl)
-                listeEmplacement.Items.Add(tP.idTypeEmplacement + " - " + tP.nom);
-            */
+            foreach (Emplacements e in lstEmplacements)
+            {
+                listeNoLocal.Items.Add(e.idTypeEmplacement + " - " + e.noLocal);
+                listeNoArmoire.Items.Add(e.noArmoire);
+                listeNoTiroir.Items.Add(e.noTiroir);
+                listeNoCasier.Items.Add(e.noCasier);
+            }
 
             // Charger la liste des type d'attachements
             List<TypeAttachements> lstAttachements = TypeAttachements.chargerlstTypeAttachements();
@@ -82,7 +92,7 @@ namespace GM241.Fenetres.Produit
             str = listePorteOutil.Text;
             idPorteOutil = str.Split(splitchar);
 
-            str2 = listeEmplacement.Text;
+            str2 = listeNoLocal.Text;
             idEmp = str.Split(splitchar);
 
             str3 = listeCollet.Text;

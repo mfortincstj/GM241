@@ -115,9 +115,14 @@ namespace GM241.Classes
 
         public bool ajoutMachine(int idPlateauMachine, string nom, int nombreOutilMagasin, string precisionMachine, string formatCone, int nombreOutilPrep, int numeroMachine, string axeXMin, string axeXMAX, string axeYMin, string axeYMAX, bool axeZ, string axeZMin, string axeZMAX)
         {
+            string idPlatMachine = idPlateauMachine.ToString();
+
+            if (idPlatMachine == "0")
+                idPlatMachine = "NULL";
+
             BDService BDMachines = new BDService();
-            String request = "INSERT INTO Collets (nom, nombreOutilMagasin, precisionMachine, formatCone, nombreOutilPrep , numeroMachine, axeXMin, axeXMAX, axeYMin, axeYMAX, axeZ, axeZMin, axeZMAX) VALUES" +
-                             "( " + idPlateauMachine +
+            String request = "INSERT INTO Machines (idPlateauMachine, nom, nombreOutilMagasin, precisionMachine, formatCone, nombreOutilPrep , numeroMachine, axeXMin, axeXMAX, axeYMin, axeYMAX, axeZ, axeZMin, axeZMAX) VALUES" +
+                             "( " + idPlatMachine +
                              ", " + "'" + nom + "'" +
                              ", " + nombreOutilMagasin +
                              ", " + "'" + precisionMachine + "'" +

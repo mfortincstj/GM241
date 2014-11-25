@@ -24,8 +24,11 @@ namespace GM241.Fenetres.Produit
         private void viderChamps()
         {
             listeTypeOutil.SelectedIndex = 0;
-            listeEmplacement.SelectedIndex = 0;
+            listeNoLocal.SelectedIndex = 0;
             listePlaquette.SelectedIndex = 0;
+            listeNoArmoire.SelectedIndex = 0;
+            listeNoTiroir.SelectedIndex = 0;
+            listeNoCasier.SelectedIndex = 0;
             nom.Text = "";
             quantite.Text = "0";
             diametreUsinage.Text = "";
@@ -49,19 +52,26 @@ namespace GM241.Fenetres.Produit
         {
             InitializeComponent();
 
+            listeNoArmoire.Items.Add("0 - Aucun");
+            listeNoTiroir.Items.Add("0 - Aucun");
+            listeNoCasier.Items.Add("0 - Aucun");
+
             // Charger la liste des types d'outil
             List<TypeOutils> lstTypeOutils = TypeOutils.chargerlstTypeOutils();
 
             foreach (TypeOutils tO in lstTypeOutils)
                 listeTypeOutil.Items.Add(tO.idTypeOutil + " - " + tO.nom);
 
-            /*
             // Charger la liste des types d'emplacements
-            List<TypeEmplacements> lstTypeEmpl = TypeEmplacements.chargerlstTypeEmplacements();
+            List<Emplacements> lstEmplacements = Emplacements.chargerlstEmplacements();
 
-            foreach (TypeEmplacements tP in lstTypeEmpl)
-                listeEmplacement.Items.Add(tP.idTypeEmplacement + " - " + tP.nom);
-            */
+            foreach (Emplacements e in lstEmplacements)
+            {
+                listeNoLocal.Items.Add(e.idTypeEmplacement + " - " + e.noLocal);
+                listeNoArmoire.Items.Add(e.noArmoire);
+                listeNoTiroir.Items.Add(e.noTiroir);
+                listeNoCasier.Items.Add(e.noCasier);
+            }
 
             // Charger la liste des plaquettes
             List<Plaquettes> lstPlaquettes = Plaquettes.chargerlstPlaquettes();
@@ -89,7 +99,7 @@ namespace GM241.Fenetres.Produit
             str = listeTypeOutil.Text;
             idTypeOutil = str.Split(splitchar);
 
-            str2 = listeEmplacement.Text;
+            str2 = listeNoLocal.Text;
             idTypeEmplacement = str.Split(splitchar);
 
             str3 = listePlaquette.Text;

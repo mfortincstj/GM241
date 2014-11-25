@@ -46,6 +46,8 @@ namespace GM241.Fenetres.Produit
         {
             InitializeComponent();
 
+            listePlateauMachine.Items.Add("0 - Aucun");
+
             // Charger la liste des plateaux machine
             List<PlateauMachines> lstPlateauMachines = PlateauMachines.chargerlstPlateauMachines();
 
@@ -120,14 +122,10 @@ namespace GM241.Fenetres.Produit
                 axeZ = true;
 
                 if (axeZMin.Text == "")
-                {
                     insertValide = false;
-                }
 
                 if (axeZMax.Text == "")
-                {
                     insertValide = false;
-                }
             }
 
             if (insertValide == true)
