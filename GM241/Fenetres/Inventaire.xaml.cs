@@ -79,6 +79,7 @@ namespace GM241.Fenetres.Inventaire
 
             List<Outils> listOutil = Outils.chargerLstOutils();
             resGrid2.ItemsSource = listOutil;
+            resGrid.ItemsSource = listOutil;
 
             List<PorteOutils> listPorteOutil = PorteOutils.chargerlstPorteOutils();
             resGrid3.ItemsSource = listPorteOutil;
@@ -113,7 +114,7 @@ namespace GM241.Fenetres.Inventaire
             //List<TypeOutils> listTypeOutil = TypeOutils.chargerNom;
             //resGrid13.ItemsSource =
 
-            string nomFournit = champNom.Text.ToLower();
+            /*string nomFournit = champNom.Text.ToLower();
             string descriptionFournit = champDescription.Text.ToLower();
 
             foreach (Outils o in listOutil)
@@ -135,7 +136,7 @@ namespace GM241.Fenetres.Inventaire
                                              + ", " + p.degagement + ", " + p.grosseur + ", " + p.compagnie + ", " + p.quantite + ", " + p.disponible
                                              + ", " + p.codeAlpha + ", " + p.unitePouce + ", " + p.tourFraseuse + ", " + p.image);
                 }
-            }
+            }*/
         }
 
         private void btnQuitter_Click(object sender, RoutedEventArgs e)
@@ -267,6 +268,24 @@ namespace GM241.Fenetres.Inventaire
             {
                 btnDetail.IsEnabled = true;
             }
+        }
+
+        private void champNom_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+            string nomFourni = champNom.Text.ToLower();
+
+            List<Outils> listOutil = Outils.chargerLstOutils();
+
+            if(nomFourni == "")
+            {
+                resGrid.ItemsSource = listOutil;
+            }
+            else
+            {
+                resGrid.ItemsSource = listOutil.Where(o => o.nom.Contains(nomFourni));
+            }
+            
         }
     }
 }
