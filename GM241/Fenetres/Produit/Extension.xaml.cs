@@ -32,7 +32,7 @@ namespace GM241.Fenetres.Produit
             longShank.Text = "";
             diamShank.Text = "";
             longTotal.Text = "";
-            quantite.Text = "0";
+            quantite.Text = "";
             img.Text = "";
         }
 
@@ -56,6 +56,7 @@ namespace GM241.Fenetres.Produit
             foreach (TypePorteOutils tPo in lstTypePorteOutils)
                 listePorteOutil.Items.Add(tPo.idTypePorteOutil + " - " + tPo.nom);
 
+            /*
             // Charger la liste des types d'emplacements
             List<Emplacements> lstEmplacements = Emplacements.chargerlstEmplacements();
 
@@ -66,6 +67,7 @@ namespace GM241.Fenetres.Produit
                 listeNoTiroir.Items.Add(e.noTiroir);
                 listeNoCasier.Items.Add(e.noCasier);
             }
+            */
 
             // Charger la liste des type d'attachements
             List<TypeAttachements> lstAttachements = TypeAttachements.chargerlstTypeAttachements();

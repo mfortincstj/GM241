@@ -27,6 +27,8 @@ namespace GM241
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+
+            usager.Focus();
         }
 
         /*private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs f)
@@ -71,9 +73,3 @@ namespace GM241
         }
     }
 }
-
-/* Note Mick : 
- *  - Ajout Cones fait
- *  - Ajout Collets fait
- *  - 
- */

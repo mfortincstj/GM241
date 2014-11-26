@@ -3,54 +3,45 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Plaquette" Height="550" Width="975" ResizeMode="CanMinimize">
     <Grid>
-
         <Label Content="Nom : " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Width="240" Height="37" HorizontalContentAlignment="Right"/>
-        <TextBox x:Name="boxNom" HorizontalAlignment="Left" Height="37" Margin="255,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
-
+        <TextBox x:Name="nom" HorizontalAlignment="Left" Height="37" Margin="255,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
         <Label Content="Type de plaquette : " HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" FontSize="20" Width="240" Height="37" HorizontalContentAlignment="Right"/>
-        <TextBox x:Name="boxPlaquette" HorizontalAlignment="Left" Height="37" Margin="255,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
-
+        <TextBox x:Name="typePlaquette" HorizontalAlignment="Left" Height="37" Margin="255,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
         <Label Content="Direction : " HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" FontSize="20" Width="240" Height="37" HorizontalContentAlignment="Right"/>
-        <TextBox x:Name="boxDirection" HorizontalAlignment="Left" Height="37" Margin="255,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
-
+        <TextBox x:Name="direction" HorizontalAlignment="Left" Height="37" Margin="255,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
         <Label Content="Angle : " HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" FontSize="20" Width="240" Height="37" HorizontalContentAlignment="Right"/>
-        <TextBox x:Name="boxAngle" HorizontalAlignment="Left" Height="37" Margin="255,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
-
+        <TextBox x:Name="angle" HorizontalAlignment="Left" Height="37" Margin="255,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
         <Label Content="Dégagement : " HorizontalAlignment="Left" Margin="10,178,0,0" VerticalAlignment="Top" FontSize="20" Width="240" Height="37" HorizontalContentAlignment="Right"/>
-        <TextBox x:Name="boxDegagement" HorizontalAlignment="Left" Height="37" Margin="255,178,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
-
+        <TextBox x:Name="degagement" HorizontalAlignment="Left" Height="37" Margin="255,178,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
         <Label Content="Grosseur : " HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top" FontSize="20" Width="240" Height="37" HorizontalContentAlignment="Right"/>
-        <TextBox x:Name="boxGrosseur" HorizontalAlignment="Left" Height="37" Margin="255,220,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
-
+        <TextBox x:Name="grosseur" HorizontalAlignment="Left" Height="37" Margin="255,220,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
         <Label Content="Compagnie : " HorizontalAlignment="Left" Margin="10,262,0,0" VerticalAlignment="Top" FontSize="20" Width="240" Height="37" HorizontalContentAlignment="Right"/>
-        <TextBox x:Name="boxCompagnie" HorizontalAlignment="Left" Height="37" Margin="255,262,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
-
+        <TextBox x:Name="compagnie" HorizontalAlignment="Left" Height="37" Margin="255,262,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
         <Label Content="Quantité : " HorizontalAlignment="Left" Margin="10,304,0,0" VerticalAlignment="Top" FontSize="20" Width="240" Height="37" HorizontalContentAlignment="Right"/>
-        <TextBox x:Name="boxQuantite" HorizontalAlignment="Left" Height="37" Margin="255,304,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
-
-        <Label Content="Code Alpha : " HorizontalAlignment="Left" Margin="10,346,0,0" VerticalAlignment="Top" FontSize="20" Width="240" Height="37" HorizontalContentAlignment="Right"/>
-        <TextBox x:Name="boxCodeAlpha" HorizontalAlignment="Left" Height="37" Margin="255,346,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
-
-        <Label Content="Ordre : " HorizontalAlignment="Left" Margin="10,388,0,0" VerticalAlignment="Top" FontSize="20" Width="240" Height="37" HorizontalContentAlignment="Right"/>
-        <TextBox x:Name="boxOrdre" HorizontalAlignment="Left" Height="37" Margin="250,388,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
-
-        <Label Content="Tour de fraiseuse : " HorizontalAlignment="Left" Margin="490,52,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.129,0.432" Height="37" HorizontalContentAlignment="Right"/>
-        <TextBox x:Name="boxTourFraiseuse" HorizontalAlignment="Left" Height="37" Margin="729,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
-
-        <Label Content="Image : " HorizontalAlignment="Left" Margin="490,10,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.129,0.432" Height="37" HorizontalContentAlignment="Right"/>
-        <TextBox x:Name="boxImage" HorizontalAlignment="Left" Height="37" Margin="729,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
+        <TextBox x:Name="quantite" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox" Height="37" Margin="255,304,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
+        <Label Content="Code Alpha : " HorizontalAlignment="Left" Margin="10,383,0,0" VerticalAlignment="Top" FontSize="20" Width="240" Height="37" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="codeAlpha" HorizontalAlignment="Left" Height="37" Margin="255,383,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
+        <Label Content="Tour de fraiseuse : " HorizontalAlignment="Left" Margin="490,10,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.129,0.432" Height="37" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="tourFraiseuse" HorizontalAlignment="Left" Height="37" Margin="730,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
+        <Label Content="Image : " HorizontalAlignment="Left" Margin="490,94,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.129,0.432" Height="37" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="image" HorizontalAlignment="Left" Height="37" Margin="735,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
         <Button x:Name="btnAjouter" Content="Ajouter" Margin="10,468,739,0" Click="btnAjout_Click" Height="44" VerticalAlignment="Top"/>
         <Button x:Name="btnModif" Content="Modifier" Margin="375,468,374,0" IsEnabled="False" Height="44" VerticalAlignment="Top"/>
         <Button x:Name="btnSupprimer" Content="Supprimer" Margin="739,468,10,0" IsEnabled="False" Height="44" VerticalAlignment="Top"/>
-        <Label Content="Numéro de local : " HorizontalAlignment="Left" Margin="484,136,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.121,0.942" Height="37" HorizontalContentAlignment="Right"/>
-        <Label Content="Numéro d'armoire : " HorizontalAlignment="Left" Margin="484,178,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.121,0.942" Height="37" HorizontalContentAlignment="Right"/>
-        <Label Content="Numéro de tiroir : " HorizontalAlignment="Left" Margin="484,220,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.121,0.942" Height="37" HorizontalContentAlignment="Right"/>
-        <Label Content="Numéro de casier : " HorizontalAlignment="Left" Margin="484,262,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.121,0.942" Height="37" HorizontalContentAlignment="Right"/>
-        <Label Content="Emplacement" HorizontalAlignment="Left" Margin="484,94,0,0" VerticalAlignment="Top" FontSize="20" Width="475" RenderTransformOrigin="0.121,0.942" Height="37" HorizontalContentAlignment="Center" FontWeight="Bold"/>
-        <ComboBox x:Name="listeNoCasier" HorizontalAlignment="Left" Margin="729,262,0,0" VerticalAlignment="Top" Width="230" Height="37"/>
-        <ComboBox x:Name="listeNoTiroir" HorizontalAlignment="Left" Margin="729,220,0,0" VerticalAlignment="Top" Width="230" Height="37"/>
-        <ComboBox x:Name="listeNoArmoire" HorizontalAlignment="Left" Margin="729,178,0,0" VerticalAlignment="Top" Width="230" Height="37"/>
-        <ComboBox x:Name="listeNoLocal" HorizontalAlignment="Left" Margin="729,136,0,0" VerticalAlignment="Top" Width="230" Height="37"/>
-
+        <Label Content="Numéro de local : " HorizontalAlignment="Left" Margin="484,190,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.121,0.942" Height="37" HorizontalContentAlignment="Right"/>
+        <Label Content="Numéro d'armoire : " HorizontalAlignment="Left" Margin="484,232,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.121,0.942" Height="37" HorizontalContentAlignment="Right"/>
+        <Label Content="Numéro de tiroir : " HorizontalAlignment="Left" Margin="484,274,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.121,0.942" Height="37" HorizontalContentAlignment="Right"/>
+        <Label Content="Numéro de casier : " HorizontalAlignment="Left" Margin="484,316,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.121,0.942" Height="37" HorizontalContentAlignment="Right"/>
+        <Label Content="Emplacement" HorizontalAlignment="Left" Margin="484,148,0,0" VerticalAlignment="Top" FontSize="20" Width="475" RenderTransformOrigin="0.121,0.942" Height="37" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+        <ComboBox x:Name="listeNoCasier" HorizontalAlignment="Left" Margin="729,316,0,0" VerticalAlignment="Top" Width="230" Height="37"/>
+        <ComboBox x:Name="listeNoTiroir" HorizontalAlignment="Left" Margin="729,274,0,0" VerticalAlignment="Top" Width="230" Height="37"/>
+        <ComboBox x:Name="listeNoArmoire" HorizontalAlignment="Left" Margin="729,232,0,0" VerticalAlignment="Top" Width="230" Height="37"/>
+        <ComboBox x:Name="listeNoLocal" HorizontalAlignment="Left" Margin="729,190,0,0" VerticalAlignment="Top" Width="230" Height="37"/>
+        <Label Content=" Disponible: " HorizontalAlignment="Left" Margin="10,341,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.129,0.432" HorizontalContentAlignment="Right"/>
+        <RadioButton x:Name="dispoOui" GroupName="dispo" Content="Oui" HorizontalAlignment="Left" Margin="284,346,0,0" VerticalAlignment="Top" Height="37" FontSize="20" Width="53"/>
+        <RadioButton x:Name="dispoNon" GroupName="dispo" Content="Non" IsChecked="True" HorizontalAlignment="Left" Margin="366,346,0,0" VerticalAlignment="Top" Height="37" FontSize="20" Width="62"/>
+        <Label Content="Unité en pouce : " HorizontalAlignment="Left" Margin="490,52,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.129,0.432" Height="37" HorizontalContentAlignment="Right"/>
+        <RadioButton x:Name="uniteOui" GroupName="unitePo" Content="Oui" HorizontalAlignment="Left" Margin="739,57,0,0" VerticalAlignment="Top" Height="37" FontSize="20" Width="53"/>
+        <RadioButton x:Name="uniteNon" GroupName="unitePo" Content="Non" IsChecked="True" HorizontalAlignment="Left" Margin="821,57,0,0" VerticalAlignment="Top" Height="37" FontSize="20" Width="62"/>
     </Grid>
 </Window>

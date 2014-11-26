@@ -25,11 +25,11 @@ namespace GM241.Fenetres.Produit
         {
             listePlateauMachine.SelectedIndex = 0;
             nom.Text = "";
-            nbrOutil.Text = "0";
+            nbrOutil.Text = "";
             precision.Text = "";
             formatCone.Text = "";
-            nbrOutilPrep.Text = "0";
-            noMachine.Text = "0";
+            nbrOutilPrep.Text = "";
+            noMachine.Text = "";
             axeXMin.Text = "";
             axeXMax.Text = "";
             axeYMin.Text = "";

@@ -26,7 +26,7 @@ namespace GM241.Fenetres.Produit
             listeTypeEmplacement.SelectedIndex = 0;
             listeTypeAttachement.SelectedIndex = 0;
             diametreInt.Text = "";
-            quant.Text = "0";
+            quant.Text = "";
             img.Text = "";
         }
 

@@ -30,7 +30,7 @@ namespace GM241.Fenetres.Produit
             listeNoTiroir.SelectedIndex = 0;
             listeNoCasier.SelectedIndex = 0;
             nom.Text = "";
-            quantite.Text = "0";
+            quantite.Text = "";
             diametreUsinage.Text = "";
             longueurCoupe.Text = "";
             longuerTotal.Text = "";
@@ -38,7 +38,7 @@ namespace GM241.Fenetres.Produit
             rayonCoin.Text = "";
             diametreSerrage.Text = "";
             anglePointe.Text = "";
-            nbrFlute.Text = "0";
+            nbrFlute.Text = "";
             img.Text = "";
         }
 

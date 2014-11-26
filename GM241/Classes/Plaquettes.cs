@@ -118,5 +118,30 @@ namespace GM241.Classes
 
             return listePlaquettes;
         }
+
+        public bool ajoutPlaquette(int idEmplacement, string nom, string typePlaquette, string direction, string angle, string degagement, string grosseur, string compagnie, int quantite, bool disponible, string codeAlpha, string tourFraseuse, bool unitePouce, string image)
+        {
+            BDService BDPlaquettes = new BDService();
+            String request = "INSERT INTO Plaquettes (idEmplacement, nom, typePlaquette, direction, angle, degagement, grosseur, compagnie, quantite, disponible, codeAlpha, tourFraseuse, unitePouce, image) VALUES" +
+                             "( " + idEmplacement +
+                             ", " + "'" + nom + "'" +
+                             ", " + "'" + typePlaquette + "'" +
+                             ", " + "'" + direction + "'" +
+                             ", " + "'" + angle + "'" +
+                             ", " + "'" + degagement + "'" +
+                             ", " + "'" + grosseur + "'" +
+                             ", " + "'" + compagnie + "'" +
+                             ", " + quantite +
+                             ", " + disponible +
+                             ", " + "'" + codeAlpha + "'" +
+                             ", " + "'" + tourFraseuse + "'" +
+                             ", " + unitePouce +
+                             ", " + "'" + image + "'" + ");";
+
+            if (BDPlaquettes.Insertion(request) == true)
+                return true;
+            else
+                return false;
+        }
     }
 }

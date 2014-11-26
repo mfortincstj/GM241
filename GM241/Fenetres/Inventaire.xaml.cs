@@ -43,7 +43,8 @@ namespace GM241.Fenetres.Inventaire
         public Inventaire(bool admin, string user)
         {
             InitializeComponent();
-            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+
+            champNom.Focus();
 
             estAdmin = admin;
             usagerConnecte = user;
@@ -148,41 +149,13 @@ namespace GM241.Fenetres.Inventaire
                 Application.Current.Shutdown();
         }
 
-        /*private void cboxCategorie_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            switch (cboxCategorie.SelectedIndex)
-            {
-                case 0 :   // Rien de sélectionné
-                    resGrid2.ItemsSource = null;
-                break;
-
-                case 1 :   // Collets
-                    List<Collets> listCol = Collets.chargerlstCollets();
-                    resGrid1.ItemsSource = listCol;
-                break;
-
-                case 2:   // Porte outils
-                    List<PorteOutils> listPorteOutil = PorteOutils.chargerlstPorteOutils();
-                    resGrid2.ItemsSource = listPorteOutil;
-                break;
-
-                case 3:   // Outils
-                    List<Outils> listOutil = Outils.chargerLstOutils();
-                    resGrid2.ItemsSource = listOutil;
-                break;
-
-                case 4:   // Plaquettes
-                    List<Plaquettes> listPlaquettes = Plaquettes.chargerlstPlaquettes();
-                    resGrid2.ItemsSource = listPlaquettes;
-                break;
-            }
-
-            btnDetail.IsEnabled = false;
-        }*/
-
         private void btnDetail_Click(object sender, RoutedEventArgs e)
         {
-            
+            for (int i = 0; i < resGrid.Items.Count; i++)
+            {
+                DataGridRow row = (DataGridRow)resGrid.ItemContainerGenerator.ContainerFromIndex(i);
+                resGrid.Items.Add(row);
+            }
         }
 
         private void lstMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)

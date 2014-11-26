@@ -28,7 +28,7 @@ namespace GM241.Fenetres.Produit
             listeNoArmoire.SelectedIndex = 0;
             listeNoTiroir.SelectedIndex = 0;
             listeNoCasier.SelectedIndex = 0;
-            quantite.Text = "0";
+            quantite.Text = "";
             image.Text = "";
         }
 
@@ -51,17 +51,28 @@ namespace GM241.Fenetres.Produit
 
             foreach (TypePorteOutils tPo in lstTypePorteOutils)
                 listePorteOutil.Items.Add(tPo.idTypePorteOutil + " - " + tPo.nom);
-
+            
             // Charger la liste des types d'emplacements
             List<Emplacements> lstEmplacements = Emplacements.chargerlstEmplacements();
 
             foreach (Emplacements e in lstEmplacements)
-            {
                 listeNoLocal.Items.Add(e.idTypeEmplacement + " - " + e.noLocal);
-                listeNoArmoire.Items.Add(e.noArmoire);
-                listeNoTiroir.Items.Add(e.noTiroir);
-                listeNoCasier.Items.Add(e.noCasier);
-            }
+
+                /*
+            // Charger les emplacements
+            List<Armoires> lstArmoires = Armoires.chargerlstArmoires();
+            List<Tiroirs> lstTiroirs = Tiroirs.chargerlstTiroirs();
+            List<Casiers> lstCasiers = Casiers.chargerlstCasiers();
+
+            foreach (Armoires a in lstArmoires)
+                listeNoArmoire.Items.Add(a.idArmoire + " - " + a.noArmoire);
+
+            foreach (Tiroirs t in lstTiroirs)
+                listeNoTiroir.Items.Add(t.idTiroir + " - " + t.noTiroir);
+
+            foreach (Casiers c in lstCasiers)
+                listeNoCasier.Items.Add(c.idCasier + " - " + c.noCasier);
+                */
 
             viderChamps();
         }
