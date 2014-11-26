@@ -63,15 +63,6 @@ namespace GM241.Fenetres.Inventaire
                 btnDetail.Visibility = Visibility.Hidden;
             }
 
-            /*
-            // Initialiser la liste des catégories
-            cboxCategorie.Items.Add("Sélectionnez");
-            cboxCategorie.Items.Add("Collet");          // Élément #1
-            cboxCategorie.Items.Add("Porte outil");     // #2
-            cboxCategorie.Items.Add("Outils");          // #3
-            cboxCategorie.Items.Add("Plaquettes");      // #4
-            cboxCategorie.SelectedIndex = 0;*/
-
             // Initialiser la liste des menus
             lstMenu.Items.Add("Inventaire");
             lstMenu.Items.Add("Administration");
@@ -115,8 +106,8 @@ namespace GM241.Fenetres.Inventaire
             List <TypeEmplacements> listTypeEmplacement = TypeEmplacements.chargerlstTypeEmplacements();
             resGrid12.ItemsSource = listTypeEmplacement;
 
-            //List<TypeOutils> listTypeOutil = TypeOutils.chargerNom;
-            //resGrid13.ItemsSource =
+            List<TypeOutils> listTypeOutil = TypeOutils.chargerlstTypeOutils();
+            resGrid13.ItemsSource = listTypeOutil;
 
             /*string nomFournit = champNom.Text.ToLower();
             string descriptionFournit = champDescription.Text.ToLower();
@@ -149,12 +140,18 @@ namespace GM241.Fenetres.Inventaire
                 Application.Current.Shutdown();
         }
 
+        void EventRow(object sender, SelectionChangedEventArgs args)
+        {
+            TabItem lbi = ((sender as TabControl).SelectedItem as TabItem);
+            //tb.Text = "   You selected " + lbi.Content.ToString() + ".";
+            Console.WriteLine(lbi.Content.ToString());
+        }
+
         private void btnDetail_Click(object sender, RoutedEventArgs e)
         {
             for (int i = 0; i < resGrid.Items.Count; i++)
             {
-                DataGridRow row = (DataGridRow)resGrid.ItemContainerGenerator.ContainerFromIndex(i);
-                resGrid.Items.Add(row);
+                
             }
         }
 
