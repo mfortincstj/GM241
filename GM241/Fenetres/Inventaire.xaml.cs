@@ -15,6 +15,8 @@ using GM241.Classes;
 using GM241.Fenetres.Produit;
 using GM241.Fenetres.Menu;
 using GM241;
+using System.Collections;
+using System.Data;
 
 namespace GM241.Fenetres.Inventaire
 {
@@ -59,6 +61,7 @@ namespace GM241.Fenetres.Inventaire
                 lstMenu.IsEnabled = false;
                 btnDetail.Visibility = Visibility.Hidden;
             }
+
             /*
             // Initialiser la liste des catégories
             cboxCategorie.Items.Add("Sélectionnez");
@@ -177,14 +180,9 @@ namespace GM241.Fenetres.Inventaire
             btnDetail.IsEnabled = false;
         }*/
 
-        private void boiteResultats_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            btnDetail.IsEnabled = true;
-        }
-
         private void btnDetail_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(resGrid2.SelectedItems.ToString());
+            
         }
 
         private void lstMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -264,7 +262,7 @@ namespace GM241.Fenetres.Inventaire
 
         private void resGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (resGrid2.SelectedItem != null)
+            if (resGrid.SelectedItem != null)
             {
                 btnDetail.IsEnabled = true;
             }
@@ -285,7 +283,6 @@ namespace GM241.Fenetres.Inventaire
             {
                 resGrid.ItemsSource = listOutil.Where(o => o.nom.Contains(nomFourni));
             }
-            
         }
     }
 }
