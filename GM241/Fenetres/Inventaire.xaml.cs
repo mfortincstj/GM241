@@ -74,7 +74,6 @@ namespace GM241.Fenetres.Inventaire
 
             List<Outils> listOutil = Outils.chargerLstOutils();
             resGrid2.ItemsSource = listOutil;
-            resGrid.ItemsSource = listOutil;
 
             List<PorteOutils> listPorteOutil = PorteOutils.chargerlstPorteOutils();
             resGrid3.ItemsSource = listPorteOutil;
@@ -108,30 +107,6 @@ namespace GM241.Fenetres.Inventaire
 
             List<TypeOutils> listTypeOutil = TypeOutils.chargerlstTypeOutils();
             resGrid13.ItemsSource = listTypeOutil;
-
-            /*string nomFournit = champNom.Text.ToLower();
-            string descriptionFournit = champDescription.Text.ToLower();
-
-            foreach (Outils o in listOutil)
-            {
-                if (o.nom == nomFournit)
-                {
-                    resGrid2.Items.Add(o.idTypeOutil + ", " + o.idEmplacement + ", " + o.idPlaquette + ", " + o.nom + ", " + o.quantite + ", " +
-                                             o.diametreUsinage + ", " + o.diametreSerrage + ", " + o.longueurCoupe + ", " + o.longueurTotal + ", " +
-                                             o.longueurShank + ", " + o.rayonCoin + ", " + o.anglePointe + ", " + o.nombreFlute + ", " +
-                                             o.disponible + ", " + o.unitePouce + ", " + o.image);
-                }
-            }
-
-            foreach (Plaquettes p in listPlaquette)
-            {
-                if (p.nom == nomFournit)
-                {
-                    resGrid4.Items.Add(p.idEmplacement + ", " + p.nom + ", " + p.typePlaquette + ", " + p.direction + ", " + p.angle
-                                             + ", " + p.degagement + ", " + p.grosseur + ", " + p.compagnie + ", " + p.quantite + ", " + p.disponible
-                                             + ", " + p.codeAlpha + ", " + p.unitePouce + ", " + p.tourFraseuse + ", " + p.image);
-                }
-            }*/
         }
 
         private void btnQuitter_Click(object sender, RoutedEventArgs e)
@@ -240,18 +215,33 @@ namespace GM241.Fenetres.Inventaire
 
         private void champNom_TextChanged(object sender, TextChangedEventArgs e)
         {
-            
             string nomFourni = champNom.Text.ToLower();
-
             List<Outils> listOutil = Outils.chargerLstOutils();
 
-            if(nomFourni == "")
-            {
-                resGrid.ItemsSource = listOutil;
+            if(radioRechPart.IsChecked == true)
+            { 
+                if(nomFourni == "")
+                {
+                    resGrid2.ItemsSource = listOutil;
+                }
+                else
+                {
+                    resGrid2.ItemsSource = listOutil.Where(o => o.nom.Contains(nomFourni));
+                }
             }
-            else
+            else 
             {
-                resGrid.ItemsSource = listOutil.Where(o => o.nom.Contains(nomFourni));
+                foreach (Outils o in listOutil)
+                {
+                    if(o.nom != nomFourni)
+                    {
+                        resGrid2.ItemsSource = listOutil;
+                    }
+                    else 
+                    {
+                        resGrid2.ItemsSource = listOutil.Where(x => x.nom.Equals(nomFourni));
+                    }
+                }
             }
         }
     }
