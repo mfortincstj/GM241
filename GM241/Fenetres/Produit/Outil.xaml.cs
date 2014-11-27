@@ -52,7 +52,58 @@ namespace GM241.Fenetres.Produit
         {
             InitializeComponent();
 
-            
+            // Pour le type d'outil
+            List<TypeOutils> lstTypeOutils = TypeOutils.chargerlstTypeOutils();
+
+            foreach (TypeOutils tO in lstTypeOutils)
+                listeTypeOutil.Items.Add(tO.idTypeOutil + " - " + tO.nom);
+
+            listeTypeOutil.SelectedIndex = monOutil.idTypeOutil - 1;
+
+            // Pour les plaquettes
+            List<Plaquettes> lstPlaquettes = Plaquettes.chargerlstPlaquettes();
+
+            if (monOutil.idPlaquette == null)
+            {
+                listePlaquette.Items.Add("0 - Aucun");
+                listePlaquette.SelectedIndex = 0;
+            }
+
+            foreach (Plaquettes p in lstPlaquettes)
+                listePlaquette.Items.Add(p.idPlaquette + " - " + p.nom);
+
+            if (monOutil.idPlaquette != null)
+                listePlaquette.SelectedIndex = monOutil.idPlaquette.Value - 1;
+
+            listePlaquette.Items.Add(monOutil.idPlaquette);
+            nom.Text = monOutil.nom;
+            quantite.Text = monOutil.quantite.ToString();
+            diametreUsinage.Text = monOutil.diametreUsinage;
+            longueurCoupe.Text = monOutil.longueurCoupe;
+            longuerTotal.Text = monOutil.longueurTotal;
+            longueurShank.Text = monOutil.longueurShank;
+            rayonCoin.Text = monOutil.rayonCoin;
+            diametreSerrage.Text = monOutil.diametreSerrage;
+            anglePointe.Text = monOutil.anglePointe;
+            nbrFlute.Text = monOutil.nombreFlute.ToString();  
+
+            if (monOutil.disponible == true)
+            {
+                dispoOui.IsChecked = true;
+                dispoNon.IsChecked = false;
+            }
+
+            if (monOutil.unitePouce == true)
+            {
+                uniteOui.IsChecked = true;
+                uniteNon.IsChecked = false;
+            }
+
+            img.Text = monOutil.image;
+
+            btnAjouter.IsEnabled = false;
+            btnModif.IsEnabled = true;
+            btnSupprimer.IsEnabled = true;
         }
 
         public Outil()
