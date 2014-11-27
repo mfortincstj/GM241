@@ -90,7 +90,14 @@ namespace GM241.Classes
             {
                 for (int i = 0; i < nombreRange; i++)
                 {
-                    idPlateauMachine = Convert.ToInt32(tabMachines[i][1]);
+                    if(tabMachines[i][1] == null || tabMachines[i][1] == "")
+                    { 
+                        idPlateauMachine = 0;
+                    }
+                    else
+                    {
+                        idPlateauMachine = Convert.ToInt32(tabMachines[i][1]);
+                    }
                     nom = tabMachines[i][2];
                     nombreOutilMagasin = Convert.ToInt32(tabMachines[i][3]);
                     precisionMachine = tabMachines[i][4];
