@@ -62,6 +62,7 @@ namespace GM241.Fenetres.Produit
             foreach (TypeOutils tO in lstTypeOutils)
                 listeTypeOutil.Items.Add(tO.idTypeOutil + " - " + tO.nom);
 
+                /*
             // Charger la liste des types d'emplacements
             List<Emplacements> lstEmplacements = Emplacements.chargerlstEmplacements();
 
@@ -73,6 +74,7 @@ namespace GM241.Fenetres.Produit
                 listeNoCasier.Items.Add(e.noCasier);
             }
 
+                 * */
             // Charger la liste des plaquettes
             List<Plaquettes> lstPlaquettes = Plaquettes.chargerlstPlaquettes();
 

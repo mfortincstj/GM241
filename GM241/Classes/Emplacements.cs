@@ -10,35 +10,35 @@ namespace GM241.Classes
     {
         public virtual int idTypeEmplacement { get; set; }
         public virtual string noLocal { get; set; }
-        public virtual string noArmoire { get; set; }
-        public virtual string noTiroir { get; set; }
-        public virtual string noCasier { get; set; }
+        public virtual string idArmoire { get; set; }
+        public virtual string idTiroir { get; set; }
+        public virtual string idCasier { get; set; }
 
         public Emplacements()
         {
             idTypeEmplacement = 0;
             noLocal = "";
-            noArmoire = "";
-            noTiroir = "";
-            noCasier = "";
+            idArmoire = "";
+            idTiroir = "";
+            idCasier = "";
         }
 
         public Emplacements(int idTypeEmp, string noLoc, string noArm, string noTir, string noCas)
         {
             idTypeEmplacement = idTypeEmp;
             noLocal = noLoc;
-            noArmoire = noArm;
-            noTiroir = noTir;
-            noCasier = noCas;
+            idArmoire = noArm;
+            idTiroir = noTir;
+            idCasier = noCas;
         }
 
         public static List<Emplacements> chargerlstEmplacements()
         {
             int idTypeEmplacement;
             string noLocal;
-            string noArmoire;
-            string noTiroir;
-            string noCasier;
+            string idArmoire;
+            string idTiroir;
+            string idCasier;
 
             BDService BDEmplacements = new BDService();
             String request = "SELECT * FROM Emplacements";
@@ -55,11 +55,11 @@ namespace GM241.Classes
                 {
                     idTypeEmplacement = Convert.ToInt32(tabEmplacements[i][1]);
                     noLocal = tabEmplacements[i][2];
-                    noArmoire = tabEmplacements[i][3];
-                    noTiroir = tabEmplacements[i][4];
-                    noCasier = tabEmplacements[i][5];
+                    idArmoire = tabEmplacements[i][3];
+                    idTiroir = tabEmplacements[i][4];
+                    idCasier = tabEmplacements[i][5];
 
-                    listeEmplacements.Add(new Emplacements(idTypeEmplacement, noLocal, noArmoire, noTiroir, noCasier));
+                    listeEmplacements.Add(new Emplacements(idTypeEmplacement, noLocal, idArmoire, idTiroir, idCasier));
                 }
             }
 
