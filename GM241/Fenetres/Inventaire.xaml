@@ -26,7 +26,7 @@
         <!--<DataGrid x:Name="resGrid" Margin="10,82,10,88" SelectionChanged="resGrid_SelectionChanged" CanUserReorderColumns="False" Background="#FFA8A8A8"/> -->
         <TabControl Name="tabInventaire" Margin="10,82,10,88" SelectionChanged="EventRow">
             <TabItem Header="TEST" FontSize="16">
-                <DataGrid x:Name="resGrid" Margin="10,10,10,10" Loaded="loadTest" SelectionChanged="resGrid_SelectionChanged" CanUserReorderColumns="False" Background="#FFA8A8A8"/>
+                <DataGrid x:Name="resGrid" Margin="10,10,10,10" SelectionChanged="resGrid_SelectionChanged" CanUserReorderColumns="False" Background="#FFA8A8A8"/>
             </TabItem>
             <TabItem Header="Collets" FontSize="16">
                 <DataGrid x:Name="resGrid1" Margin="10,10,10,10" SelectionChanged="resGrid_SelectionChanged" CanUserReorderColumns="False" Background="#FFA8A8A8"/>

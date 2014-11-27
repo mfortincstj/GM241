@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GM241.Classes
 {
-    class TypeOutils
+    public class TypeOutils
     {
         public virtual int idTypeOutil { get; set; }
         public virtual string nom{ get; set; }

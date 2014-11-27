@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GM241.Classes
 {
-    class Machines
+    public class Machines
     {
         public virtual int idPlateauMachine { get; set; }
         public virtual string nom { get; set; }

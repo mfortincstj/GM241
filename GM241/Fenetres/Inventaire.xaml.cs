@@ -91,8 +91,8 @@ namespace GM241.Fenetres.Inventaire
             List <Extensions> listExtension = Extensions.chargerlstExtensions();
             resGrid7.ItemsSource = listExtension;
 
-            //List <Machines> listMachine = Machines.chargerMachines();
-            //resGrid8.ItemsSource = listMachine;
+            List <Machines> listMachine = Machines.chargerMachines();
+            resGrid8.ItemsSource = listMachine;
 
             List <PlateauMachines> listPlateauMachine = PlateauMachines.chargerlstPlateauMachines();
             resGrid9.ItemsSource = listPlateauMachine;
@@ -147,53 +147,13 @@ namespace GM241.Fenetres.Inventaire
             Console.WriteLine(lbi.Content.ToString());
         }
 
-        /*---------------------------------------------------------------------------------------------------------*/
-
-        public class Chien
+        public void btnDetail_Click(object sender, RoutedEventArgs e)
         {
-            public string Nom { get; set; }
-            public int Taille { get; set; }
+            var outil = resGrid.SelectedItem as Outils;
 
-            public Chien(string nom, int taille)
-            {
-                this.Nom = nom;
-                this.Taille = taille;
-            }
+            Outil detailOutil = new Outil(outil);
+            detailOutil.Show();
         }
-
-        private void loadTest(object sender, RoutedEventArgs e)
-        {
-         /*   var lstItems = new List<Outils>();
-            lstItems = Outils.chargerLstOutils();
-            var grid = sender as DataGrid;
-            grid.ItemsSource = lstItems;
-
-          * */
-            var items = new List<Chien>();
-            items.Add(new Chien("Fido", 10));
-            items.Add(new Chien("Spark", 20));
-            items.Add(new Chien("Fluffy", 4));
-            items.Add(new Chien("Rover", 100));
-            items.Add(new Chien("Mister Mars", 30));
-
-            var grid = sender as DataGrid;
-            grid.ItemsSource = items;
-        }
-
-        private void btnDetail_Click(object sender, RoutedEventArgs e)
-        {
-                //var chien = resGrid.Items[resGrid.Items.CurrentItem.ToString()] as Chien;
-                /*var test = resGrid.SelectedItem.ToString();
-                MessageBox.Show(test);*/
-
-                // Ouvrir la bonne fenêtre pour les modifications et la suppression
-                //var window = "";
-                //window test = new window();
-                //inventaire.Show();
-                // Ne pas permettre d'utiliser le menu inventaire lorsque nous sommes dans une autre fenêtre
-        }
-
-        /*---------------------------------------------------------------------------------------------------------*/
 
         private void lstMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

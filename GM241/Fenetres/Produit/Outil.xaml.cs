@@ -48,6 +48,13 @@ namespace GM241.Fenetres.Produit
             e.Handled = regex.IsMatch(e.Text);
         }
 
+        public Outil(Outils monOutil)
+        {
+            InitializeComponent();
+
+            
+        }
+
         public Outil()
         {
             InitializeComponent();

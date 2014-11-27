@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GM241.Classes
 {
-    class Extensions
+    public class Extensions
     {
         public virtual int idPorteOutil { get; set; }
         public virtual int idEmplacement { get; set; }

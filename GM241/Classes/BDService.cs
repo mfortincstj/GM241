@@ -9,7 +9,7 @@ using System.Configuration;
 
 namespace GM241.Classes
 {
-    class BDService
+    public class BDService
     {
         private MySqlConnection connexion;
 

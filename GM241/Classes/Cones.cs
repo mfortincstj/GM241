@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GM241.Classes
 {
-    class Cones
+    public class Cones
     {
         public virtual int idCone { get; set; }
         public virtual string nom { get; set; }

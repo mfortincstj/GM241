@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GM241.Classes
 {
-    class TypeEmplacements
+    public class TypeEmplacements
     {
         public virtual int idTypeEmplacement { get; set; }
         public virtual string nom { get; set; }

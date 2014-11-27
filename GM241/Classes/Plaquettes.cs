@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GM241.Classes
 {
-    class Plaquettes
+    public class Plaquettes
     {
         public virtual int idPlaquette { get; set; }
         public virtual int idEmplacement { get; set; }

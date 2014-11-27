@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GM241.Classes
 {
-    class Outils
+    public class Outils
     {
         public virtual int idTypeOutil { get; set; }
         public virtual int idEmplacement { get; set; }

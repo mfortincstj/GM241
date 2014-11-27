@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GM241.Classes
 {
-    class Emplacements
+    public class Emplacements
     {
         public virtual int idTypeEmplacement { get; set; }
         public virtual string noLocal { get; set; }

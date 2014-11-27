@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GM241.Classes
 {
-    class Utilisateurs
+    public class Utilisateurs
     {
         #region
             public virtual string usager { get; set; }

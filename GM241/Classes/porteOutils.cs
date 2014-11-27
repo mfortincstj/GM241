@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GM241.Classes
 {
-    class PorteOutils
+    public class PorteOutils
     {
         public virtual int idTypePorteOutil { get; set; }
         public virtual int idEmplacement { get; set; }
