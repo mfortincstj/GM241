@@ -85,6 +85,37 @@ namespace GM241.Fenetres.Produit
             viderChamps();
         }
 
+        public Extension(Extensions monExtension)
+        {
+            InitializeComponent();
+
+            // Charger la liste des types de porte outil
+            List<TypePorteOutils> lstTypePorteOutils = TypePorteOutils.chargerlstTypePorteOutils();
+
+            foreach (TypePorteOutils tPo in lstTypePorteOutils)
+                listePorteOutil.Items.Add(tPo.idTypePorteOutil + " - " + tPo.nom);
+
+            listePorteOutil.SelectedIndex = monExtension.idPorteOutil - 1;
+
+            // Charger la liste des type d'attachements
+            List<TypeAttachements> lstAttachements = TypeAttachements.chargerlstTypeAttachements();
+
+            foreach (TypeAttachements tA in lstAttachements)
+                listeCollet.Items.Add(tA.idTypeAttachements + " - " + tA.nom);
+
+            listeCollet.SelectedIndex = monExtension.idCollet - 1;
+
+            longShank.Text = monExtension.longueurShank;
+            diamShank.Text = monExtension.diametreShank;
+            longTotal.Text = monExtension.longueurTotale;
+            quantite.Text = monExtension.quantite.ToString();
+            img.Text = monExtension.image;
+
+            btnAjouter.IsEnabled = false;
+            btnModif.IsEnabled = true;
+            btnSupprimer.IsEnabled = true;
+        }
+
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
             bool insertValide = true;

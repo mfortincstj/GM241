@@ -114,23 +114,93 @@ namespace GM241.Fenetres.Inventaire
             // Prendre le id du type d'emplacement
             str = index;
             infoIndex = str.Split(splitchar);
-            /*
-            var outil = resGrid.SelectedItem as Outils;
 
-            Outil detailOutil = new Outil(outil);
-            detailOutil.Show();
-            */
             switch (infoIndex[2])
             {
                 case "Collets":
-                    MessageBox.Show("case 0 !");
+                    var collet = resGrid1.SelectedItem as Collets;
+                    Collet detailCollet = new Collet(collet);
+                    detailCollet.Show();
                 break;
 
+<<<<<<< HEAD
                 case "Outils" : 
+=======
+                case "Outils":
+>>>>>>> origin/master
                     var outil = resGrid2.SelectedItem as Outils;
                     Outil detailOutil = new Outil(outil);
                     detailOutil.Show();
                 break;
+
+                case "Porte-outils":
+                    var porteOutil = resGrid3.SelectedItem as PorteOutils;
+                    PorteOutil detailPorteOutil = new PorteOutil(porteOutil);
+                    detailPorteOutil.Show();
+                break;
+
+                case "Plaquettes":
+                    var plaquette = resGrid4.SelectedItem as Plaquettes;
+                    Plaquette detailPlaquette = new Plaquette(plaquette);
+                    detailPlaquette.Show();
+                break;
+
+                case "Cônes":
+                    var cone = resGrid5.SelectedItem as Cones;
+                    Cone detailCone = new Cone(cone);
+                    detailCone.Show();
+                break;
+
+                case "Emplacements":
+                    var emplacements = resGrid6.SelectedItem as Emplacements;
+                    Emplacement detailEmplacement = new Emplacement(emplacements);
+                    detailEmplacement.Show();
+                break;
+
+                case "Extensions":
+                    var extensions = resGrid7.SelectedItem as Extensions;
+                    Extension detailExtension = new Extension(extensions);
+                    detailExtension.Show();
+                break;
+
+                case "Machines":
+                    var machines = resGrid8.SelectedItem as Machines;
+                    Machine detailMachine = new Machine(machines);
+                    detailMachine.Show();
+                break;
+
+                case "Plateaux":
+                    var plateauMachines = resGrid9.SelectedItem as PlateauMachines;
+                    PlateauMachine detailPlateauMachine = new PlateauMachine(plateauMachines);
+                    detailPlateauMachine.Show();
+                break;
+            }
+
+            switch (infoIndex[3])
+            {
+                case "d'attachements":
+                    var typeAttachements = resGrid10.SelectedItem as TypeAttachements;
+                    TypeAttachement detailTypeAttachement = new TypeAttachement(typeAttachements);
+                    detailTypeAttachement.Show();
+                    break;
+
+                case "de":
+                    var typePorteOutils = resGrid11.SelectedItem as TypePorteOutils;
+                    TypePorteOutil detailTypePorteOutil = new TypePorteOutil(typePorteOutils);
+                    detailTypePorteOutil.Show();
+                    break;
+
+                case "d'emplacements":
+                    var typeEmplacements = resGrid12.SelectedItem as TypeEmplacements;
+                    TypeEmplacement detailTypeEmplacement = new TypeEmplacement(typeEmplacements);
+                    detailTypeEmplacement.Show();
+                    break;
+
+                case "d'outils":
+                    var typeOutils = resGrid13.SelectedItem as TypeOutils;
+                    TypeOutil detailTypeOutil = new TypeOutil(typeOutils);
+                    detailTypeOutil.Show();
+                    break;
             }
         }
 
@@ -162,67 +232,8 @@ namespace GM241.Fenetres.Inventaire
 
         private void tabInventaire_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            switch (tabInventaire.SelectedIndex)
-            {
-                case 0:  // Test
-                    btnDetail.IsEnabled = true;
-                    index = tabInventaire.SelectedIndex.ToString();
-                    MessageBox.Show(index);
-                    break;
-
-                case 1:  // Collets
-                    btnDetail.IsEnabled = true;
-                    index = tabInventaire.SelectedValue.ToString();
-                    break;
-
-                case 2:  // Outils
-                    btnDetail.IsEnabled = true;
-                    index = tabInventaire.SelectedValue.ToString();
-                    break;
-
-                case 3:  // PorteOutils
-                    btnDetail.IsEnabled = true;
-                    break;
-
-                case 4:  // Plaquettes
-                    btnDetail.IsEnabled = true;
-                    break;
-
-                case 5:  // Cones
-                    btnDetail.IsEnabled = true;
-                    break;
-
-                case 6:  // EMplacements
-                    btnDetail.IsEnabled = true;
-                    break;
-
-                case 7:  // Extensions
-                    btnDetail.IsEnabled = true;
-                    break;
-
-                case 8:  // Machines
-                    btnDetail.IsEnabled = true;
-                    break;
-
-                case 9:  // PlateauxMachines
-                    btnDetail.IsEnabled = true;
-                    break;
-
-                case 10:  // TypeAttachements
-                    btnDetail.IsEnabled = true;
-                    break;
-
-                case 11:  // TypePorteOutils
-                    btnDetail.IsEnabled = true;
-                    break;
-
-                case 12:  // TypeEmplacements
-                    btnDetail.IsEnabled = true;
-                    break;
-                case 13:  // TypeOutils
-                    btnDetail.IsEnabled = true;
-                    break;
-            }
+            btnDetail.IsEnabled = true;
+            index = tabInventaire.SelectedValue.ToString();
         }
 
         private void champNom_TextChanged(object sender, TextChangedEventArgs e)

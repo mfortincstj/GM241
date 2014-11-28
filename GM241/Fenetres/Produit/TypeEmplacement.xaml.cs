@@ -32,6 +32,17 @@ namespace GM241.Fenetres.Produit
             viderChamps();
         }
 
+        public TypeEmplacement(TypeEmplacements monEmplacement)
+        {
+            InitializeComponent();
+
+            nom.Text = monEmplacement.nom;
+
+            btnAjouter.IsEnabled = false;
+            btnModif.IsEnabled = true;
+            btnSupprimer.IsEnabled = true;
+        }
+
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
             bool insertValide = true;

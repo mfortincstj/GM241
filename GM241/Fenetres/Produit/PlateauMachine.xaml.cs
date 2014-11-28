@@ -36,6 +36,40 @@ namespace GM241.Fenetres.Produit
             viderChamps();
         }
 
+        public PlateauMachine(PlateauMachines monPlateauMachine)
+        {
+            InitializeComponent();
+
+            nom.Text = monPlateauMachine.nom;
+
+            if (monPlateauMachine.axeSuppA == true)
+            {
+                axeSupAOui.IsChecked = true;
+                axeSupANon.IsChecked = false;
+            }
+            else
+            {
+                axeSupAOui.IsChecked = false;
+                axeSupANon.IsChecked = true;
+            }
+
+            if (monPlateauMachine.axeSuppB == true)
+            {
+                axeSupBOui.IsChecked = true;
+                axeSupBNon.IsChecked = false;
+            }
+            else
+            {
+                axeSupBOui.IsChecked = false;
+                axeSupBNon.IsChecked = true;
+            }
+
+            btnAjouter.IsEnabled = false;
+            btnModif.IsEnabled = true;
+            btnSupprimer.IsEnabled = true;
+
+        }
+
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
             bool insertValide = true;

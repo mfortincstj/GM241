@@ -57,7 +57,47 @@ namespace GM241.Fenetres.Produit
             viderChamps();
         }
 
+        public Machine(Machines maMachine)
+        {
+            InitializeComponent();
 
+            // Charger la liste des plateaux machine
+            List<PlateauMachines> lstPlateauMachines = PlateauMachines.chargerlstPlateauMachines();
+
+            foreach (PlateauMachines tPm in lstPlateauMachines)
+                listePlateauMachine.Items.Add(tPm.idPlateauMachine + " - " + tPm.nom);
+
+            listePlateauMachine.SelectedIndex = maMachine.idPlateauMachine - 1;
+            
+            nom.Text = maMachine.nom;
+            nbrOutil.Text = maMachine.nombreOutilMagasin.ToString();
+            precision.Text = maMachine.precisionMachine;
+            formatCone.Text = maMachine.formatCone;
+            nbrOutilPrep.Text = maMachine.nombreOutilPrep.ToString();
+            noMachine.Text = maMachine.numeroMachine.ToString();
+            axeXMin.Text = maMachine.axeXMin;
+            axeXMax.Text = maMachine.axeXMAX;
+            axeYMin.Text = maMachine.axeYMin;
+            axeYMax.Text = maMachine.axeYMAX;
+
+            if (maMachine.axeZ == true)
+            {
+                axeZOui.IsChecked = true;
+                axeZNon.IsChecked = false;
+
+                axeZMin.Text = maMachine.axeZMin;
+                axeZMax.Text = maMachine.axeZMAX;
+            }
+            else
+            {
+                axeZOui.IsChecked = false;
+                axeZNon.IsChecked = true;
+            }
+
+            btnAjouter.IsEnabled = false;
+            btnModif.IsEnabled = true;
+            btnSupprimer.IsEnabled = true;
+        }
 
         private void axeZOui_Checked(object sender, RoutedEventArgs e)
         {

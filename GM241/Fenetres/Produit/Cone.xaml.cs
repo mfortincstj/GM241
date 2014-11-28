@@ -34,6 +34,19 @@ namespace GM241.Fenetres.Produit
             viderChamps();
         }
 
+        public Cone(Cones monCone)
+        {
+            InitializeComponent();
+
+            nom.Text = monCone.nom;
+            typeCone.Text = monCone.typeCone;
+            typeMachine.Text = monCone.typeMachine;
+
+            btnAjouter.IsEnabled = false;
+            btnModif.IsEnabled = true;
+            btnSupprimer.IsEnabled = true;
+        }
+
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
             bool insertValide = true;

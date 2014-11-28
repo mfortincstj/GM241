@@ -76,6 +76,27 @@ namespace GM241.Fenetres.Produit
             viderChamps();
         }
 
+        public Plaquette(Plaquettes maPlaquette)
+        {
+            InitializeComponent();
+
+            nom.Text = maPlaquette.nom;
+            typePlaquette.Text = maPlaquette.typePlaquette;
+            direction.Text = maPlaquette.direction;
+            angle.Text = maPlaquette.angle;
+            degagement.Text = maPlaquette.degagement;
+            grosseur.Text = maPlaquette.grosseur;
+            compagnie.Text = maPlaquette.compagnie;
+            quantite.Text = maPlaquette.quantite.ToString();
+            codeAlpha.Text = maPlaquette.codeAlpha;
+            image.Text = maPlaquette.image;
+            tourFraiseuse.Text = maPlaquette.tourFraseuse;
+
+            btnAjouter.IsEnabled = false;
+            btnModif.IsEnabled = true;
+            btnSupprimer.IsEnabled = true;
+        }
+
         private void btnAjout_Click(object sender, RoutedEventArgs e)
         {
             bool insertValide = true;

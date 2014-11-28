@@ -55,6 +55,47 @@ namespace GM241.Fenetres.Produit
             viderChamps();
         }
 
+        public Collet(Collets monCollet)
+        {
+            InitializeComponent();
+
+            /*
+            // Charger la liste des types d'emplacements
+            List<TypeEmplacements> lstTypeEmpl = TypeEmplacements.chargerlstTypeEmplacements();
+
+            foreach (TypeEmplacements tP in lstTypeEmpl)
+                listeTypeEmplacement.Items.Add(tP.idTypeEmplacement + " - " + tP.nom);
+
+            listeTypeEmplacement.SelectedIndex = monCollet.idEmplacement - 1;
+            */
+
+            if (monCollet.idTypeAttachement == null)
+            {
+                listeTypeAttachement.Items.Add("0 - Aucun");
+
+                listeTypeAttachement.SelectedIndex = 0;
+            }
+
+            // Charger la liste des attachements
+            List<TypeAttachements> lstAttachements = TypeAttachements.chargerlstTypeAttachements();
+
+            foreach (TypeAttachements tA in lstAttachements)
+                listeTypeAttachement.Items.Add(tA.idTypeAttachements + " - " + tA.nom);
+
+            if (monCollet.idTypeAttachement != 0)
+            {
+                listeTypeAttachement.SelectedIndex = monCollet.idTypeAttachement - 1;
+            }
+
+            diametreInt.Text = monCollet.diametreInterieur;
+            quant.Text = monCollet.quantite.ToString();
+            img.Text = monCollet.image;
+
+            btnAjouter.IsEnabled = false;
+            btnModif.IsEnabled = true;
+            btnSupprimer.IsEnabled = true;
+        }
+
         private void btnAjout_Click(object sender, RoutedEventArgs e)
         {
             bool insertValide = true;
