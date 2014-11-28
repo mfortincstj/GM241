@@ -69,6 +69,13 @@ namespace GM241.Fenetres.Produit
             }
             */
 
+            // Chargement temporaire des emplacement *** À changer
+            List<Emplacements> lstEmplacements = Emplacements.chargerlstEmplacements();
+            foreach (Emplacements e in lstEmplacements)
+            {
+                listeNoLocal.Items.Add(e.idTypeEmplacement + " - " + e.noLocal + " - " + e.idArmoire + " - " + e.idCasier + " - " + e.idTiroir);
+            }
+
             // Charger la liste des type d'attachements
             List<TypeAttachements> lstAttachements = TypeAttachements.chargerlstTypeAttachements();
 
@@ -95,10 +102,10 @@ namespace GM241.Fenetres.Produit
             idPorteOutil = str.Split(splitchar);
 
             str2 = listeNoLocal.Text;
-            idEmp = str.Split(splitchar);
+            idEmp = str2.Split(splitchar);
 
             str3 = listeCollet.Text;
-            idCollet = str.Split(splitchar);
+            idCollet = str3.Split(splitchar);
 
             if (longShank.Text == "")
                 insertValide = false;

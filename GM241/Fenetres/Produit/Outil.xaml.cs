@@ -24,11 +24,11 @@ namespace GM241.Fenetres.Produit
         private void viderChamps()
         {
             listeTypeOutil.SelectedIndex = 0;
-            listeNoLocal.SelectedIndex = 0;
             listePlaquette.SelectedIndex = 0;
-            listeNoArmoire.SelectedIndex = 0;
-            listeNoTiroir.SelectedIndex = 0;
-            listeNoCasier.SelectedIndex = 0;
+            listeNoLocal.SelectedIndex = 0;
+            //listeNoArmoire.SelectedIndex = 0;
+            //listeNoTiroir.SelectedIndex = 0;
+            //listeNoCasier.SelectedIndex = 0;
             nom.Text = "";
             quantite.Text = "";
             diametreUsinage.Text = "";
@@ -75,7 +75,6 @@ namespace GM241.Fenetres.Produit
             if (monOutil.idPlaquette != null)
                 listePlaquette.SelectedIndex = monOutil.idPlaquette.Value - 1;
 
-            listePlaquette.Items.Add(monOutil.idPlaquette);
             nom.Text = monOutil.nom;
             quantite.Text = monOutil.quantite.ToString();
             diametreUsinage.Text = monOutil.diametreUsinage;
@@ -85,7 +84,7 @@ namespace GM241.Fenetres.Produit
             rayonCoin.Text = monOutil.rayonCoin;
             diametreSerrage.Text = monOutil.diametreSerrage;
             anglePointe.Text = monOutil.anglePointe;
-            nbrFlute.Text = monOutil.nombreFlute.ToString();  
+            nbrFlute.Text = monOutil.nombreFlute.ToString();
 
             if (monOutil.disponible == true)
             {
@@ -120,7 +119,7 @@ namespace GM241.Fenetres.Produit
             foreach (TypeOutils tO in lstTypeOutils)
                 listeTypeOutil.Items.Add(tO.idTypeOutil + " - " + tO.nom);
 
-                /*
+            /*
             // Charger la liste des types d'emplacements
             List<Emplacements> lstEmplacements = Emplacements.chargerlstEmplacements();
 
@@ -131,8 +130,13 @@ namespace GM241.Fenetres.Produit
                 listeNoTiroir.Items.Add(e.noTiroir);
                 listeNoCasier.Items.Add(e.noCasier);
             }
+            */
 
-                 * */
+            // Chargement temporaire des emplacement *** À changer
+            List<Emplacements> lstEmplacements = Emplacements.chargerlstEmplacements();
+            foreach (Emplacements e in lstEmplacements)
+                listeNoLocal.Items.Add(e.idTypeEmplacement + " - " + e.noLocal + " - " + e.idArmoire + " - " + e.idCasier + " - " + e.idTiroir);
+
             // Charger la liste des plaquettes
             List<Plaquettes> lstPlaquettes = Plaquettes.chargerlstPlaquettes();
 
@@ -160,10 +164,10 @@ namespace GM241.Fenetres.Produit
             idTypeOutil = str.Split(splitchar);
 
             str2 = listeNoLocal.Text;
-            idTypeEmplacement = str.Split(splitchar);
+            idTypeEmplacement = str2.Split(splitchar);
 
             str3 = listePlaquette.Text;
-            idPlaquette = str.Split(splitchar);
+            idPlaquette = str3.Split(splitchar);
 
             if (nom.Text == "")
                 insertValide = false;

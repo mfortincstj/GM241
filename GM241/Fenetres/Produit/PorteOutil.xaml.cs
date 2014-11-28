@@ -25,9 +25,9 @@ namespace GM241.Fenetres.Produit
         {
             listePorteOutil.SelectedIndex = 0;
             listeNoLocal.SelectedIndex = 0;
-            listeNoArmoire.SelectedIndex = 0;
-            listeNoTiroir.SelectedIndex = 0;
-            listeNoCasier.SelectedIndex = 0;
+            //listeNoArmoire.SelectedIndex = 0;
+            //listeNoTiroir.SelectedIndex = 0;
+            //listeNoCasier.SelectedIndex = 0;
             quantite.Text = "";
             image.Text = "";
         }
@@ -52,13 +52,7 @@ namespace GM241.Fenetres.Produit
             foreach (TypePorteOutils tPo in lstTypePorteOutils)
                 listePorteOutil.Items.Add(tPo.idTypePorteOutil + " - " + tPo.nom);
             
-            // Charger la liste des types d'emplacements
-            List<Emplacements> lstEmplacements = Emplacements.chargerlstEmplacements();
-
-            foreach (Emplacements e in lstEmplacements)
-                listeNoLocal.Items.Add(e.idTypeEmplacement + " - " + e.noLocal);
-
-                /*
+            /*
             // Charger les emplacements
             List<Armoires> lstArmoires = Armoires.chargerlstArmoires();
             List<Tiroirs> lstTiroirs = Tiroirs.chargerlstTiroirs();
@@ -72,7 +66,13 @@ namespace GM241.Fenetres.Produit
 
             foreach (Casiers c in lstCasiers)
                 listeNoCasier.Items.Add(c.idCasier + " - " + c.noCasier);
-                */
+            */
+
+            // Charger la liste des types d'emplacements
+            List<Emplacements> lstEmplacements = Emplacements.chargerlstEmplacements();
+
+            foreach (Emplacements e in lstEmplacements)
+                listeNoLocal.Items.Add(e.idTypeEmplacement + " - " + e.noLocal + " - " + e.idArmoire + " - " + e.idCasier + " - " + e.idTiroir);
 
             viderChamps();
         }
@@ -93,7 +93,7 @@ namespace GM241.Fenetres.Produit
 
             // Prendre le id du type d'attachement
             str2 = listeNoLocal.Text;
-            idEmpl = str.Split(splitchar);
+            idEmpl = str2.Split(splitchar);
 
             // Vérifier si les champs sont vide ? 
             if (quantite.Text == "")

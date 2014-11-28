@@ -33,9 +33,9 @@
         <Label Content="Numéro de tiroir : " HorizontalAlignment="Left" Margin="484,274,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.121,0.942" Height="37" HorizontalContentAlignment="Right"/>
         <Label Content="Numéro de casier : " HorizontalAlignment="Left" Margin="484,316,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.121,0.942" Height="37" HorizontalContentAlignment="Right"/>
         <Label Content="Emplacement" HorizontalAlignment="Left" Margin="484,148,0,0" VerticalAlignment="Top" FontSize="20" Width="475" RenderTransformOrigin="0.121,0.942" Height="37" HorizontalContentAlignment="Center" FontWeight="Bold"/>
-        <ComboBox x:Name="listeNoCasier" HorizontalAlignment="Left" Margin="729,316,0,0" VerticalAlignment="Top" Width="230" Height="37"/>
-        <ComboBox x:Name="listeNoTiroir" HorizontalAlignment="Left" Margin="729,274,0,0" VerticalAlignment="Top" Width="230" Height="37"/>
-        <ComboBox x:Name="listeNoArmoire" HorizontalAlignment="Left" Margin="729,232,0,0" VerticalAlignment="Top" Width="230" Height="37"/>
+        <ComboBox x:Name="listeNoCasier" HorizontalAlignment="Left" Margin="729,316,0,0" VerticalAlignment="Top" Width="230" Height="37" IsEnabled="False"/>
+        <ComboBox x:Name="listeNoTiroir" HorizontalAlignment="Left" Margin="729,274,0,0" VerticalAlignment="Top" Width="230" Height="37" IsEnabled="False"/>
+        <ComboBox x:Name="listeNoArmoire" HorizontalAlignment="Left" Margin="729,232,0,0" VerticalAlignment="Top" Width="230" Height="37" IsEnabled="False"/>
         <ComboBox x:Name="listeNoLocal" HorizontalAlignment="Left" Margin="729,190,0,0" VerticalAlignment="Top" Width="230" Height="37"/>
         <Label Content=" Disponible: " HorizontalAlignment="Left" Margin="10,341,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.129,0.432" HorizontalContentAlignment="Right"/>
         <RadioButton x:Name="dispoOui" GroupName="dispo" Content="Oui" HorizontalAlignment="Left" Margin="284,346,0,0" VerticalAlignment="Top" Height="37" FontSize="20" Width="53"/>

@@ -67,6 +67,12 @@ namespace GM241.Fenetres.Produit
             }
             */
 
+            // Chargement temporaire des emplacement *** À changer
+            List<Emplacements> lstEmplacements = Emplacements.chargerlstEmplacements();
+            foreach (Emplacements e in lstEmplacements)
+                listeNoLocal.Items.Add(e.idTypeEmplacement + " - " + e.noLocal + " - " + e.idArmoire + " - " + e.idCasier + " - " + e.idTiroir);
+
+
             viderChamps();
         }
 

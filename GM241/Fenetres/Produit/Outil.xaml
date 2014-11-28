@@ -43,9 +43,9 @@
         <Label Content="Numéro de tiroir : " HorizontalAlignment="Left" Margin="484,370,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.121,0.942" Height="36" HorizontalContentAlignment="Right"/>
         <Label Content="Numéro de casier : " HorizontalAlignment="Left" Margin="484,412,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.121,0.942" Height="36" HorizontalContentAlignment="Right"/>
         <Label Content="Emplacement" HorizontalAlignment="Left" Margin="484,244,0,0" VerticalAlignment="Top" FontSize="20" Width="475" RenderTransformOrigin="0.121,0.942" Height="36" HorizontalContentAlignment="Center" FontWeight="Bold"/>
-        <ComboBox x:Name="listeNoCasier" HorizontalAlignment="Left" Margin="729,412,0,0" VerticalAlignment="Top" Width="230" Height="36"/>
-        <ComboBox x:Name="listeNoTiroir" HorizontalAlignment="Left" Margin="729,370,0,0" VerticalAlignment="Top" Width="230" Height="36"/>
-        <ComboBox x:Name="listeNoArmoire" HorizontalAlignment="Left" Margin="729,328,0,0" VerticalAlignment="Top" Width="230" Height="36"/>
+        <ComboBox x:Name="listeNoCasier" HorizontalAlignment="Left" Margin="729,412,0,0" VerticalAlignment="Top" Width="230" Height="36" IsEnabled="False"/>
+        <ComboBox x:Name="listeNoTiroir" HorizontalAlignment="Left" Margin="729,370,0,0" VerticalAlignment="Top" Width="230" Height="36" IsEnabled="False"/>
+        <ComboBox x:Name="listeNoArmoire" HorizontalAlignment="Left" Margin="729,328,0,0" VerticalAlignment="Top" Width="230" Height="36" IsEnabled="False"/>
         <ComboBox x:Name="listeNoLocal" HorizontalAlignment="Left" Margin="729,286,0,0" VerticalAlignment="Top" Width="230" Height="36"/>
     </Grid>
 </Window>

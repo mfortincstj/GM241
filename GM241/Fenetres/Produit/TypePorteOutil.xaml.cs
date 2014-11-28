@@ -62,7 +62,7 @@ namespace GM241.Fenetres.Produit
 
             // Prendre le id du type d'attachement
             str2 = listeAttachement.Text;
-            idAttchement = str.Split(splitchar);
+            idAttchement = str2.Split(splitchar);
 
             // Vérifier si les champs sont vide ? 
             if (nom.Text == "")

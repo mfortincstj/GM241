@@ -59,6 +59,7 @@ namespace GM241.Fenetres.Produit
         {
             bool insertValide = true;
             char[] splitchar = {' '};
+            char[] splitchar2 = { ' ' };
             string str = null;
             string str2 = null;
             string[] idEmp = null;
@@ -70,8 +71,8 @@ namespace GM241.Fenetres.Produit
             idEmp = str.Split(splitchar);
 
             // Prendre le id du type d'attachement
-            str2 = listeTypeEmplacement.Text;
-            idTypeAtt = str.Split(splitchar);
+            str2 = listeTypeAttachement.Text;
+            idTypeAtt = str2.Split(splitchar2);
 
             // Vérifier si les champs sont vide ? 
             if(diametreInt.Text == "")
