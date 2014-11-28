@@ -27,18 +27,7 @@ namespace GM241.Fenetres.Inventaire
     {
         private string usagerConnecte = "";
         private bool estAdmin = false;
-
-        /*private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            if (MessageBox.Show("Êtes-vous sûr de vouloir quitter?", "Attention!", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.Yes) == MessageBoxResult.Yes)
-            {
-                Application.Current.Shutdown();
-            }
-            else
-            {
-                e.Cancel = true;
-            }
-        }*/
+        public string index = "";
 
         public Inventaire(bool admin, string user)
         {
@@ -115,19 +104,34 @@ namespace GM241.Fenetres.Inventaire
                 Application.Current.Shutdown();
         }
 
-        void EventRow(object sender, SelectionChangedEventArgs args)
-        {
-            TabItem lbi = ((sender as TabControl).SelectedItem as TabItem);
-            //tb.Text = "   You selected " + lbi.Content.ToString() + ".";
-            Console.WriteLine(lbi.Content.ToString());
-        }
-
         public void btnDetail_Click(object sender, RoutedEventArgs e)
         {
+            char[] splitchar = { ' ' };
+            string str = null;
+            string[] infoIndex = null;
+            PorteOutils porteOutils = new PorteOutils();
+
+            // Prendre le id du type d'emplacement
+            str = index;
+            infoIndex = str.Split(splitchar);
+            /*
             var outil = resGrid.SelectedItem as Outils;
 
             Outil detailOutil = new Outil(outil);
             detailOutil.Show();
+            */
+            switch (infoIndex[2])
+            {
+                case "Collets":
+                    MessageBox.Show("case 0 !");
+                break;
+
+                case "Outils" : 
+                    var outil = resGrid.SelectedItem as Outils;
+                    Outil detailOutil = new Outil(outil);
+                    detailOutil.Show();
+                break;
+            }
         }
 
         private void lstMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -205,11 +209,68 @@ namespace GM241.Fenetres.Inventaire
             }
         }*/
 
-        private void resGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void tabInventaire_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (resGrid.SelectedItem != null)
+            switch (tabInventaire.SelectedIndex)
             {
-                btnDetail.IsEnabled = true;
+                case 0:  // Test
+                    btnDetail.IsEnabled = true;
+                    index = tabInventaire.SelectedIndex.ToString();
+                    MessageBox.Show(index);
+                    break;
+
+                case 1:  // Collets
+                    btnDetail.IsEnabled = true;
+                    index = tabInventaire.SelectedValue.ToString();
+                    break;
+
+                case 2:  // Outils
+                    btnDetail.IsEnabled = true;
+                    index = tabInventaire.SelectedValue.ToString();
+                    break;
+
+                case 3:  // PorteOutils
+                    btnDetail.IsEnabled = true;
+                    break;
+
+                case 4:  // Plaquettes
+                    btnDetail.IsEnabled = true;
+                    break;
+
+                case 5:  // Cones
+                    btnDetail.IsEnabled = true;
+                    break;
+
+                case 6:  // EMplacements
+                    btnDetail.IsEnabled = true;
+                    break;
+
+                case 7:  // Extensions
+                    btnDetail.IsEnabled = true;
+                    break;
+
+                case 8:  // Machines
+                    btnDetail.IsEnabled = true;
+                    break;
+
+                case 9:  // PlateauxMachines
+                    btnDetail.IsEnabled = true;
+                    break;
+
+                case 10:  // TypeAttachements
+                    btnDetail.IsEnabled = true;
+                    break;
+
+                case 11:  // TypePorteOutils
+                    btnDetail.IsEnabled = true;
+                    break;
+
+                case 12:  // TypeEmplacements
+                    btnDetail.IsEnabled = true;
+                    break;
+                case 13:  // TypeOutils
+                    btnDetail.IsEnabled = true;
+                    break;
             }
         }
 
