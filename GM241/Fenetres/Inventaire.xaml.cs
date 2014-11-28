@@ -217,7 +217,7 @@ namespace GM241.Fenetres.Inventaire
         {
             string nomFourni = champNom.Text.ToLower();
             List<Outils> listOutil = Outils.chargerLstOutils();
-           
+            
             if(nomFourni == "")
             {
                 resGrid2.ItemsSource = listOutil;
@@ -228,9 +228,46 @@ namespace GM241.Fenetres.Inventaire
             }
         }
 
+        private void champDescription_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string descFournie = champDescription.Text.ToLower();
+            List<Outils> listOutil = Outils.chargerLstOutils();
+
+            /*if (descFournie == "")
+            {
+                resGrid2.ItemsSource = listOutil;
+            }*/
+            //else
+            //{
+                resGrid2.ItemsSource = listOutil.Where(o => o.idTypeOutil.ToString().Contains(descFournie)
+                                                         || o.idEmplacement.ToString().Contains(descFournie)
+                                                         || o.idPlaquette.ToString().Contains(descFournie)
+                                                         || o.quantite.ToString().Contains(descFournie)
+                                                         || o.diametreUsinage.Contains(descFournie)
+                                                         || o.diametreSerrage.Contains(descFournie)
+                                                         || o.longueurCoupe.Contains(descFournie)
+                                                         || o.longueurTotal.Contains(descFournie)
+                                                         || o.longueurShank.Contains(descFournie)
+                                                         || o.rayonCoin.Contains(descFournie)
+                                                         || o.anglePointe.Contains(descFournie)
+                                                         || o.nombreFlute.ToString().Contains(descFournie)
+                                                         || o.image.Contains(descFournie));
+            //}
+        }
+
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-        MessageBox.Show("oh yeah!");
+            string descFournie = champDescription.Text.ToLower();
+            List<Outils> listOutil = Outils.chargerLstOutils();
+
+            if (descFournie == "")
+            {
+                resGrid2.ItemsSource = listOutil;
+            }
+            else
+            {
+                resGrid2.ItemsSource = listOutil.Where(x => x.nom.Equals(descFournie));
+            }
         }
     }
 }
