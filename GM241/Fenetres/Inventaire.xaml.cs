@@ -217,32 +217,20 @@ namespace GM241.Fenetres.Inventaire
         {
             string nomFourni = champNom.Text.ToLower();
             List<Outils> listOutil = Outils.chargerLstOutils();
-
-            if(radioRechPart.IsChecked == true)
-            { 
-                if(nomFourni == "")
-                {
-                    resGrid2.ItemsSource = listOutil;
-                }
-                else
-                {
-                    resGrid2.ItemsSource = listOutil.Where(o => o.nom.Contains(nomFourni));
-                }
-            }
-            else 
+           
+            if(nomFourni == "")
             {
-                foreach (Outils o in listOutil)
-                {
-                    if(o.nom != nomFourni)
-                    {
-                        resGrid2.ItemsSource = listOutil;
-                    }
-                    else 
-                    {
-                        resGrid2.ItemsSource = listOutil.Where(x => x.nom.Equals(nomFourni));
-                    }
-                }
+                resGrid2.ItemsSource = listOutil;
             }
+            else
+            {
+                resGrid2.ItemsSource = listOutil.Where(o => o.nom.Contains(nomFourni));
+            }
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+        MessageBox.Show("oh yeah!");
         }
     }
 }
