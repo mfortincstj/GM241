@@ -48,6 +48,47 @@ namespace GM241.Fenetres.Produit
             e.Handled = regex.IsMatch(e.Text);
         }
 
+        public Outil()
+        {
+            InitializeComponent();
+
+            listeNoArmoire.Items.Add("0 - Aucun");
+            listeNoTiroir.Items.Add("0 - Aucun");
+            listeNoCasier.Items.Add("0 - Aucun");
+
+            // Charger la liste des types d'outil
+            List<TypeOutils> lstTypeOutils = TypeOutils.chargerlstTypeOutils();
+
+            foreach (TypeOutils tO in lstTypeOutils)
+                listeTypeOutil.Items.Add(tO.idTypeOutil + " - " + tO.nom);
+
+            /*
+            // Charger la liste des types d'emplacements
+            List<Emplacements> lstEmplacements = Emplacements.chargerlstEmplacements();
+
+            foreach (Emplacements e in lstEmplacements)
+            {
+                listeNoLocal.Items.Add(e.idTypeEmplacement + " - " + e.noLocal);
+                listeNoArmoire.Items.Add(e.noArmoire);
+                listeNoTiroir.Items.Add(e.noTiroir);
+                listeNoCasier.Items.Add(e.noCasier);
+            }
+            */
+
+            // Chargement temporaire des emplacement *** À changer
+            List<Emplacements> lstEmplacements = Emplacements.chargerlstEmplacements();
+            foreach (Emplacements e in lstEmplacements)
+                listeNoLocal.Items.Add(e.idTypeEmplacement + " - " + e.noLocal + " - " + e.idArmoire + " - " + e.idCasier + " - " + e.idTiroir);
+
+            // Charger la liste des plaquettes
+            List<Plaquettes> lstPlaquettes = Plaquettes.chargerlstPlaquettes();
+
+            foreach (Plaquettes p in lstPlaquettes)
+                listePlaquette.Items.Add(p.idPlaquette + " - " + p.nom);
+
+            viderChamps();
+        }
+
         public Outil(Outils monOutil)
         {
             InitializeComponent();
@@ -91,11 +132,21 @@ namespace GM241.Fenetres.Produit
                 dispoOui.IsChecked = true;
                 dispoNon.IsChecked = false;
             }
+            else
+            {
+                dispoOui.IsChecked = false;
+                dispoNon.IsChecked = true;
+            }
 
             if (monOutil.unitePouce == true)
             {
                 uniteOui.IsChecked = true;
                 uniteNon.IsChecked = false;
+            }
+            else
+            {
+                uniteOui.IsChecked = false;
+                uniteNon.IsChecked = true;
             }
 
             img.Text = monOutil.image;
@@ -103,47 +154,6 @@ namespace GM241.Fenetres.Produit
             btnAjouter.IsEnabled = false;
             btnModif.IsEnabled = true;
             btnSupprimer.IsEnabled = true;
-        }
-
-        public Outil()
-        {
-            InitializeComponent();
-
-            listeNoArmoire.Items.Add("0 - Aucun");
-            listeNoTiroir.Items.Add("0 - Aucun");
-            listeNoCasier.Items.Add("0 - Aucun");
-
-            // Charger la liste des types d'outil
-            List<TypeOutils> lstTypeOutils = TypeOutils.chargerlstTypeOutils();
-
-            foreach (TypeOutils tO in lstTypeOutils)
-                listeTypeOutil.Items.Add(tO.idTypeOutil + " - " + tO.nom);
-
-            /*
-            // Charger la liste des types d'emplacements
-            List<Emplacements> lstEmplacements = Emplacements.chargerlstEmplacements();
-
-            foreach (Emplacements e in lstEmplacements)
-            {
-                listeNoLocal.Items.Add(e.idTypeEmplacement + " - " + e.noLocal);
-                listeNoArmoire.Items.Add(e.noArmoire);
-                listeNoTiroir.Items.Add(e.noTiroir);
-                listeNoCasier.Items.Add(e.noCasier);
-            }
-            */
-
-            // Chargement temporaire des emplacement *** À changer
-            List<Emplacements> lstEmplacements = Emplacements.chargerlstEmplacements();
-            foreach (Emplacements e in lstEmplacements)
-                listeNoLocal.Items.Add(e.idTypeEmplacement + " - " + e.noLocal + " - " + e.idArmoire + " - " + e.idCasier + " - " + e.idTiroir);
-
-            // Charger la liste des plaquettes
-            List<Plaquettes> lstPlaquettes = Plaquettes.chargerlstPlaquettes();
-
-            foreach (Plaquettes p in lstPlaquettes)
-                listePlaquette.Items.Add(p.idPlaquette + " - " + p.nom);
-
-            viderChamps();
         }
 
         private void btnAjout_Click(object sender, RoutedEventArgs e)

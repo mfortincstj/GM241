@@ -49,6 +49,28 @@ namespace GM241.Fenetres.Produit
             viderChamps();
         }
 
+        public Emplacement(Emplacements monEmplacement)
+        {
+            InitializeComponent();
+
+            // Charger la liste des types d'emplacements
+            List<TypeEmplacements> lstTypeEmpl = TypeEmplacements.chargerlstTypeEmplacements();
+
+            foreach (TypeEmplacements tP in lstTypeEmpl)
+                listeTypeEmplacement.Items.Add(tP.idTypeEmplacement + " - " + tP.nom);
+
+            listeTypeEmplacement.SelectedIndex = monEmplacement.idTypeEmplacement - 1;
+
+            noLocal.Text = monEmplacement.noLocal;
+            noArmoire.Text = monEmplacement.idArmoire;
+            noTitoir.Text = monEmplacement.idTiroir;
+            noCasier.Text = monEmplacement.idCasier;
+
+            btnAjouter.IsEnabled = false;
+            btnModif.IsEnabled = true;
+            btnSupprimer.IsEnabled = true;
+        }
+
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
             bool insertValide = true;

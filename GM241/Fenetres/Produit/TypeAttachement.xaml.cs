@@ -33,6 +33,18 @@ namespace GM241.Fenetres.Produit
             viderChamps();
         }
 
+        public TypeAttachement(TypeAttachements monTypeAttachement)
+        {
+            InitializeComponent();
+
+            nom.Text = monTypeAttachement.nom;
+            diametreExt.Text = monTypeAttachement.diametreExterieur;
+
+            btnAjouter.IsEnabled = false;
+            btnModif.IsEnabled = true;
+            btnSupprimer.IsEnabled = true;
+        }
+
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
             bool insertValide = true;

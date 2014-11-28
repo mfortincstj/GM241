@@ -46,6 +46,29 @@ namespace GM241.Fenetres.Produit
             viderChamps();
         }
 
+        public TypePorteOutil(TypePorteOutils monTypePorteOutil)
+        {
+            InitializeComponent();
+
+            // Charger la liste des cones
+            List<Cones> lstCones = Cones.chargerlstCones();
+
+            foreach (Cones c in lstCones)
+                listeCone.Items.Add(c.idCone + " - " + c.nom);
+
+            listeCone.SelectedIndex = monTypePorteOutil.idCone - 1;
+
+            // Charger la liste des attachements
+            List<TypeAttachements> lstAttachements = TypeAttachements.chargerlstTypeAttachements();
+
+            foreach (TypeAttachements tA in lstAttachements)
+                listeAttachement.Items.Add(tA.idTypeAttachements + " - " + tA.nom);
+
+            listeAttachement.SelectedIndex = monTypePorteOutil.idTypeAttachement - 1;
+
+            nom.Text = monTypePorteOutil.nom;
+        }
+
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
             bool insertValide = true;

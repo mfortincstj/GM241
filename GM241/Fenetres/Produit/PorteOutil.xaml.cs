@@ -23,7 +23,7 @@ namespace GM241.Fenetres.Produit
     {
         private void viderChamps()
         {
-            listePorteOutil.SelectedIndex = 0;
+            listeTypePorteOutil.SelectedIndex = 0;
             listeNoLocal.SelectedIndex = 0;
             //listeNoArmoire.SelectedIndex = 0;
             //listeNoTiroir.SelectedIndex = 0;
@@ -46,11 +46,10 @@ namespace GM241.Fenetres.Produit
             listeNoTiroir.Items.Add("0 - Aucun");
             listeNoCasier.Items.Add("0 - Aucun");
 
-            // Charger la liste des types d'emplacements
             List<TypePorteOutils> lstTypePorteOutils = TypePorteOutils.chargerlstTypePorteOutils();
 
             foreach (TypePorteOutils tPo in lstTypePorteOutils)
-                listePorteOutil.Items.Add(tPo.idTypePorteOutil + " - " + tPo.nom);
+                listeTypePorteOutil.Items.Add(tPo.idTypePorteOutil + " - " + tPo.nom);
             
             /*
             // Charger les emplacements
@@ -77,6 +76,25 @@ namespace GM241.Fenetres.Produit
             viderChamps();
         }
 
+        public PorteOutil(PorteOutils monPorteOutil)
+        {
+            InitializeComponent();
+
+            List<TypePorteOutils> lstTypePorteOutils = TypePorteOutils.chargerlstTypePorteOutils();
+
+            foreach (TypePorteOutils tPo in lstTypePorteOutils)
+                listeTypePorteOutil.Items.Add(tPo.idTypePorteOutil + " - " + tPo.nom);
+
+            listeTypePorteOutil.SelectedIndex = monPorteOutil.idTypePorteOutil - 1;
+
+            quantite.Text = monPorteOutil.quantite.ToString();
+            image.Text = monPorteOutil.image;
+
+            btnAjouter.IsEnabled = false;
+            btnModif.IsEnabled = true;
+            btnSupprimer.IsEnabled = true;
+        }
+
         private void btnAjout_Click(object sender, RoutedEventArgs e)
         {
             bool insertValide = true;
@@ -88,7 +106,7 @@ namespace GM241.Fenetres.Produit
             PorteOutils porteOutils = new PorteOutils();
 
             // Prendre le id du type d'emplacement
-            str = listePorteOutil.Text;
+            str = listeTypePorteOutil.Text;
             idPorteOul = str.Split(splitchar);
 
             // Prendre le id du type d'attachement

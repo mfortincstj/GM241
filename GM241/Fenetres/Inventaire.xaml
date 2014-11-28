@@ -52,7 +52,7 @@
             <TabItem Header="Machines" FontSize="16">
                 <DataGrid x:Name="resGrid8" Margin="10,10,10,10" SelectionChanged="tabInventaire_SelectionChanged" CanUserReorderColumns="False" Background="#FFA8A8A8"/>
             </TabItem>
-            <TabItem Header="Plateaux de Machine" FontSize="16">
+            <TabItem Header="Plateaux Machine" FontSize="16">
                 <DataGrid x:Name="resGrid9" Margin="10,10,10,10" SelectionChanged="tabInventaire_SelectionChanged" CanUserReorderColumns="False" Background="#FFA8A8A8"/>
             </TabItem>
             <TabItem Header="Types d'attachements" FontSize="16">
@@ -64,7 +64,7 @@
             <TabItem Header="Types d'emplacements" FontSize="16">
                 <DataGrid x:Name="resGrid12" Margin="10,10,10,10" SelectionChanged="tabInventaire_SelectionChanged" CanUserReorderColumns="False" Background="#FFA8A8A8"/>
             </TabItem>
-            <TabItem Header="Type d'outil" FontSize="16">
+            <TabItem Header="Types d'outils" FontSize="16">
                 <DataGrid x:Name="resGrid13" Margin="10,10,10,10" SelectionChanged="tabInventaire_SelectionChanged" CanUserReorderColumns="False" Background="#FFA8A8A8"/>
             </TabItem>
         </TabControl>
