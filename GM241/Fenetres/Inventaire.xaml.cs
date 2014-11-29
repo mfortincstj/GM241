@@ -59,21 +59,13 @@ namespace GM241.Fenetres.Inventaire
             lstMenu.SelectedIndex = 0;
 
             List<Collets> listCol = Collets.chargerlstCollets();
-<<<<<<< HEAD
-            /*foreach (Collets c in listCol)
-            {
-                if (c.estSupprime == false)
-                {*/
-                    resGrid1.ItemsSource = listCol;
-              /*  }
-            }*/
-=======
+
             foreach (Collets c in listCol)
             {
                 if (c.estSupprime == false)
                     resGrid1.ItemsSource = listCol.Where(obj => obj.estSupprime.Equals(false));
             }
->>>>>>> origin/master
+
 
             List<Outils> listOutil = Outils.chargerLstOutils();
             foreach (Outils o in listOutil)
