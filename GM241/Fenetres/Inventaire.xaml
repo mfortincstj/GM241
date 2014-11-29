@@ -22,12 +22,10 @@
         <Label Content="GM241 - Navigation : " HorizontalAlignment="Left" Margin="10,10,0,0" Width="193" FontSize="18" FontWeight="Bold" Height="40" VerticalAlignment="Top" Foreground="White"/>
         <Label x:Name="role" Content="Connecté :  " HorizontalAlignment="Right" Margin="0,46,141,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Width="91" Foreground="White"/>
         <Label x:Name="usager" Content="" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Height="31" Width="126" FontSize="16" Foreground="White"/>
+        <CheckBox x:Name="CheckBoxDesc" Content="Recherche forcée" HorizontalAlignment="Left" Margin="475,0,0,49" Foreground="White" Height="16" VerticalAlignment="Bottom"/>
 
         <!--<DataGrid x:Name="resGrid" Margin="10,82,10,88" SelectionChanged="resGrid_SelectionChanged" CanUserReorderColumns="False" Background="#FFA8A8A8"/> -->
         <TabControl Name="tabInventaire" Margin="10,82,10,88">
-            <TabItem Header="TEST" FontSize="16">
-                <DataGrid x:Name="resGrid" Margin="10,10,10,10" SelectionChanged="tabInventaire_SelectionChanged" CanUserReorderColumns="False" Background="#FFA8A8A8"/>
-            </TabItem>
             <TabItem Header="Collets" FontSize="16">
                 <DataGrid x:Name="resGrid1" Margin="10,10,10,10" SelectionChanged="tabInventaire_SelectionChanged" CanUserReorderColumns="False" Background="#FFA8A8A8"/>
             </TabItem>
@@ -68,6 +66,5 @@
                 <DataGrid x:Name="resGrid13" Margin="10,10,10,10" SelectionChanged="tabInventaire_SelectionChanged" CanUserReorderColumns="False" Background="#FFA8A8A8"/>
             </TabItem>
         </TabControl>
-        <CheckBox Content="Recherche forcée" HorizontalAlignment="Left" Margin="475,0,0,49" Foreground="White" Checked="CheckBox_Checked" Height="16" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>
