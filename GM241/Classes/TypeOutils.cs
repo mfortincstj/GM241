@@ -10,30 +10,34 @@ namespace GM241.Classes
     {
         public virtual int idTypeOutil { get; set; }
         public virtual string nom{ get; set; }
+        public virtual bool estSupprime { get; set; }
 
         public TypeOutils()
         {
             idTypeOutil = 0;
             nom = "";
+            estSupprime = false;
         }
 
-        public TypeOutils(int idTypeOul, string n)
+        public TypeOutils(int idTypeOul, string n, bool estSupp)
         {
             idTypeOutil = idTypeOul;
             nom = n;
+            estSupprime = estSupp;
         }
 
         public static List<TypeOutils> chargerlstTypeOutils()
         {
             int idTypeOutil;
             string nom;
+            bool estSupprime;
 
             BDService BDTypeOutils = new BDService();
             String request = "SELECT * FROM TypeOutils";
 
             List<string>[] tabTypeOutils;
             int nombreRange = 0;
-            tabTypeOutils = BDTypeOutils.selection(request, 2, ref nombreRange);
+            tabTypeOutils = BDTypeOutils.selection(request, 3, ref nombreRange);
 
             List<TypeOutils> listeTypeOutils = new List<TypeOutils>();
 
@@ -43,8 +47,9 @@ namespace GM241.Classes
                 {
                     idTypeOutil = Convert.ToInt32(tabTypeOutils[i][0]);
                     nom = tabTypeOutils[i][1];
+                    estSupprime = Convert.ToBoolean(tabTypeOutils[i][2]);
 
-                    listeTypeOutils.Add(new TypeOutils(idTypeOutil, nom));
+                    listeTypeOutils.Add(new TypeOutils(idTypeOutil, nom, estSupprime));
                 }
             }
 
@@ -58,6 +63,17 @@ namespace GM241.Classes
                              "( " + "'" + nom + "'" + ");";
 
             if (BDTypeOutil.Insertion(request) == true)
+                return true;
+            else
+                return false;
+        }
+
+        public bool deleteTypeOutil(int id)
+        {
+            BDService BD = new BDService();
+            String request = "UPDATE TypeOutils SET estSupprime = true WHERE idTypeOutil = " + id + ";";
+
+            if (BD.delete(request) == true)
                 return true;
             else
                 return false;

@@ -12,6 +12,7 @@ namespace GM241.Classes
         public virtual string nom { get; set; }
         public virtual string typeCone { get; set; }
         public virtual string typeMachine { get; set; }
+        public virtual bool estSupprime { get; set; }
 
         public Cones()
         {
@@ -19,14 +20,16 @@ namespace GM241.Classes
             nom = "";
             typeCone = "";
             typeMachine = "";
+            estSupprime = false;
         }
 
-        public Cones(int idCon, string n, string typeC, string typeM)
+        public Cones(int idCon, string n, string typeC, string typeM, bool estSupp)
         {
             idCone = idCon;
             nom = n;
             typeCone = typeC;
             typeMachine = typeM;
+            estSupprime = estSupp;
         }
 
         public static List<Cones> chargerlstCones()
@@ -35,13 +38,14 @@ namespace GM241.Classes
             string nom;
             string typeCone;
             string typeMachine;
+            bool estSupprime;
 
             BDService BDCones = new BDService();
             String request = "SELECT * FROM Cones";
 
             List<string>[] tabCones;
             int nombreRange = 0;
-            tabCones = BDCones.selection(request, 4, ref nombreRange);
+            tabCones = BDCones.selection(request, 5, ref nombreRange);
 
             List<Cones> listeCones = new List<Cones>();
 
@@ -53,8 +57,9 @@ namespace GM241.Classes
                     nom = tabCones[i][1];
                     typeCone = tabCones[i][2];
                     typeMachine = tabCones[i][3];
+                    estSupprime = Convert.ToBoolean(tabCones[i][4]);
 
-                    listeCones.Add(new Cones(idCone, nom, typeCone, typeMachine));
+                    listeCones.Add(new Cones(idCone, nom, typeCone, typeMachine, estSupprime));
                 }
             }
 
@@ -70,6 +75,17 @@ namespace GM241.Classes
                              ", " + "'" + typeMachine + "'" + ");";
 
             if (BDCones.Insertion(request) == true)
+                return true;
+            else
+                return false;
+        }
+
+        public bool deleteCone(int id)
+        {
+            BDService BD = new BDService();
+            String request = "UPDATE Cones SET estSupprime = true WHERE idCone = " + id + ";";
+
+            if (BD.delete(request) == true)
                 return true;
             else
                 return false;

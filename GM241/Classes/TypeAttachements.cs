@@ -8,36 +8,40 @@ namespace GM241.Classes
 {
     public class TypeAttachements
     {
-        public virtual int idTypeAttachements { get; set; }
+        public virtual int idTypeAttachement { get; set; }
         public virtual string nom { get; set; }
         public virtual string diametreExterieur { get; set; }
+        public virtual bool estSupprime { get; set; }
 
         public TypeAttachements()
         {
-            idTypeAttachements = 0;
+            idTypeAttachement = 0;
             nom = "";
             diametreExterieur = "";
+            estSupprime = false;
         }
 
-        public TypeAttachements(int idTypeAtt, string n, string dE)
+        public TypeAttachements(int idTypeAtt, string n, string dE, bool estSupp)
         {
-            idTypeAttachements = idTypeAtt;
+            idTypeAttachement = idTypeAtt;
             nom = n;
             diametreExterieur = dE;
+            estSupprime = estSupp;
         }
 
         public static List<TypeAttachements> chargerlstTypeAttachements()
         {
-            int idTypeAttachements;
+            int idTypeAttachement;
             string nom;
             string diametreExterieur;
+            bool estSupprime;
 
             BDService BDtypeAttachements = new BDService();
             String request = "SELECT * FROM TypeAttachements";
 
             List<string>[] tabTypeAttachements;
             int nombreRange = 0;
-            tabTypeAttachements = BDtypeAttachements.selection(request, 3, ref nombreRange);
+            tabTypeAttachements = BDtypeAttachements.selection(request, 4, ref nombreRange);
 
             List<TypeAttachements> listeTypeAttachements = new List<TypeAttachements>();
 
@@ -45,11 +49,12 @@ namespace GM241.Classes
             {
                 for (int i = 0; i < nombreRange; i++)
                 {
-                    idTypeAttachements = Convert.ToInt32(tabTypeAttachements[i][0]);
+                    idTypeAttachement = Convert.ToInt32(tabTypeAttachements[i][0]);
                     nom = tabTypeAttachements[i][1];
                     diametreExterieur = tabTypeAttachements[i][2];
+                    estSupprime = Convert.ToBoolean(tabTypeAttachements[i][3]);
 
-                    listeTypeAttachements.Add(new TypeAttachements(idTypeAttachements, nom, diametreExterieur));
+                    listeTypeAttachements.Add(new TypeAttachements(idTypeAttachement, nom, diametreExterieur, estSupprime));
                 }
             }
 
@@ -64,6 +69,17 @@ namespace GM241.Classes
                              ", " + "'" + diametreExterieur + "'" + ");";
 
             if (BDTypeAttachement.Insertion(request) == true)
+                return true;
+            else
+                return false;
+        }
+
+        public bool deleteTypeAttachement(int id)
+        {
+            BDService BD = new BDService();
+            String request = "UPDATE TypeAttachements SET estSupprime = true WHERE idTypeAttachement = " + id + ";";
+
+            if (BD.delete(request) == true)
                 return true;
             else
                 return false;

@@ -19,7 +19,7 @@
         <TextBox x:Name="img" HorizontalAlignment="Left" Height="37" Margin="255,267,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
         <Button x:Name="btnAjouter" Content="Ajouter" Margin="10,468,739,0" Height="44" VerticalAlignment="Top" Click="btnAjouter_Click"/>
         <Button x:Name="btnModif" Content="Modifier" Margin="375,468,374,0" IsEnabled="False" Height="44" VerticalAlignment="Top"/>
-        <Button x:Name="btnSupprimer" Content="Supprimer" Margin="739,468,10,0" IsEnabled="False" Height="44" VerticalAlignment="Top"/>
+        <Button x:Name="btnSupprimer" Content="Supprimer" Margin="739,468,10,0" IsEnabled="False" Height="44" VerticalAlignment="Top" Click="btnSupprimer_Click_1"/>
         <Label Content="Numéro de local : " HorizontalAlignment="Left" Margin="484,52,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.121,0.942" Height="37" HorizontalContentAlignment="Right"/>
         <Label Content="Numéro d'armoire : " HorizontalAlignment="Left" Margin="484,94,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.121,0.942" Height="37" HorizontalContentAlignment="Right"/>
         <Label Content="Numéro de tiroir : " HorizontalAlignment="Left" Margin="484,136,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.121,0.942" Height="37" HorizontalContentAlignment="Right"/>

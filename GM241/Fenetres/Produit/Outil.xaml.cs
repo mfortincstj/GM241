@@ -21,6 +21,8 @@ namespace GM241.Fenetres.Produit
     /// </summary>
     public partial class Outil : Window
     {
+        int idItemPresent;
+
         private void viderChamps()
         {
             listeTypeOutil.SelectedIndex = 0;
@@ -92,6 +94,7 @@ namespace GM241.Fenetres.Produit
         public Outil(Outils monOutil)
         {
             InitializeComponent();
+            idItemPresent = monOutil.idOutil;
 
             // Pour le type d'outil
             List<TypeOutils> lstTypeOutils = TypeOutils.chargerlstTypeOutils();
@@ -226,6 +229,18 @@ namespace GM241.Fenetres.Produit
             }
             else
                 MessageBox.Show("Champs incomplet", "Attention !", MessageBoxButton.OK, MessageBoxImage.Warning, MessageBoxResult.OK);
+        }
+
+        private void btnSupprimer_Click_1(object sender, RoutedEventArgs e)
+        {
+            Outils outil = new Outils();
+
+            if (MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet élément ?", "Attention !", MessageBoxButton.YesNoCancel, MessageBoxImage.Question, MessageBoxResult.Cancel) == MessageBoxResult.Yes)
+            {
+                outil.deleteOutil(idItemPresent);
+                MessageBox.Show("Suppression réussie");
+                this.Close();
+            }
         }
     }
 }

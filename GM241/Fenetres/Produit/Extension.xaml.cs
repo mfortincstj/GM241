@@ -21,6 +21,8 @@ namespace GM241.Fenetres.Produit
     /// </summary>
     public partial class Extension : Window
     {
+        int idItemPresent;
+
         private void viderChamps()
         {
             listePorteOutil.SelectedIndex = 0;
@@ -80,7 +82,7 @@ namespace GM241.Fenetres.Produit
             List<TypeAttachements> lstAttachements = TypeAttachements.chargerlstTypeAttachements();
 
             foreach (TypeAttachements tA in lstAttachements)
-                listeCollet.Items.Add(tA.idTypeAttachements + " - " + tA.nom);
+                listeCollet.Items.Add(tA.idTypeAttachement + " - " + tA.nom);
 
             viderChamps();
         }
@@ -88,6 +90,7 @@ namespace GM241.Fenetres.Produit
         public Extension(Extensions monExtension)
         {
             InitializeComponent();
+            idItemPresent = monExtension.idExtension;
 
             // Charger la liste des types de porte outil
             List<TypePorteOutils> lstTypePorteOutils = TypePorteOutils.chargerlstTypePorteOutils();
@@ -101,7 +104,7 @@ namespace GM241.Fenetres.Produit
             List<TypeAttachements> lstAttachements = TypeAttachements.chargerlstTypeAttachements();
 
             foreach (TypeAttachements tA in lstAttachements)
-                listeCollet.Items.Add(tA.idTypeAttachements + " - " + tA.nom);
+                listeCollet.Items.Add(tA.idTypeAttachement + " - " + tA.nom);
 
             listeCollet.SelectedIndex = monExtension.idCollet - 1;
 
@@ -160,6 +163,18 @@ namespace GM241.Fenetres.Produit
             }
             else
                 MessageBox.Show("Champs incomplet", "Attention !", MessageBoxButton.OK, MessageBoxImage.Warning, MessageBoxResult.OK);
+        }
+
+        private void btnSupprimer_Click_1(object sender, RoutedEventArgs e)
+        {
+            Extensions extension = new Extensions();
+
+            if (MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet élément ?", "Attention !", MessageBoxButton.YesNoCancel, MessageBoxImage.Question, MessageBoxResult.Cancel) == MessageBoxResult.Yes)
+            {
+                extension.deleteExtension(idItemPresent);
+                MessageBox.Show("Suppression réussie");
+                this.Close();
+            }
         }
     }
 }

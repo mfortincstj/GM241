@@ -21,6 +21,8 @@ namespace GM241.Fenetres.Produit
     /// </summary>
     public partial class Plaquette : Window
     {
+        int idItemPresent;
+
         private void viderChamps()
         {
             listeNoLocal.SelectedIndex = 0;
@@ -79,6 +81,7 @@ namespace GM241.Fenetres.Produit
         public Plaquette(Plaquettes maPlaquette)
         {
             InitializeComponent();
+            idItemPresent = maPlaquette.idPlaquette;
 
             nom.Text = maPlaquette.nom;
             typePlaquette.Text = maPlaquette.typePlaquette;
@@ -163,6 +166,18 @@ namespace GM241.Fenetres.Produit
             }
             else
                 MessageBox.Show("Champs incomplet", "Attention !", MessageBoxButton.OK, MessageBoxImage.Warning, MessageBoxResult.OK);
+        }
+
+        private void btnSupprimer_Click_1(object sender, RoutedEventArgs e)
+        {
+            Plaquettes plaquette = new Plaquettes();
+
+            if (MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet élément ?", "Attention !", MessageBoxButton.YesNoCancel, MessageBoxImage.Question, MessageBoxResult.Cancel) == MessageBoxResult.Yes)
+            {
+                plaquette.deletePlaquette(idItemPresent);
+                MessageBox.Show("Suppression réussie");
+                this.Close();
+            }
         }
     }
 }

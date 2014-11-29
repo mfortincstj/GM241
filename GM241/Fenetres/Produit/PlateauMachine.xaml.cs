@@ -20,6 +20,8 @@ namespace GM241.Fenetres.Produit
     /// </summary>
     public partial class PlateauMachine : Window
     {
+        int idItemPresent;
+
         private void viderChamps()
         {
             nom.Text = "";
@@ -39,6 +41,7 @@ namespace GM241.Fenetres.Produit
         public PlateauMachine(PlateauMachines monPlateauMachine)
         {
             InitializeComponent();
+            idItemPresent = monPlateauMachine.idPlateauMachine;
 
             nom.Text = monPlateauMachine.nom;
 
@@ -96,6 +99,18 @@ namespace GM241.Fenetres.Produit
             }
             else
                 MessageBox.Show("Champs incomplet", "Attention !", MessageBoxButton.OK, MessageBoxImage.Warning, MessageBoxResult.OK);
+        }
+
+        private void btnSupprimer_Click_1(object sender, RoutedEventArgs e)
+        {
+            PlateauMachines plateauMachine = new PlateauMachines();
+
+            if (MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet élément ?", "Attention !", MessageBoxButton.YesNoCancel, MessageBoxImage.Question, MessageBoxResult.Cancel) == MessageBoxResult.Yes)
+            {
+                plateauMachine.deletePlateauMachine(idItemPresent);
+                MessageBox.Show("Suppression réussie");
+                this.Close();
+            }
         }
     }
 }

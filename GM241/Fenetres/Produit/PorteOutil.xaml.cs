@@ -21,6 +21,8 @@ namespace GM241.Fenetres.Produit
     /// </summary>
     public partial class PorteOutil : Window
     {
+        int idItemPresent;
+
         private void viderChamps()
         {
             listeTypePorteOutil.SelectedIndex = 0;
@@ -79,6 +81,7 @@ namespace GM241.Fenetres.Produit
         public PorteOutil(PorteOutils monPorteOutil)
         {
             InitializeComponent();
+            idItemPresent = monPorteOutil.idPorteOutil;
 
             List<TypePorteOutils> lstTypePorteOutils = TypePorteOutils.chargerlstTypePorteOutils();
 
@@ -130,6 +133,18 @@ namespace GM241.Fenetres.Produit
             }
             else
                 MessageBox.Show("Champs incomplet", "Attention !", MessageBoxButton.OK, MessageBoxImage.Warning, MessageBoxResult.OK);
+        }
+
+        private void btnSupprimer_Click_1(object sender, RoutedEventArgs e)
+        {
+            PorteOutils porteOutil = new PorteOutils();
+
+            if (MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet élément ?", "Attention !", MessageBoxButton.YesNoCancel, MessageBoxImage.Question, MessageBoxResult.Cancel) == MessageBoxResult.Yes)
+            {
+                porteOutil.deletePorteOutil(idItemPresent);
+                MessageBox.Show("Suppression réussie");
+                this.Close();
+            }
         }
     }
 }

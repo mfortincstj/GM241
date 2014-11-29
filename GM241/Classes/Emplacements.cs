@@ -8,44 +8,52 @@ namespace GM241.Classes
 {
     public class Emplacements
     {
+        public virtual int idEmplacement { get; set; }
         public virtual int idTypeEmplacement { get; set; }
         public virtual string noLocal { get; set; }
         public virtual string idArmoire { get; set; }
         public virtual string idTiroir { get; set; }
         public virtual string idCasier { get; set; }
+        public virtual bool estSupprime { get; set; }
 
         public Emplacements()
         {
+            idEmplacement = 0;
             idTypeEmplacement = 0;
             noLocal = "";
             idArmoire = "";
             idTiroir = "";
             idCasier = "";
+            estSupprime = false;
         }
 
-        public Emplacements(int idTypeEmp, string noLoc, string noArm, string noTir, string noCas)
+        public Emplacements(int idEmp, int idTypeEmp, string noLoc, string noArm, string noTir, string noCas, bool estSupp)
         {
+            idEmplacement = idEmp;
             idTypeEmplacement = idTypeEmp;
             noLocal = noLoc;
             idArmoire = noArm;
             idTiroir = noTir;
             idCasier = noCas;
+            estSupprime = estSupp;
         }
 
         public static List<Emplacements> chargerlstEmplacements()
         {
+            int idEmplacement;
             int idTypeEmplacement;
             string noLocal;
             string idArmoire;
             string idTiroir;
             string idCasier;
+            bool estSupprime;
 
             BDService BDEmplacements = new BDService();
             String request = "SELECT * FROM Emplacements";
 
             List<string>[] tabEmplacements;
             int nombreRange = 0;
-            tabEmplacements = BDEmplacements.selection(request, 6, ref nombreRange);
+            tabEmplacements = BDEmplacements.selection(request, 7, ref nombreRange);
 
             List<Emplacements> listeEmplacements = new List<Emplacements>();
 
@@ -53,13 +61,15 @@ namespace GM241.Classes
             {
                 for (int i = 0; i < nombreRange; i++)
                 {
+                    idEmplacement = Convert.ToInt32(tabEmplacements[i][0]);
                     idTypeEmplacement = Convert.ToInt32(tabEmplacements[i][1]);
                     noLocal = tabEmplacements[i][2];
                     idArmoire = tabEmplacements[i][3];
                     idTiroir = tabEmplacements[i][4];
                     idCasier = tabEmplacements[i][5];
+                    estSupprime = Convert.ToBoolean(tabEmplacements[i][6]);
 
-                    listeEmplacements.Add(new Emplacements(idTypeEmplacement, noLocal, idArmoire, idTiroir, idCasier));
+                    listeEmplacements.Add(new Emplacements(idEmplacement, idTypeEmplacement, noLocal, idArmoire, idTiroir, idCasier, estSupprime));
                 }
             }
 
@@ -77,6 +87,17 @@ namespace GM241.Classes
                              ", " + "'" + noCasier + "'" + ");";
 
             if (BDCollets.Insertion(request) == true)
+                return true;
+            else
+                return false;
+        }
+
+        public bool deleteEmplacement(int id)
+        {
+            BDService BD = new BDService();
+            String request = "UPDATE Emplacements SET estSupprime = true WHERE idEmplacement = " + id + ";";
+
+            if (BD.delete(request) == true)
                 return true;
             else
                 return false;

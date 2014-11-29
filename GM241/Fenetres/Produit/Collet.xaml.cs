@@ -21,6 +21,8 @@ namespace GM241.Fenetres.Produit
     /// </summary>
     public partial class Collet : Window
     {
+        int idColletPresent;
+
         private void viderChamps()
         {
             listeTypeEmplacement.SelectedIndex = 0;
@@ -50,7 +52,7 @@ namespace GM241.Fenetres.Produit
             List<TypeAttachements> lstAttachements = TypeAttachements.chargerlstTypeAttachements();
 
             foreach (TypeAttachements tA in lstAttachements)
-                listeTypeAttachement.Items.Add(tA.idTypeAttachements + " - " + tA.nom);
+                listeTypeAttachement.Items.Add(tA.idTypeAttachement + " - " + tA.nom);
 
             viderChamps();
         }
@@ -58,6 +60,8 @@ namespace GM241.Fenetres.Produit
         public Collet(Collets monCollet)
         {
             InitializeComponent();
+            
+            idColletPresent = monCollet.idCollet;
 
             /*
             // Charger la liste des types d'emplacements
@@ -80,7 +84,7 @@ namespace GM241.Fenetres.Produit
             List<TypeAttachements> lstAttachements = TypeAttachements.chargerlstTypeAttachements();
 
             foreach (TypeAttachements tA in lstAttachements)
-                listeTypeAttachement.Items.Add(tA.idTypeAttachements + " - " + tA.nom);
+                listeTypeAttachement.Items.Add(tA.idTypeAttachement + " - " + tA.nom);
 
             if (monCollet.idTypeAttachement != 0)
             {
@@ -139,12 +143,13 @@ namespace GM241.Fenetres.Produit
 
         private void btnSupprimer_Click(object sender, RoutedEventArgs e)
         {
-            Collets collets = new Collets();
+            Collets collet = new Collets();
 
-            if (collets.deleteCollet() == true)
+            if (MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet élément ?", "Attention !", MessageBoxButton.YesNoCancel, MessageBoxImage.Question, MessageBoxResult.Cancel) == MessageBoxResult.Yes)
             {
-                MessageBox.Show("Insertion réussie");
-                viderChamps();
+                collet.deleteCollet(idColletPresent);
+                MessageBox.Show("Suppression réussie");
+                this.Close();
             }
         }
     }

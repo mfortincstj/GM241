@@ -31,7 +31,7 @@
         <TextBox x:Name="img" HorizontalAlignment="Left" Height="37" Margin="729,183,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
         <Button x:Name="btnAjouter" Content="Ajouter" Margin="10,468,739,0" Click="btnAjout_Click" Height="44" VerticalAlignment="Top"/>
         <Button x:Name="btnModif" Content="Modifier" Margin="375,468,374,0" IsEnabled="False" Height="44" VerticalAlignment="Top"/>
-        <Button x:Name="btnSupprimer" Content="Supprimer" Margin="739,468,10,0" IsEnabled="False" Height="44" VerticalAlignment="Top"/>
+        <Button x:Name="btnSupprimer" Content="Supprimer" Margin="739,468,10,0" IsEnabled="False" Height="44" VerticalAlignment="Top" Click="btnSupprimer_Click_1"/>
         <Label Content=" Disponible: " HorizontalAlignment="Left" Margin="490,99,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.129,0.432" HorizontalContentAlignment="Right"/>
         <Label Content=" Unité en pouce : " HorizontalAlignment="Left" Margin="490,141,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.129,0.432" HorizontalContentAlignment="Right"/>
         <RadioButton x:Name="dispoOui" GroupName="dispo" Content="Oui" HorizontalAlignment="Left" Margin="731,107,0,0" VerticalAlignment="Top" Height="37" FontSize="20" Width="53"/>

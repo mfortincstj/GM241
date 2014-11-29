@@ -12,6 +12,7 @@ namespace GM241.Classes
         public virtual int idCone { get; set; }
         public virtual int idTypeAttachement { get; set; }
         public virtual string nom { get; set; }
+        public virtual bool estSupprime { get; set; }
 
         public TypePorteOutils()
         {
@@ -19,14 +20,16 @@ namespace GM241.Classes
             idCone = 0;
             idTypeAttachement = 0;
             nom = "";
+            estSupprime = false;
         }
 
-        public TypePorteOutils(int idTypePorteOut, int idCo, int idTA, string n)
+        public TypePorteOutils(int idTypePorteOut, int idCo, int idTA, string n, bool estSupp)
         {
             idTypePorteOutil = idTypePorteOut;
             idCone = idCo;
             idTypeAttachement = idTA;
             nom = n;
+            estSupprime = estSupp;
         }
 
         public static List<TypePorteOutils> chargerlstTypePorteOutils()
@@ -35,13 +38,14 @@ namespace GM241.Classes
             int idCone;
             int idTypeAttachement;
             string nom;
+            bool estSupprime;
 
             BDService BDtypePorteOutils = new BDService();
             String request = "SELECT * FROM TypePorteOutils";
 
             List<string>[] tabTypePorteOutils;
             int nombreRange = 0;
-            tabTypePorteOutils = BDtypePorteOutils.selection(request, 4, ref nombreRange);
+            tabTypePorteOutils = BDtypePorteOutils.selection(request, 5, ref nombreRange);
 
             List<TypePorteOutils> listeTypePorteOutils = new List<TypePorteOutils>();
 
@@ -53,8 +57,9 @@ namespace GM241.Classes
                     idCone = Convert.ToInt32(tabTypePorteOutils[i][1]);
                     idTypeAttachement = Convert.ToInt32(tabTypePorteOutils[i][2]);
                     nom = tabTypePorteOutils[i][3];
+                    estSupprime = Convert.ToBoolean(tabTypePorteOutils[i][4]);
 
-                    listeTypePorteOutils.Add(new TypePorteOutils(idTypePorteOutil, idCone, idTypeAttachement, nom));
+                    listeTypePorteOutils.Add(new TypePorteOutils(idTypePorteOutil, idCone, idTypeAttachement, nom, estSupprime));
                 }
             }
 
@@ -70,6 +75,17 @@ namespace GM241.Classes
                              ", " + "'" + nom + "'" + ");";
 
             if (BDTypePorteOutil.Insertion(request) == true)
+                return true;
+            else
+                return false;
+        }
+
+        public bool deleteTypePorteOutil(int id)
+        {
+            BDService BD = new BDService();
+            String request = "UPDATE TypePorteOutils SET estSupprime = true WHERE idTypePorteOutil = " + id + ";";
+
+            if (BD.delete(request) == true)
                 return true;
             else
                 return false;

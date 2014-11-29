@@ -20,6 +20,8 @@ namespace GM241.Fenetres.Produit
     /// </summary>
     public partial class TypeEmplacement : Window
     {
+        int idItemPresent;
+
         private void viderChamps()
         {
             nom.Text = "";
@@ -35,6 +37,7 @@ namespace GM241.Fenetres.Produit
         public TypeEmplacement(TypeEmplacements monEmplacement)
         {
             InitializeComponent();
+            idItemPresent = monEmplacement.idTypeEmplacement;
 
             nom.Text = monEmplacement.nom;
 
@@ -63,6 +66,18 @@ namespace GM241.Fenetres.Produit
             }
             else
                 MessageBox.Show("Champs incomplet", "Attention !", MessageBoxButton.OK, MessageBoxImage.Warning, MessageBoxResult.OK);
+        }
+
+        private void btnSupprimer_Click_1(object sender, RoutedEventArgs e)
+        {
+            TypeEmplacements typeEmplacement = new TypeEmplacements();
+
+            if (MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet élément ?", "Attention !", MessageBoxButton.YesNoCancel, MessageBoxImage.Question, MessageBoxResult.Cancel) == MessageBoxResult.Yes)
+            {
+                typeEmplacement.deleteTypeEmplacement(idItemPresent);
+                MessageBox.Show("Suppression réussie");
+                this.Close();
+            }
         }
     }
 }

@@ -9,6 +9,7 @@ namespace GM241.Classes
 {
     public class Outils
     {
+        public virtual int idOutil { get; set; }
         public virtual int idTypeOutil { get; set; }
         public virtual int idEmplacement { get; set; }
         public virtual int? idPlaquette { get; set; }
@@ -25,9 +26,11 @@ namespace GM241.Classes
         public virtual bool disponible { get; set; }
         public virtual bool  unitePouce { get; set; }
         public virtual string image { get; set; }
+        public virtual bool estSupprime { get; set; }
 
         public Outils()
         {
+            idOutil = 0;
             idTypeOutil = 0;
             idEmplacement = 0;
             idPlaquette = 0;
@@ -44,11 +47,13 @@ namespace GM241.Classes
             disponible = false;
             unitePouce = false;
             image = "";
+            estSupprime = false;
         }
 
-        public Outils(int idTO, int idEm, int? idPla, string n, int q, string diamUsi, string diamSerr, string longC, string longT, string longS, 
-                      string rayC, string angR, int nbFlute, bool dispo, bool unitPo, string img)
+        public Outils(int idOul, int idTO, int idEm, int? idPla, string n, int q, string diamUsi, string diamSerr, string longC, string longT, string longS, 
+                      string rayC, string angR, int nbFlute, bool dispo, bool unitPo, string img, bool estSupp)
         {
+            idOutil = idOul;
             idTypeOutil = idTO;
             idEmplacement = idEm;
             idPlaquette = idPla;
@@ -65,6 +70,7 @@ namespace GM241.Classes
             disponible = dispo;
             unitePouce = unitPo;
             image = img;
+            estSupprime = estSupp;
         }
 
         /// <summary>
@@ -73,6 +79,7 @@ namespace GM241.Classes
         /// <returns>Une liste de tous les outils que comporte la BD</returns>
         public static List<Outils> chargerLstOutils()
         {
+            int idOutil;
             int idTypeOutil;
             int idEmplacement;
             int? idPlaquette;
@@ -89,13 +96,14 @@ namespace GM241.Classes
             bool disponible;
             bool  unitePouce;
             string image;
+            bool estSupprime;
 
             BDService BDOutils = new BDService();
             String request = "SELECT * FROM Outils";
 
             List<string>[] tabOutil;
             int nombreRange = 0;
-            tabOutil = BDOutils.selection(request, 17, ref nombreRange);
+            tabOutil = BDOutils.selection(request, 18, ref nombreRange);
 
             List<Outils> listeOutils = new List<Outils>();
 
@@ -103,6 +111,7 @@ namespace GM241.Classes
             {
                 for (int i = 0; i < nombreRange; i++)
                 {
+                    idOutil = Convert.ToInt32(tabOutil[i][0]);
                     idTypeOutil = Convert.ToInt32(tabOutil[i][1]);
                     idEmplacement = Convert.ToInt32(tabOutil[i][2]);
 
@@ -125,9 +134,10 @@ namespace GM241.Classes
                     disponible = Convert.ToBoolean(tabOutil[i][14]);
                     unitePouce = Convert.ToBoolean(tabOutil[i][15]);
                     image = tabOutil[i][16];
+                    estSupprime = Convert.ToBoolean(tabOutil[i][17]);
 
-                    listeOutils.Add(new Outils(idTypeOutil, idEmplacement, idPlaquette, nom, quantite, diametreUsinage, diametreSerrage, longueurCoupe,
-                                               longueurTotal, longueurShank, rayonCoin, anglePointe, nombreFlute, disponible, unitePouce, image));
+                    listeOutils.Add(new Outils(idOutil, idTypeOutil, idEmplacement, idPlaquette, nom, quantite, diametreUsinage, diametreSerrage, longueurCoupe,
+                                               longueurTotal, longueurShank, rayonCoin, anglePointe, nombreFlute, disponible, unitePouce, image, estSupprime));
                 }
             }
 
@@ -156,6 +166,17 @@ namespace GM241.Classes
                              ", " + "'" + image + "'" + ");";
 
             if (BDMachines.Insertion(request) == true)
+                return true;
+            else
+                return false;
+        }
+
+        public bool deleteOutil(int id)
+        {
+            BDService BD = new BDService();
+            String request = "UPDATE Outils SET estSupprime = true WHERE idOutil = " + id + ";";
+
+            if (BD.delete(request) == true)
                 return true;
             else
                 return false;

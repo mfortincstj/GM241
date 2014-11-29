@@ -20,6 +20,8 @@ namespace GM241.Fenetres.Produit
     /// </summary>
     public partial class TypeAttachement : Window
     {
+        int idItemPresent;
+
         private void viderChamps()
         {
             nom.Text = "";
@@ -36,6 +38,7 @@ namespace GM241.Fenetres.Produit
         public TypeAttachement(TypeAttachements monTypeAttachement)
         {
             InitializeComponent();
+            idItemPresent = monTypeAttachement.idTypeAttachement;
 
             nom.Text = monTypeAttachement.nom;
             diametreExt.Text = monTypeAttachement.diametreExterieur;
@@ -68,6 +71,18 @@ namespace GM241.Fenetres.Produit
             }
             else
                 MessageBox.Show("Champs incomplet", "Attention !", MessageBoxButton.OK, MessageBoxImage.Warning, MessageBoxResult.OK);
+        }
+
+        private void btnSupprimer_Click_1(object sender, RoutedEventArgs e)
+        {
+            TypeAttachements typeAttachement = new TypeAttachements();
+
+            if (MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet élément ?", "Attention !", MessageBoxButton.YesNoCancel, MessageBoxImage.Question, MessageBoxResult.Cancel) == MessageBoxResult.Yes)
+            {
+                typeAttachement.deleteTypeAttachement(idItemPresent);
+                MessageBox.Show("Suppression réussie");
+                this.Close();
+            }
         }
     }
 }
