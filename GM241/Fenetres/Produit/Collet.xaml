@@ -10,7 +10,7 @@
         <Label Content="Diamètre intérieur : " HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" FontSize="20" Width="239" HorizontalContentAlignment="Right"/>
         <TextBox x:Name="diametreInt" HorizontalAlignment="Left" Height="37" Margin="255,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
 
-        <Label Content="Type attachement : " HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" FontSize="20" Width="239" HorizontalContentAlignment="Right"/>
+        <Label Content="Type d'attachement : " HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" FontSize="20" Width="239" HorizontalContentAlignment="Right"/>
 
         <Label Content="Quantité : " HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" FontSize="20" Width="239" HorizontalContentAlignment="Right"/>
         <TextBox Name="quant" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox" Height="37" Margin="255,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>

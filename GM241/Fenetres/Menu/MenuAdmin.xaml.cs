@@ -29,11 +29,11 @@ namespace GM241.Fenetres.Menu
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
             // Initialiser la liste des produits
-            lstProduits.Items.Add("Sélection"); lstProduits.Items.Add("Machines"); lstProduits.Items.Add("Plateau pour machines");
-            lstProduits.Items.Add("Outils"); lstProduits.Items.Add("Type d'outils"); lstProduits.Items.Add("Extensions");
-            lstProduits.Items.Add("Porte outils"); lstProduits.Items.Add("Collets"); lstProduits.Items.Add("Type de porte outils");
-            lstProduits.Items.Add("Cones"); lstProduits.Items.Add("Plaquettes"); lstProduits.Items.Add("Emplacements");
-            lstProduits.Items.Add("Type d'emplacements"); lstProduits.Items.Add("Type d'attachements");
+            lstProduits.Items.Add("Sélection"); lstProduits.Items.Add("Machines"); lstProduits.Items.Add("Plateaux pour machines");
+            lstProduits.Items.Add("Outils"); lstProduits.Items.Add("Types d'outils"); lstProduits.Items.Add("Extensions");
+            lstProduits.Items.Add("Porte-outils"); lstProduits.Items.Add("Collets"); lstProduits.Items.Add("Types de Porte-outils");
+            lstProduits.Items.Add("Cônes"); lstProduits.Items.Add("Plaquettes"); lstProduits.Items.Add("Emplacements");
+            lstProduits.Items.Add("Types d'emplacements"); lstProduits.Items.Add("Types d'attachements");
             lstProduits.SelectedIndex = 0;
 
             estAdmin = admin;

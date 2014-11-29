@@ -228,7 +228,7 @@ namespace GM241.Fenetres.Produit
                 }
             }
             else
-                MessageBox.Show("Champs incomplet", "Attention !", MessageBoxButton.OK, MessageBoxImage.Warning, MessageBoxResult.OK);
+                MessageBox.Show("Champ(s) incomplet(s)", "Attention !", MessageBoxButton.OK, MessageBoxImage.Warning, MessageBoxResult.OK);
         }
 
         private void btnSupprimer_Click_1(object sender, RoutedEventArgs e)

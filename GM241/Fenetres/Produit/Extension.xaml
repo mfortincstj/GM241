@@ -7,9 +7,9 @@
         <ComboBox x:Name="listePorteOutil" HorizontalAlignment="Left" Margin="255,10,0,0" VerticalAlignment="Top" Width="230" Height="37"/>
         <Label Content="Collet : " HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right"/>
         <ComboBox x:Name="listeCollet" HorizontalAlignment="Left" Margin="255,57,0,0" VerticalAlignment="Top" Width="230" Height="37"/>
-        <Label Content="Longueur shank : " HorizontalAlignment="Left" Margin="10,99,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right"/>
+        <Label Content="Longueur du shank : " HorizontalAlignment="Left" Margin="10,99,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right"/>
         <TextBox x:Name="longShank" HorizontalAlignment="Left" Height="37" Margin="255,99,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
-        <Label Content="Diamètre shank : " HorizontalAlignment="Left" Margin="10,141,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right"/>
+        <Label Content="Diamètre du shank : " HorizontalAlignment="Left" Margin="10,141,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right"/>
         <TextBox x:Name="diamShank" HorizontalAlignment="Left" Height="37" Margin="255,141,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
         <Label Content="Longueur total : " HorizontalAlignment="Left" Margin="10,183,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right"/>
         <TextBox x:Name="longTotal" HorizontalAlignment="Left" Height="37" Margin="255,183,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
