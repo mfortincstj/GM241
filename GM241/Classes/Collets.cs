@@ -89,5 +89,21 @@ namespace GM241.Classes
             else
                 return false;
         }
+
+        public bool deleteCollet(int idEmpl, int idTypeAtt, string diam, int quant, string img)
+        {
+            BDService BDCollets = new BDService();
+            String request = "INSERT INTO Collets (idEmplacement, idTypeAttachement, diametreInterieur, quantite, image) VALUES" +
+                             "( " + idEmpl +
+                             ", " + idTypeAtt +
+                             ", " + "'" + diam + "'" +
+                             ", " + quant +
+                             ", " + "'" + img + "'" + ");";
+
+            if (BDCollets.Insertion(request) == true)
+                return true;
+            else
+                return false;
+        }
     }
 }

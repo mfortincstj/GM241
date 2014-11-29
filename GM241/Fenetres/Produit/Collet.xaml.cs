@@ -136,5 +136,16 @@ namespace GM241.Fenetres.Produit
             else
                 MessageBox.Show("Champs incomplet", "Attention !", MessageBoxButton.OK, MessageBoxImage.Warning, MessageBoxResult.OK);
         }
+
+        private void btnSupprimer_Click(object sender, RoutedEventArgs e)
+        {
+            Collets collets = new Collets();
+
+            if (collets.deleteCollet() == true)
+            {
+                MessageBox.Show("Insertion réussie");
+                viderChamps();
+            }
+        }
     }
 }
