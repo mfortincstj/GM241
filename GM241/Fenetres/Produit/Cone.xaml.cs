@@ -20,6 +20,8 @@ namespace GM241.Fenetres.Produit
     /// </summary>
     public partial class Cone : Window
     {
+        int idItemPresent;
+
         private void viderChamps()
         {
             nom.Text = "";
@@ -37,6 +39,7 @@ namespace GM241.Fenetres.Produit
         public Cone(Cones monCone)
         {
             InitializeComponent();
+            idItemPresent = monCone.idCone;
 
             nom.Text = monCone.nom;
             typeCone.Text = monCone.typeCone;
@@ -72,6 +75,18 @@ namespace GM241.Fenetres.Produit
             }
             else
                 MessageBox.Show("Champs incomplet", "Attention !", MessageBoxButton.OK, MessageBoxImage.Warning, MessageBoxResult.OK);
+        }
+
+        private void btnSupprimer_Click_1(object sender, RoutedEventArgs e)
+        {
+            Cones cone = new Cones();
+
+            if (MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet élément ?", "Attention !", MessageBoxButton.YesNoCancel, MessageBoxImage.Question, MessageBoxResult.Cancel) == MessageBoxResult.Yes)
+            {
+                cone.deleteCone(idItemPresent);
+                MessageBox.Show("Suppression réussie");
+                this.Close();
+            }
         }
     }
 }

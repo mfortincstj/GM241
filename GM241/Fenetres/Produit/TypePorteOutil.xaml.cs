@@ -20,6 +20,8 @@ namespace GM241.Fenetres.Produit
     /// </summary>
     public partial class TypePorteOutil : Window
     {
+        int idItemPresent;
+
         private void viderChamps()
         {
             listeCone.SelectedIndex = 0;
@@ -41,7 +43,7 @@ namespace GM241.Fenetres.Produit
             List<TypeAttachements> lstAttachements = TypeAttachements.chargerlstTypeAttachements();
 
             foreach (TypeAttachements tA in lstAttachements)
-                listeAttachement.Items.Add(tA.idTypeAttachements + " - " + tA.nom);
+                listeAttachement.Items.Add(tA.idTypeAttachement + " - " + tA.nom);
 
             viderChamps();
         }
@@ -49,6 +51,7 @@ namespace GM241.Fenetres.Produit
         public TypePorteOutil(TypePorteOutils monTypePorteOutil)
         {
             InitializeComponent();
+            idItemPresent = monTypePorteOutil.idTypePorteOutil;
 
             // Charger la liste des cones
             List<Cones> lstCones = Cones.chargerlstCones();
@@ -62,11 +65,15 @@ namespace GM241.Fenetres.Produit
             List<TypeAttachements> lstAttachements = TypeAttachements.chargerlstTypeAttachements();
 
             foreach (TypeAttachements tA in lstAttachements)
-                listeAttachement.Items.Add(tA.idTypeAttachements + " - " + tA.nom);
+                listeAttachement.Items.Add(tA.idTypeAttachement + " - " + tA.nom);
 
             listeAttachement.SelectedIndex = monTypePorteOutil.idTypeAttachement - 1;
 
             nom.Text = monTypePorteOutil.nom;
+
+            btnAjouter.IsEnabled = false;
+            btnModif.IsEnabled = true;
+            btnSupprimer.IsEnabled = true;
         }
 
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
@@ -101,6 +108,18 @@ namespace GM241.Fenetres.Produit
             }
             else
                 MessageBox.Show("Champs incomplet", "Attention !", MessageBoxButton.OK, MessageBoxImage.Warning, MessageBoxResult.OK);
+        }
+
+        private void btnSupprimer_Click_1(object sender, RoutedEventArgs e)
+        {
+            TypePorteOutils typePorteOutil = new TypePorteOutils();
+
+            if (MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet élément ?", "Attention !", MessageBoxButton.YesNoCancel, MessageBoxImage.Question, MessageBoxResult.Cancel) == MessageBoxResult.Yes)
+            {
+                typePorteOutil.deleteTypePorteOutil(idItemPresent);
+                MessageBox.Show("Suppression réussie");
+                this.Close();
+            }
         }
     }
 }

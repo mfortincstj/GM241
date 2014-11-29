@@ -24,6 +24,7 @@ namespace GM241.Classes
         public virtual string tourFraseuse { get; set; }
         public virtual bool unitePouce { get; set; }
         public virtual string image { get; set; }
+        public virtual bool estSupprime { get; set; }
 
         public Plaquettes()
         {
@@ -42,10 +43,11 @@ namespace GM241.Classes
             tourFraseuse = "";
             unitePouce = false;
             image = "";
+            estSupprime = false;
         }
 
         public Plaquettes(int idPlaq, int idEmp, string n, string typePla, string direc, string ang, string dega, string gros,
-                          string comp, int quant, bool dispo, string codeA, string tourFra, bool unitePo, string img)
+                          string comp, int quant, bool dispo, string codeA, string tourFra, bool unitePo, string img, bool estSupp)
         {
             idPlaquette = idPlaq;
             idEmplacement = idEmp;
@@ -62,6 +64,7 @@ namespace GM241.Classes
             tourFraseuse = tourFra;
             unitePouce = unitePo;
             image = img;
+            estSupprime = estSupp;
         }
 
         public static List<Plaquettes> chargerlstPlaquettes()
@@ -81,13 +84,14 @@ namespace GM241.Classes
             string tourFraseuse;
             bool unitePouce;
             string image;
+            bool estSupprime;
 
             BDService BDPlaquettes = new BDService();
             String request = "SELECT * FROM Plaquettes";
 
             List<string>[] tabPlaquettes;
             int nombreRange = 0;
-            tabPlaquettes = BDPlaquettes.selection(request, 15, ref nombreRange);
+            tabPlaquettes = BDPlaquettes.selection(request, 16, ref nombreRange);
 
             List<Plaquettes> listePlaquettes = new List<Plaquettes>();
 
@@ -110,9 +114,10 @@ namespace GM241.Classes
                     tourFraseuse = tabPlaquettes[i][12];
                     unitePouce = Convert.ToBoolean(tabPlaquettes[i][13]);
                     image = tabPlaquettes[i][14];
+                    estSupprime = Convert.ToBoolean(tabPlaquettes[i][15]);
 
                     listePlaquettes.Add(new Plaquettes(idPlaquette, idEmplacement, nom, typePlaquette, direction, angle, degagement, grosseur, compagnie, quantite, 
-                                                        disponible, codeAlpha, tourFraseuse, unitePouce, image));
+                                                        disponible, codeAlpha, tourFraseuse, unitePouce, image, estSupprime));
                 }
             }
 
@@ -139,6 +144,17 @@ namespace GM241.Classes
                              ", " + "'" + image + "'" + ");";
 
             if (BDPlaquettes.Insertion(request) == true)
+                return true;
+            else
+                return false;
+        }
+
+        public bool deletePlaquette(int id)
+        {
+            BDService BD = new BDService();
+            String request = "UPDATE Plaquettes SET estSupprime = true WHERE idPlaquette = " + id + ";";
+
+            if (BD.delete(request) == true)
                 return true;
             else
                 return false;

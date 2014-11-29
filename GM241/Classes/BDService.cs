@@ -138,5 +138,29 @@ namespace GM241.Classes
             }
             return listeRetour;
         }
+
+        public bool delete(string del)
+        {
+            bool updateValide = false;
+
+            try
+            {
+                if (Ouvrir())
+                {
+                    MySqlCommand cmd = new MySqlCommand(del, connexion);
+                    cmd.ExecuteNonQuery();
+                    updateValide = true;
+                    Fermer();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Erreur lors de la supression");
+
+                updateValide = false;
+            }
+
+            return updateValide;
+        }
     }
 }

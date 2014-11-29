@@ -12,6 +12,7 @@ namespace GM241.Classes
         public virtual string nom { get; set; }
         public virtual bool axeSuppA { get; set; }
         public virtual bool axeSuppB { get; set; }
+        public virtual bool estSupprime { get; set; }
 
         public PlateauMachines()
         {
@@ -19,14 +20,16 @@ namespace GM241.Classes
             nom = "";
             axeSuppA = false;
             axeSuppB = false;
+            estSupprime = false;
         }
 
-        public PlateauMachines(int idPlateauM, string n, bool axeSuA, bool axeSuB)
+        public PlateauMachines(int idPlateauM, string n, bool axeSuA, bool axeSuB, bool estSupp)
         {
             idPlateauMachine = idPlateauM;
             nom = n;
             axeSuppA = axeSuA;
             axeSuppB = axeSuB;
+            estSupprime = estSupp;
         }
 
         public static List<PlateauMachines> chargerlstPlateauMachines()
@@ -35,13 +38,14 @@ namespace GM241.Classes
             string nom;
             bool axeSuppA;
             bool axeSuppB;
+            bool estSupprime;
 
             BDService BDPlateauMachines = new BDService();
             String request = "SELECT * FROM PlateauMachines";
 
             List<string>[] tabPlateauMachines;
             int nombreRange = 0;
-            tabPlateauMachines = BDPlateauMachines.selection(request, 4, ref nombreRange);
+            tabPlateauMachines = BDPlateauMachines.selection(request, 5, ref nombreRange);
 
             List<PlateauMachines> listePlateauMachines = new List<PlateauMachines>();
 
@@ -53,8 +57,9 @@ namespace GM241.Classes
                     nom = tabPlateauMachines[i][1];
                     axeSuppA = Convert.ToBoolean(tabPlateauMachines[i][2]);
                     axeSuppB = Convert.ToBoolean(tabPlateauMachines[i][3]);
+                    estSupprime = Convert.ToBoolean(tabPlateauMachines[i][4]);
 
-                    listePlateauMachines.Add(new PlateauMachines(idPlateauMachine, nom, axeSuppA, axeSuppB));
+                    listePlateauMachines.Add(new PlateauMachines(idPlateauMachine, nom, axeSuppA, axeSuppB, estSupprime));
                 }
             }
 
@@ -70,6 +75,17 @@ namespace GM241.Classes
                              ", " + axeSuppB + ");";
 
             if (BDPlateauMachines.Insertion(request) == true)
+                return true;
+            else
+                return false;
+        }
+
+        public bool deletePlateauMachine(int id)
+        {
+            BDService BD = new BDService();
+            String request = "UPDATE PlateauMachines SET estSupprime = true WHERE idPlateauMachine = " + id + ";";
+
+            if (BD.delete(request) == true)
                 return true;
             else
                 return false;

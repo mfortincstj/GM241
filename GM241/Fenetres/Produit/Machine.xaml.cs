@@ -21,6 +21,8 @@ namespace GM241.Fenetres.Produit
     /// </summary>
     public partial class Machine : Window
     {
+        int idItemPresent;
+
         private void viderChamps()
         {
             listePlateauMachine.SelectedIndex = 0;
@@ -60,6 +62,7 @@ namespace GM241.Fenetres.Produit
         public Machine(Machines maMachine)
         {
             InitializeComponent();
+            idItemPresent = maMachine.idMachine;
 
             // Charger la liste des plateaux machine
             List<PlateauMachines> lstPlateauMachines = PlateauMachines.chargerlstPlateauMachines();
@@ -178,6 +181,18 @@ namespace GM241.Fenetres.Produit
             }
             else
                 MessageBox.Show("Champs incomplet", "Attention !", MessageBoxButton.OK, MessageBoxImage.Warning, MessageBoxResult.OK);
+        }
+
+        private void btnSupprimer_Click_1(object sender, RoutedEventArgs e)
+        {
+            Machines machine = new Machines();
+
+            if (MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet élément ?", "Attention !", MessageBoxButton.YesNoCancel, MessageBoxImage.Question, MessageBoxResult.Cancel) == MessageBoxResult.Yes)
+            {
+                machine.deleteMachine(idItemPresent);
+                MessageBox.Show("Suppression réussie");
+                this.Close();
+            }
         }
     }
 }
