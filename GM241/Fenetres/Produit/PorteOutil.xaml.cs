@@ -94,7 +94,6 @@ namespace GM241.Fenetres.Produit
             image.Text = monPorteOutil.image;
 
             btnAjouter.IsEnabled = false;
-            btnModif.IsEnabled = true;
             btnSupprimer.IsEnabled = true;
         }
 

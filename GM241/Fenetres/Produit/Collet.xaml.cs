@@ -96,7 +96,6 @@ namespace GM241.Fenetres.Produit
             img.Text = monCollet.image;
 
             btnAjouter.IsEnabled = false;
-            btnModif.IsEnabled = true;
             btnSupprimer.IsEnabled = true;
         }
 

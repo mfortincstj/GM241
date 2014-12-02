@@ -72,7 +72,6 @@ namespace GM241.Fenetres.Produit
             nom.Text = monTypePorteOutil.nom;
 
             btnAjouter.IsEnabled = false;
-            btnModif.IsEnabled = true;
             btnSupprimer.IsEnabled = true;
         }
 

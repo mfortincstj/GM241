@@ -115,7 +115,6 @@ namespace GM241.Fenetres.Produit
             img.Text = monExtension.image;
 
             btnAjouter.IsEnabled = false;
-            btnModif.IsEnabled = true;
             btnSupprimer.IsEnabled = true;
         }
 

@@ -70,7 +70,6 @@ namespace GM241.Fenetres.Produit
             noCasier.Text = monEmplacement.idCasier;
 
             btnAjouter.IsEnabled = false;
-            btnModif.IsEnabled = true;
             btnSupprimer.IsEnabled = true;
         }
 

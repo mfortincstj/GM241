@@ -96,7 +96,6 @@ namespace GM241.Fenetres.Produit
             tourFraiseuse.Text = maPlaquette.tourFraseuse;
 
             btnAjouter.IsEnabled = false;
-            btnModif.IsEnabled = true;
             btnSupprimer.IsEnabled = true;
         }
 

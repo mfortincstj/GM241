@@ -98,7 +98,6 @@ namespace GM241.Fenetres.Produit
             }
 
             btnAjouter.IsEnabled = false;
-            btnModif.IsEnabled = true;
             btnSupprimer.IsEnabled = true;
         }
 

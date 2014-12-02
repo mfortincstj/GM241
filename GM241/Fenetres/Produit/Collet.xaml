@@ -19,7 +19,7 @@
         <TextBox Name="img" HorizontalAlignment="Left" Height="37" Margin="255,178,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
 
         <Button x:Name="btnAjouter" Content="Ajouter" Margin="10,468,739,0" Click="btnAjout_Click" Height="44" VerticalAlignment="Top"/>
-        <Button x:Name="btnModif" Content="Modifier" Margin="375,468,374,0" IsEnabled="False" Height="44" VerticalAlignment="Top"/>
+        <Button x:Name="btnModif" Content="Modifier" Margin="375,468,374,0" Height="44" VerticalAlignment="Top" IsEnabled="False"/>
         <Button x:Name="btnSupprimer" Content="Supprimer" Margin="739,468,10,0" IsEnabled="False" Height="44" VerticalAlignment="Top" Click="btnSupprimer_Click"/>
         <ComboBox x:Name="listeTypeAttachement" HorizontalAlignment="Left" Margin="255,52,0,0" VerticalAlignment="Top" Width="230" Height="37"/>
     </Grid>

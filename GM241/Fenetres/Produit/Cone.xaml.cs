@@ -46,7 +46,6 @@ namespace GM241.Fenetres.Produit
             typeMachine.Text = monCone.typeMachine;
 
             btnAjouter.IsEnabled = false;
-            btnModif.IsEnabled = true;
             btnSupprimer.IsEnabled = true;
         }
 

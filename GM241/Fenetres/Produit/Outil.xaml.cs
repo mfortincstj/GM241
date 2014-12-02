@@ -155,7 +155,6 @@ namespace GM241.Fenetres.Produit
             img.Text = monOutil.image;
 
             btnAjouter.IsEnabled = false;
-            btnModif.IsEnabled = true;
             btnSupprimer.IsEnabled = true;
         }
 

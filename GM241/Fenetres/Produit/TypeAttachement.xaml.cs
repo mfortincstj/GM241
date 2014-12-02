@@ -44,7 +44,6 @@ namespace GM241.Fenetres.Produit
             diametreExt.Text = monTypeAttachement.diametreExterieur;
 
             btnAjouter.IsEnabled = false;
-            btnModif.IsEnabled = true;
             btnSupprimer.IsEnabled = true;
         }
 
