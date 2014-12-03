@@ -43,7 +43,6 @@ namespace GM241.Fenetres.Produit
             nom.Text = monTypeAttachement.nom;
             diametreExt.Text = monTypeAttachement.diametreExterieur;
 
-            btnAjouter.IsEnabled = false;
             btnSupprimer.IsEnabled = true;
         }
 
@@ -65,7 +64,9 @@ namespace GM241.Fenetres.Produit
                 if (typeAttachements.ajoutTypeAttachement(nom.Text, diametreExt.Text) == true)
                 {
                     MessageBox.Show("Insertion réussie");
-                    viderChamps();
+
+                    if (conserveChamps.IsChecked == false)
+                        viderChamps();
                 }
             }
             else
@@ -78,9 +79,11 @@ namespace GM241.Fenetres.Produit
 
             if (MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet élément ?", "Attention !", MessageBoxButton.YesNoCancel, MessageBoxImage.Question, MessageBoxResult.Cancel) == MessageBoxResult.Yes)
             {
-                typeAttachement.deleteTypeAttachement(idItemPresent);
-                MessageBox.Show("Suppression réussie");
-                this.Close();
+                if (typeAttachement.deleteTypeAttachement(idItemPresent) == true)
+                {
+                    MessageBox.Show("Suppression réussie");
+                    this.Close();
+                }
             }
         }
     }

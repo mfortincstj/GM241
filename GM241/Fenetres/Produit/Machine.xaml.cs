@@ -97,7 +97,6 @@ namespace GM241.Fenetres.Produit
                 axeZNon.IsChecked = true;
             }
 
-            btnAjouter.IsEnabled = false;
             btnSupprimer.IsEnabled = true;
         }
 
@@ -175,7 +174,9 @@ namespace GM241.Fenetres.Produit
                 if (machines.ajoutMachine(Convert.ToInt32(idPlateauMachine[0]), nom.Text, Convert.ToInt32(nbrOutil.Text), precision.Text, formatCone.Text, Convert.ToInt32(nbrOutilPrep.Text), Convert.ToInt32(noMachine.Text), axeXMin.Text, axeXMax.Text, axeYMin.Text, axeYMax.Text, Convert.ToBoolean(axeZ), axeZMin.Text, axeZMax.Text) == true)
                 {
                     MessageBox.Show("Insertion réussie");
-                    viderChamps();
+
+                    if (conserveChamps.IsChecked == false)
+                        viderChamps();
                 }
             }
             else
@@ -188,9 +189,11 @@ namespace GM241.Fenetres.Produit
 
             if (MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet élément ?", "Attention !", MessageBoxButton.YesNoCancel, MessageBoxImage.Question, MessageBoxResult.Cancel) == MessageBoxResult.Yes)
             {
-                machine.deleteMachine(idItemPresent);
-                MessageBox.Show("Suppression réussie");
-                this.Close();
+                if (machine.deleteMachine(idItemPresent) == true)
+                {
+                    MessageBox.Show("Suppression réussie");
+                    this.Close();
+                }
             }
         }
     }

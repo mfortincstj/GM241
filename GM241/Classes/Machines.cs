@@ -142,19 +142,19 @@ namespace GM241.Classes
             BDService BDMachines = new BDService();
             String request = "INSERT INTO Machines (idPlateauMachine, nom, nombreOutilMagasin, precisionMachine, formatCone, nombreOutilPrep , numeroMachine, axeXMin, axeXMAX, axeYMin, axeYMAX, axeZ, axeZMin, axeZMAX) VALUES" +
                              "( " + idPlatMachine +
-                             ", " + "'" + nom + "'" +
+                             ", " + "'" + nom.ToLower() + "'" +
                              ", " + nombreOutilMagasin +
-                             ", " + "'" + precisionMachine + "'" +
-                             ", " + "'" + formatCone + "'" +
+                             ", " + "'" + precisionMachine.ToLower() + "'" +
+                             ", " + "'" + formatCone.ToLower() + "'" +
                              ", " + nombreOutilPrep +
                              ", " + numeroMachine +
-                             ", " + "'" + axeXMin + "'" +
-                             ", " + "'" + axeXMAX + "'" +
-                             ", " + "'" + axeYMin + "'" +
-                             ", " + "'" + axeYMAX + "'" +
+                             ", " + "'" + axeXMin.ToLower() + "'" +
+                             ", " + "'" + axeXMAX.ToLower() + "'" +
+                             ", " + "'" + axeYMin.ToLower() + "'" +
+                             ", " + "'" + axeYMAX.ToLower() + "'" +
                              ", " + axeZ +
-                             ", " + "'" + axeZMin + "'" +
-                             ", " + "'" + axeZMAX + "'" + ");";
+                             ", " + "'" + axeZMin.ToLower() + "'" +
+                             ", " + "'" + axeZMAX.ToLower() + "'" + ");";
 
             if (BDMachines.Insertion(request) == true)
                 return true;

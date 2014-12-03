@@ -72,7 +72,7 @@ namespace GM241.Classes
             String request = "INSERT INTO TypePorteOutils (idCone, idTypeAttachement, nom) VALUES" +
                              "( " + idCone +
                              ", " + idTypeAttachement +
-                             ", " + "'" + nom + "'" + ");";
+                             ", " + "'" + nom.ToLower() + "'" + ");";
 
             if (BDTypePorteOutil.Insertion(request) == true)
                 return true;

@@ -98,11 +98,11 @@ namespace GM241.Classes
                              "( " + idPorteOutil +
                              ", " + idEmplacement +
                              ", " + idCollet +
-                             ", " + "'" + longueurShank + "'" +
-                             ", " + "'" + diametreShank + "'" +
-                             ", " + "'" + longueurTotale + "'" +
+                             ", " + "'" + longueurShank.ToLower() + "'" +
+                             ", " + "'" + diametreShank.ToLower() + "'" +
+                             ", " + "'" + longueurTotale.ToLower() + "'" +
                              ", " + quantite +
-                             ", " + "'" + image + "'" + ");";
+                             ", " + "'" + image.ToLower() + "'" + ");";
 
             if (BDExtension.Insertion(request) == true)
                 return true;

@@ -45,7 +45,6 @@ namespace GM241.Fenetres.Produit
             typeCone.Text = monCone.typeCone;
             typeMachine.Text = monCone.typeMachine;
 
-            btnAjouter.IsEnabled = false;
             btnSupprimer.IsEnabled = true;
         }
 
@@ -69,7 +68,9 @@ namespace GM241.Fenetres.Produit
                 if (cones.ajoutCone(nom.Text, typeCone.Text, typeMachine.Text) == true)
                 {
                     MessageBox.Show("Insertion réussie");
-                    viderChamps();
+
+                    if (conserveChamps.IsChecked == false)
+                        viderChamps();
                 }
             }
             else
@@ -82,9 +83,11 @@ namespace GM241.Fenetres.Produit
 
             if (MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet élément ?", "Attention !", MessageBoxButton.YesNoCancel, MessageBoxImage.Question, MessageBoxResult.Cancel) == MessageBoxResult.Yes)
             {
-                cone.deleteCone(idItemPresent);
-                MessageBox.Show("Suppression réussie");
-                this.Close();
+                if (cone.deleteCone(idItemPresent) == true)
+                {
+                    MessageBox.Show("Suppression réussie");
+                    this.Close();
+                }
             }
         }
     }

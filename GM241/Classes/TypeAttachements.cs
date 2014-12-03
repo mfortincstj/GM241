@@ -65,8 +65,8 @@ namespace GM241.Classes
         {
             BDService BDTypeAttachement = new BDService();
             String request = "INSERT INTO TypeAttachements (nom, diametreExterieur) VALUES" +
-                             "( " + "'" + nom + "'" +
-                             ", " + "'" + diametreExterieur + "'" + ");";
+                             "( " + "'" + nom.ToLower() + "'" +
+                             ", " + "'" + diametreExterieur.ToLower() + "'" + ");";
 
             if (BDTypeAttachement.Insertion(request) == true)
                 return true;

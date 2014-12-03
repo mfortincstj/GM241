@@ -151,19 +151,19 @@ namespace GM241.Classes
                              "( " + idTypeOutil +
                              ", " + idEmplacement +
                              ", " + idPlaquette +
-                             ", " + "'" + nom + "'" +
+                             ", " + "'" + nom.ToLower() + "'" +
                              ", " + quantite +
-                             ", " + "'" + diametreUsinage + "'" +
-                             ", " + "'" + diametreSerrage + "'" +
-                             ", " + "'" + longueurCoupe + "'" +
-                             ", " + "'" + longueurTotal + "'" +
-                             ", " + "'" + longueurShank + "'" +
-                             ", " + "'" + rayonCoin + "'" +
+                             ", " + "'" + diametreUsinage.ToLower() + "'" +
+                             ", " + "'" + diametreSerrage.ToLower() + "'" +
+                             ", " + "'" + longueurCoupe.ToLower() + "'" +
+                             ", " + "'" + longueurTotal.ToLower() + "'" +
+                             ", " + "'" + longueurShank.ToLower() + "'" +
+                             ", " + "'" + rayonCoin.ToLower() + "'" +
                              ", " + anglePointe +
                              ", " + nombreFlute +
                              ", " + disponible +
                              ", " + unitePouce +
-                             ", " + "'" + image + "'" + ");";
+                             ", " + "'" + image.ToLower() + "'" + ");";
 
             if (BDMachines.Insertion(request) == true)
                 return true;

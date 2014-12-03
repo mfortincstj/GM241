@@ -129,19 +129,19 @@ namespace GM241.Classes
             BDService BDPlaquettes = new BDService();
             String request = "INSERT INTO Plaquettes (idEmplacement, nom, typePlaquette, direction, angle, degagement, grosseur, compagnie, quantite, disponible, codeAlpha, tourFraseuse, unitePouce, image) VALUES" +
                              "( " + idEmplacement +
-                             ", " + "'" + nom + "'" +
-                             ", " + "'" + typePlaquette + "'" +
-                             ", " + "'" + direction + "'" +
-                             ", " + "'" + angle + "'" +
-                             ", " + "'" + degagement + "'" +
-                             ", " + "'" + grosseur + "'" +
-                             ", " + "'" + compagnie + "'" +
+                             ", " + "'" + nom.ToLower() + "'" +
+                             ", " + "'" + typePlaquette.ToLower() + "'" +
+                             ", " + "'" + direction.ToLower() + "'" +
+                             ", " + "'" + angle.ToLower() + "'" +
+                             ", " + "'" + degagement.ToLower() + "'" +
+                             ", " + "'" + grosseur.ToLower() + "'" +
+                             ", " + "'" + compagnie.ToLower() + "'" +
                              ", " + quantite +
                              ", " + disponible +
-                             ", " + "'" + codeAlpha + "'" +
-                             ", " + "'" + tourFraseuse + "'" +
+                             ", " + "'" + codeAlpha.ToLower() + "'" +
+                             ", " + "'" + tourFraseuse.ToLower() + "'" +
                              ", " + unitePouce +
-                             ", " + "'" + image + "'" + ");";
+                             ", " + "'" + image.ToLower() + "'" + ");";
 
             if (BDPlaquettes.Insertion(request) == true)
                 return true;

@@ -70,7 +70,7 @@ namespace GM241.Classes
         {
             BDService BDPlateauMachines = new BDService();
             String request = "INSERT INTO PlateauMachines (nom, axeSuppA, axeSuppB) VALUES" +
-                             "( " + "'" + nom + "'" + 
+                             "( " + "'" + nom.ToLower() + "'" + 
                              ", " + axeSuppA +
                              ", " + axeSuppB + ");";
 

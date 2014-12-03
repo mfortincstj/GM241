@@ -60,7 +60,7 @@ namespace GM241.Classes
         {
             BDService BDTypeOutil = new BDService();
             String request = "INSERT INTO TypeOutils (nom) VALUES" +
-                             "( " + "'" + nom + "'" + ");";
+                             "( " + "'" + nom.ToLower() + "'" + ");";
 
             if (BDTypeOutil.Insertion(request) == true)
                 return true;

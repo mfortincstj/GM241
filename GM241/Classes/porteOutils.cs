@@ -78,7 +78,7 @@ namespace GM241.Classes
                              "( " + idTypePorteOutil +
                              ", " + idEmplacement +
                              ", " + quantite +
-                             ", " + "'" + image + "'" + ");";
+                             ", " + "'" + image.ToLower() + "'" + ");";
 
             if (BDPorteOutils.Insertion(request) == true)
                 return true;

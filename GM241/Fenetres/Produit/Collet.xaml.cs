@@ -95,7 +95,6 @@ namespace GM241.Fenetres.Produit
             quant.Text = monCollet.quantite.ToString();
             img.Text = monCollet.image;
 
-            btnAjouter.IsEnabled = false;
             btnSupprimer.IsEnabled = true;
         }
 
@@ -133,7 +132,9 @@ namespace GM241.Fenetres.Produit
                 if (collets.ajoutCollet(Convert.ToInt32(idEmp[0]), Convert.ToInt32(idTypeAtt[0]), diametreInt.Text, Convert.ToInt32(quant.Text), img.Text) == true)
                 {
                     MessageBox.Show("Insertion réussie");
-                    viderChamps();
+
+                    if (conserveChamps.IsChecked == false)
+                        viderChamps();
                 }
             }
             else
@@ -146,9 +147,11 @@ namespace GM241.Fenetres.Produit
 
             if (MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet élément ?", "Attention !", MessageBoxButton.YesNoCancel, MessageBoxImage.Question, MessageBoxResult.Cancel) == MessageBoxResult.Yes)
             {
-                collet.deleteCollet(idColletPresent);
-                MessageBox.Show("Suppression réussie");
-                this.Close();
+                if (collet.deleteCollet(idColletPresent) == true)
+                {
+                    MessageBox.Show("Suppression réussie");
+                    this.Close();
+                }
             }
         }
     }

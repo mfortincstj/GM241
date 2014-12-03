@@ -60,7 +60,7 @@ namespace GM241.Classes
         {
             BDService BDTypeEmplacement = new BDService();
             String request = "INSERT INTO TypeEmplacements (nom) VALUES" +
-                             "( " + "'" + nom + "'" + ");";
+                             "( " + "'" + nom.ToLower() + "'" + ");";
 
             if (BDTypeEmplacement.Insertion(request) == true)
                 return true;

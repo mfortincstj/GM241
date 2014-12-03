@@ -95,7 +95,6 @@ namespace GM241.Fenetres.Produit
             image.Text = maPlaquette.image;
             tourFraiseuse.Text = maPlaquette.tourFraseuse;
 
-            btnAjouter.IsEnabled = false;
             btnSupprimer.IsEnabled = true;
         }
 
@@ -160,7 +159,9 @@ namespace GM241.Fenetres.Produit
                 if (plaquettes.ajoutPlaquette(Convert.ToInt32(idTypeEmplacement[0]), nom.Text, typePlaquette.Text, direction.Text, angle.Text, degagement.Text, grosseur.Text, compagnie.Text, Convert.ToInt32(quantite.Text), outilDisponible, codeAlpha.Text, tourFraiseuse.Text, uniteEnPouce, image.Text) == true)
                 {
                     MessageBox.Show("Insertion réussie");
-                    viderChamps();
+
+                    if (conserveChamps.IsChecked == false)
+                        viderChamps();
                 }
             }
             else
@@ -173,9 +174,11 @@ namespace GM241.Fenetres.Produit
 
             if (MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet élément ?", "Attention !", MessageBoxButton.YesNoCancel, MessageBoxImage.Question, MessageBoxResult.Cancel) == MessageBoxResult.Yes)
             {
-                plaquette.deletePlaquette(idItemPresent);
-                MessageBox.Show("Suppression réussie");
-                this.Close();
+                if (plaquette.deletePlaquette(idItemPresent) == true)
+                {
+                    MessageBox.Show("Suppression réussie");
+                    this.Close();
+                }
             }
         }
     }

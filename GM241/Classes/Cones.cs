@@ -70,9 +70,9 @@ namespace GM241.Classes
         {
             BDService BDCones = new BDService();
             String request = "INSERT INTO Cones (nom, typeCone, TypeMachine) VALUES" +
-                             "( " + "'" + nom + "'" +
-                             ", " + "'" + typeCone + "'" +
-                             ", " + "'" + typeMachine + "'" + ");";
+                             "( " + "'" + nom.ToLower() + "'" +
+                             ", " + "'" + typeCone.ToLower() + "'" +
+                             ", " + "'" + typeMachine.ToLower() + "'" + ");";
 
             if (BDCones.Insertion(request) == true)
                 return true;

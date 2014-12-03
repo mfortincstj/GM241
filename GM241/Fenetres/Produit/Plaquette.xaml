@@ -25,9 +25,6 @@
         <TextBox x:Name="tourFraiseuse" HorizontalAlignment="Left" Height="37" Margin="730,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
         <Label Content="Image : " HorizontalAlignment="Left" Margin="490,94,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.129,0.432" Height="37" HorizontalContentAlignment="Right"/>
         <TextBox x:Name="image" HorizontalAlignment="Left" Height="37" Margin="735,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
-        <Button x:Name="btnAjouter" Content="Ajouter" Margin="10,468,739,0" Click="btnAjout_Click" Height="44" VerticalAlignment="Top"/>
-        <Button x:Name="btnModif" Content="Modifier" Margin="375,468,374,0" IsEnabled="False" Height="44" VerticalAlignment="Top"/>
-        <Button x:Name="btnSupprimer" Content="Supprimer" Margin="739,468,10,0" IsEnabled="False" Height="44" VerticalAlignment="Top" Click="btnSupprimer_Click_1"/>
         <Label Content="Numéro de local : " HorizontalAlignment="Left" Margin="484,190,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.121,0.942" Height="37" HorizontalContentAlignment="Right"/>
         <Label Content="Numéro d'armoire : " HorizontalAlignment="Left" Margin="484,232,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.121,0.942" Height="37" HorizontalContentAlignment="Right"/>
         <Label Content="Numéro de tiroir : " HorizontalAlignment="Left" Margin="484,274,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.121,0.942" Height="37" HorizontalContentAlignment="Right"/>
@@ -43,5 +40,9 @@
         <Label Content="Unité en pouce : " HorizontalAlignment="Left" Margin="490,52,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.129,0.432" Height="37" HorizontalContentAlignment="Right"/>
         <RadioButton x:Name="uniteOui" GroupName="unitePo" Content="Oui" HorizontalAlignment="Left" Margin="739,57,0,0" VerticalAlignment="Top" Height="37" FontSize="20" Width="53"/>
         <RadioButton x:Name="uniteNon" GroupName="unitePo" Content="Non" IsChecked="True" HorizontalAlignment="Left" Margin="821,57,0,0" VerticalAlignment="Top" Height="37" FontSize="20" Width="62"/>
+        <Button x:Name="btnAjouter" Content="Ajouter" Margin="10,462,0,0" Click="btnAjout_Click" HorizontalAlignment="Left" Width="220" Height="44" VerticalAlignment="Top"/>
+        <Button x:Name="btnModif" Content="Modifier" Margin="235,462,0,0" IsEnabled="False" Height="44" VerticalAlignment="Top" HorizontalAlignment="Left" Width="220"/>
+        <Button x:Name="btnSupprimer" Content="Supprimer" Margin="460,462,0,0" IsEnabled="False" Click="btnSupprimer_Click_1" HorizontalAlignment="Left" Width="220" Height="44" VerticalAlignment="Top"/>
+        <CheckBox x:Name="conserveChamps" Content="Conserver les champs" Margin="0,467,38,16" FontSize="20" HorizontalAlignment="Right" Width="217"/>
     </Grid>
 </Window>

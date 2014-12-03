@@ -154,7 +154,6 @@ namespace GM241.Fenetres.Produit
 
             img.Text = monOutil.image;
 
-            btnAjouter.IsEnabled = false;
             btnSupprimer.IsEnabled = true;
         }
 
@@ -223,7 +222,9 @@ namespace GM241.Fenetres.Produit
                 if (outils.ajoutOutil(Convert.ToInt32(idTypeOutil[0]), Convert.ToInt32(idTypeEmplacement[0]), Convert.ToInt32(idPlaquette[0]), nom.Text, Convert.ToInt32(quantite.Text), diametreUsinage.Text, diametreSerrage.Text, longueurCoupe.Text, longuerTotal.Text, longueurShank.Text, rayonCoin.Text, anglePointe.Text, Convert.ToInt32(nbrFlute.Text), outilDisponible, uniteEnPouce, img.Text) == true)
                 {
                     MessageBox.Show("Insertion réussie");
-                    viderChamps();
+
+                    if (conserveChamps.IsChecked == false)
+                        viderChamps();
                 }
             }
             else
@@ -236,9 +237,11 @@ namespace GM241.Fenetres.Produit
 
             if (MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet élément ?", "Attention !", MessageBoxButton.YesNoCancel, MessageBoxImage.Question, MessageBoxResult.Cancel) == MessageBoxResult.Yes)
             {
-                outil.deleteOutil(idItemPresent);
-                MessageBox.Show("Suppression réussie");
-                this.Close();
+                if (outil.deleteOutil(idItemPresent) == true)
+                {
+                    MessageBox.Show("Suppression réussie");
+                    this.Close();
+                }
             }
         }
     }

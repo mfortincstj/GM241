@@ -29,6 +29,13 @@ namespace GM241.Fenetres.Inventaire
         private bool estAdmin = false;
         public string index = "";
 
+        private void refresh()
+        {
+            Inventaire windowsInventaire = new Inventaire(estAdmin, usagerConnecte);
+            this.Close();
+            windowsInventaire.Show();
+        }
+
         public Inventaire(bool admin, string user)
         {
             InitializeComponent();
@@ -96,11 +103,7 @@ namespace GM241.Fenetres.Inventaire
             }
             
             List <Emplacements> listEmplacement = Emplacements.chargerlstEmplacements();
-            foreach (Emplacements e in listEmplacement)
-            {
-                if (e.estSupprime == false)
-                    resGrid6.ItemsSource = listEmplacement.Where(obj5 => obj5.estSupprime.Equals(false));
-            }
+            resGrid6.ItemsSource = listEmplacement;
 
             List <Extensions> listExtension = Extensions.chargerlstExtensions();
             foreach (Extensions e in listExtension)
@@ -174,56 +177,56 @@ namespace GM241.Fenetres.Inventaire
                 case "Collets":
                     var collet = resGrid1.SelectedItem as Collets;
                     Collet detailCollet = new Collet(collet);
-                    detailCollet.Show();
+                    detailCollet.ShowDialog();
                 break;
 
                 case "Outils":
 
                     var outil = resGrid2.SelectedItem as Outils;
                     Outil detailOutil = new Outil(outil);
-                    detailOutil.Show();
+                    detailOutil.ShowDialog();
                 break;
 
                 case "Porte-outils":
                     var porteOutil = resGrid3.SelectedItem as PorteOutils;
                     PorteOutil detailPorteOutil = new PorteOutil(porteOutil);
-                    detailPorteOutil.Show();
+                    detailPorteOutil.ShowDialog();
                 break;
 
                 case "Plaquettes":
                     var plaquette = resGrid4.SelectedItem as Plaquettes;
                     Plaquette detailPlaquette = new Plaquette(plaquette);
-                    detailPlaquette.Show();
+                    detailPlaquette.ShowDialog();
                 break;
 
                 case "Cônes":
                     var cone = resGrid5.SelectedItem as Cones;
                     Cone detailCone = new Cone(cone);
-                    detailCone.Show();
+                    detailCone.ShowDialog();
                 break;
 
                 case "Emplacements":
                     var emplacements = resGrid6.SelectedItem as Emplacements;
                     Emplacement detailEmplacement = new Emplacement(emplacements);
-                    detailEmplacement.Show();
+                    detailEmplacement.ShowDialog();
                 break;
 
                 case "Extensions":
                     var extensions = resGrid7.SelectedItem as Extensions;
                     Extension detailExtension = new Extension(extensions);
-                    detailExtension.Show();
+                    detailExtension.ShowDialog();
                 break;
 
                 case "Machines":
                     var machines = resGrid8.SelectedItem as Machines;
                     Machine detailMachine = new Machine(machines);
-                    detailMachine.Show();
+                    detailMachine.ShowDialog();
                 break;
 
                 case "Plateaux":
                     var plateauMachines = resGrid9.SelectedItem as PlateauMachines;
                     PlateauMachine detailPlateauMachine = new PlateauMachine(plateauMachines);
-                    detailPlateauMachine.Show();
+                    detailPlateauMachine.ShowDialog();
                 break;
             }
 
@@ -232,25 +235,25 @@ namespace GM241.Fenetres.Inventaire
                 case "d'attachements":
                     var typeAttachements = resGrid10.SelectedItem as TypeAttachements;
                     TypeAttachement detailTypeAttachement = new TypeAttachement(typeAttachements);
-                    detailTypeAttachement.Show();
+                    detailTypeAttachement.ShowDialog();
                     break;
 
                 case "de":
                     var typePorteOutils = resGrid11.SelectedItem as TypePorteOutils;
                     TypePorteOutil detailTypePorteOutil = new TypePorteOutil(typePorteOutils);
-                    detailTypePorteOutil.Show();
+                    detailTypePorteOutil.ShowDialog();
                     break;
 
                 case "d'emplacements":
                     var typeEmplacements = resGrid12.SelectedItem as TypeEmplacements;
                     TypeEmplacement detailTypeEmplacement = new TypeEmplacement(typeEmplacements);
-                    detailTypeEmplacement.Show();
+                    detailTypeEmplacement.ShowDialog();
                     break;
 
                 case "d'outils":
                     var typeOutils = resGrid13.SelectedItem as TypeOutils;
                     TypeOutil detailTypeOutil = new TypeOutil(typeOutils);
-                    detailTypeOutil.Show();
+                    detailTypeOutil.ShowDialog();
                     break;
             }
         }

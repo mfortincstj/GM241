@@ -89,10 +89,10 @@ namespace GM241.Classes
             BDService BDCollets = new BDService();
             String request = "INSERT INTO Collets (idEmplacement, idTypeAttachement, diametreInterieur, quantite, image) VALUES" + 
                              "( " + idEmpl + 
-                             ", " + idTypeAtt + 
-                             ", " + "'" + diam + "'" +
+                             ", " + idTypeAtt +
+                             ", " + "'" + diam.ToLower() + "'" +
                              ", " + quant +
-                             ", " + "'" + img + "'" + ");";
+                             ", " + "'" + img.ToLower() + "'" + ");";
 
             if(BDCollets.Insertion(request) == true)
                 return true;

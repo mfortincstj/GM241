@@ -114,7 +114,6 @@ namespace GM241.Fenetres.Produit
             quantite.Text = monExtension.quantite.ToString();
             img.Text = monExtension.image;
 
-            btnAjouter.IsEnabled = false;
             btnSupprimer.IsEnabled = true;
         }
 
@@ -157,7 +156,9 @@ namespace GM241.Fenetres.Produit
                 if (extensions.ajoutExtension(Convert.ToInt32(idPorteOutil[0]), Convert.ToInt32(idEmp[0]), Convert.ToInt32(idCollet[0]), longShank.Text, diamShank.Text, longTotal.Text, Convert.ToInt32(quantite.Text), img.Text) == true)
                 {
                     MessageBox.Show("Insertion réussie");
-                    viderChamps();
+
+                    if (conserveChamps.IsChecked == false)
+                        viderChamps();
                 }
             }
             else
@@ -170,9 +171,11 @@ namespace GM241.Fenetres.Produit
 
             if (MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet élément ?", "Attention !", MessageBoxButton.YesNoCancel, MessageBoxImage.Question, MessageBoxResult.Cancel) == MessageBoxResult.Yes)
             {
-                extension.deleteExtension(idItemPresent);
-                MessageBox.Show("Suppression réussie");
-                this.Close();
+                if (extension.deleteExtension(idItemPresent) == true)
+                {
+                    MessageBox.Show("Suppression réussie");
+                    this.Close();
+                }
             }
         }
     }
