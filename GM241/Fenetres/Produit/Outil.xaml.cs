@@ -53,6 +53,8 @@ namespace GM241.Fenetres.Produit
         public Outil()
         {
             InitializeComponent();
+            quantite.ToolTip = "Ce champ n'accepte que les chiffres";
+            nbrFlute.ToolTip = "Ce champ n'accepte que les chiffres";
 
             listeNoArmoire.Items.Add("0 - Aucun");
             listeNoTiroir.Items.Add("0 - Aucun");

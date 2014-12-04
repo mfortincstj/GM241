@@ -47,6 +47,9 @@ namespace GM241.Fenetres.Produit
         public Machine()
         {
             InitializeComponent();
+            nbrOutil.ToolTip = "Ce champ n'accepte que les chiffres";
+            nbrOutilPrep.ToolTip = "Ce champ n'accepte que les chiffres";
+            noMachine.ToolTip = "Ce champ n'accepte que les chiffres";
 
             listePlateauMachine.Items.Add("0 - Aucun");
 

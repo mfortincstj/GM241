@@ -41,6 +41,7 @@ namespace GM241.Fenetres.Produit
         public Collet()
         {
             InitializeComponent();
+            quant.ToolTip = "Ce champ n'accepte que les chiffres";
 
             // Charger la liste des types d'emplacements
             List<TypeEmplacements> lstTypeEmpl = TypeEmplacements.chargerlstTypeEmplacements();

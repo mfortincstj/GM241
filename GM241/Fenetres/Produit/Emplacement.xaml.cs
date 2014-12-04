@@ -54,15 +54,19 @@ namespace GM241.Fenetres.Produit
         public Emplacement(Emplacements monEmplacement)
         {
             InitializeComponent();
-            idItemPresent = monEmplacement.idEmplacement;
+            idItemPresent = monEmplacement.Emplacement;
 
             // Charger la liste des types d'emplacements
             List<TypeEmplacements> lstTypeEmpl = TypeEmplacements.chargerlstTypeEmplacements();
+            List<Emplacements> lstEmplacements = Emplacements.chargerlstEmplacements();
 
             foreach (TypeEmplacements tP in lstTypeEmpl)
-                listeTypeEmplacement.Items.Add(tP.idTypeEmplacement + " - " + tP.nom);
+            {
+                if (monEmplacement.idTypeEmplacement == tP.nom)
+		            listeTypeEmplacement.SelectedIndex = tP.idTypeEmplacement - 1;
 
-            listeTypeEmplacement.SelectedIndex = Convert.ToInt32(monEmplacement.idTypeEmplacement) - 1;
+                listeTypeEmplacement.Items.Add(tP.idTypeEmplacement + " - " + tP.nom);
+            }
 
             noLocal.Text = monEmplacement.noLocal;
             noArmoire.Text = monEmplacement.idArmoire;

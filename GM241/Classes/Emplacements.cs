@@ -8,7 +8,7 @@ namespace GM241.Classes
 {
     public class Emplacements
     {
-        public virtual int idEmplacement { get; set; }
+        public virtual int Emplacement { get; set; }
         public virtual string idTypeEmplacement { get; set; }
         public virtual string noLocal { get; set; }
         public virtual string idArmoire { get; set; }
@@ -17,7 +17,7 @@ namespace GM241.Classes
 
         public Emplacements()
         {
-            idEmplacement = 0;
+            Emplacement = 0;
             idTypeEmplacement = "";
             noLocal = "";
             idArmoire = "";
@@ -27,7 +27,7 @@ namespace GM241.Classes
 
         public Emplacements(int idEmp, string idTypeEmp, string noLoc, string noArm, string noTir, string noCas)
         {
-            idEmplacement = idEmp;
+            Emplacement = idEmp;
             idTypeEmplacement = idTypeEmp;
             noLocal = noLoc;
             idArmoire = noArm;
