@@ -15,7 +15,6 @@ namespace GM241.Classes
         public virtual string diametreInterieur { get; set; }
         public virtual int quantite { get; set; }
         public virtual string image { get; set; }
-        public virtual bool estSupprime { get; set; }
 
         public Collets()
         {
@@ -25,10 +24,9 @@ namespace GM241.Classes
             diametreInterieur = "";
             quantite = 0;
             image = "";
-            estSupprime = false;
         }
 
-        public Collets(int idCol, int idEmp, int idTypeAtt, string diamInt, int quant, string img, bool estSupp)
+        public Collets(int idCol, int idEmp, int idTypeAtt, string diamInt, int quant, string img)
         {
             idCollet = idCol;
             idEmplacement = idEmp;
@@ -36,7 +34,6 @@ namespace GM241.Classes
             diametreInterieur = diamInt;
             quantite = quant;
             image = img;
-            estSupprime = estSupp;
         }
 
         /// <summary>
@@ -51,7 +48,6 @@ namespace GM241.Classes
             string diametreInterieur;
             int quantite;
             string image;
-            bool estSupprime;
 
             BDService BDCollets = new BDService();
             String request = "SELECT * FROM Collets";
@@ -66,15 +62,17 @@ namespace GM241.Classes
             {
                 for (int i = 0; i < nombreRange; i++)
                 {
-                    idCollet = Convert.ToInt32(tabCol[i][0]);
-                    idEmplacement = Convert.ToInt32(tabCol[i][1]);
-                    idTypeAttachement = Convert.ToInt32(tabCol[i][2]);
-                    diametreInterieur = tabCol[i][3];
-                    quantite = Convert.ToInt32(tabCol[i][4]);
-                    image = tabCol[i][5];
-                    estSupprime = Convert.ToBoolean(tabCol[i][6]);
+                    if (Convert.ToBoolean(tabCol[i][6]) == false)
+                    {
+                        idCollet = Convert.ToInt32(tabCol[i][0]);
+                        idEmplacement = Convert.ToInt32(tabCol[i][1]);
+                        idTypeAttachement = Convert.ToInt32(tabCol[i][2]);
+                        diametreInterieur = tabCol[i][3];
+                        quantite = Convert.ToInt32(tabCol[i][4]);
+                        image = tabCol[i][5];
 
-                    listeCollets.Add(new Collets(idCollet, idEmplacement, idTypeAttachement, diametreInterieur, quantite, image, estSupprime));
+                        listeCollets.Add(new Collets(idCollet, idEmplacement, idTypeAttachement, diametreInterieur, quantite, image));
+                    }
                 }
             }
 

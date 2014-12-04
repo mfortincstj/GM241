@@ -12,7 +12,6 @@ namespace GM241.Classes
         public virtual string nom { get; set; }
         public virtual bool axeSuppA { get; set; }
         public virtual bool axeSuppB { get; set; }
-        public virtual bool estSupprime { get; set; }
 
         public PlateauMachines()
         {
@@ -20,16 +19,14 @@ namespace GM241.Classes
             nom = "";
             axeSuppA = false;
             axeSuppB = false;
-            estSupprime = false;
         }
 
-        public PlateauMachines(int idPlateauM, string n, bool axeSuA, bool axeSuB, bool estSupp)
+        public PlateauMachines(int idPlateauM, string n, bool axeSuA, bool axeSuB)
         {
             idPlateauMachine = idPlateauM;
             nom = n;
             axeSuppA = axeSuA;
             axeSuppB = axeSuB;
-            estSupprime = estSupp;
         }
 
         public static List<PlateauMachines> chargerlstPlateauMachines()
@@ -38,7 +35,6 @@ namespace GM241.Classes
             string nom;
             bool axeSuppA;
             bool axeSuppB;
-            bool estSupprime;
 
             BDService BDPlateauMachines = new BDService();
             String request = "SELECT * FROM PlateauMachines";
@@ -53,13 +49,15 @@ namespace GM241.Classes
             {
                 for (int i = 0; i < nombreRange; i++)
                 {
-                    idPlateauMachine = Convert.ToInt32(tabPlateauMachines[i][0]);
-                    nom = tabPlateauMachines[i][1];
-                    axeSuppA = Convert.ToBoolean(tabPlateauMachines[i][2]);
-                    axeSuppB = Convert.ToBoolean(tabPlateauMachines[i][3]);
-                    estSupprime = Convert.ToBoolean(tabPlateauMachines[i][4]);
+                    if (Convert.ToBoolean(tabPlateauMachines[i][4]) == false)
+                    {
+                        idPlateauMachine = Convert.ToInt32(tabPlateauMachines[i][0]);
+                        nom = tabPlateauMachines[i][1];
+                        axeSuppA = Convert.ToBoolean(tabPlateauMachines[i][2]);
+                        axeSuppB = Convert.ToBoolean(tabPlateauMachines[i][3]);
 
-                    listePlateauMachines.Add(new PlateauMachines(idPlateauMachine, nom, axeSuppA, axeSuppB, estSupprime));
+                        listePlateauMachines.Add(new PlateauMachines(idPlateauMachine, nom, axeSuppA, axeSuppB));
+                    }
                 }
             }
 

@@ -21,6 +21,7 @@ namespace GM241
     /// <summary>
     /// Logique d'interaction pour MainWindow.xaml
     /// </summary>
+
     public partial class Login : Window
     {
         public Login()
@@ -70,6 +71,11 @@ namespace GM241
         {
             if(MessageBox.Show("Êtes-vous sûr de vouloir quitter?", "Attention!", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.Yes) == MessageBoxResult.Yes)
                 Application.Current.Shutdown();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

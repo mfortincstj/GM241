@@ -17,7 +17,6 @@ namespace GM241.Classes
         public virtual string longueurTotale { get; set; }
         public virtual int quantite { get; set; }
         public virtual string image { get; set; }
-        public virtual bool estSupprime { get; set; }
 
         public Extensions()
         {
@@ -30,10 +29,9 @@ namespace GM241.Classes
             longueurTotale = "";
             quantite = 0;
             image = "";
-            estSupprime = false;
         }
 
-        public Extensions(int idExt, int idPO, int idEmp, int idCol, string longShank, string diamShank, string longTotal, int quant, string img, bool estSupp)
+        public Extensions(int idExt, int idPO, int idEmp, int idCol, string longShank, string diamShank, string longTotal, int quant, string img)
         {
             idExtension = idExt;
             idPorteOutil = idPO;
@@ -44,7 +42,6 @@ namespace GM241.Classes
             longueurTotale = longTotal;
             quantite = quant;
             image = img;
-            estSupprime = estSupp;
         }
 
         public static List<Extensions> chargerlstExtensions()
@@ -58,7 +55,6 @@ namespace GM241.Classes
             string longueurTotale;
             int quantite;
             string image;
-            bool estSupprime;
 
             BDService BDExtensions = new BDService();
             String request = "SELECT * FROM Extensions";
@@ -73,18 +69,20 @@ namespace GM241.Classes
             {
                 for (int i = 0; i < nombreRange; i++)
                 {
-                    idExtension = Convert.ToInt32(tabExtensions[i][0]);
-                    idPorteOutil = Convert.ToInt32(tabExtensions[i][1]);
-                    idEmplacement = Convert.ToInt32(tabExtensions[i][2]);
-                    idCollet = Convert.ToInt32(tabExtensions[i][3]);
-                    longueurShank = tabExtensions[i][4];
-                    diametreShank = tabExtensions[i][5];
-                    longueurTotale = tabExtensions[i][6];
-                    quantite = Convert.ToInt32(tabExtensions[i][7]);
-                    image = tabExtensions[i][8];
-                    estSupprime = Convert.ToBoolean(tabExtensions[i][9]);
+                    if (Convert.ToBoolean(tabExtensions[i][9]) == false)
+                    {
+                        idExtension = Convert.ToInt32(tabExtensions[i][0]);
+                        idPorteOutil = Convert.ToInt32(tabExtensions[i][1]);
+                        idEmplacement = Convert.ToInt32(tabExtensions[i][2]);
+                        idCollet = Convert.ToInt32(tabExtensions[i][3]);
+                        longueurShank = tabExtensions[i][4];
+                        diametreShank = tabExtensions[i][5];
+                        longueurTotale = tabExtensions[i][6];
+                        quantite = Convert.ToInt32(tabExtensions[i][7]);
+                        image = tabExtensions[i][8];
 
-                    listeExtensions.Add(new Extensions(idExtension, idPorteOutil, idEmplacement, idCollet, longueurShank, diametreShank, longueurTotale, quantite, image, estSupprime));
+                        listeExtensions.Add(new Extensions(idExtension, idPorteOutil, idEmplacement, idCollet, longueurShank, diametreShank, longueurTotale, quantite, image));
+                    }
                 }
             }
 

@@ -12,7 +12,6 @@ namespace GM241.Classes
         public virtual int idCone { get; set; }
         public virtual int idTypeAttachement { get; set; }
         public virtual string nom { get; set; }
-        public virtual bool estSupprime { get; set; }
 
         public TypePorteOutils()
         {
@@ -20,16 +19,14 @@ namespace GM241.Classes
             idCone = 0;
             idTypeAttachement = 0;
             nom = "";
-            estSupprime = false;
         }
 
-        public TypePorteOutils(int idTypePorteOut, int idCo, int idTA, string n, bool estSupp)
+        public TypePorteOutils(int idTypePorteOut, int idCo, int idTA, string n)
         {
             idTypePorteOutil = idTypePorteOut;
             idCone = idCo;
             idTypeAttachement = idTA;
             nom = n;
-            estSupprime = estSupp;
         }
 
         public static List<TypePorteOutils> chargerlstTypePorteOutils()
@@ -38,7 +35,6 @@ namespace GM241.Classes
             int idCone;
             int idTypeAttachement;
             string nom;
-            bool estSupprime;
 
             BDService BDtypePorteOutils = new BDService();
             String request = "SELECT * FROM TypePorteOutils";
@@ -53,13 +49,15 @@ namespace GM241.Classes
             {
                 for (int i = 0; i < nombreRange; i++)
                 {
-                    idTypePorteOutil = Convert.ToInt32(tabTypePorteOutils[i][0]);
-                    idCone = Convert.ToInt32(tabTypePorteOutils[i][1]);
-                    idTypeAttachement = Convert.ToInt32(tabTypePorteOutils[i][2]);
-                    nom = tabTypePorteOutils[i][3];
-                    estSupprime = Convert.ToBoolean(tabTypePorteOutils[i][4]);
+                    if (Convert.ToBoolean(tabTypePorteOutils[i][4]) == false)
+                    {
+                        idTypePorteOutil = Convert.ToInt32(tabTypePorteOutils[i][0]);
+                        idCone = Convert.ToInt32(tabTypePorteOutils[i][1]);
+                        idTypeAttachement = Convert.ToInt32(tabTypePorteOutils[i][2]);
+                        nom = tabTypePorteOutils[i][3];
 
-                    listeTypePorteOutils.Add(new TypePorteOutils(idTypePorteOutil, idCone, idTypeAttachement, nom, estSupprime));
+                        listeTypePorteOutils.Add(new TypePorteOutils(idTypePorteOutil, idCone, idTypeAttachement, nom));
+                    }
                 }
             }
 

@@ -23,7 +23,6 @@ namespace GM241.Classes
         public virtual bool axeZ { get; set; }
         public virtual string axeZMin { get; set; }
         public virtual string axeZMAX { get; set; }
-        public virtual bool estSupprime { get; set; }
 
         public Machines()
         {
@@ -42,11 +41,10 @@ namespace GM241.Classes
             axeZ = false;
             axeZMin = "";
             axeZMAX = "";
-            estSupprime = false;
         }
 
         public Machines(int idMach, int idPlatMach, string n, int nbOutilMag, string precMach, string formatCo, int nbOutilPr, int noMach,
-                        string axeXMi, string axeXMa, string axeYMi, string axeYMa, bool axZ, string axeZMi, string axeZMa, bool estSupp)
+                        string axeXMi, string axeXMa, string axeYMi, string axeYMa, bool axZ, string axeZMi, string axeZMa)
         {
             idMachine = idMach;
             idPlateauMachine = idPlatMach;
@@ -63,7 +61,6 @@ namespace GM241.Classes
             axeZ = axZ;
             axeZMin = axeZMi;
             axeZMAX = axeZMa;
-            estSupprime = estSupp;
         }
 
         public static List<Machines> chargerMachines()
@@ -83,7 +80,6 @@ namespace GM241.Classes
             bool axeZ;
             string axeZMin;
             string axeZMAX;
-            bool estSupprime;
 
             BDService BDMachines = new BDService();
             String request = "SELECT * FROM Machines";
@@ -98,34 +94,36 @@ namespace GM241.Classes
             {
                 for (int i = 0; i < nombreRange; i++)
                 {
-                    idMachine = Convert.ToInt32(tabMachines[i][0]);
-
-                    if(tabMachines[i][1] == null || tabMachines[i][1] == "")
-                    { 
-                        idPlateauMachine = 0;
-                    }
-                    else
+                    if (Convert.ToBoolean(tabMachines[i][15]) == false)
                     {
-                        idPlateauMachine = Convert.ToInt32(tabMachines[i][1]);
+                        idMachine = Convert.ToInt32(tabMachines[i][0]);
+
+                        if (tabMachines[i][1] == null || tabMachines[i][1] == "")
+                        {
+                            idPlateauMachine = 0;
+                        }
+                        else
+                        {
+                            idPlateauMachine = Convert.ToInt32(tabMachines[i][1]);
+                        }
+
+                        nom = tabMachines[i][2];
+                        nombreOutilMagasin = Convert.ToInt32(tabMachines[i][3]);
+                        precisionMachine = tabMachines[i][4];
+                        formatCone = tabMachines[i][5];
+                        nombreOutilPrep = Convert.ToInt32(tabMachines[i][6]);
+                        numeroMachine = Convert.ToInt32(tabMachines[i][7]);
+                        axeXMin = tabMachines[i][8];
+                        axeXMAX = tabMachines[i][9];
+                        axeYMin = tabMachines[i][10];
+                        axeYMAX = tabMachines[i][11];
+                        axeZ = Convert.ToBoolean(tabMachines[i][12]);
+                        axeZMin = tabMachines[i][13];
+                        axeZMAX = tabMachines[i][14];
+
+                        listeMachines.Add(new Machines(idMachine, idPlateauMachine, nom, nombreOutilMagasin, precisionMachine, formatCone, nombreOutilPrep,
+                            numeroMachine, axeXMin, axeXMAX, axeYMin, axeYMAX, axeZ, axeZMin, axeZMAX));
                     }
-
-                    nom = tabMachines[i][2];
-                    nombreOutilMagasin = Convert.ToInt32(tabMachines[i][3]);
-                    precisionMachine = tabMachines[i][4];
-                    formatCone = tabMachines[i][5];
-                    nombreOutilPrep = Convert.ToInt32(tabMachines[i][6]);
-                    numeroMachine = Convert.ToInt32(tabMachines[i][7]);
-                    axeXMin = tabMachines[i][8];
-                    axeXMAX = tabMachines[i][9];
-                    axeYMin = tabMachines[i][10];
-                    axeYMAX = tabMachines[i][11];
-                    axeZ = Convert.ToBoolean(tabMachines[i][12]);
-                    axeZMin = tabMachines[i][13];
-                    axeZMAX = tabMachines[i][14];
-                    estSupprime = Convert.ToBoolean(tabMachines[i][15]);
-
-                    listeMachines.Add(new Machines(idMachine, idPlateauMachine, nom, nombreOutilMagasin, precisionMachine, formatCone, nombreOutilPrep, 
-                                                numeroMachine, axeXMin, axeXMAX, axeYMin, axeYMAX, axeZ, axeZMin, axeZMAX, estSupprime));
                 }
             }
 

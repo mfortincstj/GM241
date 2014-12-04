@@ -12,7 +12,6 @@ namespace GM241.Classes
         public virtual string nom { get; set; }
         public virtual string typeCone { get; set; }
         public virtual string typeMachine { get; set; }
-        public virtual bool estSupprime { get; set; }
 
         public Cones()
         {
@@ -20,16 +19,14 @@ namespace GM241.Classes
             nom = "";
             typeCone = "";
             typeMachine = "";
-            estSupprime = false;
         }
 
-        public Cones(int idCon, string n, string typeC, string typeM, bool estSupp)
+        public Cones(int idCon, string n, string typeC, string typeM)
         {
             idCone = idCon;
             nom = n;
             typeCone = typeC;
             typeMachine = typeM;
-            estSupprime = estSupp;
         }
 
         public static List<Cones> chargerlstCones()
@@ -38,7 +35,6 @@ namespace GM241.Classes
             string nom;
             string typeCone;
             string typeMachine;
-            bool estSupprime;
 
             BDService BDCones = new BDService();
             String request = "SELECT * FROM Cones";
@@ -53,13 +49,15 @@ namespace GM241.Classes
             {
                 for (int i = 0; i < nombreRange; i++)
                 {
-                    idCone = Convert.ToInt32(tabCones[i][0]);
-                    nom = tabCones[i][1];
-                    typeCone = tabCones[i][2];
-                    typeMachine = tabCones[i][3];
-                    estSupprime = Convert.ToBoolean(tabCones[i][4]);
+                    if (Convert.ToBoolean(tabCones[i][4]) == false)
+                    {
+                        idCone = Convert.ToInt32(tabCones[i][0]);
+                        nom = tabCones[i][1];
+                        typeCone = tabCones[i][2];
+                        typeMachine = tabCones[i][3];
 
-                    listeCones.Add(new Cones(idCone, nom, typeCone, typeMachine, estSupprime));
+                        listeCones.Add(new Cones(idCone, nom, typeCone, typeMachine));
+                    }
                 }
             }
 

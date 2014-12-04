@@ -9,7 +9,7 @@ namespace GM241.Classes
     public class Emplacements
     {
         public virtual int idEmplacement { get; set; }
-        public virtual int idTypeEmplacement { get; set; }
+        public virtual string idTypeEmplacement { get; set; }
         public virtual string noLocal { get; set; }
         public virtual string idArmoire { get; set; }
         public virtual string idTiroir { get; set; }
@@ -18,14 +18,14 @@ namespace GM241.Classes
         public Emplacements()
         {
             idEmplacement = 0;
-            idTypeEmplacement = 0;
+            idTypeEmplacement = "";
             noLocal = "";
             idArmoire = "";
             idTiroir = "";
             idCasier = "";
         }
 
-        public Emplacements(int idEmp, int idTypeEmp, string noLoc, string noArm, string noTir, string noCas)
+        public Emplacements(int idEmp, string idTypeEmp, string noLoc, string noArm, string noTir, string noCas)
         {
             idEmplacement = idEmp;
             idTypeEmplacement = idTypeEmp;
@@ -38,18 +38,18 @@ namespace GM241.Classes
         public static List<Emplacements> chargerlstEmplacements()
         {
             int idEmplacement;
-            int idTypeEmplacement;
+            string idTypeEmplacement;
             string noLocal;
             string idArmoire;
             string idTiroir;
             string idCasier;
 
             BDService BDEmplacements = new BDService();
-            String request = "SELECT * FROM Emplacements";
+            String request = "SELECT * FROM Emplacements AS e INNER JOIN TypeEmplacements AS te ON te.idTypeEmplacement = e.idTypeEmplacement";
 
             List<string>[] tabEmplacements;
             int nombreRange = 0;
-            tabEmplacements = BDEmplacements.selection(request, 7, ref nombreRange);
+            tabEmplacements = BDEmplacements.selection(request, 9, ref nombreRange);
 
             List<Emplacements> listeEmplacements = new List<Emplacements>();
 
@@ -60,7 +60,7 @@ namespace GM241.Classes
                     if (Convert.ToBoolean(tabEmplacements[i][6]) == false)
                     {
                         idEmplacement = Convert.ToInt32(tabEmplacements[i][0]);
-                        idTypeEmplacement = Convert.ToInt32(tabEmplacements[i][1]);
+                        idTypeEmplacement = tabEmplacements[i][8];
                         noLocal = tabEmplacements[i][2];
                         idArmoire = tabEmplacements[i][3];
                         idTiroir = tabEmplacements[i][4];

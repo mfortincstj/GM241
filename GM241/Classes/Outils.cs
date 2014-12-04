@@ -26,7 +26,6 @@ namespace GM241.Classes
         public virtual bool disponible { get; set; }
         public virtual bool  unitePouce { get; set; }
         public virtual string image { get; set; }
-        public virtual bool estSupprime { get; set; }
 
         public Outils()
         {
@@ -47,11 +46,10 @@ namespace GM241.Classes
             disponible = false;
             unitePouce = false;
             image = "";
-            estSupprime = false;
         }
 
         public Outils(int idOul, int idTO, int idEm, int? idPla, string n, int q, string diamUsi, string diamSerr, string longC, string longT, string longS, 
-                      string rayC, string angR, int nbFlute, bool dispo, bool unitPo, string img, bool estSupp)
+                      string rayC, string angR, int nbFlute, bool dispo, bool unitPo, string img)
         {
             idOutil = idOul;
             idTypeOutil = idTO;
@@ -70,7 +68,6 @@ namespace GM241.Classes
             disponible = dispo;
             unitePouce = unitPo;
             image = img;
-            estSupprime = estSupp;
         }
 
         /// <summary>
@@ -96,7 +93,6 @@ namespace GM241.Classes
             bool disponible;
             bool  unitePouce;
             string image;
-            bool estSupprime;
 
             BDService BDOutils = new BDService();
             String request = "SELECT * FROM Outils";
@@ -111,33 +107,35 @@ namespace GM241.Classes
             {
                 for (int i = 0; i < nombreRange; i++)
                 {
-                    idOutil = Convert.ToInt32(tabOutil[i][0]);
-                    idTypeOutil = Convert.ToInt32(tabOutil[i][1]);
-                    idEmplacement = Convert.ToInt32(tabOutil[i][2]);
+                    if (Convert.ToBoolean(tabOutil[i][17]) == false)
+                    {
+                        idOutil = Convert.ToInt32(tabOutil[i][0]);
+                        idTypeOutil = Convert.ToInt32(tabOutil[i][1]);
+                        idEmplacement = Convert.ToInt32(tabOutil[i][2]);
 
-                    // Le idPlaquette peut etre nullable
-                    if (tabOutil[i][3] == "")
-                        idPlaquette = null;
-                    else
-                        idPlaquette = Convert.ToInt32(tabOutil[i][3]);
+                        // Le idPlaquette peut etre nullable
+                        if (tabOutil[i][3] == "")
+                            idPlaquette = null;
+                        else
+                            idPlaquette = Convert.ToInt32(tabOutil[i][3]);
                     
-                    nom = tabOutil[i][4];
-                    quantite = Convert.ToInt32(tabOutil[i][5]);
-                    diametreUsinage = tabOutil[i][6];
-                    diametreSerrage = tabOutil[i][7];
-                    longueurCoupe = tabOutil[i][8];
-                    longueurTotal = tabOutil[i][9];
-                    longueurShank = tabOutil[i][10];
-                    rayonCoin = tabOutil[i][11];
-                    anglePointe = tabOutil[i][12];
-                    nombreFlute = Convert.ToInt32(tabOutil[i][13]);
-                    disponible = Convert.ToBoolean(tabOutil[i][14]);
-                    unitePouce = Convert.ToBoolean(tabOutil[i][15]);
-                    image = tabOutil[i][16];
-                    estSupprime = Convert.ToBoolean(tabOutil[i][17]);
+                        nom = tabOutil[i][4];
+                        quantite = Convert.ToInt32(tabOutil[i][5]);
+                        diametreUsinage = tabOutil[i][6];
+                        diametreSerrage = tabOutil[i][7];
+                        longueurCoupe = tabOutil[i][8];
+                        longueurTotal = tabOutil[i][9];
+                        longueurShank = tabOutil[i][10];
+                        rayonCoin = tabOutil[i][11];
+                        anglePointe = tabOutil[i][12];
+                        nombreFlute = Convert.ToInt32(tabOutil[i][13]);
+                        disponible = Convert.ToBoolean(tabOutil[i][14]);
+                        unitePouce = Convert.ToBoolean(tabOutil[i][15]);
+                        image = tabOutil[i][16];
 
-                    listeOutils.Add(new Outils(idOutil, idTypeOutil, idEmplacement, idPlaquette, nom, quantite, diametreUsinage, diametreSerrage, longueurCoupe,
-                                               longueurTotal, longueurShank, rayonCoin, anglePointe, nombreFlute, disponible, unitePouce, image, estSupprime));
+                        listeOutils.Add(new Outils(idOutil, idTypeOutil, idEmplacement, idPlaquette, nom, quantite, diametreUsinage, diametreSerrage, longueurCoupe,
+                                                   longueurTotal, longueurShank, rayonCoin, anglePointe, nombreFlute, disponible, unitePouce, image));
+                    }
                 }
             }
 

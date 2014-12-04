@@ -10,27 +10,23 @@ namespace GM241.Classes
     {
         public virtual int idTypeEmplacement { get; set; }
         public virtual string nom { get; set; }
-        public virtual bool estSupprime { get; set; }
 
         public TypeEmplacements()
         {
             idTypeEmplacement = 0;
             nom = "";
-            estSupprime = false;
         }
 
-        public TypeEmplacements(int idTypeEmp, string n, bool estSupp)
+        public TypeEmplacements(int idTypeEmp, string n)
         {
             idTypeEmplacement = idTypeEmp;
             nom = n;
-            estSupprime = estSupp;
         }
 
         public static List<TypeEmplacements> chargerlstTypeEmplacements()
         {
             int idTypeEmplacement;
             string nom;
-            bool estSupprime;
 
             BDService BDTypeEmplacements = new BDService();
             String request = "SELECT * FROM TypeEmplacements";
@@ -45,11 +41,13 @@ namespace GM241.Classes
             {
                 for (int i = 0; i < nombreRange; i++)
                 {
-                    idTypeEmplacement = Convert.ToInt32(tabTypeEmplacements[i][0]);
-                    nom = tabTypeEmplacements[i][1];
-                    estSupprime = Convert.ToBoolean(tabTypeEmplacements[i][2]);
+                    if (Convert.ToBoolean(tabTypeEmplacements[i][2]) == false)
+                    {
+                        idTypeEmplacement = Convert.ToInt32(tabTypeEmplacements[i][0]);
+                        nom = tabTypeEmplacements[i][1];
 
-                    listeTypeEmplacements.Add(new TypeEmplacements(idTypeEmplacement, nom, estSupprime));
+                        listeTypeEmplacements.Add(new TypeEmplacements(idTypeEmplacement, nom));
+                    }
                 }
             }
 

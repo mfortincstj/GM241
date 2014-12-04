@@ -13,7 +13,6 @@ namespace GM241.Classes
         public virtual int idEmplacement { get; set; }
         public virtual int quantite { get; set; }
         public virtual string image { get; set; }
-        public virtual bool estSupprime { get; set; }
 
         public PorteOutils()
         {
@@ -22,17 +21,15 @@ namespace GM241.Classes
             idEmplacement = 0;
             quantite = 0;
             image = "";
-            estSupprime = false;
         }
 
-        public PorteOutils(int idPOut, int idTypePO, int idEm, int quant, string img, bool estSupp)
+        public PorteOutils(int idPOut, int idTypePO, int idEm, int quant, string img)
         {
             idPorteOutil = idPOut;
             idTypePorteOutil = idTypePO;
             idEmplacement = idEm;
             quantite = quant;
             image = img;
-            estSupprime = estSupp;
         }
 
         public static List<PorteOutils> chargerlstPorteOutils()
@@ -42,7 +39,6 @@ namespace GM241.Classes
             int idEmplacement;
             int quantite;
             string image;
-            bool estSupprime;
 
             BDService BDporteOutils = new BDService();
             String request = "SELECT * FROM PorteOutils";
@@ -57,14 +53,16 @@ namespace GM241.Classes
             {
                 for (int i = 0; i < nombreRange; i++)
                 {
-                    idPorteOutil = Convert.ToInt32(tabPorteOutils[i][0]);
-                    idTypePorteOutil = Convert.ToInt32(tabPorteOutils[i][1]);
-                    idEmplacement = Convert.ToInt32(tabPorteOutils[i][2]);
-                    quantite = Convert.ToInt32(tabPorteOutils[i][3]);
-                    image = tabPorteOutils[i][4];
-                    estSupprime = Convert.ToBoolean(tabPorteOutils[i][5]);
+                    if (Convert.ToBoolean(tabPorteOutils[i][5]) == false)
+                    {
+                        idPorteOutil = Convert.ToInt32(tabPorteOutils[i][0]);
+                        idTypePorteOutil = Convert.ToInt32(tabPorteOutils[i][1]);
+                        idEmplacement = Convert.ToInt32(tabPorteOutils[i][2]);
+                        quantite = Convert.ToInt32(tabPorteOutils[i][3]);
+                        image = tabPorteOutils[i][4];
 
-                    listePorteOutils.Add(new PorteOutils(idPorteOutil, idTypePorteOutil, idEmplacement, quantite, image, estSupprime));
+                        listePorteOutils.Add(new PorteOutils(idPorteOutil, idTypePorteOutil, idEmplacement, quantite, image));
+                    }
                 }
             }
 

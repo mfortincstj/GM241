@@ -66,93 +66,43 @@ namespace GM241.Fenetres.Inventaire
             lstMenu.SelectedIndex = 0;
 
             List<Collets> listCol = Collets.chargerlstCollets();
-
-            foreach (Collets c in listCol)
-            {
-                if (c.estSupprime == false)
-                    resGrid1.ItemsSource = listCol.Where(obj => obj.estSupprime.Equals(false));
-            }
-
+            resGrid1.ItemsSource = listCol;
 
             List<Outils> listOutil = Outils.chargerLstOutils();
-            foreach (Outils o in listOutil)
-            {
-                if (o.estSupprime == false)
-                    resGrid2.ItemsSource = listOutil.Where(obj1 => obj1.estSupprime.Equals(false));
-            }
-            
+            resGrid2.ItemsSource = listOutil;
+
             List<PorteOutils> listPorteOutil = PorteOutils.chargerlstPorteOutils();
-            foreach (PorteOutils pO in listPorteOutil)
-            {
-                if (pO.estSupprime == false)
-                    resGrid3.ItemsSource = listPorteOutil.Where(obj2 => obj2.estSupprime.Equals(false));
-            }
+            resGrid3.ItemsSource = listPorteOutil;
             
             List<Plaquettes> listPlaquette = Plaquettes.chargerlstPlaquettes();
-            foreach (Plaquettes p in listPlaquette)
-            {
-                if (p.estSupprime == false)
-                    resGrid4.ItemsSource = listPlaquette.Where(obj3 => obj3.estSupprime.Equals(false));
-            }
+            resGrid4.ItemsSource = listPlaquette;
             
             List <Cones> listCone = Cones.chargerlstCones();
-            foreach (Cones c in listCone)
-            {
-                if (c.estSupprime == false)
-                    resGrid5.ItemsSource = listCone.Where(obj4 => obj4.estSupprime.Equals(false));
-            }
+            resGrid5.ItemsSource = listCone;
             
             List <Emplacements> listEmplacement = Emplacements.chargerlstEmplacements();
             resGrid6.ItemsSource = listEmplacement;
 
             List <Extensions> listExtension = Extensions.chargerlstExtensions();
-            foreach (Extensions e in listExtension)
-            {
-                if (e.estSupprime == false)
-                    resGrid7.ItemsSource = listExtension.Where(obj6 => obj6.estSupprime.Equals(false));
-            }
+            resGrid7.ItemsSource = listExtension;
             
             List <Machines> listMachine = Machines.chargerMachines();
-            foreach (Machines m in listMachine)
-            {
-                if (m.estSupprime == false)
-                    resGrid8.ItemsSource = listMachine.Where(obj7 => obj7.estSupprime.Equals(false));
-            }
+            resGrid8.ItemsSource = listMachine;
             
             List <PlateauMachines> listPlateauMachine = PlateauMachines.chargerlstPlateauMachines();
-            foreach (PlateauMachines pM in listPlateauMachine)
-            {
-                if (pM.estSupprime == false)
-                    resGrid9.ItemsSource = listPlateauMachine.Where(obj8 => obj8.estSupprime.Equals(false));
-            }
+            resGrid9.ItemsSource = listPlateauMachine;
             
             List <TypeAttachements> listTypeAttachement = TypeAttachements.chargerlstTypeAttachements();
-            foreach (TypeAttachements tA in listTypeAttachement)
-            {
-                if (tA.estSupprime == false)
-                    resGrid10.ItemsSource = listTypeAttachement.Where(obj9 => obj9.estSupprime.Equals(false));
-            }
+            resGrid10.ItemsSource = listTypeAttachement;
             
             List <TypePorteOutils> listTypePorteOutil = TypePorteOutils.chargerlstTypePorteOutils();
-            foreach (TypePorteOutils tPo in listTypePorteOutil)
-            {
-                if (tPo.estSupprime == false)
-                    resGrid11.ItemsSource = listTypePorteOutil.Where(obj10 => obj10.estSupprime.Equals(false));
-            }
+            resGrid11.ItemsSource = listTypePorteOutil;
             
             List <TypeEmplacements> listTypeEmplacement = TypeEmplacements.chargerlstTypeEmplacements();
-            foreach (TypeEmplacements tE in listTypeEmplacement)
-            {
-                if (tE.estSupprime == false)
-                    resGrid12.ItemsSource = listTypeEmplacement.Where(obj11 => obj11.estSupprime.Equals(false));
-            }
+            resGrid12.ItemsSource = listTypeEmplacement;
             
             List<TypeOutils> listTypeOutil = TypeOutils.chargerlstTypeOutils();
-            foreach (TypeOutils tO in listTypeOutil)
-            {
-                if (tO.estSupprime == false)
-                    resGrid13.ItemsSource = listTypeOutil.Where(obj12 => obj12.estSupprime.Equals(false));
-            }
+            resGrid13.ItemsSource = listTypeOutil;
         }
 
         private void btnQuitter_Click(object sender, RoutedEventArgs e)
@@ -181,7 +131,6 @@ namespace GM241.Fenetres.Inventaire
                 break;
 
                 case "Outils":
-
                     var outil = resGrid2.SelectedItem as Outils;
                     Outil detailOutil = new Outil(outil);
                     detailOutil.ShowDialog();

@@ -62,7 +62,7 @@ namespace GM241.Fenetres.Produit
             foreach (TypeEmplacements tP in lstTypeEmpl)
                 listeTypeEmplacement.Items.Add(tP.idTypeEmplacement + " - " + tP.nom);
 
-            listeTypeEmplacement.SelectedIndex = monEmplacement.idTypeEmplacement - 1;
+            listeTypeEmplacement.SelectedIndex = Convert.ToInt32(monEmplacement.idTypeEmplacement) - 1;
 
             noLocal.Text = monEmplacement.noLocal;
             noArmoire.Text = monEmplacement.idArmoire;

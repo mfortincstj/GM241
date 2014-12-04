@@ -24,7 +24,6 @@ namespace GM241.Classes
         public virtual string tourFraseuse { get; set; }
         public virtual bool unitePouce { get; set; }
         public virtual string image { get; set; }
-        public virtual bool estSupprime { get; set; }
 
         public Plaquettes()
         {
@@ -43,11 +42,10 @@ namespace GM241.Classes
             tourFraseuse = "";
             unitePouce = false;
             image = "";
-            estSupprime = false;
         }
 
         public Plaquettes(int idPlaq, int idEmp, string n, string typePla, string direc, string ang, string dega, string gros,
-                          string comp, int quant, bool dispo, string codeA, string tourFra, bool unitePo, string img, bool estSupp)
+                          string comp, int quant, bool dispo, string codeA, string tourFra, bool unitePo, string img)
         {
             idPlaquette = idPlaq;
             idEmplacement = idEmp;
@@ -64,7 +62,6 @@ namespace GM241.Classes
             tourFraseuse = tourFra;
             unitePouce = unitePo;
             image = img;
-            estSupprime = estSupp;
         }
 
         public static List<Plaquettes> chargerlstPlaquettes()
@@ -84,7 +81,6 @@ namespace GM241.Classes
             string tourFraseuse;
             bool unitePouce;
             string image;
-            bool estSupprime;
 
             BDService BDPlaquettes = new BDService();
             String request = "SELECT * FROM Plaquettes";
@@ -99,25 +95,27 @@ namespace GM241.Classes
             {
                 for (int i = 0; i < nombreRange; i++)
                 {
-                    idPlaquette = Convert.ToInt32(tabPlaquettes[i][0]);
-                    idEmplacement = Convert.ToInt32(tabPlaquettes[i][1]);
-                    nom = tabPlaquettes[i][2];
-                    typePlaquette = tabPlaquettes[i][3];
-                    direction = tabPlaquettes[i][4];
-                    angle = tabPlaquettes[i][5];
-                    degagement = tabPlaquettes[i][6];
-                    grosseur = tabPlaquettes[i][7];
-                    compagnie = tabPlaquettes[i][8];
-                    quantite = Convert.ToInt32(tabPlaquettes[i][9]);
-                    disponible = Convert.ToBoolean(tabPlaquettes[i][10]);
-                    codeAlpha = tabPlaquettes[i][11];
-                    tourFraseuse = tabPlaquettes[i][12];
-                    unitePouce = Convert.ToBoolean(tabPlaquettes[i][13]);
-                    image = tabPlaquettes[i][14];
-                    estSupprime = Convert.ToBoolean(tabPlaquettes[i][15]);
+                    if (Convert.ToBoolean(tabPlaquettes[i][15]) == false)
+                    {
+                        idPlaquette = Convert.ToInt32(tabPlaquettes[i][0]);
+                        idEmplacement = Convert.ToInt32(tabPlaquettes[i][1]);
+                        nom = tabPlaquettes[i][2];
+                        typePlaquette = tabPlaquettes[i][3];
+                        direction = tabPlaquettes[i][4];
+                        angle = tabPlaquettes[i][5];
+                        degagement = tabPlaquettes[i][6];
+                        grosseur = tabPlaquettes[i][7];
+                        compagnie = tabPlaquettes[i][8];
+                        quantite = Convert.ToInt32(tabPlaquettes[i][9]);
+                        disponible = Convert.ToBoolean(tabPlaquettes[i][10]);
+                        codeAlpha = tabPlaquettes[i][11];
+                        tourFraseuse = tabPlaquettes[i][12];
+                        unitePouce = Convert.ToBoolean(tabPlaquettes[i][13]);
+                        image = tabPlaquettes[i][14];
 
-                    listePlaquettes.Add(new Plaquettes(idPlaquette, idEmplacement, nom, typePlaquette, direction, angle, degagement, grosseur, compagnie, quantite, 
-                                                        disponible, codeAlpha, tourFraseuse, unitePouce, image, estSupprime));
+                        listePlaquettes.Add(new Plaquettes(idPlaquette, idEmplacement, nom, typePlaquette, direction, angle, degagement, grosseur, compagnie, quantite, 
+                                                        disponible, codeAlpha, tourFraseuse, unitePouce, image));  
+                    }
                 }
             }
 

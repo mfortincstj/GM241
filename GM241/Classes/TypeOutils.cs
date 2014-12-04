@@ -10,27 +10,23 @@ namespace GM241.Classes
     {
         public virtual int idTypeOutil { get; set; }
         public virtual string nom{ get; set; }
-        public virtual bool estSupprime { get; set; }
 
         public TypeOutils()
         {
             idTypeOutil = 0;
             nom = "";
-            estSupprime = false;
         }
 
-        public TypeOutils(int idTypeOul, string n, bool estSupp)
+        public TypeOutils(int idTypeOul, string n)
         {
             idTypeOutil = idTypeOul;
             nom = n;
-            estSupprime = estSupp;
         }
 
         public static List<TypeOutils> chargerlstTypeOutils()
         {
             int idTypeOutil;
             string nom;
-            bool estSupprime;
 
             BDService BDTypeOutils = new BDService();
             String request = "SELECT * FROM TypeOutils";
@@ -45,11 +41,13 @@ namespace GM241.Classes
             {
                 for (int i = 0; i < nombreRange; i++)
                 {
-                    idTypeOutil = Convert.ToInt32(tabTypeOutils[i][0]);
-                    nom = tabTypeOutils[i][1];
-                    estSupprime = Convert.ToBoolean(tabTypeOutils[i][2]);
+                    if (Convert.ToBoolean(tabTypeOutils[i][2]) == false)
+                    {
+                        idTypeOutil = Convert.ToInt32(tabTypeOutils[i][0]);
+                        nom = tabTypeOutils[i][1];
 
-                    listeTypeOutils.Add(new TypeOutils(idTypeOutil, nom, estSupprime));
+                        listeTypeOutils.Add(new TypeOutils(idTypeOutil, nom));
+                    }
                 }
             }
 
