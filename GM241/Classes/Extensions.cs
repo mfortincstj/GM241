@@ -61,11 +61,12 @@ namespace GM241.Classes
             String request = "SELECT * " +
                              "FROM Extensions AS e " +
                                 "INNER JOIN Collets AS c ON c.idCollet = e.idCollet " +
+                                "INNER JOIN TypeAttachements AS ta ON ta.idTypeAttachement = c.idTypeAttachement " + 
                                 "INNER JOIN PorteOutils AS po ON po.idPorteOutil = e.idPorteOutil";
 
             List<string>[] tabExtensions;
             int nombreRange = 0;
-            tabExtensions = BDExtensions.selection(request, 21, ref nombreRange);
+            tabExtensions = BDExtensions.selection(request, 23, ref nombreRange);
 
             List<Extensions> listeExtensions = new List<Extensions>();
 
@@ -78,7 +79,7 @@ namespace GM241.Classes
                         idExtension = Convert.ToInt32(tabExtensions[i][0]);
                         idPorteOutil = tabExtensions[i][15];
                         idEmplacement = Convert.ToInt32(tabExtensions[i][2]);
-                        idCollet = tabExtensions[i][8];
+                        idCollet = tabExtensions[i][18];
                         longueurShank = tabExtensions[i][4];
                         diametreShank = tabExtensions[i][5];
                         longueurTotale = tabExtensions[i][6];
