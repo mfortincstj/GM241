@@ -43,6 +43,7 @@ namespace GM241.Fenetres.Produit
         public PorteOutil()
         {
             InitializeComponent();
+            conserveChamps.ToolTip = "Empêche la suppression des chapms lors de l'ajout";
 
             listeNoArmoire.Items.Add("0 - Aucun");
             listeNoTiroir.Items.Add("0 - Aucun");
@@ -86,9 +87,12 @@ namespace GM241.Fenetres.Produit
             List<TypePorteOutils> lstTypePorteOutils = TypePorteOutils.chargerlstTypePorteOutils();
 
             foreach (TypePorteOutils tPo in lstTypePorteOutils)
-                listeTypePorteOutil.Items.Add(tPo.idTypePorteOutil + " - " + tPo.nom);
+            {
+                if (monPorteOutil.idTypePorteOutil == tPo.nom)
+                    listeTypePorteOutil.SelectedIndex = tPo.idTypePorteOutil - 1;
 
-            listeTypePorteOutil.SelectedIndex = monPorteOutil.idTypePorteOutil - 1;
+                listeTypePorteOutil.Items.Add(tPo.idTypePorteOutil + " - " + tPo.nom);
+            }
 
             quantite.Text = monPorteOutil.quantite.ToString();
             image.Text = monPorteOutil.image;

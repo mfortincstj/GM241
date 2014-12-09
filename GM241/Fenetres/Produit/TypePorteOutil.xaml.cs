@@ -32,6 +32,7 @@ namespace GM241.Fenetres.Produit
         public TypePorteOutil()
         {
             InitializeComponent();
+            conserveChamps.ToolTip = "Empêche la suppression des chapms lors de l'ajout";
 
             // Charger la liste des cones
             List<Cones> lstCones = Cones.chargerlstCones();
@@ -57,17 +58,23 @@ namespace GM241.Fenetres.Produit
             List<Cones> lstCones = Cones.chargerlstCones();
 
             foreach (Cones c in lstCones)
-                listeCone.Items.Add(c.idCone + " - " + c.nom);
+            {
+                if (monTypePorteOutil.idCone == c.nom)
+                    listeCone.SelectedIndex = c.idCone - 1;
 
-            listeCone.SelectedIndex = monTypePorteOutil.idCone - 1;
+                listeCone.Items.Add(c.idCone + " - " + c.nom);
+            }
 
             // Charger la liste des attachements
             List<TypeAttachements> lstAttachements = TypeAttachements.chargerlstTypeAttachements();
 
             foreach (TypeAttachements tA in lstAttachements)
-                listeAttachement.Items.Add(tA.idTypeAttachement + " - " + tA.nom);
+            {
+                if (monTypePorteOutil.idTypeAttachement == tA.nom)
+                    listeAttachement.SelectedIndex = tA.idTypeAttachement - 1;
 
-            listeAttachement.SelectedIndex = monTypePorteOutil.idTypeAttachement - 1;
+                listeAttachement.Items.Add(tA.idTypeAttachement + " - " + tA.nom);
+            }
 
             nom.Text = monTypePorteOutil.nom;
 

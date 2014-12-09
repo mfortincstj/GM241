@@ -32,6 +32,7 @@ namespace GM241.Fenetres.Produit
         public Cone()
         {
             InitializeComponent();
+            conserveChamps.ToolTip = "Empêche la suppression des chapms lors de l'ajout";
 
             viderChamps();
         }

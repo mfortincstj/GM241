@@ -47,6 +47,7 @@ namespace GM241.Fenetres.Produit
         public Extension()
         {
             InitializeComponent();
+            conserveChamps.ToolTip = "Empêche la suppression des chapms lors de l'ajout";
             quantite.ToolTip = "Ce champ n'accepte que les chiffres";
 
             listeNoArmoire.Items.Add("0 - Aucun");
@@ -94,20 +95,26 @@ namespace GM241.Fenetres.Produit
             idItemPresent = monExtension.idExtension;
 
             // Charger la liste des types de porte outil
-            List<TypePorteOutils> lstTypePorteOutils = TypePorteOutils.chargerlstTypePorteOutils();
+            List<TypeAttachements> lstTypeAttachements = TypeAttachements.chargerlstTypeAttachements();
 
-            foreach (TypePorteOutils tPo in lstTypePorteOutils)
-                listePorteOutil.Items.Add(tPo.idTypePorteOutil + " - " + tPo.nom);
+            foreach (TypeAttachements ta in lstTypeAttachements)
+            {
+                if (monExtension.idCollet == ta.nom)
+                    listePorteOutil.SelectedIndex = ta.idTypeAttachement - 1;
 
-            listePorteOutil.SelectedIndex = monExtension.idPorteOutil - 1;
+                listeCollet.Items.Add(ta.idTypeAttachement + " - " + ta.nom);
+            }
 
             // Charger la liste des type d'attachements
-            List<TypeAttachements> lstAttachements = TypeAttachements.chargerlstTypeAttachements();
+            List<TypePorteOutils> lstTypePorteOutils = TypePorteOutils.chargerlstTypePorteOutils();
 
-            foreach (TypeAttachements tA in lstAttachements)
-                listeCollet.Items.Add(tA.idTypeAttachement + " - " + tA.nom);
+            foreach (TypePorteOutils tpo in lstTypePorteOutils)
+            {
+                if (monExtension.idPorteOutil == tpo.nom)
+                    listePorteOutil.SelectedIndex = tpo.idTypePorteOutil - 1;
 
-            listeCollet.SelectedIndex = monExtension.idCollet - 1;
+                listePorteOutil.Items.Add(tpo.idTypePorteOutil + " - " + tpo.nom);
+            }
 
             longShank.Text = monExtension.longueurShank;
             diamShank.Text = monExtension.diametreShank;

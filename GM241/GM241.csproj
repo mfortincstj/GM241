@@ -230,7 +230,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\GM241.jpg" />
+    <Resource Include="Images\admin.jpg" />
+    <Resource Include="Images\inventaire.jpg" />
+    <Resource Include="Images\login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\fond.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

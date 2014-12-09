@@ -3,25 +3,26 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Extension" Height="550" Width="975" ResizeMode="CanMinimize">
     <Grid>
-        <Label Content="Porte-outil : " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right"/>
+        <Image Source="../../Images/fond.jpg" Stretch="Fill"/>
+        <Label Content="Porte-outil : " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right" Foreground="#FF00C2FB"/>
         <ComboBox x:Name="listePorteOutil" HorizontalAlignment="Left" Margin="255,10,0,0" VerticalAlignment="Top" Width="230" Height="37"/>
-        <Label Content="Collet : " HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right"/>
+        <Label Content="Collet : " HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right" Foreground="#FF00C2FB"/>
         <ComboBox x:Name="listeCollet" HorizontalAlignment="Left" Margin="255,57,0,0" VerticalAlignment="Top" Width="230" Height="37"/>
-        <Label Content="Longueur du shank : " HorizontalAlignment="Left" Margin="10,99,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right"/>
+        <Label Content="Longueur du shank : " HorizontalAlignment="Left" Margin="10,99,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right" Foreground="#FF00C2FB"/>
         <TextBox x:Name="longShank" HorizontalAlignment="Left" Height="37" Margin="255,99,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
-        <Label Content="Diamètre du shank : " HorizontalAlignment="Left" Margin="10,141,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right"/>
+        <Label Content="Diamètre du shank : " HorizontalAlignment="Left" Margin="10,141,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right" Foreground="#FF00C2FB"/>
         <TextBox x:Name="diamShank" HorizontalAlignment="Left" Height="37" Margin="255,141,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
-        <Label Content="Longueur total : " HorizontalAlignment="Left" Margin="10,183,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right"/>
+        <Label Content="Longueur total : " HorizontalAlignment="Left" Margin="10,183,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right" Foreground="#FF00C2FB"/>
         <TextBox x:Name="longTotal" HorizontalAlignment="Left" Height="37" Margin="255,183,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
-        <Label Content="Quantité : " HorizontalAlignment="Left" Margin="10,225,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.129,0.432" HorizontalContentAlignment="Right"/>
+        <Label Content="Quantité : " HorizontalAlignment="Left" Margin="10,225,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.129,0.432" HorizontalContentAlignment="Right" Foreground="#FF00C2FB"/>
         <TextBox x:Name="quantite" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Height="37" Margin="255,225,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
-        <Label Content="Image : " HorizontalAlignment="Left" Margin="10,267,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.129,0.432" HorizontalContentAlignment="Right"/>
+        <Label Content="Image : " HorizontalAlignment="Left" Margin="10,267,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.129,0.432" HorizontalContentAlignment="Right" Foreground="#FF00C2FB"/>
         <TextBox x:Name="img" HorizontalAlignment="Left" Height="37" Margin="255,267,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
-        <Label Content="Numéro de local : " HorizontalAlignment="Left" Margin="484,52,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.121,0.942" Height="37" HorizontalContentAlignment="Right"/>
-        <Label Content="Numéro d'armoire : " HorizontalAlignment="Left" Margin="484,94,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.121,0.942" Height="37" HorizontalContentAlignment="Right"/>
-        <Label Content="Numéro de tiroir : " HorizontalAlignment="Left" Margin="484,136,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.121,0.942" Height="37" HorizontalContentAlignment="Right"/>
-        <Label Content="Numéro de casier : " HorizontalAlignment="Left" Margin="484,178,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.121,0.942" Height="37" HorizontalContentAlignment="Right"/>
-        <Label Content="Emplacement" HorizontalAlignment="Left" Margin="484,10,0,0" VerticalAlignment="Top" FontSize="20" Width="475" RenderTransformOrigin="0.121,0.942" Height="37" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+        <Label Content="Numéro de local : " HorizontalAlignment="Left" Margin="484,52,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.121,0.942" Height="37" HorizontalContentAlignment="Right" Foreground="#FF00C2FB"/>
+        <Label Content="Numéro d'armoire : " HorizontalAlignment="Left" Margin="484,94,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.121,0.942" Height="37" HorizontalContentAlignment="Right" Foreground="#FF00C2FB"/>
+        <Label Content="Numéro de tiroir : " HorizontalAlignment="Left" Margin="484,136,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.121,0.942" Height="37" HorizontalContentAlignment="Right" Foreground="#FF00C2FB"/>
+        <Label Content="Numéro de casier : " HorizontalAlignment="Left" Margin="484,178,0,0" VerticalAlignment="Top" FontSize="20" Width="240" RenderTransformOrigin="0.121,0.942" Height="37" HorizontalContentAlignment="Right" Foreground="#FF00C2FB"/>
+        <Label Content="Emplacement" HorizontalAlignment="Left" Margin="484,10,0,0" VerticalAlignment="Top" FontSize="20" Width="475" RenderTransformOrigin="0.121,0.942" Height="37" HorizontalContentAlignment="Center" FontWeight="Bold" Foreground="#FF00C2FB"/>
         <ComboBox x:Name="listeNoCasier" HorizontalAlignment="Left" Margin="729,178,0,0" VerticalAlignment="Top" Width="230" Height="37" IsEnabled="False"/>
         <ComboBox x:Name="listeNoTiroir" HorizontalAlignment="Left" Margin="729,136,0,0" VerticalAlignment="Top" Width="230" Height="37" IsEnabled="False"/>
         <ComboBox x:Name="listeNoArmoire" HorizontalAlignment="Left" Margin="729,94,0,0" VerticalAlignment="Top" Width="230" Height="37" IsEnabled="False"/>
@@ -29,6 +30,6 @@
         <Button x:Name="btnAjouter" Content="Ajouter" Margin="10,462,0,0" Click="btnAjouter_Click" HorizontalAlignment="Left" Width="220" Height="44" VerticalAlignment="Top"/>
         <Button x:Name="btnModif" Content="Modifier" Margin="235,462,0,0" IsEnabled="False" Height="44" VerticalAlignment="Top" HorizontalAlignment="Left" Width="220"/>
         <Button x:Name="btnSupprimer" Content="Supprimer" Margin="460,462,0,0" IsEnabled="False" Click="btnSupprimer_Click_1" HorizontalAlignment="Left" Width="220" Height="44" VerticalAlignment="Top"/>
-        <CheckBox x:Name="conserveChamps" Content="Conserver les champs" Margin="0,467,38,16" FontSize="20" HorizontalAlignment="Right" Width="217"/>
+        <CheckBox x:Name="conserveChamps" Content="Conserver les champs" Margin="0,467,38,16" FontSize="20" HorizontalAlignment="Right" Width="217" Foreground="#FF00C2FB"/>
     </Grid>
 </Window>

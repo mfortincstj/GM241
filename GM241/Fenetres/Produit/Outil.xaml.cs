@@ -53,6 +53,7 @@ namespace GM241.Fenetres.Produit
         public Outil()
         {
             InitializeComponent();
+            conserveChamps.ToolTip = "Empêche la suppression des chapms lors de l'ajout";
             quantite.ToolTip = "Ce champ n'accepte que les chiffres";
             nbrFlute.ToolTip = "Ce champ n'accepte que les chiffres";
 

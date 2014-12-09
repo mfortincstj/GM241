@@ -3,12 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MenuAdmin" Height="800" Width="1000" ResizeMode="CanMinimize">
     <Grid>
-        <!--<Image Source="../../Images/GM241.jpg" Stretch="Fill"/>-->
-        <Label Content="GM241" Canvas.Left="10" Canvas.Top="10" FontSize="48" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="10,10,10,0" Height="71" VerticalAlignment="Top"/>
-        <Label Content="Menu Administrateur" Margin="10,86,10,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" HorizontalContentAlignment="Center"/>
+        <Image Source="../../Images/admin.jpg" Stretch="Fill"/>
         <Button x:Name="btsFermer" Content="Fermer" Margin="0,0,10,10" Click="btnFermer_Click" HorizontalAlignment="Right" Width="129" Height="30" VerticalAlignment="Bottom"/>
-        <ComboBox x:Name="lstProduits" Margin="380,130,380,0" FontSize="18" Height="31" VerticalAlignment="Top" SelectionChanged="lstProduits_SelectionChanged"/>
-        <Label Content="Sélectionner un produit : " Margin="199,130,608,0" FontSize="14" FontWeight="Bold" Height="31" VerticalAlignment="Top" Foreground="White"/>
+        <ComboBox x:Name="lstProduits" Margin="456,130,304,0" FontSize="18" Height="31" VerticalAlignment="Top" SelectionChanged="lstProduits_SelectionChanged"/>
+        <Label Content="Sélectionner un produit : " Margin="275,130,532,0" FontSize="14" FontWeight="Bold" Height="31" VerticalAlignment="Top" Foreground="#FF00C2FB"/>
         <Grid x:Name="vue" Height="550" Width="975" Margin="9,177,10,45"/>
+        <Button Content="Guide utilisateur" HorizontalAlignment="Right" Margin="0,0,144,10" Width="150" Click="Button_Click" Height="30" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>

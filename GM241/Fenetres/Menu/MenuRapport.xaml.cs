@@ -26,6 +26,8 @@ namespace GM241.Fenetres.Menu
         public MenuRapport(bool admin, string user)
         {
             InitializeComponent();
+            btnPerte.ToolTip = "À venir !";
+            btnCommande.ToolTip = "À venir !";
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
             estAdmin = admin;

@@ -9,7 +9,7 @@ namespace GM241.Classes
     public class Machines
     {
         public virtual int idMachine { get; set; }
-        public virtual int idPlateauMachine { get; set; }
+        public virtual string idPlateauMachine { get; set; }
         public virtual string nom { get; set; }
         public virtual int nombreOutilMagasin { get; set; }
         public virtual string precisionMachine { get; set; }
@@ -27,7 +27,7 @@ namespace GM241.Classes
         public Machines()
         {
             idMachine = 0;
-            idPlateauMachine = 0;
+            idPlateauMachine = "";
             nom = "";
             nombreOutilMagasin = 0;
             precisionMachine = "";
@@ -43,7 +43,7 @@ namespace GM241.Classes
             axeZMAX = "";
         }
 
-        public Machines(int idMach, int idPlatMach, string n, int nbOutilMag, string precMach, string formatCo, int nbOutilPr, int noMach,
+        public Machines(int idMach, string idPlatMach, string n, int nbOutilMag, string precMach, string formatCo, int nbOutilPr, int noMach,
                         string axeXMi, string axeXMa, string axeYMi, string axeYMa, bool axZ, string axeZMi, string axeZMa)
         {
             idMachine = idMach;
@@ -66,7 +66,7 @@ namespace GM241.Classes
         public static List<Machines> chargerMachines()
         {
             int idMachine;
-            int idPlateauMachine;
+            string idPlateauMachine;
             string nom;
             int nombreOutilMagasin;
             string precisionMachine;
@@ -82,11 +82,11 @@ namespace GM241.Classes
             string axeZMAX;
 
             BDService BDMachines = new BDService();
-            String request = "SELECT * FROM Machines";
+            String request = "SELECT * FROM Machines AS m INNER JOIN PlateauMachines AS pm ON pm.idPlateauMachine = m.idPlateauMachine";
 
             List<string>[] tabMachines;
             int nombreRange = 0;
-            tabMachines = BDMachines.selection(request, 16, ref nombreRange);
+            tabMachines = BDMachines.selection(request, 20, ref nombreRange);
 
             List<Machines> listeMachines = new List<Machines>();
 
@@ -98,14 +98,10 @@ namespace GM241.Classes
                     {
                         idMachine = Convert.ToInt32(tabMachines[i][0]);
 
-                        if (tabMachines[i][1] == null || tabMachines[i][1] == "")
-                        {
-                            idPlateauMachine = 0;
-                        }
+                        if (tabMachines[i][17] == null || tabMachines[i][17] == "")
+                            idPlateauMachine = "Aucun";
                         else
-                        {
-                            idPlateauMachine = Convert.ToInt32(tabMachines[i][1]);
-                        }
+                            idPlateauMachine = tabMachines[i][17];
 
                         nom = tabMachines[i][2];
                         nombreOutilMagasin = Convert.ToInt32(tabMachines[i][3]);

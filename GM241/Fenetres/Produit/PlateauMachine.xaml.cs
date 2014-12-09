@@ -34,6 +34,7 @@ namespace GM241.Fenetres.Produit
         public PlateauMachine()
         {
             InitializeComponent();
+            conserveChamps.ToolTip = "Empêche la suppression des chapms lors de l'ajout";
 
             viderChamps();
         }

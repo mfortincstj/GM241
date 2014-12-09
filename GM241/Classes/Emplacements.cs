@@ -67,7 +67,7 @@ namespace GM241.Classes
                         idCasier = tabEmplacements[i][5];
 
                         listeEmplacements.Add(new Emplacements(idEmplacement, idTypeEmplacement, noLocal, idArmoire, idTiroir, idCasier));
-                    }           
+                    }
                 }
             }
 

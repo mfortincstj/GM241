@@ -41,6 +41,7 @@ namespace GM241.Fenetres.Produit
         public Emplacement()
         {
             InitializeComponent();
+            conserveChamps.ToolTip = "Empêche la suppression des chapms lors de l'ajout";
 
             // Charger la liste des types d'emplacements
             List<TypeEmplacements> lstTypeEmpl = TypeEmplacements.chargerlstTypeEmplacements();
@@ -58,7 +59,6 @@ namespace GM241.Fenetres.Produit
 
             // Charger la liste des types d'emplacements
             List<TypeEmplacements> lstTypeEmpl = TypeEmplacements.chargerlstTypeEmplacements();
-            List<Emplacements> lstEmplacements = Emplacements.chargerlstEmplacements();
 
             foreach (TypeEmplacements tP in lstTypeEmpl)
             {

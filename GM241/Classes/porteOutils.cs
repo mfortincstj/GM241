@@ -9,7 +9,7 @@ namespace GM241.Classes
     public class PorteOutils
     {
         public virtual int idPorteOutil { get; set; }
-        public virtual int idTypePorteOutil { get; set; }
+        public virtual string idTypePorteOutil { get; set; }
         public virtual int idEmplacement { get; set; }
         public virtual int quantite { get; set; }
         public virtual string image { get; set; }
@@ -17,13 +17,13 @@ namespace GM241.Classes
         public PorteOutils()
         {
             idPorteOutil = 0;
-            idTypePorteOutil = 0;
+            idTypePorteOutil = "";
             idEmplacement = 0;
             quantite = 0;
             image = "";
         }
 
-        public PorteOutils(int idPOut, int idTypePO, int idEm, int quant, string img)
+        public PorteOutils(int idPOut, string idTypePO, int idEm, int quant, string img)
         {
             idPorteOutil = idPOut;
             idTypePorteOutil = idTypePO;
@@ -35,17 +35,17 @@ namespace GM241.Classes
         public static List<PorteOutils> chargerlstPorteOutils()
         {
             int idPorteOutil;
-            int idTypePorteOutil;
+            string idTypePorteOutil;
             int idEmplacement;
             int quantite;
             string image;
 
             BDService BDporteOutils = new BDService();
-            String request = "SELECT * FROM PorteOutils";
+            String request = "SELECT * FROM PorteOutils AS po INNER JOIN TypePorteOutils AS tpo ON tpo.idTypePorteOutil = po.idTypePorteOutil";
 
             List<string>[] tabPorteOutils;
             int nombreRange = 0;
-            tabPorteOutils = BDporteOutils.selection(request, 6, ref nombreRange);
+            tabPorteOutils = BDporteOutils.selection(request, 10, ref nombreRange);
 
             List<PorteOutils> listePorteOutils = new List<PorteOutils>();
 
@@ -56,7 +56,7 @@ namespace GM241.Classes
                     if (Convert.ToBoolean(tabPorteOutils[i][5]) == false)
                     {
                         idPorteOutil = Convert.ToInt32(tabPorteOutils[i][0]);
-                        idTypePorteOutil = Convert.ToInt32(tabPorteOutils[i][1]);
+                        idTypePorteOutil = tabPorteOutils[i][9];
                         idEmplacement = Convert.ToInt32(tabPorteOutils[i][2]);
                         quantite = Convert.ToInt32(tabPorteOutils[i][3]);
                         image = tabPorteOutils[i][4];

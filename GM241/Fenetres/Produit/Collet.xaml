@@ -3,24 +3,24 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Collet" Height="550" Width="975" ResizeMode="CanMinimize">
     <Grid>
-
-        <Label Content="Type d'emplacement : " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Width="239" HorizontalContentAlignment="Right"/>
+        <Image Source="../../Images/admin.jpg" Height="800" Width="1000" Stretch="Fill" Margin="-27,-211,-4,-67"/>
+        <Label Content="Type d'emplacement : " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Width="239" HorizontalContentAlignment="Right" Foreground="#FF00C2FB"/>
         <ComboBox x:Name="listeTypeEmplacement" HorizontalAlignment="Left" Margin="255,10,0,0" VerticalAlignment="Top" Width="230" Height="37"/>
 
-        <Label Content="Diamètre intérieur : " HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" FontSize="20" Width="239" HorizontalContentAlignment="Right"/>
+        <Label Content="Diamètre intérieur : " HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" FontSize="20" Width="239" HorizontalContentAlignment="Right" Foreground="#FF00C2FB"/>
         <TextBox x:Name="diametreInt" HorizontalAlignment="Left" Height="37" Margin="255,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
 
-        <Label Content="Type d'attachement : " HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" FontSize="20" Width="239" HorizontalContentAlignment="Right"/>
+        <Label Content="Type d'attachement : " HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" FontSize="20" Width="239" HorizontalContentAlignment="Right" Foreground="#FF00C2FB"/>
 
-        <Label Content="Quantité : " HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" FontSize="20" Width="239" HorizontalContentAlignment="Right"/>
+        <Label Content="Quantité : " HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" FontSize="20" Width="239" HorizontalContentAlignment="Right" Foreground="#FF00C2FB"/>
         <TextBox Name="quant" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox" Height="37" Margin="255,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
 
-        <Label Content="Image : " HorizontalAlignment="Left" Margin="10,178,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right"/>
+        <Label Content="Image : " HorizontalAlignment="Left" Margin="10,178,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right" Foreground="#FF00C2FB"/>
         <TextBox Name="img" HorizontalAlignment="Left" Height="37" Margin="255,178,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
         <ComboBox x:Name="listeTypeAttachement" HorizontalAlignment="Left" Margin="255,52,0,0" VerticalAlignment="Top" Width="230" Height="37"/>
         <Button x:Name="btnAjouter" Content="Ajouter" Margin="10,462,0,0" Click="btnAjout_Click" HorizontalAlignment="Left" Width="220" Height="44" VerticalAlignment="Top"/>
         <Button x:Name="btnModif" Content="Modifier" Margin="235,462,0,0" IsEnabled="False" Height="44" VerticalAlignment="Top" HorizontalAlignment="Left" Width="220"/>
         <Button x:Name="btnSupprimer" Content="Supprimer" Margin="460,462,0,0" IsEnabled="False" Click="btnSupprimer_Click" HorizontalAlignment="Left" Width="220" Height="44" VerticalAlignment="Top"/>
-        <CheckBox x:Name="conserveChamps" Content="Conserver les champs" Margin="0,467,38,16" FontSize="20" HorizontalAlignment="Right" Width="217"/>
+        <CheckBox x:Name="conserveChamps" Content="Conserver les champs" Margin="0,467,38,16" FontSize="20" HorizontalAlignment="Right" Width="217" Foreground="#FF00C2FB"/>
     </Grid>
 </Window>

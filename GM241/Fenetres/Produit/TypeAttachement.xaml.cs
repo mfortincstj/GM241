@@ -31,6 +31,7 @@ namespace GM241.Fenetres.Produit
         public TypeAttachement()
         {
             InitializeComponent();
+            conserveChamps.ToolTip = "Empêche la suppression des chapms lors de l'ajout";
 
             viderChamps();
         }
