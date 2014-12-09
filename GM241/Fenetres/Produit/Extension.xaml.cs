@@ -179,6 +179,7 @@ namespace GM241.Fenetres.Produit
 
             if (MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet élément ?", "Attention !", MessageBoxButton.YesNoCancel, MessageBoxImage.Question, MessageBoxResult.Cancel) == MessageBoxResult.Yes)
             {
+                
                 if (extension.deleteExtension(idItemPresent) == true)
                 {
                     MessageBox.Show("Suppression réussie");
