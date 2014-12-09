@@ -22,7 +22,6 @@
         <Label x:Name="usager" Content="" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Height="31" Width="126" FontSize="16" Foreground="#FF00C2FB"/>
         <CheckBox x:Name="CheckBoxDesc" Content="Recherche forcée" HorizontalAlignment="Left" Margin="302,0,0,19" Foreground="#FF00C2FB" Height="16" VerticalAlignment="Bottom"/>
 
-        <!--<DataGrid x:Name="resGrid" Margin="10,82,10,88" SelectionChanged="resGrid_SelectionChanged" CanUserReorderColumns="False" Background="#FFA8A8A8"/> -->
         <TabControl Name="tabInventaire" Margin="10,82,10,88">
             <TabItem Header="Collets" FontSize="16">
                 <DataGrid x:Name="resGrid1" Margin="10,10,10,10" AlternatingRowBackground="#FFA0C3CD" SelectionChanged="tabInventaire_SelectionChanged" CanUserReorderColumns="False" Background="#FFA8A8A8"/>

@@ -48,9 +48,6 @@ namespace GM241.Fenetres.Inventaire
             radioOu.ToolTip = "À venir";
             CheckBoxDesc.ToolTip = "Force la correspondance exacte du critère";
 
-            
-            
-
             estAdmin = admin;
             usagerConnecte = user;
 
