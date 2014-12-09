@@ -11,7 +11,7 @@ namespace GM241.Classes
     {
         public virtual int idCollet { get; set; }
         public virtual int idEmplacement { get; set; }
-        public virtual int idTypeAttachement { get; set; }
+        public virtual string idTypeAttachement { get; set; }
         public virtual string diametreInterieur { get; set; }
         public virtual int quantite { get; set; }
         public virtual string image { get; set; }
@@ -20,13 +20,13 @@ namespace GM241.Classes
         {
             idCollet = 0;
             idEmplacement = 0;
-            idTypeAttachement = 0;
+            idTypeAttachement = "";
             diametreInterieur = "";
             quantite = 0;
             image = "";
         }
 
-        public Collets(int idCol, int idEmp, int idTypeAtt, string diamInt, int quant, string img)
+        public Collets(int idCol, int idEmp, string idTypeAtt, string diamInt, int quant, string img)
         {
             idCollet = idCol;
             idEmplacement = idEmp;
@@ -44,17 +44,17 @@ namespace GM241.Classes
         {
             int idCollet;
             int idEmplacement;
-            int idTypeAttachement;
+            string idTypeAttachement;
             string diametreInterieur;
             int quantite;
             string image;
 
             BDService BDCollets = new BDService();
-            String request = "SELECT * FROM Collets";
+            String request = "SELECT * FROM Collets AS c INNER JOIN TypeAttachements AS ta ON ta.idTypeAttachement = c.idTypeAttachement";
 
             List<string>[] tabCol;
             int nombreRange = 0;
-            tabCol = BDCollets.selection(request, 7, ref nombreRange);
+            tabCol = BDCollets.selection(request, 10, ref nombreRange);
 
             List<Collets> listeCollets = new List<Collets>();
 
@@ -66,7 +66,7 @@ namespace GM241.Classes
                     {
                         idCollet = Convert.ToInt32(tabCol[i][0]);
                         idEmplacement = Convert.ToInt32(tabCol[i][1]);
-                        idTypeAttachement = Convert.ToInt32(tabCol[i][2]);
+                        idTypeAttachement = tabCol[i][8];
                         diametreInterieur = tabCol[i][3];
                         quantite = Convert.ToInt32(tabCol[i][4]);
                         image = tabCol[i][5];

@@ -51,6 +51,7 @@ namespace GM241.Fenetres.Produit
         public Plaquette()
         {
             InitializeComponent();
+            conserveChamps.ToolTip = "Empêche la suppression des chapms lors de l'ajout";
             quantite.ToolTip = "Ce champ n'accepte que les chiffres";
 
             listeNoArmoire.Items.Add("0 - Aucun");

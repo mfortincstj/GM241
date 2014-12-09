@@ -47,6 +47,7 @@ namespace GM241.Fenetres.Produit
         public Machine()
         {
             InitializeComponent();
+            conserveChamps.ToolTip = "Empêche la suppression des chapms lors de l'ajout";
             nbrOutil.ToolTip = "Ce champ n'accepte que les chiffres";
             nbrOutilPrep.ToolTip = "Ce champ n'accepte que les chiffres";
             noMachine.ToolTip = "Ce champ n'accepte que les chiffres";
@@ -71,9 +72,12 @@ namespace GM241.Fenetres.Produit
             List<PlateauMachines> lstPlateauMachines = PlateauMachines.chargerlstPlateauMachines();
 
             foreach (PlateauMachines tPm in lstPlateauMachines)
-                listePlateauMachine.Items.Add(tPm.idPlateauMachine + " - " + tPm.nom);
+            {
+                if (maMachine.idPlateauMachine == tPm.nom)
+                    listePlateauMachine.SelectedIndex = tPm.idPlateauMachine - 1;
 
-            listePlateauMachine.SelectedIndex = maMachine.idPlateauMachine - 1;
+                listePlateauMachine.Items.Add(tPm.idPlateauMachine + " - " + tPm.nom);
+            }
             
             nom.Text = maMachine.nom;
             nbrOutil.Text = maMachine.nombreOutilMagasin.ToString();

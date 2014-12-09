@@ -9,9 +9,9 @@ namespace GM241.Classes
     public class Extensions
     {
         public virtual int idExtension { get; set; }
-        public virtual int idPorteOutil { get; set; }
+        public virtual string idPorteOutil { get; set; }
         public virtual int idEmplacement { get; set; }
-        public virtual int idCollet { get; set; }
+        public virtual string idCollet { get; set; }
         public virtual string longueurShank { get; set; }
         public virtual string diametreShank { get; set; }
         public virtual string longueurTotale { get; set; }
@@ -21,9 +21,9 @@ namespace GM241.Classes
         public Extensions()
         {
             idExtension = 0;
-            idPorteOutil = 0;
+            idPorteOutil = "";
             idEmplacement = 0;
-            idCollet = 0;
+            idCollet = "";
             longueurShank = "";
             diametreShank = "";
             longueurTotale = "";
@@ -31,7 +31,7 @@ namespace GM241.Classes
             image = "";
         }
 
-        public Extensions(int idExt, int idPO, int idEmp, int idCol, string longShank, string diamShank, string longTotal, int quant, string img)
+        public Extensions(int idExt, string idPO, int idEmp, string idCol, string longShank, string diamShank, string longTotal, int quant, string img)
         {
             idExtension = idExt;
             idPorteOutil = idPO;
@@ -47,9 +47,9 @@ namespace GM241.Classes
         public static List<Extensions> chargerlstExtensions()
         {
             int idExtension;
-            int idPorteOutil;
+            string idPorteOutil;
             int idEmplacement;
-            int idCollet;
+            string idCollet;
             string longueurShank;
             string diametreShank;
             string longueurTotale;
@@ -57,11 +57,15 @@ namespace GM241.Classes
             string image;
 
             BDService BDExtensions = new BDService();
-            String request = "SELECT * FROM Extensions";
+
+            String request = "SELECT * " +
+                             "FROM Extensions AS e " +
+                                "INNER JOIN Collets AS c ON c.idCollet = e.idCollet " +
+                                "INNER JOIN PorteOutils AS po ON po.idPorteOutil = e.idPorteOutil";
 
             List<string>[] tabExtensions;
             int nombreRange = 0;
-            tabExtensions = BDExtensions.selection(request, 10, ref nombreRange);
+            tabExtensions = BDExtensions.selection(request, 21, ref nombreRange);
 
             List<Extensions> listeExtensions = new List<Extensions>();
 
@@ -72,9 +76,9 @@ namespace GM241.Classes
                     if (Convert.ToBoolean(tabExtensions[i][9]) == false)
                     {
                         idExtension = Convert.ToInt32(tabExtensions[i][0]);
-                        idPorteOutil = Convert.ToInt32(tabExtensions[i][1]);
+                        idPorteOutil = tabExtensions[i][15];
                         idEmplacement = Convert.ToInt32(tabExtensions[i][2]);
-                        idCollet = Convert.ToInt32(tabExtensions[i][3]);
+                        idCollet = tabExtensions[i][8];
                         longueurShank = tabExtensions[i][4];
                         diametreShank = tabExtensions[i][5];
                         longueurTotale = tabExtensions[i][6];

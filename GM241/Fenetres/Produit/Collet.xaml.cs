@@ -41,6 +41,7 @@ namespace GM241.Fenetres.Produit
         public Collet()
         {
             InitializeComponent();
+            conserveChamps.ToolTip = "Empêche la suppression des chapms lors de l'ajout";
             quant.ToolTip = "Ce champ n'accepte que les chiffres";
 
             // Charger la liste des types d'emplacements
@@ -85,11 +86,11 @@ namespace GM241.Fenetres.Produit
             List<TypeAttachements> lstAttachements = TypeAttachements.chargerlstTypeAttachements();
 
             foreach (TypeAttachements tA in lstAttachements)
-                listeTypeAttachement.Items.Add(tA.idTypeAttachement + " - " + tA.nom);
-
-            if (monCollet.idTypeAttachement != 0)
             {
-                listeTypeAttachement.SelectedIndex = monCollet.idTypeAttachement - 1;
+                if (monCollet.idTypeAttachement == tA.nom)
+                    listeTypeAttachement.SelectedIndex = tA.idTypeAttachement - 1;
+
+                listeTypeAttachement.Items.Add(tA.idTypeAttachement + " - " + tA.nom);
             }
 
             diametreInt.Text = monCollet.diametreInterieur;

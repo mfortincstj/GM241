@@ -43,6 +43,7 @@ namespace GM241.Fenetres.Produit
         public PorteOutil()
         {
             InitializeComponent();
+            conserveChamps.ToolTip = "Empêche la suppression des chapms lors de l'ajout";
 
             listeNoArmoire.Items.Add("0 - Aucun");
             listeNoTiroir.Items.Add("0 - Aucun");

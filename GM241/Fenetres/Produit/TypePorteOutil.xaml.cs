@@ -32,6 +32,7 @@ namespace GM241.Fenetres.Produit
         public TypePorteOutil()
         {
             InitializeComponent();
+            conserveChamps.ToolTip = "Empêche la suppression des chapms lors de l'ajout";
 
             // Charger la liste des cones
             List<Cones> lstCones = Cones.chargerlstCones();
