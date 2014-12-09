@@ -3,15 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Cone" Height="550" Width="975" ResizeMode="CanMinimize">
     <Grid>
-        <Label Content="Nom : " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right"/>
+        <Label Content="Nom : " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right" Foreground="#FF00C2FB"/>
         <TextBox x:Name="nom" HorizontalAlignment="Left" Height="37" Margin="255,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
-        <Label Content="Type de cône : " HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right"/>
+        <Label Content="Type de cône : " HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right" Foreground="#FF00C2FB"/>
         <TextBox x:Name="typeCone" HorizontalAlignment="Left" Height="37" Margin="255,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
-        <Label Content="Type de machine : " HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right"/>
+        <Label Content="Type de machine : " HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right" Foreground="#FF00C2FB"/>
         <TextBox x:Name="typeMachine" HorizontalAlignment="Left" Height="37" Margin="255,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230" FontSize="18"/>
         <Button x:Name="btnAjouter" Content="Ajouter" Margin="10,462,0,0" Click="btnAjouter_Click" HorizontalAlignment="Left" Width="220" Height="44" VerticalAlignment="Top"/>
         <Button x:Name="btnModif" Content="Modifier" Margin="235,462,0,0" IsEnabled="False" Height="44" VerticalAlignment="Top" HorizontalAlignment="Left" Width="220"/>
         <Button x:Name="btnSupprimer" Content="Supprimer" Margin="460,462,0,0" IsEnabled="False" Click="btnSupprimer_Click_1" HorizontalAlignment="Left" Width="220" Height="44" VerticalAlignment="Top"/>
-        <CheckBox x:Name="conserveChamps" Content="Conserver les champs" Margin="0,467,38,16" FontSize="20" HorizontalAlignment="Right" Width="217"/>
+        <CheckBox x:Name="conserveChamps" Content="Conserver les champs" Margin="0,467,38,16" FontSize="20" HorizontalAlignment="Right" Width="217" Foreground="#FF00C2FB"/>
     </Grid>
 </Window>

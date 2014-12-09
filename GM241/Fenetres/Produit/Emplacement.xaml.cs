@@ -58,7 +58,6 @@ namespace GM241.Fenetres.Produit
 
             // Charger la liste des types d'emplacements
             List<TypeEmplacements> lstTypeEmpl = TypeEmplacements.chargerlstTypeEmplacements();
-            List<Emplacements> lstEmplacements = Emplacements.chargerlstEmplacements();
 
             foreach (TypeEmplacements tP in lstTypeEmpl)
             {
