@@ -42,6 +42,15 @@ namespace GM241.Fenetres.Inventaire
 
             champNom.Focus();
 
+            champNom.ToolTip = "Pour le nom des produits";
+            champDescription.ToolTip = "Pour tout les champs sauf le nom des produits";
+            radioEt.ToolTip = "À venir";
+            radioOu.ToolTip = "À venir";
+            CheckBoxDesc.ToolTip = "Force la correspondance exacte du critère";
+
+            
+            
+
             estAdmin = admin;
             usagerConnecte = user;
 
@@ -103,7 +112,8 @@ namespace GM241.Fenetres.Inventaire
             
             List<TypeOutils> listTypeOutil = TypeOutils.chargerlstTypeOutils();
             resGrid13.ItemsSource = listTypeOutil;
-        }
+
+    }
 
         private void btnQuitter_Click(object sender, RoutedEventArgs e)
         {
@@ -271,7 +281,8 @@ namespace GM241.Fenetres.Inventaire
                 resGrid10.ItemsSource = listTypeAttachement;
                 resGrid11.ItemsSource = listTypePorteOutil;
                 resGrid12.ItemsSource = listTypeEmplacement;
-                resGrid13.ItemsSource = listTypeOutil;  
+                resGrid13.ItemsSource = listTypeOutil;
+                resGrid1.Columns[0].Header = "TEST";
             }
             else
             {
