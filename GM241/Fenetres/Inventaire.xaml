@@ -5,7 +5,7 @@
     <Grid>
         <Image Source="../Images/inventaire.jpg" Stretch="Fill"/>
         <Label Content="Nom : " HorizontalAlignment="Left" Margin="10,0,0,46" VerticalAlignment="Bottom" Width="62" Height="31" RenderTransformOrigin="0.075,0.516" Foreground="#FF00C2FB"/>
-        <TextBox x:Name="champNom" HorizontalAlignment="Left" Margin="57,0,0,46" TextWrapping="Wrap" Width="158" Height="31" VerticalAlignment="Bottom" FontSize="16" TextChanged="champNom_TextChanged" SpellCheck.IsEnabled="True" IsManipulationEnabled="True"/>
+        <TextBox x:Name="champNom" HorizontalAlignment="Left" Margin="57,0,0,46" Width="158" Height="31" VerticalAlignment="Bottom" FontSize="16" TextChanged="champNom_TextChanged" SpellCheck.IsEnabled="True" IsManipulationEnabled="True"/>
         <Label Content="Description : " HorizontalAlignment="Left" Margin="220,0,0,46" VerticalAlignment="Bottom" Width="77" Height="31" Foreground="#FF00C2FB"/>
         <TextBox x:Name="champDescription" HorizontalAlignment="Left" Height="31" Margin="302,0,0,46" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="158" FontSize="16" RenderTransformOrigin="-0.063,0.839" TextChanged="champDescription_TextChanged"/>
 
