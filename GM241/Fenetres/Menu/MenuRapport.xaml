@@ -1,7 +1,7 @@
 ﻿<Window x:Class="GM241.Fenetres.Menu.MenuRapport"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MenuRapport" Height="600" Width="1000" ResizeMode="CanMinimize">
+        Title="MenuRapport" Height="600" Width="1000" ResizeMode="CanMinimize" Icon="..\..\Images\logo.jpg">
     <Grid>
         <Image Source="../../Images/login.jpg" Stretch="Fill"/>
         <Label Content="Menu rapport" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Foreground="#FF00C2FB"/>
