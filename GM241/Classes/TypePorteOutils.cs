@@ -44,7 +44,7 @@ namespace GM241.Classes
 
             List<string>[] tabTypePorteOutils;
             int nombreRange = 0;
-            tabTypePorteOutils = BDtypePorteOutils.selection(request, 12, ref nombreRange);
+            tabTypePorteOutils = BDtypePorteOutils.selection(request, 14, ref nombreRange);
 
             List<TypePorteOutils> listeTypePorteOutils = new List<TypePorteOutils>();
 

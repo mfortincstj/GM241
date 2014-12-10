@@ -288,7 +288,6 @@ namespace GM241.Fenetres.Inventaire
                 resGrid11.ItemsSource = listTypePorteOutil;
                 resGrid12.ItemsSource = listTypeEmplacement;
                 resGrid13.ItemsSource = listTypeOutil;
-                resGrid1.Columns[0].Header = "TEST";
             }
             else
             {
