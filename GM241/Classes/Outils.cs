@@ -144,11 +144,16 @@ namespace GM241.Classes
 
         public bool ajoutOutil(int idTypeOutil, int idEmplacement, int idPlaquette, string nom, int quantite, string diametreUsinage, string diametreSerrage, string longueurCoupe, string longueurTotal, string longueurShank, string rayonCoin, string anglePointe, int nombreFlute, bool disponible, bool unitePouce, string image)
         {
+            string idPlaq = idPlaquette.ToString();
+
+            if (idPlaquette == 0)
+                idPlaq = "NULL";
+
             BDService BDMachines = new BDService();
             String request = "INSERT INTO Outils (idTypeOutil, idEmplacement, idPlaquette, nom, quantite, diametreUsinage , diametreSerrage, longueurCoupe, longueurTotal, longueurShank, rayonCoin, anglePointe, nombreFlute, disponible, unitePouce, image) VALUES" +
                              "( " + idTypeOutil +
                              ", " + idEmplacement +
-                             ", " + idPlaquette +
+                             ", " + idPlaq +
                              ", " + "'" + nom.ToLower() + "'" +
                              ", " + quantite +
                              ", " + "'" + diametreUsinage.ToLower() + "'" +

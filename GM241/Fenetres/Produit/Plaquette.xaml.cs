@@ -85,6 +85,12 @@ namespace GM241.Fenetres.Produit
             InitializeComponent();
             idItemPresent = maPlaquette.idPlaquette;
 
+            List<Emplacements> lstEmplacements = Emplacements.chargerlstEmplacements();
+            foreach (Emplacements e in lstEmplacements)
+                listeNoLocal.Items.Add(e.idTypeEmplacement + " - " + e.noLocal + " - " + e.idArmoire + " - " + e.idCasier + " - " + e.idTiroir);
+
+            listeNoLocal.SelectedIndex = 0;
+
             nom.Text = maPlaquette.nom;
             typePlaquette.Text = maPlaquette.typePlaquette;
             direction.Text = maPlaquette.direction;
@@ -158,7 +164,7 @@ namespace GM241.Fenetres.Produit
 
             if (insertValide == true)
             {
-                if (plaquettes.ajoutPlaquette(Convert.ToInt32(idTypeEmplacement[0]), nom.Text, typePlaquette.Text, direction.Text, angle.Text, degagement.Text, grosseur.Text, compagnie.Text, Convert.ToInt32(quantite.Text), outilDisponible, codeAlpha.Text, tourFraiseuse.Text, uniteEnPouce, image.Text) == true)
+                if (plaquettes.ajoutPlaquette(1, nom.Text, typePlaquette.Text, direction.Text, angle.Text, degagement.Text, grosseur.Text, compagnie.Text, Convert.ToInt32(quantite.Text), outilDisponible, codeAlpha.Text, tourFraiseuse.Text, uniteEnPouce, image.Text) == true)
                 {
                     MessageBox.Show("Insertion réussie");
 

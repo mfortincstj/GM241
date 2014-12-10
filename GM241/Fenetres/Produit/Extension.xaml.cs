@@ -120,6 +120,14 @@ namespace GM241.Fenetres.Produit
                 listePorteOutil.Items.Add(tpo.idTypePorteOutil + " - " + tpo.nom);
             }
 
+            List<Emplacements> lstEmplacements = Emplacements.chargerlstEmplacements();
+            foreach (Emplacements e in lstEmplacements)
+            {
+                listeNoLocal.Items.Add(e.idTypeEmplacement + " - " + e.noLocal + " - " + e.idArmoire + " - " + e.idCasier + " - " + e.idTiroir);
+            }
+
+            listeNoLocal.SelectedIndex = 0;
+
             longShank.Text = monExtension.longueurShank;
             diamShank.Text = monExtension.diametreShank;
             longTotal.Text = monExtension.longueurTotale;
@@ -165,7 +173,7 @@ namespace GM241.Fenetres.Produit
 
             if (insertValide == true)
             {
-                if (extensions.ajoutExtension(Convert.ToInt32(idPorteOutil[0]), Convert.ToInt32(idEmp[0]), Convert.ToInt32(idCollet[0]), longShank.Text, diamShank.Text, longTotal.Text, Convert.ToInt32(quantite.Text), img.Text) == true)
+                if (extensions.ajoutExtension(Convert.ToInt32(idPorteOutil[0]), 1, Convert.ToInt32(idCollet[0]), longShank.Text, diamShank.Text, longTotal.Text, Convert.ToInt32(quantite.Text), img.Text) == true)
                 {
                     MessageBox.Show("Insertion réussie");
 

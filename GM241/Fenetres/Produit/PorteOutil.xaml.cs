@@ -96,6 +96,13 @@ namespace GM241.Fenetres.Produit
                 listeTypePorteOutil.Items.Add(tPo.idTypePorteOutil + " - " + tPo.nom);
             }
 
+            List<Emplacements> lstEmplacements = Emplacements.chargerlstEmplacements();
+
+            foreach (Emplacements e in lstEmplacements)
+                listeNoLocal.Items.Add(e.idTypeEmplacement + " - " + e.noLocal + " - " + e.idArmoire + " - " + e.idCasier + " - " + e.idTiroir);
+
+            listeNoLocal.SelectedIndex = 0;
+
             quantite.Text = monPorteOutil.quantite.ToString();
             image.Text = monPorteOutil.image;
 
@@ -129,7 +136,7 @@ namespace GM241.Fenetres.Produit
 
             if (insertValide == true)
             {
-                if (porteOutils.ajoutPorteOutil(Convert.ToInt32(idPorteOul[0]), Convert.ToInt32(idEmpl[0]), Convert.ToInt32(quantite.Text), image.Text) == true)
+                if (porteOutils.ajoutPorteOutil(Convert.ToInt32(idPorteOul[0]), 1, Convert.ToInt32(quantite.Text), image.Text) == true)
                 {
                     MessageBox.Show("Insertion réussie");
 

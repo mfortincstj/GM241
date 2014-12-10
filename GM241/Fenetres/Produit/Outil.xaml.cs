@@ -181,6 +181,7 @@ namespace GM241.Fenetres.Produit
             string[] idTypeOutil = null;
             string[] idTypeEmplacement = null;
             string[] idPlaquette = null;
+            int? idPlaq;
             Outils outils = new Outils();
 
             str = listeTypeOutil.Text;
@@ -231,7 +232,7 @@ namespace GM241.Fenetres.Produit
 
             if (insertValide == true)
             {
-                if (outils.ajoutOutil(Convert.ToInt32(idTypeOutil[0]), Convert.ToInt32(idTypeEmplacement[0]), Convert.ToInt32(idPlaquette[0]), nom.Text, Convert.ToInt32(quantite.Text), diametreUsinage.Text, diametreSerrage.Text, longueurCoupe.Text, longuerTotal.Text, longueurShank.Text, rayonCoin.Text, anglePointe.Text, Convert.ToInt32(nbrFlute.Text), outilDisponible, uniteEnPouce, img.Text) == true)
+                if (outils.ajoutOutil(Convert.ToInt32(idTypeOutil[0]), 1, Convert.ToInt32(idPlaquette[0]), nom.Text, Convert.ToInt32(quantite.Text), diametreUsinage.Text, diametreSerrage.Text, longueurCoupe.Text, longuerTotal.Text, longueurShank.Text, rayonCoin.Text, anglePointe.Text, Convert.ToInt32(nbrFlute.Text), outilDisponible, uniteEnPouce, img.Text) == true)
                 {
                     MessageBox.Show("Insertion réussie");
 
