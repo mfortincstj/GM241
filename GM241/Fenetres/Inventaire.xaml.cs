@@ -291,7 +291,7 @@ namespace GM241.Fenetres.Inventaire
             }
             else
             {
-                //resGrid1.ItemsSource = listCol.Where(o => o.nom.Contains(nomFourni));
+                resGrid1.ItemsSource = listCol.Where(o => o.idTypeAttachement.Contains(nomFourni));
                 resGrid2.ItemsSource = listOutil.Where(o => o.nom.Contains(nomFourni));
                 //resGrid3.ItemsSource = listPorteOutil.Where(o => o.nom.Contains(nomFourni));
                 resGrid4.ItemsSource = listPlaquette.Where(o => o.nom.Contains(nomFourni));
@@ -346,8 +346,8 @@ namespace GM241.Fenetres.Inventaire
             {
                 if(CheckBoxDesc.IsChecked == true)
                 {
-                    resGrid1.ItemsSource = listCol.Where(c => c.idEmplacement.ToString().Equals(descFournie) || c.idTypeAttachement.ToString().Equals(descFournie)
-                    || c.diametreInterieur.Equals(descFournie) || c.quantite.ToString().Equals(descFournie) || c.image.Equals(descFournie));
+                    resGrid1.ItemsSource = listCol.Where(c => c.idEmplacement.ToString().Equals(descFournie) || c.diametreInterieur.Equals(descFournie) 
+                    || c.quantite.ToString().Equals(descFournie) || c.image.Equals(descFournie));
 
                     resGrid2.ItemsSource = listOutil.Where(o => o.idTypeOutil.ToString().Equals(descFournie) || o.idEmplacement.ToString().Equals(descFournie)
                     || o.idPlaquette.ToString().Equals(descFournie) || o.quantite.ToString().Equals(descFournie) || o.diametreUsinage.Equals(descFournie)
@@ -384,8 +384,8 @@ namespace GM241.Fenetres.Inventaire
                 }
                 else
                 {
-                    resGrid1.ItemsSource = listCol.Where(c => c.idEmplacement.ToString().Contains(descFournie) || c.idTypeAttachement.ToString().Contains(descFournie)
-                    || c.diametreInterieur.Contains(descFournie) || c.quantite.ToString().Contains(descFournie) || c.image.Contains(descFournie));
+                    resGrid1.ItemsSource = listCol.Where(c => c.idEmplacement.ToString().Contains(descFournie) || c.diametreInterieur.Contains(descFournie) 
+                    || c.quantite.ToString().Contains(descFournie) || c.image.Contains(descFournie));
 
                     resGrid2.ItemsSource = listOutil.Where(o => o.idTypeOutil.ToString().Contains(descFournie) || o.idEmplacement.ToString().Contains(descFournie)
                     || o.idPlaquette.ToString().Contains(descFournie) || o.quantite.ToString().Contains(descFournie) || o.diametreUsinage.Contains(descFournie)
