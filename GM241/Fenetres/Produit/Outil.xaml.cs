@@ -105,7 +105,7 @@ namespace GM241.Fenetres.Produit
             foreach (TypeOutils tO in lstTypeOutils)
                 listeTypeOutil.Items.Add(tO.idTypeOutil + " - " + tO.nom);
 
-            listeTypeOutil.SelectedIndex = monOutil.idTypeOutil - 1;
+            //listeTypeOutil.SelectedIndex = monOutil.idTypeOutil - 1;
 
             // Pour les plaquettes
             List<Plaquettes> lstPlaquettes = Plaquettes.chargerlstPlaquettes();
@@ -119,10 +119,10 @@ namespace GM241.Fenetres.Produit
             foreach (Plaquettes p in lstPlaquettes)
                 listePlaquette.Items.Add(p.idPlaquette + " - " + p.nom);
 
-            if (monOutil.idPlaquette != null)
+            /*if (monOutil.idPlaquette != null)
                 listePlaquette.SelectedIndex = monOutil.idPlaquette.Value - 1;
             else
-                listePlaquette.SelectedIndex = 0;
+                listePlaquette.SelectedIndex = 0;*/
 
             // Chargement temporaire des emplacement *** À changer
             List<Emplacements> lstEmplacements = Emplacements.chargerlstEmplacements();

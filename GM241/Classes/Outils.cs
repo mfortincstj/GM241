@@ -10,9 +10,9 @@ namespace GM241.Classes
     public class Outils
     {
         public virtual int idOutil { get; set; }
-        public virtual int idTypeOutil { get; set; }
+        public virtual string idTypeOutil { get; set; }
         public virtual int idEmplacement { get; set; }
-        public virtual int? idPlaquette { get; set; }
+        public virtual string idPlaquette { get; set; }
         public virtual string nom { get; set; }
         public virtual int quantite { get; set; }
         public virtual string diametreUsinage { get; set; }
@@ -30,9 +30,9 @@ namespace GM241.Classes
         public Outils()
         {
             idOutil = 0;
-            idTypeOutil = 0;
+            idTypeOutil = "";
             idEmplacement = 0;
-            idPlaquette = 0;
+            idPlaquette = "";
             nom = "";
             quantite = 0;
             diametreUsinage = "";
@@ -48,7 +48,7 @@ namespace GM241.Classes
             image = "";
         }
 
-        public Outils(int idOul, int idTO, int idEm, int? idPla, string n, int q, string diamUsi, string diamSerr, string longC, string longT, string longS, 
+        public Outils(int idOul, string idTO, int idEm, string idPla, string n, int q, string diamUsi, string diamSerr, string longC, string longT, string longS, 
                       string rayC, string angR, int nbFlute, bool dispo, bool unitPo, string img)
         {
             idOutil = idOul;
@@ -77,9 +77,9 @@ namespace GM241.Classes
         public static List<Outils> chargerLstOutils()
         {
             int idOutil;
-            int idTypeOutil;
+            string idTypeOutil;
             int idEmplacement;
-            int? idPlaquette;
+            string idPlaquette;
             string nom;
             int quantite;
             string diametreUsinage;
@@ -113,14 +113,14 @@ namespace GM241.Classes
                     if (Convert.ToBoolean(tabOutil[i][17]) == false)
                     {
                         idOutil = Convert.ToInt32(tabOutil[i][0]);
-                        idTypeOutil = Convert.ToInt32(tabOutil[i][1]);
+                        idTypeOutil = tabOutil[i][19];
                         idEmplacement = Convert.ToInt32(tabOutil[i][2]);
 
                         // Le idPlaquette peut etre nullable
-                        if (tabOutil[i][3] == "")
+                        if (tabOutil[i][23] == "")
                             idPlaquette = null;
                         else
-                            idPlaquette = Convert.ToInt32(tabOutil[i][3]);
+                            idPlaquette = tabOutil[i][23];
                     
                         nom = tabOutil[i][4];
                         quantite = Convert.ToInt32(tabOutil[i][5]);
