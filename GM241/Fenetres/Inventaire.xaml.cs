@@ -293,10 +293,10 @@ namespace GM241.Fenetres.Inventaire
             {
                 resGrid1.ItemsSource = listCol.Where(o => o.idTypeAttachement.Contains(nomFourni));
                 resGrid2.ItemsSource = listOutil.Where(o => o.nom.Contains(nomFourni));
-                //resGrid3.ItemsSource = listPorteOutil.Where(o => o.nom.Contains(nomFourni));
+                resGrid3.ItemsSource = listPorteOutil.Where(o => o.idTypePorteOutil.Contains(nomFourni));
                 resGrid4.ItemsSource = listPlaquette.Where(o => o.nom.Contains(nomFourni));
                 resGrid5.ItemsSource = listCone.Where(o => o.nom.Contains(nomFourni));
-                //resGrid6.ItemsSource = listEmplacement.Where(o => o.nom.Contains(nomFourni));
+                resGrid6.ItemsSource = listEmplacement.Where(o => o.idTypeEmplacement.Contains(nomFourni));
                 //resGrid7.ItemsSource = listExtension.Where(o => o.nom.Contains(nomFourni));
                 resGrid8.ItemsSource = listMachine.Where(o => o.nom.Contains(nomFourni));
                 resGrid9.ItemsSource = listPlateauMachine.Where(o => o.nom.Contains(nomFourni));
@@ -346,13 +346,9 @@ namespace GM241.Fenetres.Inventaire
             {
                 if(CheckBoxDesc.IsChecked == true)
                 {
-<<<<<<< HEAD
+
                     resGrid1.ItemsSource = listCol.Where(c => c.idEmplacement.ToString().Equals(descFournie) || c.diametreInterieur.Equals(descFournie) 
                     || c.quantite.ToString().Equals(descFournie) || c.image.Equals(descFournie));
-=======
-                    resGrid1.ItemsSource = listCol.Where(c => c.idEmplacement.ToString().Equals(descFournie)
-                    || c.diametreInterieur.Equals(descFournie) || c.quantite.ToString().Equals(descFournie) || c.image.Equals(descFournie));
->>>>>>> origin/master
 
                     resGrid2.ItemsSource = listOutil.Where(o => o.idTypeOutil.ToString().Equals(descFournie) || o.idEmplacement.ToString().Equals(descFournie)
                     || o.idPlaquette.ToString().Equals(descFournie) || o.quantite.ToString().Equals(descFournie) || o.diametreUsinage.Equals(descFournie)
@@ -360,8 +356,8 @@ namespace GM241.Fenetres.Inventaire
                     || o.longueurShank.Equals(descFournie) || o.rayonCoin.Equals(descFournie) || o.anglePointe.Equals(descFournie)
                     || o.nombreFlute.ToString().Equals(descFournie) || o.image.Equals(descFournie));
 
-                    resGrid3.ItemsSource = listPorteOutil.Where(po => po.idTypePorteOutil.ToString().Equals(descFournie) || po.idEmplacement.ToString().Equals(descFournie)
-                    || po.quantite.ToString().Equals(descFournie) || po.image.Equals(descFournie));
+                    resGrid3.ItemsSource = listPorteOutil.Where(po => po.idEmplacement.ToString().Equals(descFournie) || po.quantite.ToString().Equals(descFournie) 
+                    || po.image.Equals(descFournie));
 
                     resGrid4.ItemsSource = listPlaquette.Where(p => p.idEmplacement.ToString().Equals(descFournie) || p.typePlaquette.Equals(descFournie)
                     || p.direction.Equals(descFournie) || p.angle.Equals(descFournie) || p.degagement.Equals(descFournie) || p.grosseur.Equals(descFournie)
@@ -370,8 +366,8 @@ namespace GM241.Fenetres.Inventaire
 
                     resGrid5.ItemsSource = listCone.Where(co => co.typeCone.Equals(descFournie) || co.typeMachine.Equals(descFournie));
 
-                    resGrid6.ItemsSource = listEmplacement.Where(em => em.idTypeEmplacement.ToString().Equals(descFournie) || em.noLocal.Equals(descFournie)
-                    || em.idArmoire.Equals(descFournie) || em.idTiroir.Equals(descFournie) || em.idCasier.Equals(descFournie));
+                    resGrid6.ItemsSource = listEmplacement.Where(em => em.noLocal.Equals(descFournie) || em.idArmoire.Equals(descFournie) 
+                    || em.idTiroir.Equals(descFournie) || em.idCasier.Equals(descFournie));
 
                     resGrid7.ItemsSource = listExtension.Where(ex => ex.idPorteOutil.ToString().Equals(descFournie) || ex.idEmplacement.ToString().Equals(descFournie)
                     || ex.idCollet.ToString().Equals(descFournie) || ex.longueurShank.Equals(descFournie) || ex.diametreShank.Equals(descFournie)
@@ -389,13 +385,8 @@ namespace GM241.Fenetres.Inventaire
                 }
                 else
                 {
-<<<<<<< HEAD
                     resGrid1.ItemsSource = listCol.Where(c => c.idEmplacement.ToString().Contains(descFournie) || c.diametreInterieur.Contains(descFournie) 
                     || c.quantite.ToString().Contains(descFournie) || c.image.Contains(descFournie));
-=======
-                    resGrid1.ItemsSource = listCol.Where(c => c.idEmplacement.ToString().Contains(descFournie)
-                    || c.diametreInterieur.Contains(descFournie) || c.quantite.ToString().Contains(descFournie) || c.image.Contains(descFournie));
->>>>>>> origin/master
 
                     resGrid2.ItemsSource = listOutil.Where(o => o.idTypeOutil.ToString().Contains(descFournie) || o.idEmplacement.ToString().Contains(descFournie)
                     || o.idPlaquette.ToString().Contains(descFournie) || o.quantite.ToString().Contains(descFournie) || o.diametreUsinage.Contains(descFournie)
@@ -403,8 +394,8 @@ namespace GM241.Fenetres.Inventaire
                     || o.longueurShank.Contains(descFournie) || o.rayonCoin.Contains(descFournie) || o.anglePointe.Contains(descFournie)
                     || o.nombreFlute.ToString().Contains(descFournie) || o.image.Contains(descFournie));
 
-                    resGrid3.ItemsSource = listPorteOutil.Where(po => po.idTypePorteOutil.ToString().Contains(descFournie) || po.idEmplacement.ToString().Contains(descFournie)
-                    || po.quantite.ToString().Contains(descFournie) || po.image.Contains(descFournie));
+                    resGrid3.ItemsSource = listPorteOutil.Where(po => po.idEmplacement.ToString().Contains(descFournie) || po.quantite.ToString().Contains(descFournie) 
+                    || po.image.Contains(descFournie));
 
                     resGrid4.ItemsSource = listPlaquette.Where(p => p.idEmplacement.ToString().Contains(descFournie) || p.typePlaquette.Contains(descFournie)
                     || p.direction.Contains(descFournie) || p.angle.Contains(descFournie) || p.degagement.Contains(descFournie) || p.grosseur.Contains(descFournie)
@@ -413,8 +404,8 @@ namespace GM241.Fenetres.Inventaire
 
                     resGrid5.ItemsSource = listCone.Where(co => co.typeCone.Contains(descFournie) || co.typeMachine.Contains(descFournie));
 
-                    resGrid6.ItemsSource = listEmplacement.Where(em => em.idTypeEmplacement.ToString().Contains(descFournie) || em.noLocal.Contains(descFournie)
-                    || em.idArmoire.Contains(descFournie) || em.idTiroir.Contains(descFournie) || em.idCasier.Contains(descFournie));
+                    resGrid6.ItemsSource = listEmplacement.Where(em => em.noLocal.Contains(descFournie) || em.idArmoire.Contains(descFournie) 
+                    || em.idTiroir.Contains(descFournie) || em.idCasier.Contains(descFournie));
 
                     resGrid7.ItemsSource = listExtension.Where(ex => ex.idPorteOutil.ToString().Contains(descFournie) || ex.idEmplacement.ToString().Contains(descFournie)
                     || ex.idCollet.ToString().Contains(descFournie) || ex.longueurShank.Contains(descFournie) || ex.diametreShank.Contains(descFournie)
