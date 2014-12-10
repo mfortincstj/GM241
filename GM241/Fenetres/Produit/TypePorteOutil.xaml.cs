@@ -61,6 +61,8 @@ namespace GM241.Fenetres.Produit
             {
                 if (monTypePorteOutil.idCone == c.nom)
                     listeCone.SelectedIndex = c.idCone - 1;
+                else
+                    listeCone.SelectedIndex = 0;
 
                 listeCone.Items.Add(c.idCone + " - " + c.nom);
             }
@@ -72,6 +74,8 @@ namespace GM241.Fenetres.Produit
             {
                 if (monTypePorteOutil.idTypeAttachement == tA.nom)
                     listeAttachement.SelectedIndex = tA.idTypeAttachement - 1;
+                else
+                    listeAttachement.SelectedIndex = 0;
 
                 listeAttachement.Items.Add(tA.idTypeAttachement + " - " + tA.nom);
             }

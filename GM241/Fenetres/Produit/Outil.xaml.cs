@@ -121,6 +121,15 @@ namespace GM241.Fenetres.Produit
 
             if (monOutil.idPlaquette != null)
                 listePlaquette.SelectedIndex = monOutil.idPlaquette.Value - 1;
+            else
+                listePlaquette.SelectedIndex = 0;
+
+            // Chargement temporaire des emplacement *** À changer
+            List<Emplacements> lstEmplacements = Emplacements.chargerlstEmplacements();
+            foreach (Emplacements e in lstEmplacements)
+                listeNoLocal.Items.Add(e.idTypeEmplacement + " - " + e.noLocal + " - " + e.idArmoire + " - " + e.idCasier + " - " + e.idTiroir);
+
+            listeNoLocal.SelectedIndex = 0;
 
             nom.Text = monOutil.nom;
             quantite.Text = monOutil.quantite.ToString();

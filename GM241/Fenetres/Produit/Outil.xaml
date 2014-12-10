@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Outil" Height="550" Width="975" ResizeMode="CanMinimize">
     <Grid>
+        <Image Source="../../Images/fond.jpg" Stretch="Fill"/>
         <Label Content="Type d'outil : " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right" Foreground="#FF00C2FB"/>
         <ComboBox x:Name="listeTypeOutil" HorizontalAlignment="Left" Margin="255,10,0,0" VerticalAlignment="Top" Width="230" Height="37"/>
         <Label Content="Plaquette : " HorizontalAlignment="Left" Margin="10,53,0,0" VerticalAlignment="Top" FontSize="20" Width="240" HorizontalContentAlignment="Right" Foreground="#FF00C2FB"/>

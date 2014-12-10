@@ -64,6 +64,8 @@ namespace GM241.Fenetres.Produit
             {
                 if (monEmplacement.idTypeEmplacement == tP.nom)
 		            listeTypeEmplacement.SelectedIndex = tP.idTypeEmplacement - 1;
+                else
+                    listeTypeEmplacement.SelectedIndex = 0;
 
                 listeTypeEmplacement.Items.Add(tP.idTypeEmplacement + " - " + tP.nom);
             }

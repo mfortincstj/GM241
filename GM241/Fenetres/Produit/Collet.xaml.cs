@@ -65,22 +65,16 @@ namespace GM241.Fenetres.Produit
             
             idColletPresent = monCollet.idCollet;
 
-            /*
             // Charger la liste des types d'emplacements
             List<TypeEmplacements> lstTypeEmpl = TypeEmplacements.chargerlstTypeEmplacements();
 
             foreach (TypeEmplacements tP in lstTypeEmpl)
                 listeTypeEmplacement.Items.Add(tP.idTypeEmplacement + " - " + tP.nom);
 
-            listeTypeEmplacement.SelectedIndex = monCollet.idEmplacement - 1;
-            */
-
             if (monCollet.idTypeAttachement == null)
-            {
                 listeTypeAttachement.Items.Add("0 - Aucun");
 
-                listeTypeAttachement.SelectedIndex = 0;
-            }
+            listeTypeEmplacement.SelectedIndex = 0;
 
             // Charger la liste des attachements
             List<TypeAttachements> lstAttachements = TypeAttachements.chargerlstTypeAttachements();
@@ -89,6 +83,8 @@ namespace GM241.Fenetres.Produit
             {
                 if (monCollet.idTypeAttachement == tA.nom)
                     listeTypeAttachement.SelectedIndex = tA.idTypeAttachement - 1;
+                else
+                    listeTypeAttachement.SelectedIndex = 0;
 
                 listeTypeAttachement.Items.Add(tA.idTypeAttachement + " - " + tA.nom);
             }

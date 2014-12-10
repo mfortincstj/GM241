@@ -6,7 +6,7 @@
         <Image Source="../../Images/login.jpg" Stretch="Fill"/>
         <Label Content="Menu rapport" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Foreground="#FF00C2FB"/>
         <Button x:Name="btnPerte" Content="Perte" Margin="371,170,371,320" FontSize="22"/>
-        <Button x:Name="btnFermer" Content="Fermer" Margin="832,510,0,0" HorizontalAlignment="Left" Width="130" Height="30" VerticalAlignment="Top" Click="btnFermer_Click"/>
+        <Button x:Name="btnFermer" Content="Retour" Margin="832,510,0,0" HorizontalAlignment="Left" Width="130" Height="30" VerticalAlignment="Top" Click="btnFermer_Click"/>
         <Button x:Name="btnCommande" Content="Commande" Margin="371,350,371,140" FontSize="22"/>
     </Grid>
 </Window>

@@ -90,6 +90,8 @@ namespace GM241.Fenetres.Produit
             {
                 if (monPorteOutil.idTypePorteOutil == tPo.nom)
                     listeTypePorteOutil.SelectedIndex = tPo.idTypePorteOutil - 1;
+                else
+                    listeTypePorteOutil.SelectedIndex = 0;
 
                 listeTypePorteOutil.Items.Add(tPo.idTypePorteOutil + " - " + tPo.nom);
             }

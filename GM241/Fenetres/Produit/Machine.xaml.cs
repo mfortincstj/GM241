@@ -75,6 +75,8 @@ namespace GM241.Fenetres.Produit
             {
                 if (maMachine.idPlateauMachine == tPm.nom)
                     listePlateauMachine.SelectedIndex = tPm.idPlateauMachine - 1;
+                else
+                    listePlateauMachine.SelectedIndex = 0;
 
                 listePlateauMachine.Items.Add(tPm.idPlateauMachine + " - " + tPm.nom);
             }

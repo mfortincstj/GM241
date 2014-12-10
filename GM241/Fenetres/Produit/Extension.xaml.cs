@@ -100,7 +100,9 @@ namespace GM241.Fenetres.Produit
             foreach (TypeAttachements ta in lstTypeAttachements)
             {
                 if (monExtension.idCollet == ta.nom)
-                    listePorteOutil.SelectedIndex = ta.idTypeAttachement - 1;
+                    listeCollet.SelectedIndex = ta.idTypeAttachement - 1;
+                else
+                    listeCollet.SelectedIndex = 0;
 
                 listeCollet.Items.Add(ta.idTypeAttachement + " - " + ta.nom);
             }
@@ -112,6 +114,8 @@ namespace GM241.Fenetres.Produit
             {
                 if (monExtension.idPorteOutil == tpo.nom)
                     listePorteOutil.SelectedIndex = tpo.idTypePorteOutil - 1;
+                else
+                    listePorteOutil.SelectedIndex = 0;
 
                 listePorteOutil.Items.Add(tpo.idTypePorteOutil + " - " + tpo.nom);
             }

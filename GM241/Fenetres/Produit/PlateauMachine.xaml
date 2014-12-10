@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="PlateauMachine" Height="550" Width="975" ResizeMode="CanMinimize">
     <Grid>
+        <Image Source="../../Images/fond.jpg" Stretch="Fill"/>
         <Label Content="Nom : " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Width="240" Height="37" HorizontalContentAlignment="Right" Foreground="#FF00C2FB"/>
         <Label Content="Axe suppérieur B : " HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" FontSize="20" Width="240" Height="37" HorizontalContentAlignment="Right" Foreground="#FF00C2FB"/>
         <Label Content="Axe suppérieur A : " HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" FontSize="20" Width="240" Height="37" HorizontalContentAlignment="Right" Foreground="#FF00C2FB"/>
