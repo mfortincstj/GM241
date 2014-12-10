@@ -94,21 +94,15 @@ namespace GM241.Classes
             bool  unitePouce;
             string image;
 
-            /*BDService BDOutils = new BDService();
-            String request = "SELECT * FROM Outils";*/
-
             BDService BDOutils = new BDService();
-            String request = "SELECT * FROM Outils INNER JOIN TypeOutils AS to ON to.idTypeOutil = o.idTypeOutil INNER JOIN Plaquettes AS p ON p.idPlaquette = o.idPlaquette";
-
-            /*BDService BDOutils = new BDService();
             String request = "SELECT * " +
                              "FROM Outils AS o " +
-                                "INNER JOIN TypeOutils AS to ON to.idTypeOutil = o.idTypeOutil " +
-                                "INNER JOIN Plaquettes AS p ON p.idPlaquette = o.idPlaquette";*/
+                                "INNER JOIN TypeOutils AS tos ON tos.idTypeOutil = o.idTypeOutil " +
+                                "INNER JOIN Plaquettes AS p ON p.idPlaquette = o.idPlaquette";
 
             List<string>[] tabOutil;
             int nombreRange = 0;
-            tabOutil = BDOutils.selection(request, 34, ref nombreRange);
+            tabOutil = BDOutils.selection(request, 37, ref nombreRange);
 
             List<Outils> listeOutils = new List<Outils>();
 
