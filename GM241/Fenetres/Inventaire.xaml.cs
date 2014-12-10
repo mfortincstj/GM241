@@ -346,8 +346,13 @@ namespace GM241.Fenetres.Inventaire
             {
                 if(CheckBoxDesc.IsChecked == true)
                 {
+<<<<<<< HEAD
                     resGrid1.ItemsSource = listCol.Where(c => c.idEmplacement.ToString().Equals(descFournie) || c.diametreInterieur.Equals(descFournie) 
                     || c.quantite.ToString().Equals(descFournie) || c.image.Equals(descFournie));
+=======
+                    resGrid1.ItemsSource = listCol.Where(c => c.idEmplacement.ToString().Equals(descFournie)
+                    || c.diametreInterieur.Equals(descFournie) || c.quantite.ToString().Equals(descFournie) || c.image.Equals(descFournie));
+>>>>>>> origin/master
 
                     resGrid2.ItemsSource = listOutil.Where(o => o.idTypeOutil.ToString().Equals(descFournie) || o.idEmplacement.ToString().Equals(descFournie)
                     || o.idPlaquette.ToString().Equals(descFournie) || o.quantite.ToString().Equals(descFournie) || o.diametreUsinage.Equals(descFournie)
@@ -384,8 +389,13 @@ namespace GM241.Fenetres.Inventaire
                 }
                 else
                 {
+<<<<<<< HEAD
                     resGrid1.ItemsSource = listCol.Where(c => c.idEmplacement.ToString().Contains(descFournie) || c.diametreInterieur.Contains(descFournie) 
                     || c.quantite.ToString().Contains(descFournie) || c.image.Contains(descFournie));
+=======
+                    resGrid1.ItemsSource = listCol.Where(c => c.idEmplacement.ToString().Contains(descFournie)
+                    || c.diametreInterieur.Contains(descFournie) || c.quantite.ToString().Contains(descFournie) || c.image.Contains(descFournie));
+>>>>>>> origin/master
 
                     resGrid2.ItemsSource = listOutil.Where(o => o.idTypeOutil.ToString().Contains(descFournie) || o.idEmplacement.ToString().Contains(descFournie)
                     || o.idPlaquette.ToString().Contains(descFournie) || o.quantite.ToString().Contains(descFournie) || o.diametreUsinage.Contains(descFournie)

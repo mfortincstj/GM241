@@ -76,7 +76,6 @@ namespace GM241.Fenetres.Produit
             foreach (Emplacements e in lstEmplacements)
                 listeNoLocal.Items.Add(e.idTypeEmplacement + " - " + e.noLocal + " - " + e.idArmoire + " - " + e.idCasier + " - " + e.idTiroir);
 
-
             viderChamps();
         }
 
