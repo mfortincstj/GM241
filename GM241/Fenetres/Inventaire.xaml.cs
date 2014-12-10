@@ -39,6 +39,7 @@ namespace GM241.Fenetres.Inventaire
         public Inventaire(bool admin, string user)
         {
             InitializeComponent();
+            btnDetail.IsEnabled = false;
 
             champNom.Focus();
 
@@ -109,17 +110,20 @@ namespace GM241.Fenetres.Inventaire
             
             List<TypeOutils> listTypeOutil = TypeOutils.chargerlstTypeOutils();
             resGrid13.ItemsSource = listTypeOutil;
-
     }
 
         private void btnQuitter_Click(object sender, RoutedEventArgs e)
         {
+            btnDetail.IsEnabled = false;
+
             if (MessageBox.Show("Voulez-vous quitter le programme?", "Attention!", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No) == MessageBoxResult.Yes)
                 Application.Current.Shutdown();
         }
 
         public void btnDetail_Click(object sender, RoutedEventArgs e)
         {
+            btnDetail.IsEnabled = false;
+
             char[] splitchar = { ' ' };
             string str = null;
             string[] infoIndex = null;
@@ -216,6 +220,8 @@ namespace GM241.Fenetres.Inventaire
 
         private void lstMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            btnDetail.IsEnabled = false;
+
             if (lstMenu.SelectedIndex == 1)   // Administration
             {
                 MenuAdmin menuAdmin = new MenuAdmin(estAdmin, usagerConnecte);
@@ -232,6 +238,8 @@ namespace GM241.Fenetres.Inventaire
 
         private void btnDeconnexion_Click(object sender, RoutedEventArgs e)
         {
+            btnDetail.IsEnabled = false;
+
             if (MessageBox.Show("Voulez-vous vous déconnectez ?", "Attention !", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No) == MessageBoxResult.Yes)
             {
                 Login login = new Login();
@@ -248,6 +256,7 @@ namespace GM241.Fenetres.Inventaire
 
         private void champNom_TextChanged(object sender, TextChangedEventArgs e)
         {
+            btnDetail.IsEnabled = false;
             string nomFourni = champNom.Text.ToLower();
 
             List<Collets> listCol = Collets.chargerlstCollets();
@@ -301,6 +310,7 @@ namespace GM241.Fenetres.Inventaire
 
         private void champDescription_TextChanged(object sender, TextChangedEventArgs e)
         {
+            btnDetail.IsEnabled = false;
             string descFournie = champDescription.Text.ToLower();
 
             List<Collets> listCol = Collets.chargerlstCollets();
@@ -416,6 +426,7 @@ namespace GM241.Fenetres.Inventaire
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            btnDetail.IsEnabled = false;
             string appPath = System.IO.Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
             String fileName = appPath + "\\guideUtilisateur.pdf";
             System.Diagnostics.Process process = new System.Diagnostics.Process();
