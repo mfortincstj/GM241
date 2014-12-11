@@ -63,7 +63,7 @@
                 <DataGrid x:Name="resGrid13" Margin="10,10,10,10" AlternatingRowBackground="#FFA0C3CD" SelectionChanged="tabInventaire_SelectionChanged" CanUserReorderColumns="False" Background="#FFA8A8A8"/>
             </TabItem>
         </TabControl>
-        <Button Content="Guide utilisateur" HorizontalAlignment="Right" Margin="0,0,150,10" Width="135" Click="Button_Click" Height="34" VerticalAlignment="Bottom"/>
+        <Button Content="Aide" HorizontalAlignment="Right" Margin="0,0,150,10" Width="135" Click="Button_Click" Height="34" VerticalAlignment="Bottom"/>
         <Label x:Name="Navigation" Content="Navigation : " Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Foreground="#FF00C2FB" HorizontalAlignment="Left" Width="150"/>
     </Grid>
 </Window>
