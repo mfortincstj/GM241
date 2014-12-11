@@ -218,7 +218,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Guide utilisateur\guideUtilisateur.pdf" />
+    <None Include="Guide utilisateur\ajoutProduit.pdf" />
+    <None Include="Guide utilisateur\guideUtilisateurComplet.pdf" />
+    <None Include="Guide utilisateur\navigation.pdf" />
+    <None Include="Guide utilisateur\outilsNécessaireAuLogiciel.pdf" />
+    <None Include="Guide utilisateur\suppressionProduit.pdf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
