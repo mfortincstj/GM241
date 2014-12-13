@@ -186,7 +186,7 @@ namespace GM241.Fenetres.Produit
             string[] idTypeOutil = null;
             string[] idTypeEmplacement = null;
             string[] idPlaquette = null;
-            int? idPlaq;
+            //int? idPlaq;
             Outils outils = new Outils();
 
             str = listeTypeOutil.Text;

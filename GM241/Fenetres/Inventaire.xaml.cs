@@ -424,15 +424,24 @@ namespace GM241.Fenetres.Inventaire
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnGuide_Click(object sender, RoutedEventArgs e)
         {
             btnDetail.IsEnabled = false;
             string appPath = System.IO.Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
-            String fileName = appPath + "\\guideUtilisateur.pdf";
+            String fileName = appPath + "\\Guide_utilisateur\\guideUtilisateurComplet.pdf";
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             process.StartInfo.FileName = fileName;
             process.Start();
-            process.WaitForExit();
+        }
+
+        private void btnAide_Click(object sender, RoutedEventArgs e)
+        {
+            btnDetail.IsEnabled = false;
+            string appPath = System.IO.Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
+            String fileName = appPath + "\\Guide_utilisateur\\menuPrincipal.pdf";
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            process.StartInfo.FileName = fileName;
+            process.Start();
         }
     }
 }

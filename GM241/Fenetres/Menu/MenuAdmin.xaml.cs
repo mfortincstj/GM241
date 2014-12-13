@@ -175,14 +175,13 @@ namespace GM241.Fenetres.Menu
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnAideAdmin_Click(object sender, RoutedEventArgs e)
         {
             string appPath = System.IO.Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
-            String fileName = appPath + "\\guideUtilisateur.pdf";
+            String fileName = appPath + "\\Guide_utilisateur\\menuAdmin.pdf";
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             process.StartInfo.FileName = fileName;
             process.Start();
-            process.WaitForExit();
         }
     }
 }

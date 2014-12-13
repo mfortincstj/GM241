@@ -69,11 +69,10 @@ namespace GM241
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string appPath = System.IO.Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
-            String fileName = appPath + "\\guideUtilisateur.pdf";
+            String fileName = appPath + "\\Guide_utilisateur\\guideUtilisateurComplet.pdf";
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             process.StartInfo.FileName = fileName;
             process.Start();
-            process.WaitForExit();
         }
     }
 }
