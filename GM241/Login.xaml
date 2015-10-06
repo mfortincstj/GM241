@@ -13,7 +13,7 @@
         <PasswordBox x:Name="motDePasse" Margin="389,225,389,0" Height="31" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="16"/>
 
         <Button x:Name="btnAuthentification" Content="Authentification" Canvas.Left="443" Canvas.Top="234" RenderTransformOrigin="0.496,0.045" Margin="421,0,421,236" Click="btnAuthentification_Click" Height="43" VerticalAlignment="Bottom" IsDefault="True" Background="White"/>
-        <Button x:Name="btnQuitter" Content="Quitter" Canvas.Left="469" Canvas.Top="476" Margin="442,459,442,70" Click="btnQuitter_Click"/>
+        <Button x:Name="btnQuitter" Content="Quitter" Canvas.Left="469" Canvas.Top="476" Margin="442,460,442,69" Click="btnQuitter_Click"/>
         <Button Content="Guide utilisateur" Margin="427,423,428,0" VerticalAlignment="Top" Height="31" Click="Button_Click"/>
     </Grid>
 </Window>
